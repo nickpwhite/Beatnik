@@ -59,7 +59,7 @@ class LinkConverter:
         return (gpm_link, spotify_link)
 
     def get_gpm_link(self, song_info):
-        query = "{0} - {1}".format(song_info[0], song_info[1])
+        query = "song:{1} {0}".format(song_info[0], song_info[1])
         results = self.gpm_api.search(query, max_results = 1)
         if (len(results['song_hits']) > 0):
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
