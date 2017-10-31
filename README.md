@@ -8,4 +8,3 @@ The link converter will accept a link to a song on a streaming service as input 
 The currently supported services are listed below:
 * Google Play Music
 * Spotify
-* Apple Music
