@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # This is a test script to run LinkConverter
 from link_converter.LinkConverter import LinkConverter
 
