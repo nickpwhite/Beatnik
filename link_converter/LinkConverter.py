@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
-import getpass
+import os
 import spotipy
+import sys
 
 from gmusicapi import Mobileclient
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -20,8 +21,8 @@ class LinkConverter:
 
     def get_gpm_api(self):
         gpm_api = Mobileclient()
-        username = input("Enter your Google Play Music email address: ")
-        password = getpass.getpass("Enter your password: ")
+        username = os.environ['GPM_USERNAME']
+        password = os.environ['GPM_PASSWORD']
 
         if (not gpm_api.login(username, password, Mobileclient.FROM_MAC_ADDRESS, 'en_US')):
             print("Unable to login to Google Play Music.")
