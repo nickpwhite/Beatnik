@@ -101,9 +101,13 @@ class LinkConverter:
             return None
 
     def get_spotify_album(self, album_info):
-        query = "album:{0} artist:{1}".format(album_info[0], track_info[1])
+        query = "album:{0} artist:{1}".format(album_info[0], album_info[1])
         results = self.spotify_api.search(query, limit = 10, type = "album")
-        print(results)
+        if (results['albums']['total'] > 0):
+            return results['albums']['items'][0]['external_urls']['spotify']
+        else:
+            print("Could not find an album on Spotify using the following info:\n{0}".format(album_info))
+            return None
 
     def get_spotify_track(self, track_info):
         query = "track:{0} artist:{1}".format(track_info[0], track_info[1])
