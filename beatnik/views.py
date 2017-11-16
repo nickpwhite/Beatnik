@@ -4,14 +4,20 @@ from link_converter.LinkConverter import LinkConverter
 from .forms import LinkConverterForm
 
 def index(request):
-    return render(request, 'beatnik/index.html')
+    if (request.method == "GET"):
+        return render(request, 'beatnik/index.html')
+    else:
+        return HttpResponse()
 
-def songs(request):
-    link = request.GET.get('q', '')
-    if (link != ''):
-        linkConverter = LinkConverter()
-        return HttpResponse(linkConverter.convert_link(link))
-    return HttpResponse('')
+def music(request):
+    if (request.method == "GET"):
+        link = request.GET.get('q', '')
+        if (link != ''):
+            linkConverter = LinkConverter()
+            return HttpResponse(linkConverter.convert_link(link))
+        return HttpResponse('')
+    else:
+        return HttpResponse()
 
 def linkConverter(request):
     if (request.method == "POST"):
@@ -25,3 +31,4 @@ def linkConverter(request):
         links = None
 
     return render(request, 'beatnik/linkConverter.html', { 'form': form, 'links': links })
+
