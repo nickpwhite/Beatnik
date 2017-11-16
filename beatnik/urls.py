@@ -21,4 +21,6 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^songs/', views.songs, name='songs'),
+    url(r'^linkConverter/', views.linkConverter, name='link converter')
 ]

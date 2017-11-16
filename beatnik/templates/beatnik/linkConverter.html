@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Beatnik - Link Converter</title>
+    </head>
+    
+    <body>
+        <h1>Convert a link</h1>
+        <form action="/linkConverter/", method="post">
+            {% csrf_token %}
+            {{ form }}
+            <div class="button">
+                <button type="submit">Convert</button>
+            </div>
+        </form>
+        {% if links %}
+        <ul>
+            {% for link in links %}
+            <li><a target="_blank" href="{{ link }}">{{link}}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>
