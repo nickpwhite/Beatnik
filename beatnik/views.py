@@ -14,8 +14,10 @@ def music(request):
         link = request.GET.get('q', '')
         if (link != ''):
             linkConverter = LinkConverter()
-            return HttpResponse(linkConverter.convert_link(link))
-        return HttpResponse('')
+            links = linkConverter.convert_link(link)
+            return render(request, 'beatnik/music.html', { 'links': links })
+        else:
+            return HttpResponse("Not found")
     else:
         return HttpResponse()
 

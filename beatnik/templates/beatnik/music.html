@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Beatnik - Music</title>
+    </head>
+
+    <body>
+        <h1>Beatnik</h1>
+        {% if links %}
+        <ul>
+            {% for key, val in links.items %}
+            <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </body>
+</html>
