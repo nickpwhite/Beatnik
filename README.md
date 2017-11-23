@@ -1,5 +1,5 @@
 # Beatnik
-Aggregates links for music streaming services given a song, album, or artist
+Beatnik is a service that aggregates links for music streaming services given a song, album, or artist.
 
 ## website
 Provides a website that allows users to convert links through a convenient web interface. The site also provides a place to redirect users through the browser extension in order to automatically convert links on web pages they are browsing.
