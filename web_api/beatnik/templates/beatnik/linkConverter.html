@@ -16,8 +16,8 @@
         </form>
         {% if links %}
         <ul>
-            {% for link in links %}
-            <li><a target="_blank" href="{{ link }}">{{link}}</a></li>
+            {% for key, val in links.items %}
+            <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}

@@ -46,7 +46,7 @@ class LinkConverter:
             links = { 'spotify_link': spotify_link, 'gpm_link': gpm_link }
         elif info[0] == "album":
             spotify_link = self.get_spotify_album(info[1:])
-            gpm_link = self.get_gpm_track(info[1:])
+            gpm_link = self.get_gpm_album(info[1:])
             links = { 'spotify_link': spotify_link, 'gpm_link': gpm_link }
         else:
             raise ValueError("Received a media type I can't handle: {0}".format(info))
@@ -64,7 +64,7 @@ class LinkConverter:
             return None
 
     def get_gpm_track(self, track_info):
-        query = "song:{0} {1}".format(track_info[0], track_info[1])
+        query = "\"{0}\" \"{1}\"".format(track_info[0], track_info[1])
         results = self.gpm_api.search(query, max_results = 1)
         if (len(results['song_hits']) > 0):
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])

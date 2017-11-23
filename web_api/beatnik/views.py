@@ -26,8 +26,8 @@ def linkConverter(request):
         form = LinkConverterForm(request.POST)
         if (form.is_valid()):
             linkConverter = LinkConverter()
-            print(form.cleaned_data)
             links = linkConverter.convert_link(form.cleaned_data['link'])
+            print(links)
     else:
         form = LinkConverterForm()
         links = None

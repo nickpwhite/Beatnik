@@ -1,6 +1,6 @@
 from django.test import TestCase
 
-from Beatnik.link_converter.LinkConverter import LinkConverter
+from ..link_converter.LinkConverter import LinkConverter
 
 class TestLinkConverter(TestCase):
 

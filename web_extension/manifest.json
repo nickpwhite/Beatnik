@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Beatnik",
+    "version": "1.0",
+
+    "description": "Replaces links to Spotify and Google Play Music on webpages with a Beatnik link which will direct users to both the Spotify and Google Play Music link for the corresponding song",
+    "homepage_url": "https://github.com/nick41496/beatnik",
+    "icons": {
+        "48": "icons/beatnik.png"
+    },
+    
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["default.js"]
+        }
+    ]
+}
