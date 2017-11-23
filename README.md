@@ -1,8 +1,17 @@
 # Beatnik
 Aggregates links for music streaming services given a song, album, or artist
 
-## LinkConverter
-The link converter will accept a link to a song on a streaming service as input and produce links to a matching song on all supported streaming services as output.
+## website
+Provides a website that allows users to convert links through a convenient web interface. The site also provides a place to redirect users through the browser extension in order to automatically convert links on web pages they are browsing.
+
+### LinkConverter
+The link converter will accept a link to a song or album on a streaming service as input and produce links to a matching song on all supported streaming services as output.
+
+### LinkParser
+The link parser will accept a link to a song or album as input, parse the link, and produce information in the form `(type, title, artist)` where `type` is one of `track` or `artist`.
+
+## web_extension
+Provides a browser extension that will replace links to tracks or albums on supported streaming services with a link to a page on the Beatnik website that contains links to all supported streaming services.
 
 ## Supported Services
 The currently supported services are listed below:
