@@ -12,7 +12,14 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
+            "exclude_matches": ["http://127.0.0.1/*", "https://www.messenger.com/*"],
             "js": ["default.js"]
+        },
+        {
+            "matches": ["https://www.messenger.com/*"],
+            "js": ["messenger.js"],
+            "run_at": "document_start",
+            "all_frames": true
         }
     ]
 }
