@@ -14,13 +14,8 @@ function replaceLinks(event) {
 
             if (regex.exec(href)) {
                 new_href = `http://127.0.0.1:8000/music/?q=${href}`;
-                console.log(new_href);
                 anchors[i].href = new_href;
-            } else {
-                console.log(href);
             }
-        } else {
-            console.log(anchors[i]);
         }
     }
 }
