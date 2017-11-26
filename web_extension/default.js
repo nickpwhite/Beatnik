@@ -1,12 +1,43 @@
-const regex = /https?:\/\/(?:play\.google\.com\/music\/m\/[A-z0-9]+(?:\?t=.*)?|open\.spotify\.com\/(?:track|album)\/[A-z0-9]+)/;
+document.addEventListener('DOMContentLoaded', function() {
+    walkTree(document.getRootNode());
+    initMutationObserver(document.getRootNode());
+});
 
-let anchors = document.getElementsByTagName('a');
+function walkTree(root) {
+    const treeWalker = document.createTreeWalker(
+        root, 
+        window.NodeFilter.SHOW_ELEMENT, 
+        { 
+            acceptNode: (node) => { 
+                const regex = /^https:\/\/(?:play\.google\.com|open\.spotify\.com)/;
+                const accept = (node.tagName === 'A' && node.hasAttribute('href')) && regex.exec(node.getAttribute('href')) !== null;
+                if (accept) {
+                    return NodeFilter.FILTER_ACCEPT;
+                } else {
+                    return NodeFilter.FILTER_SKIP;
+                }
+            } 
+        }, 
+        false);
 
-for (let i = 0; i < anchors.length; i++) {
-    let href = anchors[i].href;
-
-    if (regex.exec(href)) {
-        new_href = `http://127.0.0.1:8000/music/?q=${href}`;
-        anchors[i].href = new_href;
+    let node;
+    while ((node = treeWalker.nextNode())) {
+		replaceLink(node);
     }
+}
+
+function initMutationObserver(root) {
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach((mutation) => {
+            walkTree(mutation.target);
+        })
+        observer.observe(root, opts);
+    });
+    var opts = { characterData: true, childList: true, subtree: true };
+    observer.observe(root, opts);
+}
+
+function replaceLink(node) {
+    node.setAttribute('href', `http://127.0.0.1:8000/music/?q=${node.getAttribute('href')}`)
 }

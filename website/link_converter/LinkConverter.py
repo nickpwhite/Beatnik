@@ -55,6 +55,8 @@ class LinkConverter:
 
     def get_gpm_album(self, album_info):
         query = "{0} {1}".format(album_info[0], album_info[1])
+        print(query)
+        print(album_info)
         results = self.gpm_api.search(query, max_results = 1)
         if (len(results['album_hits']) > 0):
             album_id = results['album_hits'][0]['album']['albumId']
