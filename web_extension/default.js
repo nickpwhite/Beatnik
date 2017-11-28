@@ -39,5 +39,5 @@ function initMutationObserver(root) {
 }
 
 function replaceLink(node) {
-    node.setAttribute('href', `http://127.0.0.1:8000/music/?q=${node.getAttribute('href')}`)
+    node.setAttribute('href', `${beatnik_url}/music/?q=${node.getAttribute('href')}`)
 }

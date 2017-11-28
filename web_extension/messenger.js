@@ -43,7 +43,7 @@ function replaceLink(node) {
     let result = regex.exec(node.getAttribute('href'));
     if (result) {
         let href = decodeURIComponent(result[1]);
-        node.setAttribute('href', `http://127.0.0.1:8000/music/?q=${href}`)
+        node.setAttribute('href', `${beatnik_url}/music/?q=${href}`)
         console.log(node.getAttribute('href'));
     }
 }
