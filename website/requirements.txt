@@ -3,6 +3,7 @@ beautifulsoup4==4.6.0
 certifi==2017.7.27.1
 chardet==3.0.4
 decorator==4.1.2
+Django==1.11.7
 future==0.16.0
 gmusicapi==10.1.2
 gpsoauth==0.4.1
@@ -16,10 +17,12 @@ pbr==3.1.1
 pkg-resources==0.0.0
 proboscis==1.2.6.0
 protobuf==3.4.0
+psycopg2==2.7.3.2
 pyasn1==0.3.7
 pyasn1-modules==0.1.5
 pycryptodomex==3.4.7
 python-dateutil==2.6.1
+pytz==2017.3
 requests==2.18.4
 rsa==3.4.2
 six==1.11.0
