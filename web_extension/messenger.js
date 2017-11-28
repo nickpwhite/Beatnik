@@ -39,10 +39,11 @@ function initMutationObserver(root) {
 }
 
 function replaceLink(node) {
-    const regex = /^https:\/\/(?:l\.messenger\.com|facebook.com)\/l\.php\?u=([A-z\.\%0-9]+)&h=.+$/;
+    const regex = /^https:\/\/(?:l\.messenger\.com|facebook.com)\/l\.php\?u=([A-z_\-\.\%0-9]+)&h=.+$/;
     let result = regex.exec(node.getAttribute('href'));
     if (result) {
         let href = decodeURIComponent(result[1]);
         node.setAttribute('href', `http://127.0.0.1:8000/music/?q=${href}`)
+        console.log(node.getAttribute('href'));
     }
 }
