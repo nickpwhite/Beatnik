@@ -37,7 +37,9 @@ class LinkConverter:
 
         return soundcloud.Client(
                 client_id=client_id,
-                client_secret=client_secret)
+                client_secret=client_secret,
+                username=username,
+                password=password)
 
     def get_spotify_api(self):
         client_credentials_manager = SpotifyClientCredentials()

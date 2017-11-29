@@ -17,7 +17,9 @@
         {% if links %}
         <ul>
             {% for key, val in links.items %}
-            <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
+                {% if val is not None %}
+                    <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
+                {% endif %}
             {% endfor %}
         </ul>
         {% endif %}
