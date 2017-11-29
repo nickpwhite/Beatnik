@@ -4,6 +4,7 @@ certifi==2017.7.27.1
 chardet==3.0.4
 decorator==4.1.2
 Django==1.11.7
+fudge==1.1.0
 future==0.16.0
 gmusicapi==10.1.2
 gpsoauth==0.4.1
@@ -25,7 +26,9 @@ python-dateutil==2.6.1
 pytz==2017.3
 requests==2.18.4
 rsa==3.4.2
+simplejson==3.13.2
 six==1.11.0
+soundcloud==0.5.0
 spotipy==2.4.4
 urllib3==1.22
 validictory==1.1.1
