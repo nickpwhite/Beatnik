@@ -11,7 +11,10 @@ if __name__ == "__main__":
     links6 = linkConverter.convert_link('https://open.spotify.com/album/6wbLFpKc9QnhMMWIVesC83')
     links7 = linkConverter.convert_link('https://soundcloud.com/shakey-graves-official/sets/and-the-war-came')
     links8 = linkConverter.convert_link('https://soundcloud.com/kendrick-lamar-music/sets/damn-86')
+    links9 = linkConverter.convert_link('https://play.google.com/music/m/Bx7aimn4qvv7hjcgijqltqe27k4?t=Be_Kind_to_Yourself_-_Willow_Beats')
+    links10 = linkConverter.convert_link('https://soundcloud.com/van-wal-beats/all-i-wantvacancy?in=van-wal-beats/sets/all-well-and-good')
 
+    print('\n')
     print(links1)
     print(links2)
     print(links3)
@@ -20,3 +23,5 @@ if __name__ == "__main__":
     print(links6)
     print(links7)
     print(links8)
+    print(links9)
+    print(links10)

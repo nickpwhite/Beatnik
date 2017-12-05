@@ -25,22 +25,52 @@ class LinkParser:
         prefix = item_id[:1]
         if prefix == self.gpm_album_prefix:
             album = self.gpm_api.get_album_info(item_id)
-            return ("album", album['name'], album['artist'])
+            info = {
+                'type': "album",
+                'title': album['name'],
+                'artist': album['artist'],
+                'art': album['albumArtRef']
+            }
         elif prefix == self.gpm_track_prefix:
             track = self.gpm_api.get_track_info(item_id)
-            return ("track", track['title'], track['artist'])
+            info = {
+                'type': "track",
+                'title': track['title'],
+                'artist': track['artist'],
+                'art': track['albumArtRef'][0]['url'],
+                'album': track['album']
+            }
+        return info 
 
     def parse_soundcloud_link(self, url):
         item = self.soundcloud_api.get('/resolve', url=url)
+        info = {
+            'type': item.type if item.kind == 'playlist' else item.kind,
+            'title': item.title,
+            'artist': item.user['username'],
+            'art': item.artwork_url
+        }
         
-        return (item.type if item.kind == 'playlist' else item.kind, item.title, item.user['username'])
+        return info
 
     def parse_spotify_link(self, url):
         item_id = url.path.split('/')[-1]
         prefix = url.path.split('/')[1] 
         if prefix == self.spotify_album_prefix:
             album = self.spotify_api.album(item_id)
-            return ("album", self.clean_title(album['name']), album['artists'][0]['name'])
+            info = {
+                'type': "album",
+                'title': self.clean_title(album['name']),
+                'artist': album['artists'][0]['name'],
+                'art': album['images'][0]['url']
+            }
         elif prefix == self.spotify_track_prefix:
             track = self.spotify_api.track(item_id)
-            return ("track", self.clean_title(track['name']), track['artists'][0]['name'])
+            info = {
+                'type': "track",
+                'title': self.clean_title(track['name']),
+                'artist': track['artists'][0]['name'],
+                'art': track['album']['images'][0]['url'],
+                'album': track['album']['name']
+            }
+        return info

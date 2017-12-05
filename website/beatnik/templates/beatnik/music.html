@@ -7,9 +7,14 @@
 
     <body>
         <h1>Beatnik</h1>
-        {% if links %}
+        {% if info %}
+        <div>
+            <img src="{{ info.art }}" height=240px width=240px />
+            <h2>{{ info.title }}</h2>
+            <h3>{{ info.artist }}</h2>
+        </div>
         <ul>
-            {% for key, val in links.items %}
+            {% for key, val in info.links.items %}
                 {% if val is not None %}
                     <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
                 {% endif %}

@@ -14,8 +14,8 @@ def music(request):
         link = request.GET.get('q', '')
         if (link != ''):
             linkConverter = LinkConverter()
-            links = linkConverter.convert_link(link)
-            return render(request, 'beatnik/music.html', { 'links': links })
+            info = linkConverter.convert_link(link)
+            return render(request, 'beatnik/music.html', { 'info': info })
         else:
             return HttpResponse("Not found")
     else:
@@ -26,10 +26,10 @@ def linkConverter(request):
         form = LinkConverterForm(request.POST)
         if (form.is_valid()):
             linkConverter = LinkConverter()
-            links = linkConverter.convert_link(form.cleaned_data['link'])
+            info = linkConverter.convert_link(form.cleaned_data['link'])
     else:
         form = LinkConverterForm()
-        links = None
+        info = None
 
-    return render(request, 'beatnik/linkConverter.html', { 'form': form, 'links': links })
+    return render(request, 'beatnik/linkConverter.html', { 'form': form, 'info': info })
 
