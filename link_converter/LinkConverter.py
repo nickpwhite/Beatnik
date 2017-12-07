@@ -8,16 +8,26 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from urllib import parse
 
 from . import LinkParser
+from apple_music_api import AppleMusicApi
 
 class LinkConverter:
     gpm_format = "https://play.google.com/music/m/{0}"
 
     def __init__(self):
+        self.apple_api = self.get_apple_api()
         self.gpm_api = self.get_gpm_api()
         self.soundcloud_api = self.get_soundcloud_api()
         self.spotify_api = self.get_spotify_api()
-        self.link_parser = LinkParser.LinkParser(self.gpm_api, self.soundcloud_api, self.spotify_api)
+        self.link_parser = LinkParser.LinkParser(self.apple_api, self.gpm_api, self.soundcloud_api, self.spotify_api)
 
+    def get_apple_api(self):
+        key_id = os.environ['APPLE_KEY_ID']
+        issuer = os.environ['APPLE_KEY_ISSUER']
+        key_filename = os.environ['APPLE_KEY_PATH']
+        return AppleMusicApi.AppleMusicApi(key_id=key_id,
+                issuer=issuer,
+                key_filename=key_filename)
+        
     def get_gpm_api(self):
         gpm_api = Mobileclient()
         username = os.environ['GPM_USERNAME']
@@ -47,7 +57,9 @@ class LinkConverter:
 
     def convert_link(self, link):
         url = parse.urlparse(link)
-        if self.link_parser.gpm_netloc in url.netloc:
+        if self.link_parser.apple_netloc in url.netloc:
+            info = self.link_parser.parse_apple_link(url)
+        elif self.link_parser.gpm_netloc in url.netloc:
             info = self.link_parser.parse_gpm_link(url)
         elif self.link_parser.soundcloud_netloc in url.netloc:
             info = self.link_parser.parse_soundcloud_link(link)

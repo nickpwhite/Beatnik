@@ -1,6 +1,9 @@
 import re
 
+from urllib import parse
+
 class LinkParser:
+    apple_netloc = 'itunes.apple.com'
     gpm_netloc = 'play.google.com'
     soundcloud_netloc = 'soundcloud.com'
     spotify_netloc = 'open.spotify.com'
@@ -11,7 +14,8 @@ class LinkParser:
     spotify_album_prefix = 'album'
     spotify_track_prefix = 'track'
 
-    def __init__(self, gpm_api, soundcloud_api, spotify_api):
+    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api):
+        self.apple_api = apple_api
         self.gpm_api = gpm_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
@@ -19,6 +23,31 @@ class LinkParser:
     def clean_title(self, title):
         regex = re.compile('( \- \d{4} )?\-?[a-z\s]*\(?remaster(ed)?\)?', re.IGNORECASE)
         return regex.sub('', title)
+
+    def parse_apple_link(self, url):
+        if (url.query == ''):
+            album_id = url.path.split('/')[-1]
+            album = self.apple_api.get_album(album_id)['data'][0]
+            art = album['attributes']['artwork']
+            info = {
+                'type': "album",
+                'title': album['attributes']['name'],
+                'artist': album['attributes']['artistName'],
+                'art': art['url'].format(w=art['width'], h=art['height'])
+            }
+        else:
+            track_id = parse.parse_qs(url.query)['i'][0]
+            track = self.apple_api.get_track(track_id)['data'][0]
+            art = track['attributes']['artwork']
+            info = {
+                'type': "track",
+                'title': track['attributes']['name'],
+                'artist': track['attributes']['artistName'],
+                'art': art['url'].format(w=art['width'], h=art['height']),
+                'album': track['attributes']['albumName']
+            }
+
+        return info
 
     def parse_gpm_link(self, url):
         item_id = url.path.split('/')[-1]
