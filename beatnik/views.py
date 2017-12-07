@@ -32,4 +32,3 @@ def linkConverter(request):
         info = None
 
     return render(request, 'beatnik/linkConverter.html', { 'form': form, 'info': info })
-

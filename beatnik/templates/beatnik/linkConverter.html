@@ -14,9 +14,9 @@
                 <button type="submit">Convert</button>
             </div>
         </form>
-        {% if links %}
+        {% if info %}
         <ul>
-            {% for key, val in links.items %}
+            {% for key, val in info.links.items %}
                 {% if val is not None %}
                     <li><a target="_blank" href="{{ val }}">{{ key }}</a></li>
                 {% endif %}
