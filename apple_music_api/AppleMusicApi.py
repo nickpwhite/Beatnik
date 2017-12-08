@@ -54,4 +54,7 @@ class AppleMusicApi:
         }
         results = self._get(url, params)
 
-        return results
+        if (results['results']):
+            return results['results']
+
+        return None

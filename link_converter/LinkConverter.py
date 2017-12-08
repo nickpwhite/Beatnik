@@ -45,11 +45,17 @@ class LinkConverter:
         username = os.environ['SOUNDCLOUD_USERNAME']
         password = os.environ['SOUNDCLOUD_PASSWORD']
 
-        return soundcloud.Client(
-                client_id=client_id,
-                client_secret=client_secret,
-                username=username,
-                password=password)
+        try:
+            client = soundcloud.Client(
+                    client_id=client_id,
+                    client_secret=client_secret,
+                    username=username,
+                    password=password)
+            return client
+        except BaseException as e:
+            print("Unable to login to Soundcloud with exception {0}".format(e))
+            return None
+
 
     def get_spotify_api(self):
         client_credentials_manager = SpotifyClientCredentials()
@@ -69,10 +75,12 @@ class LinkConverter:
             raise ValueError("Received a link I can't handle: {0}".format(link))
 
         if info['type'] == "track":
+            apple_link = self.get_apple_track(info)
             gpm_link = self.get_gpm_track(info)
             soundcloud_link = self.get_soundcloud_track(info)
             spotify_link = self.get_spotify_track(info)
         elif info['type'] == "album":
+            apple_link = self.get_apple_album(info)
             gpm_link = self.get_gpm_album(info)
             soundcloud_link = self.get_soundcloud_album(info)
             spotify_link = self.get_spotify_album(info)
@@ -80,11 +88,30 @@ class LinkConverter:
             raise ValueError("Received a media type I can't handle: {0}".format(info))
 
         info['links'] = {
+            'apple_link': apple_link,
             'gpm_link': gpm_link,
             'soundcloud_link': soundcloud_link,
             'spotify_link': spotify_link
         }
         return info
+
+    def get_apple_album(self, album_info):
+        query = "{0} {1}".format(album_info['title'], album_info['artist'])
+        results = self.apple_api.search(query, limit = 1, types='albums')
+        if (results is not None):
+            album = results['albums']['data'][0]
+            return album['attributes']['url']
+        else:
+            return None
+
+    def get_apple_track(self, track_info):
+        query = "{0} {1}".format(track_info['title'], track_info['artist'])
+        results = self.apple_api.search(query, limit = 1, types='songs')
+        if (results is not None):
+            track = results['songs']['data'][0]
+            return track['attributes']['url']
+        else:
+            return None
 
     def get_gpm_album(self, album_info):
         query = "{0} {1}".format(album_info['title'], album_info['artist'])
@@ -93,7 +120,6 @@ class LinkConverter:
             album_id = results['album_hits'][0]['album']['albumId']
             return self.gpm_format.format(album_id)
         else:
-            print("Could not find an album on Google Play using the following info:\n{0}".format(album_info))
             return None
 
     def get_gpm_track(self, track_info):
@@ -103,7 +129,6 @@ class LinkConverter:
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
             return self.gpm_format.format(track_id)
         else:
-            print("Could not find a track on Google Play using the following info:\n{0}".format(track_info))
             return None
 
     def get_soundcloud_album(self, album_info):
@@ -112,7 +137,6 @@ class LinkConverter:
         for album in results:
             if (album.title == album_info['title'] and album.user['username'] == album_info['artist']):
                 return album.permalink_url
-        print("Could not find an album on Soundcloud using the following info:\n{0}".format(album_info))
         return None
 
     def get_soundcloud_track(self, track_info):
@@ -121,7 +145,6 @@ class LinkConverter:
         for track in results:
             if (track.user['username'] == track_info['artist']):
                 return track.permalink_url
-        print("Could not find a track on Soundcloud using the following info:\n{0}".format(track_info))
         return None
 
     def get_spotify_album(self, album_info):
@@ -130,7 +153,6 @@ class LinkConverter:
         if (results['albums']['total'] > 0):
             return results['albums']['items'][0]['external_urls']['spotify']
         else:
-            print("Could not find an album on Spotify using the following info:\n{0}".format(album_info))
             return None
 
     def get_spotify_track(self, track_info):
@@ -139,5 +161,4 @@ class LinkConverter:
         if (results['tracks']['total'] > 0):
             return results['tracks']['items'][0]['external_urls']['spotify']
         else:
-            print("Could not find a track on Spotify using the following info:\n{0}".format(track_info))
             return None

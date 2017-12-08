@@ -12,6 +12,6 @@ if __name__ == "__main__":
 
     print(response2['data'][0])
 
-    response3 = appleMusicApi.search("Skin Flume", limit=1, types="albums")
+    response3 = appleMusicApi.search("Project Freedom Joey DeFrancesco", limit=1, types="albums")
 
     print(response3['results']['albums']['data'][0])
