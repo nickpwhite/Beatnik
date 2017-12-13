@@ -9267,9 +9267,14 @@ var _user$project$Main$update = F2(
 			};
 		}
 	});
-var _user$project$Main$Model = function (a) {
-	return {currentPage: a};
-};
+var _user$project$Main$MusicInfo = F5(
+	function (a, b, c, d, e) {
+		return {musicType: a, title: b, artist: c, art: d, album: e};
+	});
+var _user$project$Main$Model = F2(
+	function (a, b) {
+		return {currentPage: a, musicInfo: b};
+	});
 var _user$project$Main$Music = {ctor: 'Music'};
 var _user$project$Main$Home = {ctor: 'Home'};
 var _user$project$Main$init = function (location) {
@@ -9283,7 +9288,7 @@ var _user$project$Main$init = function (location) {
 	}();
 	return {
 		ctor: '_Tuple2',
-		_0: _user$project$Main$Model(page),
+		_0: A2(_user$project$Main$Model, page, _elm_lang$core$Maybe$Nothing),
 		_1: _elm_lang$core$Platform_Cmd$none
 	};
 };
@@ -9301,7 +9306,7 @@ var _user$project$Main$renderMenu = function (model) {
 				{
 					ctor: '::',
 					_0: _elm_lang$html$Html_Events$onClick(
-						_user$project$Main$LinkTo('/home')),
+						_user$project$Main$LinkTo('/home/')),
 					_1: {ctor: '[]'}
 				},
 				{
@@ -9316,7 +9321,7 @@ var _user$project$Main$renderMenu = function (model) {
 					{
 						ctor: '::',
 						_0: _elm_lang$html$Html_Events$onClick(
-							_user$project$Main$LinkTo('/music')),
+							_user$project$Main$LinkTo('/music/')),
 						_1: {ctor: '[]'}
 					},
 					{
@@ -9358,7 +9363,7 @@ var _user$project$Main$GoTo = function (a) {
 };
 var _user$project$Main$urlChange = function (location) {
 	var _p3 = location.pathname;
-	if (_p3 === '/music') {
+	if (_p3 === '/music/') {
 		return _user$project$Main$GoTo(_user$project$Main$Music);
 	} else {
 		return _user$project$Main$GoTo(_user$project$Main$Home);

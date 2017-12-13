@@ -19,8 +19,6 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^music/', views.music, name='music'),
-    url(r'^linkConverter/', views.linkConverter, name='link converter')
+    url(r'^.*$', views.index, name='index'),
 ]
