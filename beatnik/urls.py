@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from . import views
+from beatnik.views import Index, Music, Convert 
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', Index.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
-    url(r'^music/', views.music, name='music'),
-    url(r'^linkConverter/', views.linkConverter, name='link converter')
+    url(r'^music/', Music.as_view(), name='music'),
+    url(r'^convert/', Convert.as_view(), name='convert')
 ]
