@@ -1,7 +1,7 @@
 import json
 
 from beatnik.forms import LinkConverterForm
-from beatnik.models import Music as MusicModel
+from beatnik.models import Music
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
@@ -14,29 +14,6 @@ class Index(View):
     def get(self, request):
         return render(request, 'beatnik/index.html')
 
-class Music(View):
-    def get(self, request):
-        link = request.GET.get('q', '')
-        if (link != ''):
-            linkConverter = LinkConverter()
-            info = linkConverter.convert_link(link)
-            return render(request, 'beatnik/music.html', { 'info': info })
-        else:
-            return HttpResponse("Not found")
-
-class Convert(View):
-    def get(self, request):
-        form = LinkConverterForm()
-        return render(request, 'beatnik/linkConverter.html', { 'form': form, 'info': None })
-
-    def post(self, request):
-        form = LinkConverterForm(request.POST)
-        info = None
-        if (form.is_valid()):
-            linkConverter = LinkConverter()
-            info = linkConverter.convert_link(form.cleaned_data['link'])
-        return render(request, 'beatnik/linkConverter.html', { 'form': form, 'info': info })
-
 class MusicApi(View):
     def get(self, request):
         link = request.GET.get('q')
@@ -44,21 +21,21 @@ class MusicApi(View):
             url = parse.urlparse(link)
             link = "{0}://{1}{2}".format(url.scheme, url.netloc, url.path)
             if LinkParser.apple_netloc in url.netloc:
-                info = MusicModel.objects.filter(apple_url = link)
+                info = Music.objects.filter(apple_url = link)
             elif LinkParser.gpm_netloc in url.netloc:
-                info = MusicModel.objects.filter(gpm_url = link)
+                info = Music.objects.filter(gpm_url = link)
                 print(info)
             elif LinkParser.soundcloud_netloc in url.netloc:
-                info = MusicModel.objects.filter(soundcloud_url = link)
+                info = Music.objects.filter(soundcloud_url = link)
             elif LinkParser.spotify_netloc in url.netloc:
-                info = MusicModel.objects.filter(spotify_url = link)
+                info = Music.objects.filter(spotify_url = link)
             else:
                 return HttpResponse(status=404)
 
             if (len(info) == 0):
                 linkConverter = LinkConverter()
                 data = linkConverter.convert_link(link)
-                info = [MusicModel.objects.create(
+                info = [Music.objects.create(
                         music_type = 'A' if data['type'] == "album" else 'T',
                         name = data['title'],
                         artist = data['artist'],

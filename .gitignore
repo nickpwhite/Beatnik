@@ -105,3 +105,4 @@ ENV/
 
 #elm files
 elm-stuff/
+*.html
