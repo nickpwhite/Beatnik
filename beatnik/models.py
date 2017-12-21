@@ -11,24 +11,3 @@ class Music(models.Model):
     spotify_url = models.URLField("Spotify URL")
     match_rating = models.IntegerField("Rating of the match", default=0)
     artwork = models.URLField("Album art URL")
-
-    def __init__(
-            self,
-            music_type,
-            name,
-            artist,
-            album,
-            apple_url,
-            gpm_url,
-            soundcloud_url,
-            spotify_url,
-            artwork):
-        self.music_type = music_type
-        self.name = name
-        self.artist = artist
-        self.album = album
-        self.apple_url = apple_url
-        self.gpm_url = gpm_url
-        self.soundcloud_url = soundcloud_url
-        self.spotify_url = spotify_url
-        self.artwork = artwork

@@ -2,6 +2,7 @@ import json
 
 from beatnik.forms import LinkConverterForm
 from beatnik.models import Music as MusicModel
+from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
@@ -41,23 +42,24 @@ class MusicApi(View):
         link = request.GET.get('q')
         if (link):
             url = parse.urlparse(link)
+            link = "{0}://{1}{2}".format(url.scheme, url.netloc, url.path)
             if LinkParser.apple_netloc in url.netloc:
-                info = MusicModel.objects.filter(apple_url = parse.urlunparse(url))
+                info = MusicModel.objects.filter(apple_url = link)
             elif LinkParser.gpm_netloc in url.netloc:
-                info = MusicModel.objects.filter(gpm_url = parse.urlunparse(url))
+                info = MusicModel.objects.filter(gpm_url = link)
+                print(info)
             elif LinkParser.soundcloud_netloc in url.netloc:
-                info = MusicModel.objects.filter(soundcloud_url = parse.urlunparse(url))
+                info = MusicModel.objects.filter(soundcloud_url = link)
             elif LinkParser.spotify_netloc in url.netloc:
-                info = MusicModel.objects.filter(spotify_url = parse.urlunparse(url))
+                info = MusicModel.objects.filter(spotify_url = link)
             else:
                 return HttpResponse(status=404)
 
             if (len(info) == 0):
                 linkConverter = LinkConverter()
                 data = linkConverter.convert_link(link)
-                print(data)
-                info = Music(
-                        music_type = data['type'],
+                info = [MusicModel.objects.create(
+                        music_type = 'A' if data['type'] == "album" else 'T',
                         name = data['title'],
                         artist = data['artist'],
                         album = data.get('album', ''),
@@ -65,9 +67,8 @@ class MusicApi(View):
                         gpm_url = data['links']['gpm_link'],
                         soundcloud_url = data['links']['soundcloud_link'],
                         spotify_url = data['links']['spotify_link'],
-                        artwork = data['art'])
+                        artwork = data['art'])]
 
-            print(info)
-            return JsonResponse(json.dumps(info.__dict__), safe=False)
+            return JsonResponse(serializers.serialize('json', info), safe=False)
         else:
-            return HttpResponse()
+            return HttpResponse(status=400)
