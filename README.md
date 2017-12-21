@@ -1,8 +1,14 @@
 # Beatnik
 Beatnik is a service that aggregates links for music streaming services given a song, album, or artist.
 
-## website
-Provides a website that allows users to convert links through a convenient web interface. The site also provides a place to redirect users through the browser extension in order to automatically convert links on web pages they are browsing.
+## apple_music_api 
+An API client for the Apple Music API which implements only the basic functionality necessary (getting data for a song/album given a link and search).
+
+## beatnik
+Contains the Django files that comprise the models and views, as well as URL routing logic and application settings.
+
+## link_converter
+This python package contains the functionality for getting a list of links to a given song or album given a link to it on one service
 
 ### LinkConverter
 The link converter will accept a link to a song or album on a streaming service as input and produce links to a matching song on all supported streaming services as output.
@@ -10,12 +16,14 @@ The link converter will accept a link to a song or album on a streaming service 
 ### LinkParser
 The link parser will accept a link to a song or album as input, parse the link, and produce information in the form `(type, title, artist)` where `type` is one of `track` or `artist`.
 
-## web_extension
-Provides a browser extension that will replace links to tracks or albums on supported streaming services with a link to a page on the Beatnik website that contains links to all supported streaming services.
+## tests
+Unit tests, run them with `python manage.py test`
 
 ## Supported Services
 The currently supported services are listed below:
+* Apple Music
 * Google Play Music
+* Soundcloud
 * Spotify
 
 ## Requirements
