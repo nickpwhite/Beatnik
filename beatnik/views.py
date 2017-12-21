@@ -24,7 +24,6 @@ class MusicApi(View):
                 info = Music.objects.filter(apple_url = link)
             elif LinkParser.gpm_netloc in url.netloc:
                 info = Music.objects.filter(gpm_url = link)
-                print(info)
             elif LinkParser.soundcloud_netloc in url.netloc:
                 info = Music.objects.filter(soundcloud_url = link)
             elif LinkParser.spotify_netloc in url.netloc:

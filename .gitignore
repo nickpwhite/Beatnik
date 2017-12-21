@@ -102,7 +102,3 @@ ENV/
 
 #vim swap (backup) files
 *.swp
-
-#elm files
-elm-stuff/
-*.html
