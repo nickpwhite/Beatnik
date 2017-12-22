@@ -100,5 +100,40 @@ ENV/
 # mypy
 .mypy_cache/
 
-#vim swap (backup) files
+# vim swap (backup) files
 *.swp
+
+# React
+node_modules
+ncp-debug.log
+npm-debug.log
+bower_component
+src/config/configSec.js
+
+.DS_STORE
+node_modules
+*~
+*.pyc
+static
+.grunt
+_SpecRunner.html
+__benchmarks__
+build/
+coverage/
+.module-cache
+*.gem
+docs/.bundle
+docs/code
+docs/_site
+docs/.sass-cache
+docs/js/*
+docs/downloads
+docs/vendor/bundle
+examples/shared/*.js
+test/the-files-to-test.generated.js
+*.log*
+chrome-user-data
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
