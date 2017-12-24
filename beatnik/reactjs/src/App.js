@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Converter from './Converter.js';
 import Header from './Header.js';
 import Home from './Home.js';
@@ -7,11 +7,15 @@ import './App.css';
 
 class App extends Component {
   render() {
+    console.log(this.props.location);
     return (
       <div>
         <Header />
-        <Route path="/index" component={ Home } />
-        <Route path="/convert" component={ Converter } />
+        <Switch>
+          <Route path="/index" component={ Home } />
+          <Route path="/convert" component={ Converter } />
+          <Redirect exact={true} from="/" to="/index" />
+        </Switch>
       </div>
     );
   }

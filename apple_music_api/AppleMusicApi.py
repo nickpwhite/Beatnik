@@ -47,14 +47,16 @@ class AppleMusicApi:
     def search(self, term, limit=25, offset=0, types='artists, albums, songs, playlists, stations', storefront='us'):
         url = "https://api.music.apple.com/v1/catalog/{0}/search".format(storefront)
         params = {
-            'term': term,
+            'term': term.replace(',', ''),
             'limit': limit,
             'offset': offset,
             'types': types
         }
         results = self._get(url, params)
 
-        if (results['results']):
+        if ('errors' in results):
+            print(results['errors'])
+        if ('results' in results):
             return results['results']
 
         return None

@@ -18,6 +18,11 @@
   margin: 10px auto;
 }
 
+.flex-col {
+  display: flex;
+  flex-flow: column wrap;
+}
+
 .flex-row {
   display: flex;
   flex-flow: row wrap;
@@ -26,6 +31,11 @@
 .col-25 {
   width: 25%;
   flex: 0 0 25%;
+}
+
+.col-33 {
+  width: 33%;
+  flex: 0 0 33%;
 }
 
 .col-50 {
@@ -41,6 +51,11 @@
 .col-100 {
   width: 100%;
   flex: 0 0 100%;
+}
+
+.row-50 {
+  height: 50%;
+  flex: 0 0 50%;
 }
 
 input.search-box {
@@ -70,4 +85,16 @@ input.search-box:focus {
 img {
   height: 240px;
   width: 240px;
+}
+
+.music-container {
+  margin: 10px;
+}
+
+.music-info {
+  padding-left: 20px;
+}
+
+.music-info-item {
+  margin: 5px;
 }

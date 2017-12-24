@@ -4,12 +4,15 @@ import axios from 'axios';
 class ConvertForm extends Component {
   constructor(props) {
     super(props);
+    const params = new URLSearchParams(props.query);
     this.state = {
-      value: ''
+      value: params.get('q') || ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.handleSubmit();
   }
 
   handleChange(event) {
@@ -17,19 +20,25 @@ class ConvertForm extends Component {
   }
 
   handleSubmit(event) {
+    console.log(this.state.value);
+    if (this.state.value === '') {
+      return false;
+    }
     const url = `http://127.0.0.1:8000/api/music?q=${this.state.value}`
     axios.get(url)
       .then((response) => { 
         this.props.onSubmit(response.data);
       })
       .catch((err) => { console.log(err); });
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     return false;
   }
 
   render() {
     return (
-      <form className="search-form flex-row" onSubmit={ this.handleSubmit }>
+      <form id="search-form" className="search-form flex-row" onSubmit={ this.handleSubmit }>
         <div className="col-100">
           <input 
             className="search-box"

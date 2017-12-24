@@ -15,18 +15,15 @@ class Converter extends Component {
 
   updateMusic(music) {
     this.setState({ music });
-    console.log(this.state);
   }
 
   render() {
     return (
       <div className="content">
         <div className="flex-row">
-          <ConvertForm onSubmit={ this.updateMusic } />
+          <ConvertForm onSubmit={ this.updateMusic } query={ this.props.location.search } />
         </div>
-        <div className="flex-row">
-          <MusicList music={ this.state.music } />
-        </div>
+        <MusicList music={ this.state.music } />
       </div>
     )
   }
