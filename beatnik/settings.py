@@ -87,11 +87,11 @@ WSGI_APPLICATION = 'beatnik.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'beatnik_dev',
+        'NAME': os.environ['POSTGRES_DBNAME'],
         'USER': os.environ['POSTGRES_USERNAME'],
         'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': os.environ['POSTGRES_HOST'],
+        'PORT': os.environ['POSTGRES_PORT'],
     }
 }
 
