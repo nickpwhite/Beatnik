@@ -13,7 +13,6 @@ class Header extends Component {
 
   get_ext_url() {
     const browser = detect();
-    console.log(browser);
 
     switch (browser && browser.name) {
       case 'chrome':

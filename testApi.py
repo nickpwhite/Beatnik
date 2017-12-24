@@ -3,7 +3,7 @@ import os
 from apple_music_api.AppleMusicApi import AppleMusicApi
 
 if __name__ == "__main__":
-    appleMusicApi = AppleMusicApi(key_id=os.environ['APPLE_KEY_ID'], issuer=os.environ['APPLE_KEY_ISSUER'], key_filename=os.environ['APPLE_KEY_PATH'])
+    appleMusicApi = AppleMusicApi(key_id=os.environ['APPLE_KEY_ID'], issuer=os.environ['APPLE_KEY_ISSUER'], key=os.environ['APPLE_KEY'])
     response = appleMusicApi.get_album("1265893523")
 
     print(response['data'][0])
@@ -14,4 +14,4 @@ if __name__ == "__main__":
 
     response3 = appleMusicApi.search("Project Freedom Joey DeFrancesco", limit=1, types="albums")
 
-    print(response3['results']['albums']['data'][0])
+    print(response3['albums']['data'][0])

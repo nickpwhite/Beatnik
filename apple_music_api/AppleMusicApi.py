@@ -4,10 +4,8 @@ import jwt
 import requests
 
 class AppleMusicApi:
-    def __init__(self, key_id, issuer, key_filename):
-        key_file = open(key_filename, 'r')
-        secret_key = key_file.read()
-        key_file.close()
+    def __init__(self, key_id, issuer, key):
+        secret_key = key
         iat = int(datetime.datetime.utcnow().strftime("%s"))
         exp = int((datetime.datetime.utcnow() + datetime.timedelta(hours=12)).strftime("%s"))
         algorithm = 'ES256'

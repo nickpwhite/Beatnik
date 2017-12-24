@@ -23,10 +23,10 @@ class LinkConverter:
     def get_apple_api(self):
         key_id = os.environ['APPLE_KEY_ID']
         issuer = os.environ['APPLE_KEY_ISSUER']
-        key_filename = os.environ['APPLE_KEY_PATH']
+        key = os.environ['APPLE_KEY']
         return AppleMusicApi.AppleMusicApi(key_id=key_id,
                 issuer=issuer,
-                key_filename=key_filename)
+                key=key)
         
     def get_gpm_api(self):
         gpm_api = Mobileclient()
