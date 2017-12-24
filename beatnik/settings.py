@@ -25,10 +25,11 @@ SECRET_KEY = 'o$&in)g&6=vger&+)e)apimjlrwfdfox@fx4)-3&+ijky7w#le'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'beatnik-app.herokuapp.com' ]
 
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
+    'beatnik-app.herokuapp.com',
 ]
 
 
