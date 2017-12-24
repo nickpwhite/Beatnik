@@ -24,7 +24,7 @@ class ConvertForm extends Component {
     if (this.state.value === '') {
       return false;
     }
-    const url = `http://127.0.0.1:8000/api/music?q=${this.state.value}`
+    const url = `https://beatnik-app.herokuapp.com/api/music?q=${this.state.value}`
     axios.get(url)
       .then((response) => { 
         this.props.onSubmit(response.data);
