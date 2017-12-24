@@ -20,6 +20,6 @@ from beatnik.views import Index, MusicApi
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/music/', MusicApi.as_view()),
+    url(r'^api/music', MusicApi.as_view()),
     url(r'^.*$', Index.as_view(), name='index'),
 ]

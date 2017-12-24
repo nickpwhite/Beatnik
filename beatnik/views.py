@@ -1,6 +1,5 @@
 import json
 
-from beatnik.forms import LinkConverterForm
 from beatnik.models import Music
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
@@ -45,6 +44,8 @@ class MusicApi(View):
                         spotify_url = data['links']['spotify_link'],
                         artwork = data['art'])]
 
-            return JsonResponse(serializers.serialize('json', info), safe=False)
+
+            json_response = json.loads(serializers.serialize('json', info))
+            return JsonResponse(json_response, safe=False)
         else:
             return HttpResponse(status=400)

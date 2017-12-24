@@ -25,13 +25,18 @@ SECRET_KEY = 'o$&in)g&6=vger&+)e)apimjlrwfdfox@fx4)-3&+ijky7w#le'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1' ]
+
+CORS_ORIGIN_WHITELIST = [
+    'localhost:3000',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'beatnik.apps.BeatnikConfig',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
