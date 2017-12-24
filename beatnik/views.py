@@ -1,6 +1,8 @@
 import json
+import os
 
 from beatnik.models import Music
+from django.conf import settings
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
@@ -11,7 +13,8 @@ from urllib import parse
 
 class Index(View):
     def get(self, request):
-        return render(request, 'beatnik/index.html')
+        with open(os.path.join(settings.REACT_APP, 'build', 'index.html')) as file:
+            return HttpResponse(file.read())
 
 class MusicApi(View):
     def get(self, request):
