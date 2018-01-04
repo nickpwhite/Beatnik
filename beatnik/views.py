@@ -21,10 +21,10 @@ class MusicApi(View):
         link = request.GET.get('q')
         if (link):
             url = parse.urlparse(link)
-            link = "{0}://{1}{2}".format(url.scheme, url.netloc, url.path)
             if LinkParser.apple_netloc in url.netloc:
                 info = Music.objects.filter(apple_url = link)
             elif LinkParser.gpm_netloc in url.netloc:
+                link = "{0}://{1}{2}".format(url.scheme, url.netloc, url.path)
                 info = Music.objects.filter(gpm_url = link)
             elif LinkParser.soundcloud_netloc in url.netloc:
                 info = Music.objects.filter(soundcloud_url = link)
