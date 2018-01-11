@@ -20,7 +20,6 @@ class ConvertForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state.value);
     if (this.state.value === '') {
       return false;
     }

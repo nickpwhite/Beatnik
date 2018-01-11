@@ -1,26 +1,102 @@
 import React, { Component } from 'react';
+import apple_logo from './images/apple_logo.png';
+import gpm_logo from './images/gpm_logo.png';
+import soundcloud_logo from './images/soundcloud_logo.png';
+import spotify_logo from './images/spotify_logo.png';
 
 class Music extends Component {
+  constructor(props) {
+    super(props);
+
+    this.openLink = this.openLink.bind(this);
+  }
+
+  openLink(href) {
+    window.open(href, "_blank");
+  }
+
   render() {
     const music = this.props.music;
-    const album = music.album && <h3 className="music-info-item">{ music.album }</h3>
-    const apple_url = music.apple_url && <li><a href={ music.apple_url } target="_blank">{ music.apple_url }</a></li>;
-    const gpm_url = music.gpm_url && <li><a href={ music.gpm_url } target="_blank">{ music.gpm_url }</a></li>;
-    const soundcloud_url = music.soundcloud_url && <li><a href={ music.soundcloud_url } target="_blank">{ music.soundcloud_url }</a></li>;
-    const spotify_url = music.spotify_url && <li><a href={ music.spotify_url } target="_blank">{ music.spotify_url }</a></li>;
+    const album = music.album && <h3 className="music-info">{ music.album }</h3>
+    const apple_url = music.apple_url && 
+      <li>
+        <button type="button" 
+                className="apple" 
+                onClick={ this.openLink.bind(this, music.apple_url) }
+        >
+          <div className="flex-row">
+            <div className="col-25">
+              <img alt="" className="service-logo" src={ apple_logo } />
+            </div>
+            <div className="col-75 service-description">
+              Apple Music
+            </div>
+          </div>
+        </button>
+      </li>;
+    const gpm_url = music.gpm_url && 
+      <li>
+        <button type="button" 
+                className="google"
+                onClick={ this.openLink.bind(this, music.gpm_url) }
+        >
+          <div className="flex-row">
+            <div className="col-25">
+              <img alt="" className="service-logo" src={ gpm_logo } />
+            </div>
+            <div className="col-75 service-description">
+              Google Play Music
+            </div>
+          </div>
+        </button>
+      </li>;
+    const soundcloud_url = music.soundcloud_url && 
+      <li>
+        <button type="button" 
+                className="soundcloud"
+                onClick={ this.openLink.bind(this, music.soundcloud_url) }
+        >
+          <div className="flex-row">
+            <div className="col-25">
+              <img className="service-logo" src={ soundcloud_logo } />
+            </div>
+            <div className="col-75 service-description">
+              Soundcloud
+            </div>
+          </div>
+        </button>
+      </li>;
+    const spotify_url = music.spotify_url && 
+      <li>
+        <button type="button" 
+                className="spotify"
+                onClick={ this.openLink.bind(this, music.spotify_logo) }
+        >
+          <div className="flex-row">
+            <div className="col-25">
+              <img className="service-logo" src={ spotify_logo } />
+            </div>
+            <div className="col-75 service-description">
+              Spotify
+            </div>
+          </div>
+        </button>
+      </li>;
     return (
       <div className="flex-row music-container">
         <div className="flex-row col-100">
-          <div>
-            <img src={ music.artwork } alt="Album cover" />
-          </div>
           <div className="flex-col">
-            <div className="row-50 music-info">
-              <h2 className="music-info-item">{ music.name }</h2>
-              <h3 className="music-info-item">{ music.artist }</h3>
-              { album }
-            </div>
-            <div className="row-50">
+            <h2 className="music-info">{ music.name }</h2>
+            <h3 className="music-info">{ music.artist }</h3>
+            { album }
+          </div>
+        </div>
+        <div className="flex-row col-100">
+          <div className="flex-row col-33">
+            <img className="artwork" src={ music.artwork } alt="Album cover" />
+          </div>
+          <div className="flex-row col-66">
+            <div className="flex-col">
               <ul>
                 { apple_url }
                 { gpm_url }

@@ -1,3 +1,18 @@
+button {
+  border-width: 0;
+  height: 50px;
+  width: 300px;
+}
+
+li {
+  padding: 5px 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .header {
   background-color: #222;
   padding: 1px 10px;
@@ -43,6 +58,11 @@
   flex: 0 0 50%;
 }
 
+.col-66 {
+  width: 66%;
+  flex: 0 0 66%;
+}
+
 .col-75 {
   width: 75%;
   flex: 0 0 75%;
@@ -53,9 +73,9 @@
   flex: 0 0 100%;
 }
 
-.row-50 {
-  height: 50%;
-  flex: 0 0 50%;
+.row-100 {
+  height: 100%;
+  flex: 0 0 100%;
 }
 
 input.search-box {
@@ -82,9 +102,42 @@ input.search-box:focus {
   padding-bottom: 7px;
 }
 
-img {
-  height: 240px;
-  width: 240px;
+.artwork {
+  height: 280px;
+  width: 280px;
+}
+
+.service-description {
+  font-size: x-large;
+  line-height: 30px;
+  text-align: left;
+}
+
+.service-logo {
+  height: 30px;
+  width: 30px;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.apple {
+  background-color: #808080;
+  color: #fff;
+}
+
+.google {
+  background-color: #808080;
+  color: #fff;
+}
+
+.soundcloud {
+  background-color: #808080;
+  color: #fff;
+}
+
+.spotify {
+  background-color: #808080;
+  color: #fff;
 }
 
 .music-container {
@@ -92,9 +145,5 @@ img {
 }
 
 .music-info {
-  padding-left: 20px;
-}
-
-.music-info-item {
   margin: 5px;
 }
