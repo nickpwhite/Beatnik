@@ -58,7 +58,7 @@ class Music extends Component {
         >
           <div className="flex-row">
             <div className="col-25">
-              <img className="service-logo" src={ soundcloud_logo } />
+              <img alt="" className="service-logo" src={ soundcloud_logo } />
             </div>
             <div className="col-75 service-description">
               Soundcloud
@@ -74,7 +74,7 @@ class Music extends Component {
         >
           <div className="flex-row">
             <div className="col-25">
-              <img className="service-logo" src={ spotify_logo } />
+              <img alt="" className="service-logo" src={ spotify_logo } />
             </div>
             <div className="col-75 service-description">
               Spotify
