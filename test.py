@@ -16,6 +16,7 @@ if __name__ == "__main__":
     links11 = linkConverter.convert_link('https://itunes.apple.com/us/album/freudian/1265893523')
     links12 = linkConverter.convert_link('https://itunes.apple.com/us/album/the-autobiography/1256952577')
     links13 = linkConverter.convert_link('https://itunes.apple.com/us/album/eleanor-rigby/401136641?i=401136644')
+    links14 = linkConverter.convert_link('https://play.google.com/music/m/Tmnguilcqsjlj2mmmi6t6owif2a?t=Just_To_Talk_To_You_-_Nathaniel_Rateliff__The_Night_Sweats')
 
     print('\n')
     print(links1)
@@ -31,3 +32,4 @@ if __name__ == "__main__":
     print(links11)
     print(links12)
     print(links13)
+    print(links14)

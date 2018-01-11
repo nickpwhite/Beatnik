@@ -1,4 +1,5 @@
 import os
+import re
 import soundcloud
 import spotipy
 import sys
@@ -107,7 +108,7 @@ class LinkConverter:
     def get_apple_track(self, track_info):
         query = "{0} {1}".format(track_info['title'], track_info['artist'])
         results = self.apple_api.search(query, limit = 1, types='songs')
-        if (results is not None):
+        if (results != {}):
             track = results['songs']['data'][0]
             return track['attributes']['url']
         else:
@@ -123,8 +124,8 @@ class LinkConverter:
             return None
 
     def get_gpm_track(self, track_info):
-        query = "\"{0}\" \"{1}\"".format(track_info['title'], track_info['artist'])
-        results = self.gpm_api.search(query, max_results = 1)
+        query = "{0} {1}".format(track_info['title'], self.sanitize(track_info['artist']))
+        results = self.gpm_api.search(query)
         if (len(results['song_hits']) > 0):
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
             return self.gpm_format.format(track_id)
@@ -162,3 +163,6 @@ class LinkConverter:
             return results['tracks']['items'][0]['external_urls']['spotify']
         else:
             return None
+
+    def sanitize(self, s):
+        return s.replace(" & ", " ")
