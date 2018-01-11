@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import createHistory from 'history/createBrowserHistory';
 
 class ConvertForm extends Component {
   constructor(props) {
@@ -8,6 +9,8 @@ class ConvertForm extends Component {
     this.state = {
       value: params.get('q') || ''
     };
+
+    this.history = createHistory();
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +29,10 @@ class ConvertForm extends Component {
     const url = `https://beatnik-app.herokuapp.com/api/music?q=${this.state.value}`
     axios.get(url)
       .then((response) => { 
+        this.history.push({
+          pathname: '/convert',
+          search: `?q=${this.state.value}`
+        });
         this.props.onSubmit(response.data);
       })
       .catch((err) => { console.log(err); });
