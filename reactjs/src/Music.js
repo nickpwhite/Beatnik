@@ -70,7 +70,7 @@ class Music extends Component {
       <li>
         <button type="button" 
                 className="spotify"
-                onClick={ this.openLink.bind(this, music.spotify_logo) }
+                onClick={ this.openLink.bind(this, music.spotify_url) }
         >
           <div className="flex-row">
             <div className="col-25">
@@ -92,10 +92,10 @@ class Music extends Component {
           </div>
         </div>
         <div className="flex-row col-100">
-          <div className="flex-row col-33">
+          <div className="flex-row col-50">
             <img className="artwork" src={ music.artwork } alt="Album cover" />
           </div>
-          <div className="flex-row col-66">
+          <div className="flex-row col-50">
             <div className="flex-col">
               <ul>
                 { apple_url }

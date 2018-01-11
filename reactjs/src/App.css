@@ -5,7 +5,7 @@ button {
 }
 
 li {
-  padding: 5px 20px;
+  padding: 5px 0;
 }
 
 ul {
@@ -103,8 +103,8 @@ input.search-box:focus {
 }
 
 .artwork {
-  height: 280px;
-  width: 280px;
+  height: 300px;
+  width: 300px;
 }
 
 .service-description {
@@ -146,4 +146,11 @@ input.search-box:focus {
 
 .music-info {
   margin: 5px;
+}
+
+@media only screen and (max-width: 1075px) {
+  .col-50 {
+    width: 100%;
+    flex: 0 0 100%;
+  }
 }
