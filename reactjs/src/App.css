@@ -177,6 +177,8 @@ input.search-box:focus {
 }
 
 @media only screen and (max-width: 1075px) {
+  .col-25,
+  .col-33,
   .col-50 {
     width: 100%;
     flex: 0 0 100%;
