@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import mixpanel from 'mixpanel-browser';
 import createHistory from 'history/createBrowserHistory';
 
 class ConvertForm extends Component {
@@ -26,6 +27,11 @@ class ConvertForm extends Component {
     if (this.state.value === '') {
       return false;
     }
+
+    mixpanel.track("Search", {
+      'query': this.state.value
+    });
+
     const url = `https://beatnik-app.herokuapp.com/api/music?q=${this.state.value}`
     axios.get(url)
       .then((response) => { 

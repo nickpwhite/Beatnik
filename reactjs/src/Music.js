@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mixpanel from 'mixpanel-browser';
 import Modal from './Modal';
 import apple_logo from './images/apple_logo.png';
 import gpm_logo from './images/gpm_logo.png';
@@ -33,6 +34,7 @@ class Music extends Component {
   }
 
   handleModalNever() {
+    mixpanel.track("Set Redirect", { 'value': "none" });
     this.closeModal();
     localStorage.setItem("autoRedirect", "none");
     window.open(this.state.href, "_blank");
@@ -44,6 +46,7 @@ class Music extends Component {
   }
 
   handleModalYes() {
+    mixpanel.track("Set Redirect", { 'value': this.state.modalType });
     this.closeModal();
     localStorage.setItem("autoRedirect", this.state.modalType);
     window.open(this.state.href, "_blank");
@@ -51,6 +54,8 @@ class Music extends Component {
 
   openLink(href, type) {
     const autoRedirect = localStorage.getItem("autoRedirect");
+
+    mixpanel.track("Open Link", { 'href': href });
 
     if (autoRedirect !== 'none' && autoRedirect !== type) {
       this.setState({

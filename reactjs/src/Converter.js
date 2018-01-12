@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import mixpanel from 'mixpanel-browser';
 import ConvertForm from './ConvertForm.js';
 import MusicList from './MusicList.js';
 
@@ -6,15 +7,17 @@ class Converter extends Component {
   constructor(props) {
     super(props);
 
+    mixpanel.track("View Converter");
+
     this.state = {
       music: []
     };
 
     this.updateMusic = this.updateMusic.bind(this);
-
   }
 
   updateMusic(music) {
+    mixpanel.track("Load Music", music[0].fields);
     this.setState({ music });
   }
 

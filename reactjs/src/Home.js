@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import mixpanel from 'mixpanel-browser';
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+
+    mixpanel.track("View Home");
+  }
+
   render() {
     return (
       <div className="content">
