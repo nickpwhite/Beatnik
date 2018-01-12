@@ -21,7 +21,7 @@ class LinkParser:
         self.spotify_api = spotify_api
 
     def clean_title(self, title):
-        regex = re.compile('( \- \d{4} )?\-?[a-z\s]*\(?remaster(ed)?\)?', re.IGNORECASE)
+        regex = re.compile('( \- \d{4})?( \-[a-z\s]*remaster(ed)?| \(remaster(ed)?\))', re.IGNORECASE)
         return regex.sub('', title)
 
     def parse_apple_link(self, url):
@@ -56,7 +56,7 @@ class LinkParser:
             album = self.gpm_api.get_album_info(item_id)
             info = {
                 'type': "album",
-                'title': album['name'],
+                'title': self.clean_title(album['name']),
                 'artist': album['artist'],
                 'art': album['albumArtRef']
             }
@@ -64,7 +64,7 @@ class LinkParser:
             track = self.gpm_api.get_track_info(item_id)
             info = {
                 'type': "track",
-                'title': track['title'],
+                'title': self.clean_title(track['title']),
                 'artist': track['artist'],
                 'art': track['albumArtRef'][0]['url'],
                 'album': track['album']

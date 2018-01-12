@@ -36,7 +36,8 @@ class MusicApi(View):
             if (len(info) == 0):
                 linkConverter = LinkConverter()
                 data = linkConverter.convert_link(link)
-                info = [Music.objects.create(
+                try:
+                    info = [Music.objects.create(
                         music_type = 'A' if data['type'] == "album" else 'T',
                         name = data['title'],
                         artist = data['artist'],
@@ -46,6 +47,23 @@ class MusicApi(View):
                         soundcloud_url = data['links']['soundcloud_link'],
                         spotify_url = data['links']['spotify_link'],
                         artwork = data['art'])]
+                except:
+                    info = [{
+                        'fields': {
+                            'music_type': 'A' if data['type'] == "album" else 'T',
+                            'name': data['title'],
+                            'artist': data['artist'],
+                            'album': data.get('album', ''),
+                            'apple_url': data['links']['apple_link'],
+                            'gpm_url': data['links']['gpm_link'],
+                            'soundcloud_url': data['links']['soundcloud_link'],
+                            'spotify_url': data['links']['spotify_link'],
+                            'artwork': data['art'],
+                            }
+                        }
+                    ]
+
+                    return HttpResponse(json.dumps(info), content_type='application/json')
 
 
             json_response = json.loads(serializers.serialize('json', info))

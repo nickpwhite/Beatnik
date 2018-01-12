@@ -99,7 +99,7 @@ class LinkConverter:
     def get_apple_album(self, album_info):
         query = "{0} {1}".format(album_info['title'], album_info['artist'])
         results = self.apple_api.search(query, limit = 1, types='albums')
-        if (results is not None):
+        if (results != {}):
             album = results['albums']['data'][0]
             return album['attributes']['url']
         else:
