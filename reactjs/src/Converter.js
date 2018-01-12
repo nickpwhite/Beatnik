@@ -14,6 +14,13 @@ class Converter extends Component {
   }
 
   updateMusic(music) {
+    if (this.state.value !== '') {
+      const autoRedirect = localStorage.getItem("autoRedirect");
+      if (autoRedirect && music.length > 0 && music[0].fields[autoRedirect]) {
+        window.open(music[0].fields[autoRedirect], "_self");
+        return false;
+      }
+    }
     this.setState({ music });
   }
 
