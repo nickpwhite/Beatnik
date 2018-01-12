@@ -129,24 +129,6 @@ input.search-box:focus {
   vertical-align: middle;
 }
 
-.apple {
-}
-
-.google {
-  background-color: #808080;
-  color: #fff;
-}
-
-.soundcloud {
-  background-color: #808080;
-  color: #fff;
-}
-
-.spotify {
-  background-color: #808080;
-  color: #fff;
-}
-
 .music-container {
   margin: 10px;
 }
