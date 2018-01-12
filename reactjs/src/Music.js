@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Modal from './Modal';
 import apple_logo from './images/apple_logo.png';
 import gpm_logo from './images/gpm_logo.png';
 import soundcloud_logo from './images/soundcloud_logo.png';
@@ -8,11 +9,59 @@ class Music extends Component {
   constructor(props) {
     super(props);
 
+    this.appleMusicText = "Apple Music";
+    this.gpmText = "Google Play Music";
+    this.soundcloudText = "Soundcloud";
+    this.spotifyText = "Spotify";
+
+    this.closeModal = this.closeModal.bind(this);
+    this.handleModalNever = this.handleModalNever.bind(this);
+    this.handleModalNo = this.handleModalNo.bind(this);
+    this.handleModalYes = this.handleModalYes.bind(this);
+
     this.openLink = this.openLink.bind(this);
+
+    this.state = {
+      modalOpen: false
+    };
   }
 
-  openLink(href) {
-    window.open(href, "_blank");
+  closeModal() {
+    this.setState({
+      modalOpen: false
+    });
+  }
+
+  handleModalNever() {
+    this.closeModal();
+    localStorage.setItem("autoRedirect", "none");
+    window.open(this.state.href, "_blank");
+  }
+
+  handleModalNo() {
+    this.closeModal();
+    window.open(this.state.href, "_blank");
+  }
+
+  handleModalYes() {
+    this.closeModal();
+    localStorage.setItem("autoRedirect", this.state.modalType);
+    window.open(this.state.href, "_blank");
+  }
+
+  openLink(href, type) {
+    const autoRedirect = localStorage.getItem("autoRedirect");
+
+    if (autoRedirect !== 'none' && autoRedirect !== type) {
+      this.setState({
+        modalOpen: true,
+        modalType: type,
+        modalCurrentType: autoRedirect,
+        href: href
+      });
+    } else {
+      window.open(href, "_blank");
+    }
   }
 
   render() {
@@ -21,8 +70,8 @@ class Music extends Component {
     const apple_url = music.apple_url && 
       <li>
         <button type="button" 
-                className="apple" 
-                onClick={ this.openLink.bind(this, music.apple_url) }
+                className="music-button" 
+                onClick={ this.openLink.bind(this, music.apple_url, 'apple_url') }
         >
           <div className="flex-row">
             <div className="col-25">
@@ -37,8 +86,8 @@ class Music extends Component {
     const gpm_url = music.gpm_url && 
       <li>
         <button type="button" 
-                className="google"
-                onClick={ this.openLink.bind(this, music.gpm_url) }
+                className="music-button"
+                onClick={ this.openLink.bind(this, music.gpm_url, 'gpm_url') }
         >
           <div className="flex-row">
             <div className="col-25">
@@ -53,8 +102,8 @@ class Music extends Component {
     const soundcloud_url = music.soundcloud_url && 
       <li>
         <button type="button" 
-                className="soundcloud"
-                onClick={ this.openLink.bind(this, music.soundcloud_url) }
+                className="music-button"
+                onClick={ this.openLink.bind(this, music.soundcloud_url, 'soundcloud_url') }
         >
           <div className="flex-row">
             <div className="col-25">
@@ -69,8 +118,8 @@ class Music extends Component {
     const spotify_url = music.spotify_url && 
       <li>
         <button type="button" 
-                className="spotify"
-                onClick={ this.openLink.bind(this, music.spotify_url) }
+                className="music-button"
+                onClick={ this.openLink.bind(this, music.spotify_url, 'spotify_url') }
         >
           <div className="flex-row">
             <div className="col-25">
@@ -84,6 +133,12 @@ class Music extends Component {
       </li>;
     return (
       <div className="flex-row music-container">
+        <Modal show={ this.state.modalOpen }
+          type={ this.state.modalType }
+          currentType={ this.state.modalCurrentType }
+          onNever={this.handleModalNever}
+          onNo={this.handleModalNo}
+          onYes={this.handleModalYes} />
         <div className="flex-row col-100">
           <div className="flex-col">
             <h2 className="music-info">{ music.name }</h2>

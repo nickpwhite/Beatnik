@@ -1,9 +1,3 @@
-button {
-  border-width: 0;
-  height: 50px;
-  width: 300px;
-}
-
 li {
   padding: 5px 0;
 }
@@ -43,6 +37,11 @@ ul {
   flex-flow: row wrap;
 }
 
+.flex-row-reverse {
+  display: flex;
+  flex-flow: row-reverse wrap;
+}
+
 .col-25 {
   width: 25%;
   flex: 0 0 25%;
@@ -71,6 +70,16 @@ ul {
 .col-100 {
   width: 100%;
   flex: 0 0 100%;
+}
+
+.row-10 {
+  height: 10%;
+  flex: 0 0 10%;
+}
+
+.row-90 {
+  height: 90%;
+  flex: 0 0 90%;
 }
 
 .row-100 {
@@ -121,8 +130,6 @@ input.search-box:focus {
 }
 
 .apple {
-  background-color: #808080;
-  color: #fff;
 }
 
 .google {
@@ -146,6 +153,45 @@ input.search-box:focus {
 
 .music-info {
   margin: 5px;
+}
+
+.music-button {
+  background-color: #808080;
+  border-width: 0;
+  color: #fff;
+  height: 50px;
+  width: 300px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 100px;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 500px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.modal-content {
+  height: 300px;
+}
+
+.modal-text {
+  text-align: center;
+}
+
+.modal-button {
+  width: 95%;
 }
 
 @media only screen and (max-width: 1075px) {
