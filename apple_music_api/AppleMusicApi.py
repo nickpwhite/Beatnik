@@ -22,10 +22,10 @@ class AppleMusicApi:
         }
 
         token_bytes = jwt.encode(payload, secret_key, algorithm=algorithm, headers=headers)
-        self.developer_token = token_bytes.decode()
+        developer_token = token_bytes.decode()
 
     def _get(self, url, params={}):
-        headers = { "Authorization": "Bearer {0}".format(self.developer_token) }
+        headers = { "Authorization": "Bearer {0}".format(developer_token) }
         response = requests.get(url, params=params, headers=headers)
 
         return json.loads(response.text)
