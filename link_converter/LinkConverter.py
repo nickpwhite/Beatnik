@@ -10,6 +10,7 @@ from urllib import parse
 
 from . import LinkParser
 from apple_music_api import AppleMusicApi
+from soundcloud_api import SoundcloudApi
 
 class LinkConverter:
     gpm_format = "https://play.google.com/music/m/{0}"
@@ -41,22 +42,7 @@ class LinkConverter:
         return gpm_api
 
     def get_soundcloud_api(self):
-        client_id = os.environ['SOUNDCLOUD_CLIENT_ID']
-        client_secret = os.environ['SOUNDCLOUD_CLIENT_SECRET']
-        username = os.environ['SOUNDCLOUD_USERNAME']
-        password = os.environ['SOUNDCLOUD_PASSWORD']
-
-        try:
-            client = soundcloud.Client(
-                    client_id=client_id,
-                    client_secret=client_secret,
-                    username=username,
-                    password=password)
-            return client
-        except BaseException as e:
-            print("Unable to login to Soundcloud with exception {0}".format(e))
-            return None
-
+        return SoundcloudApi.SoundcloudApi()
 
     def get_spotify_api(self):
         client_credentials_manager = SpotifyClientCredentials()
@@ -133,20 +119,10 @@ class LinkConverter:
             return None
 
     def get_soundcloud_album(self, album_info):
-        query = "{0} {1}".format(album_info['title'], album_info['artist'])
-        results = self.soundcloud_api.get('/playlists', q=query)
-        for album in results:
-            if (album.title == album_info['title'] and album.user['username'] == album_info['artist']):
-                return album.permalink_url
-        return None
+        return self.soundcloud_api.search(album_info['title'], album_info['artist'])
 
     def get_soundcloud_track(self, track_info):
-        query = "{0} {1}".format(track_info['title'], track_info['artist'])
-        results = self.soundcloud_api.get('/tracks', q=query)
-        for track in results:
-            if (track.user['username'] == track_info['artist']):
-                return track.permalink_url
-        return None
+        return self.soundcloud_api.search(track_info['title'], track_info['artist'])
 
     def get_spotify_album(self, album_info):
         query = "album:{0} artist:{1}".format(album_info['title'], album_info['artist'])

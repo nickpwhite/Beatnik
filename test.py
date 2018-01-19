@@ -12,11 +12,12 @@ if __name__ == "__main__":
     links7 = linkConverter.convert_link('https://soundcloud.com/shakey-graves-official/sets/and-the-war-came')
     links8 = linkConverter.convert_link('https://soundcloud.com/kendrick-lamar-music/sets/damn-86')
     links9 = linkConverter.convert_link('https://play.google.com/music/m/Bx7aimn4qvv7hjcgijqltqe27k4?t=Be_Kind_to_Yourself_-_Willow_Beats')
-    links10 = linkConverter.convert_link('https://soundcloud.com/van-wal-beats/all-i-wantvacancy?in=van-wal-beats/sets/all-well-and-good')
+    links10 = linkConverter.convert_link('https://soundcloud.com/san-fermin-1/no-promises-1?in=san-fermin-1/sets/belong-11')
     links11 = linkConverter.convert_link('https://itunes.apple.com/us/album/freudian/1265893523')
     links12 = linkConverter.convert_link('https://itunes.apple.com/us/album/the-autobiography/1256952577')
     links13 = linkConverter.convert_link('https://itunes.apple.com/us/album/eleanor-rigby/401136641?i=401136644')
     links14 = linkConverter.convert_link('https://play.google.com/music/m/Tmnguilcqsjlj2mmmi6t6owif2a?t=Just_To_Talk_To_You_-_Nathaniel_Rateliff__The_Night_Sweats')
+    links15 = linkConverter.convert_link('https://open.spotify.com/track/752Dp89E27wUgg20JV5PWA')
 
     print('\n')
     print(links1)
@@ -33,3 +34,4 @@ if __name__ == "__main__":
     print(links12)
     print(links13)
     print(links14)
+    print(links15)

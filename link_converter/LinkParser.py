@@ -72,15 +72,7 @@ class LinkParser:
         return info 
 
     def parse_soundcloud_link(self, url):
-        item = self.soundcloud_api.get('/resolve', url=url)
-        info = {
-            'type': item.type if item.kind == 'playlist' else item.kind,
-            'title': item.title,
-            'artist': item.user['username'],
-            'art': item.artwork_url
-        }
-        
-        return info
+        return self.soundcloud_api.get(url)
 
     def parse_spotify_link(self, url):
         item_id = url.path.split('/')[-1]

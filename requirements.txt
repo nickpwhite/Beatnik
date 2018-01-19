@@ -5,6 +5,7 @@ certifi==2017.7.27.1
 cffi==1.11.2
 chardet==3.0.4
 cryptography==2.1.4
+cssselect==1.0.3
 decorator==4.1.2
 Django==1.11.7
 django-cors-headers==2.1.0
@@ -16,6 +17,7 @@ gpsoauth==0.4.1
 gunicorn==19.7.1
 httplib2==0.10.3
 idna==2.6
+lxml==4.1.1
 MechanicalSoup==0.8.0
 mock==2.0.0
 mutagen==1.38
@@ -29,6 +31,7 @@ pyasn1-modules==0.1.5
 pycparser==2.18
 pycryptodomex==3.4.7
 PyJWT==1.5.3
+pyquery==1.4.0
 python-dateutil==2.6.1
 pytz==2017.3
 requests==2.18.4
