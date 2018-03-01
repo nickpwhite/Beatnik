@@ -13,7 +13,7 @@ from apple_music_api import AppleMusicApi
 from soundcloud_api import SoundcloudApi
 
 class LinkConverter:
-    gpm_format = "https://play.google.com/music/m/{0}"
+    gpm_format = "https://music.google.com/music/m/{0}"
 
     def __init__(self):
         self.apple_api = self.get_apple_api()
