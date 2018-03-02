@@ -143,3 +143,20 @@ STATICFILES_DIRS = [
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'soundcloud_api.SoundcloudApi': {
+            'handlers': ['console'],
+            'level': os.getenv('SOUNDCLOUD_API_LOG_LEVEL', 'INFO'),
+        },
+    },
+}
