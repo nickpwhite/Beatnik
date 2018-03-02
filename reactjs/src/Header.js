@@ -16,7 +16,7 @@ class Header extends Component {
 
     switch (browser && browser.name) {
       case 'chrome':
-        return 'https://chrome.google.com/webstore/detail/imhhnehiopfkoogocbgihgepdkedbcfi/publish-delayed?authuser=2';
+        return 'https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US';
       case 'firefox':
         return 'https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/';
       default:
