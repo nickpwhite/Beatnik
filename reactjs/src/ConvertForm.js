@@ -32,7 +32,7 @@ class ConvertForm extends Component {
       'query': this.state.value
     });
 
-    const url = `https://beatnik-app.herokuapp.com/api/music?q=${this.state.value}`
+    const url = `${process.env.REACT_APP_API_ROOT}/api/music?q=${this.state.value}`
     axios.get(url)
       .then((response) => { 
         this.history.push({
