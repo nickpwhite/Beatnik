@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import mixpanel from 'mixpanel-browser';
-import Modal from './Modal';
+import Modal from './RedirectModal';
 import apple_logo from './images/apple_logo.png';
 import gpm_logo from './images/gpm_logo.png';
 import soundcloud_logo from './images/soundcloud_logo.png';
