@@ -79,10 +79,10 @@ class Music extends Component {
                 onClick={ this.openLink.bind(this, music.apple_url, 'apple_url') }
         >
           <div className="flex-row">
-            <div className="col-25">
+            <div className="service-logo-container">
               <img alt="" className="service-logo" src={ apple_logo } />
             </div>
-            <div className="col-75 service-description">
+            <div className="service-description">
               Apple Music
             </div>
           </div>
@@ -95,10 +95,10 @@ class Music extends Component {
                 onClick={ this.openLink.bind(this, music.gpm_url, 'gpm_url') }
         >
           <div className="flex-row">
-            <div className="col-25">
+            <div className="service-logo-container">
               <img alt="" className="service-logo" src={ gpm_logo } />
             </div>
-            <div className="col-75 service-description">
+            <div className="service-description">
               Google Play Music
             </div>
           </div>
@@ -111,10 +111,10 @@ class Music extends Component {
                 onClick={ this.openLink.bind(this, music.soundcloud_url, 'soundcloud_url') }
         >
           <div className="flex-row">
-            <div className="col-25">
+            <div className="service-logo-container">
               <img alt="" className="service-logo" src={ soundcloud_logo } />
             </div>
-            <div className="col-75 service-description">
+            <div className="service-description">
               Soundcloud
             </div>
           </div>
@@ -127,15 +127,16 @@ class Music extends Component {
                 onClick={ this.openLink.bind(this, music.spotify_url, 'spotify_url') }
         >
           <div className="flex-row">
-            <div className="col-25">
+            <div className="service-logo-container">
               <img alt="" className="service-logo" src={ spotify_logo } />
             </div>
-            <div className="col-75 service-description">
+            <div className="service-description">
               Spotify
             </div>
           </div>
         </button>
       </li>;
+
     return (
       <div className="flex-row music-container">
         <Modal show={ this.state.modalOpen }

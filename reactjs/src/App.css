@@ -87,6 +87,11 @@ ul {
   flex: 0 0 100%;
 }
 
+.spinner {
+  height: 50px;
+  width: 50px;
+}
+
 input.search-box {
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -94,12 +99,22 @@ input.search-box {
   font-size: 100%;
   padding: 5px;
   text-align: center;
-  height: 20px;
-  width: 100%;
+  width: 95%;
 }
 
 input.search-box:focus {
   outline: none;
+}
+
+input.search-button {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 3px #666;
+  font-size: 100%;
+  text-align: center;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
 }
 
 .search-form {
@@ -120,6 +135,8 @@ input.search-box:focus {
   font-size: x-large;
   line-height: 30px;
   text-align: left;
+  width: 75%;
+  flex: 0 0 75%;
 }
 
 .service-logo {
@@ -127,6 +144,11 @@ input.search-box:focus {
   width: 30px;
   margin-right: 20px;
   vertical-align: middle;
+}
+
+.service-logo-container {
+  width: 25%;
+  flex: 0 0 25%;
 }
 
 .music-container {
@@ -176,11 +198,38 @@ input.search-box:focus {
   width: 95%;
 }
 
+@media only screen and (max-width: 350px) {
+  .service-description {
+    font-size: 5vw;
+  }
+
+  .music-button {
+    width: 75vw;
+  }
+}
+
 @media only screen and (max-width: 1075px) {
   .col-25,
   .col-33,
-  .col-50 {
+  .col-50,
+  .col-75 {
     width: 100%;
     flex: 0 0 100%;
+  }
+
+  .artwork {
+    width: 225px;
+    height: 225px;
+  }
+
+  .content {
+    width: 80%;
+  }
+
+  input.search-box {
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 }

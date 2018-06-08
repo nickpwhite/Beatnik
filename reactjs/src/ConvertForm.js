@@ -28,6 +28,8 @@ class ConvertForm extends Component {
       return false;
     }
 
+    this.props.onBeforeSubmit();
+
     mixpanel.track("Search", {
       'query': this.state.value
     });
@@ -51,7 +53,7 @@ class ConvertForm extends Component {
   render() {
     return (
       <form id="search-form" className="search-form flex-row" onSubmit={ this.handleSubmit }>
-        <div className="col-100">
+        <div className="col-75">
           <input 
             className="search-box"
             type="text" 
@@ -59,6 +61,9 @@ class ConvertForm extends Component {
             value={ this.state.value }
             onChange={ this.handleChange }
           />
+        </div>
+        <div className="col-25">
+          <input className="search-button" type="submit" value="Convert" />
         </div>
       </form>
     )
