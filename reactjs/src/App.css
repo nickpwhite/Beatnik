@@ -77,6 +77,16 @@ ul {
   flex: 0 0 10%;
 }
 
+.row-20 {
+  height: 20%;
+  flex: 0 0 20%;
+}
+
+.row-80 {
+  height: 80%;
+  flex: 0 0 80%;
+}
+
 .row-90 {
   height: 90%;
   flex: 0 0 90%;
@@ -196,6 +206,10 @@ input.search-button {
 
 .modal-button {
   width: 95%;
+}
+
+.scrolling {
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 350px) {

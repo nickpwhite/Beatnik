@@ -23,12 +23,12 @@ class Modal extends Component {
       <div className="backdrop">
         <div className="modal">
           <div className="flex-col modal-content">
-            <div className="row-90">
+            <div className="row-80">
               <p className="modal-text">Would you like to make { type } your default?</p>
               { currentType } 
               <p className="modal-text"><small>You can reset this value by clearing data for this site in your browser</small></p>
             </div>
-            <div className="row-10">
+            <div className="row-20">
               <div className="flex-row-reverse">
                 <div className="col-33">
                   <button className="modal-button" onClick={ this.props.onYes }>
