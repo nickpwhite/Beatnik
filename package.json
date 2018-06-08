@@ -1,0 +1,7 @@
+{
+    "name": "beatnik",
+    "version": "1.0.0",
+    "scripts": {
+        "postinstall": "npm install --prefix reactjs && npm run build --prefix reactjs"
+    }
+}
