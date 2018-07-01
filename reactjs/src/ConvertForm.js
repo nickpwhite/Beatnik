@@ -43,7 +43,9 @@ class ConvertForm extends Component {
         });
         this.props.onSubmit(response.data);
       })
-      .catch((err) => { console.log(err); });
+      .catch((err) => {
+        this.props.onSubmit([]);
+      });
     if (event) {
       event.preventDefault();
     }

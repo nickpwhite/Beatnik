@@ -27,7 +27,9 @@ class Converter extends Component {
   }
 
   updateMusic(music) {
-    mixpanel.track("Load Music", music[0].fields);
+    if (music.length > 0) {
+      mixpanel.track("Load Music", music[0].fields);
+    }
     this.setState({ 
       loading: false,
       music: music 

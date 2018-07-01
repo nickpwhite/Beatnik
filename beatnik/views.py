@@ -13,8 +13,8 @@ from urllib import parse
 
 class Index(View):
     def get(self, request):
-        with open(os.path.join(settings.REACT_APP, 'build', 'index.html')) as file:
-            return HttpResponse(file.read())
+        with open(os.path.join(settings.REACT_APP, 'build', 'index.html')) as f:
+            return HttpResponse(f.read())
 
 class MusicApi(View):
     def get(self, request):

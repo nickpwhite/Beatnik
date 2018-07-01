@@ -3,7 +3,6 @@ import './Spinner.css';
 
 class Spinner extends Component {
   render() {
-    console.log(this.props.loading);
     if (this.props.loading === false) {
       return null;
     }

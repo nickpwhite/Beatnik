@@ -4,7 +4,7 @@ from urllib import parse
 
 class LinkParser:
     apple_netloc = 'itunes.apple.com'
-    gpm_netloc = 'play.google.com'
+    gpm_netloc = 'google.com'
     soundcloud_netloc = 'soundcloud.com'
     spotify_netloc = 'open.spotify.com'
 
