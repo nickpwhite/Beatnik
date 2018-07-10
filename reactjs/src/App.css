@@ -197,7 +197,7 @@ input.search-button {
 }
 
 .modal-content {
-  height: 300px;
+  min-height: 270px;
 }
 
 .modal-text {
@@ -206,10 +206,6 @@ input.search-button {
 
 .modal-button {
   width: 95%;
-}
-
-.scrolling {
-  overflow: scroll;
 }
 
 @media only screen and (max-width: 350px) {

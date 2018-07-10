@@ -10,7 +10,7 @@ class Modal extends Component {
       <div className="backdrop">
         <div className="modal">
           <div className="flex-col modal-content">
-            <div className="row-90 scrolling">
+            <div className="row-90">
               <p className="modal-text">
                 At Beatnik we collect anonymous data about actions our users perform on the site. This is to understand how people use the service and how we can make it better.
               </p>
