@@ -7,8 +7,8 @@ from django.core import serializers
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views import View
-from link_converter.LinkConverter import LinkConverter
-from link_converter.LinkParser import LinkParser
+from api_manager.ApiManager import ApiManager
+from api_manager.LinkParser import LinkParser
 from urllib import parse
 
 class Index(View):
@@ -34,8 +34,8 @@ class MusicApi(View):
                 return HttpResponse(status=404)
 
             if (len(info) == 0):
-                linkConverter = LinkConverter()
-                data = linkConverter.convert_link(link)
+                api_manager = ApiManager()
+                data = api_manager.link_converter.convert_link(link)
                 try:
                     info = [Music.objects.create(
                         music_type = 'A' if data['type'] == "album" else 'T',

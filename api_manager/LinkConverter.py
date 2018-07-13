@@ -1,52 +1,14 @@
-import os
-import re
-import soundcloud
-import spotipy
-import sys
-
-from gmusicapi import Mobileclient
-from spotipy.oauth2 import SpotifyClientCredentials
 from urllib import parse
-
-from . import LinkParser
-from apple_music_api import AppleMusicApi
-from soundcloud_api import SoundcloudApi
 
 class LinkConverter:
     gpm_format = "https://music.google.com/music/m/{0}"
 
-    def __init__(self):
-        self.apple_api = self.get_apple_api()
-        self.gpm_api = self.get_gpm_api()
-        self.soundcloud_api = self.get_soundcloud_api()
-        self.spotify_api = self.get_spotify_api()
-        self.link_parser = LinkParser.LinkParser(self.apple_api, self.gpm_api, self.soundcloud_api, self.spotify_api)
-
-    def get_apple_api(self):
-        key_id = os.environ['APPLE_KEY_ID']
-        issuer = os.environ['APPLE_KEY_ISSUER']
-        key = os.environ['APPLE_KEY']
-        return AppleMusicApi.AppleMusicApi(key_id=key_id,
-                issuer=issuer,
-                key=key)
-        
-    def get_gpm_api(self):
-        gpm_api = Mobileclient()
-        username = os.environ['GPM_USERNAME']
-        password = os.environ['GPM_PASSWORD']
-
-        if (not gpm_api.login(username, password, Mobileclient.FROM_MAC_ADDRESS, 'en_US')):
-            print("Unable to login to Google Play Music.")
-            sys.exit(-1)
-
-        return gpm_api
-
-    def get_soundcloud_api(self):
-        return SoundcloudApi.SoundcloudApi()
-
-    def get_spotify_api(self):
-        client_credentials_manager = SpotifyClientCredentials()
-        return spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, link_parser):
+        self.apple_api = apple_api
+        self.gpm_api = gpm_api
+        self.soundcloud_api = soundcloud_api
+        self.spotify_api = spotify_api
+        self.link_parser = link_parser
 
     def convert_link(self, link):
         url = parse.urlparse(link)
