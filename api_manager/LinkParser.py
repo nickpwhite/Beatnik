@@ -58,7 +58,7 @@ class LinkParser:
                 'type': "album",
                 'title': self.clean_title(album['name']),
                 'artist': album['artist'],
-                'art': album['albumArtRef']
+                'art': album['albumArtRef'].replace('http:', 'https:', 1)
             }
         elif prefix == self.gpm_track_prefix:
             track = self.gpm_api.get_track_info(item_id)
@@ -66,7 +66,7 @@ class LinkParser:
                 'type': "track",
                 'title': self.clean_title(track['title']),
                 'artist': track['artist'],
-                'art': track['albumArtRef'][0]['url'],
+                'art': track['albumArtRef'][0]['url'].replace('http:', 'https:', 1),
                 'album': track['album']
             }
         return info 
