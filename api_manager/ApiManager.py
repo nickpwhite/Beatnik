@@ -7,6 +7,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 from . import LinkConverter
 from . import LinkParser
+from . import SearchHandler
 from apple_music_api import AppleMusicApi
 from soundcloud_api import SoundcloudApi
 
@@ -27,6 +28,7 @@ class ApiManager:
                 self.soundcloud_api,
                 self.spotify_api,
                 self.link_parser)
+        self.search_handler = SearchHandler.SearchHandler(self.spotify_api, self.link_converter)
 
     def get_apple_api(self):
         key_id = os.environ['APPLE_KEY_ID']
