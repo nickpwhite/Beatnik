@@ -38,7 +38,7 @@ class ConvertForm extends Component {
     axios.get(url)
       .then((response) => { 
         this.history.push({
-          pathname: '/convert',
+          pathname: '/',
           search: `?q=${this.state.value}`
         });
         this.props.onSubmit(response.data);

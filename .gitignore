@@ -111,7 +111,6 @@ bower_component
 src/config/configSec.js
 
 .DS_STORE
-node_modules
 *~
 *.pyc
 static
@@ -137,3 +136,5 @@ chrome-user-data
 *.sublime-workspace
 .idea
 *.iml
+.ignore
+tags

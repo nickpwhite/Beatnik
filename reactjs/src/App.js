@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
 import mixpanel from 'mixpanel-browser';
-import Converter from './Converter.js';
 import Header from './Header.js';
 import Home from './Home.js';
 import Modal from './TrackingModal.js';
@@ -44,11 +42,7 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Switch>
-          <Route path="/index" component={ Home } />
-          <Route path="/convert" component={ Converter } />
-          <Redirect exact={true} from="/" to="/index" />
-        </Switch>
+        <Home />
         <Modal show={ this.state.modalOpen }
           onNo={this.handleModalNo}
           onYes={this.handleModalYes} />

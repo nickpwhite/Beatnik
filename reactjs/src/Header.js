@@ -1,6 +1,5 @@
 import { detect } from 'detect-browser';
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Header extends Component {
   constructor(props) {
@@ -28,14 +27,11 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="flex-row">
-          <div className="col-33">
-            <Link to="/index" className="title"><h1>Beatnik</h1></Link>
-          </div>
-          <div className="col-33 subtitle">
-            <Link to="/convert" className="title"><h2>Link Converter</h2></Link>
+          <div className="col-50">
+            <a href={process.env.REACT_APP_HOME} className="title"><h1>Beatnik</h1></a>
           </div>
           { this.state.ext_url && 
-            <div className="col-33 subtitle">
+            <div className="col-50 subtitle">
               <a href={ this.state.ext_url } target="_blank" className="title"><h2>Get the extension</h2></a>
             </div>
           }
