@@ -24,6 +24,7 @@ class Header extends Component {
   }
 
   render() {
+    console.log(process.env.REACT_APP_HOME);
     return (
       <header className="header">
         <div className="flex-row">
