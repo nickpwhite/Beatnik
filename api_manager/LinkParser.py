@@ -50,6 +50,9 @@ class LinkParser:
         return info
 
     def parse_gpm_link(self, url):
+        if self.gpm_api is None:
+            return {}
+
         item_id = url.path.split('/')[-1]
         prefix = item_id[:1]
         if prefix == self.gpm_album_prefix:
@@ -69,7 +72,7 @@ class LinkParser:
                 'art': track['albumArtRef'][0]['url'].replace('http:', 'https:', 1),
                 'album': track['album']
             }
-        return info 
+        return info
 
     def parse_soundcloud_link(self, url):
         return self.soundcloud_api.get(url)

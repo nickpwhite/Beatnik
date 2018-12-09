@@ -25,6 +25,7 @@ class LinkConverter:
             info = self.link_parser.parse_spotify_link(url)
         else:
             self.logger.error("Received a link I can't handle: {0}".format(link))
+            return None
 
         if info['type'] == "track":
             apple_link = self.get_apple_track(info)
@@ -82,6 +83,9 @@ class LinkConverter:
             self.logger.warning("Encountered unknown type: {0}".format(info['type']))
 
     def get_gpm_album(self, album_info):
+        if self.gpm_api is None:
+            return None
+
         query = "{0} {1}".format(album_info['title'], album_info['artist'])
         results = self.gpm_api.search(query, max_results = 1)
         if (len(results['album_hits']) > 0):
@@ -91,6 +95,9 @@ class LinkConverter:
             return None
 
     def get_gpm_track(self, track_info):
+        if self.gpm_api is None:
+            return None
+
         query = "{0} {1}".format(track_info['title'], self.sanitize(track_info['artist']))
         results = self.gpm_api.search(query)
         if (len(results['song_hits']) > 0):
