@@ -28,11 +28,20 @@ class Header extends Component {
       <header className="header">
         <div className="flex-row">
           <div className="col-50">
-            <a href={process.env.REACT_APP_HOME} className="title"><h1>Beatnik</h1></a>
+            <a href={process.env.REACT_APP_HOME} className="title">
+              <h1>Beatnik</h1>
+            </a>
           </div>
-          { this.state.ext_url && 
+          { this.state.ext_url &&
             <div className="col-50 subtitle">
-              <a href={ this.state.ext_url } target="_blank" className="title"><h2>Get the extension</h2></a>
+              <a
+                href={ this.state.ext_url }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="title"
+              >
+                <h2>Get the extension</h2>
+              </a>
             </div>
           }
         </div>
