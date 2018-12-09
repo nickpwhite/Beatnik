@@ -56,10 +56,10 @@ class ConvertForm extends Component {
     return (
       <form id="search-form" className="search-form flex-row" onSubmit={ this.handleSubmit }>
         <div className="col-75">
-          <input 
+          <input
             className="search-box"
-            type="text" 
-            placeholder="Enter a link to convert" 
+            type="text"
+            placeholder="Enter a link to convert"
             value={ this.state.value }
             onChange={ this.handleChange }
           />
