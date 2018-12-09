@@ -7,7 +7,7 @@ chardet==3.0.4
 cryptography==2.3.1
 cssselect==1.0.3
 decorator==4.1.2
-Django==1.11.7
+Django==2.1.4
 django-cors-headers==2.1.0
 djangorestframework==3.7.3
 fudge==1.1.0
@@ -34,7 +34,7 @@ PyJWT==1.5.3
 pyquery==1.4.0
 python-dateutil==2.6.1
 pytz==2017.3
-requests==2.18.4
+requests==2.20.1
 rsa==3.4.2
 simplejson==3.13.2
 six==1.11.0
