@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from beatnik.views import Index, MusicApi
+from beatnik.views import Index, MusicApi, MusicConvert, NoScript
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/music', MusicApi.as_view()),
+    url(r'^noscript/music', MusicConvert.as_view(), name='music'),
+    url(r'^noscript', NoScript.as_view(), name='noscript'),
     url(r'^.*$', Index.as_view(), name='index'),
 ]

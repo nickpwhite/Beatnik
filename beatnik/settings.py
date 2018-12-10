@@ -137,7 +137,7 @@ REACT_APP = os.path.join(BASE_DIR, 'reactjs')
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [ 
+STATICFILES_DIRS = [
     os.path.join(REACT_APP, 'build', 'static'),
     os.path.join(REACT_APP, 'build'),
 ]

@@ -72,10 +72,10 @@ class Music extends Component {
   render() {
     const music = this.props.music;
     const album = music.album && <h3 className="music-info">{ music.album }</h3>
-    const apple_url = music.apple_url && 
+    const apple_url = music.apple_url &&
       <li>
-        <button type="button" 
-                className="music-button" 
+        <button type="button"
+                className="music-button"
                 onClick={ this.openLink.bind(this, music.apple_url, 'apple_url') }
         >
           <div className="flex-row">
@@ -88,9 +88,9 @@ class Music extends Component {
           </div>
         </button>
       </li>;
-    const gpm_url = music.gpm_url && 
+    const gpm_url = music.gpm_url &&
       <li>
-        <button type="button" 
+        <button type="button"
                 className="music-button"
                 onClick={ this.openLink.bind(this, music.gpm_url, 'gpm_url') }
         >
@@ -104,9 +104,9 @@ class Music extends Component {
           </div>
         </button>
       </li>;
-    const soundcloud_url = music.soundcloud_url && 
+    const soundcloud_url = music.soundcloud_url &&
       <li>
-        <button type="button" 
+        <button type="button"
                 className="music-button"
                 onClick={ this.openLink.bind(this, music.soundcloud_url, 'soundcloud_url') }
         >
@@ -120,9 +120,9 @@ class Music extends Component {
           </div>
         </button>
       </li>;
-    const spotify_url = music.spotify_url && 
+    const spotify_url = music.spotify_url &&
       <li>
-        <button type="button" 
+        <button type="button"
                 className="music-button"
                 onClick={ this.openLink.bind(this, music.spotify_url, 'spotify_url') }
         >

@@ -1,0 +1,87 @@
+{% extends "noscript.html" %}
+{% load static %}
+
+{% block music %}
+{% for item in music %}
+<div class="flex-row music-container">
+  <div class="flex-row col-100">
+    <div class="flex-col">
+      <h2 class="music-info">{{ item.name }}</h2>
+      <h3 class="music-info">{{ item.artist }}</h3>
+      {% if item.album != "" %}
+      <h3 class="music-info">{{ item.album }}</h3>
+      {% endif %}
+    </div>
+  </div>
+  <div class="flex-row col-100">
+    <div class="flex-row col-50">
+      <img class="artwork" src="{{ item.artwork }}" alt="Album cover" />
+    </div>
+    <div class="flex-row col-50">
+      <div class="flex-col">
+        <form target="_blank">
+          <ul>
+            {% if item.apple_url %}
+            <li>
+              <button class="music-button" formaction="{{ item.apple_url }}" type="submit">
+                <div class="flex-row">
+                  <div class="service-logo-container">
+                    <img alt="" class="service-logo" src="{% static "images/apple_logo.png" %}" />
+                  </div>
+                  <div class="service-description">
+                    Apple Music
+                  </div>
+                </div>
+              </button>
+            </li>
+            {% endif %}
+            {% if item.gpm_url %}
+            <li>
+              <button class="music-button" formaction="{{ item.gpm_url }}" type="submit">
+                <div class="flex-row">
+                  <div class="service-logo-container">
+                    <img alt="" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
+                  </div>
+                  <div class="service-description">
+                    Google Play Music
+                  </div>
+                </div>
+              </button>
+            </li>
+            {% endif %}
+            {% if item.soundcloud_url %}
+            <li>
+              <button class="music-button" formaction="{{ item.soundcloud_url }}" type="submit">
+                <div class="flex-row">
+                  <div class="service-logo-container">
+                    <img alt="" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
+                  </div>
+                  <div class="service-description">
+                    Soundcloud
+                  </div>
+                </div>
+              </button>
+            </li>
+            {% endif %}
+            {% if item.spotify_url %}
+            <li>
+              <button class="music-button" formaction="{{ item.spotify_url }}" type="submit">
+                <div class="flex-row">
+                  <div class="service-logo-container">
+                    <img alt="" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
+                  </div>
+                  <div class="service-description">
+                    Spotify
+                  </div>
+                </div>
+              </button>
+            </li>
+            {% endif %}
+          </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
