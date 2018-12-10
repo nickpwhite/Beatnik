@@ -18,6 +18,7 @@ class Index(View):
 
 class NoScript(View):
     def get(self, request):
+        print("in noscript view")
         return render(request, 'noscript.html')
 
 class MusicView(View):
