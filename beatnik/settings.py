@@ -140,6 +140,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(REACT_APP, 'build', 'static'),
     os.path.join(REACT_APP, 'build'),
+    os.path.join(BASE_DIR, 'beatnik', 'static'),
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
