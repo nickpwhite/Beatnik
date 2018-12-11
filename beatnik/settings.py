@@ -67,9 +67,6 @@ ROOT_URLCONF = 'beatnik.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            'reactjs/build',
-        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,18 +126,10 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# React
-REACT_APP = os.path.join(BASE_DIR, 'reactjs')
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(REACT_APP, 'build', 'static'),
-    os.path.join(REACT_APP, 'build'),
-]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

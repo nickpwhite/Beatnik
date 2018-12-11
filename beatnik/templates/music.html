@@ -1,29 +1,28 @@
-{% extends "noscript.html" %}
+{% extends "index.html" %}
 {% load static %}
 
 {% block music %}
-{% for item in music %}
 <div class="flex-row music-container">
   <div class="flex-row col-100">
     <div class="flex-col">
-      <h2 class="music-info">{{ item.name }}</h2>
-      <h3 class="music-info">{{ item.artist }}</h3>
-      {% if item.album != "" %}
-      <h3 class="music-info">{{ item.album }}</h3>
+      <h2 class="music-info">{{ music.name }}</h2>
+      <h3 class="music-info">{{ music.artist }}</h3>
+      {% if music.album != "" %}
+      <h3 class="music-info">{{ music.album }}</h3>
       {% endif %}
     </div>
   </div>
   <div class="flex-row col-100">
     <div class="flex-row col-50">
-      <img class="artwork" src="{{ item.artwork }}" alt="Album cover" />
+      <img class="artwork" src="{{ music.artwork }}" alt="Album cover" />
     </div>
     <div class="flex-row col-50">
       <div class="flex-col">
         <form target="_blank">
           <ul>
-            {% if item.apple_url %}
+            {% if music.apple_url %}
             <li>
-              <button class="music-button" formaction="{{ item.apple_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.apple_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/apple_logo.png" %}" />
@@ -35,9 +34,9 @@
               </button>
             </li>
             {% endif %}
-            {% if item.gpm_url %}
+            {% if music.gpm_url %}
             <li>
-              <button class="music-button" formaction="{{ item.gpm_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.gpm_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
@@ -49,9 +48,9 @@
               </button>
             </li>
             {% endif %}
-            {% if item.soundcloud_url %}
+            {% if music.soundcloud_url %}
             <li>
-              <button class="music-button" formaction="{{ item.soundcloud_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.soundcloud_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
@@ -63,9 +62,9 @@
               </button>
             </li>
             {% endif %}
-            {% if item.spotify_url %}
+            {% if music.spotify_url %}
             <li>
-              <button class="music-button" formaction="{{ item.spotify_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.spotify_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
@@ -83,5 +82,4 @@
     </div>
   </div>
 </div>
-{% endfor %}
 {% endblock %}

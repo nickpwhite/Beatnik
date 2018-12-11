@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Beatnik makes it easy to share music that you love with the people most important to you!">
+  <meta property="og:title" content="Beatnik - Handy music sharing">
+  <meta property="og:url" content="https://beatnik-app.herokuapp.com/index" />
+  <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="manifest" href="{% static "manifest.json" %}">
+
+  <link rel="stylesheet" href="{% static "css/noscript.css" %}" type="text/css">
+
+  <!-- ****** static/faviconit.com static/favicons ****** -->
+  <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="{% static "favicon.ico" %}">
+  <link rel="icon" type="image/png" sizes="196x196" href="{% static "favicon-192.png" %}">
+  <link rel="icon" type="image/png" sizes="160x160" href="{% static "favicon-160.png" %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon-96.png" %}">
+  <link rel="icon" type="image/png" sizes="64x64" href="{% static "favicon-64.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon-32.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon-16.png" %}">
+  <link rel="apple-touch-icon" href="{% static "favicon-57.png" %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static "favicon-114.png" %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static "favicon-72.png" %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static "favicon-144.png" %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static "favicon-60.png" %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static "favicon-120.png" %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "favicon-76.png" %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "favicon-152.png" %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon-180.png" %}">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="{% static "favicon-144.png" %}">
+  <meta name="msapplication-config" content="{% static "browserconfig.xml" %}">
+  <title>Beatnik - Handy music sharing</title>
+</head>
+<body>
+  <header class="header">
+    <div class="flex-row">
+      <div class="col-50">
+        <a href="/" class="title">
+        <h1>Beatnik</h1>
+      </div>
+      <div class="col-25 subtitle">
+        <a class="title" target="_blank" rel="noopener noreferer" href="{{ chrome_ext_url }}">
+          <h2>Chrome Extension</h2>
+        </a>
+      </div>
+      <div class="col-25 subtitle">
+        <a class="title" target="_blank" rel="noopener noreferer" href="{{ firefox_ext_url }}">
+          <h2>Firefox Extension</h2>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="flex-row">
+      <form id="search-form" action="music" method="get" class="search-form flex-row">
+        <div class="col-75">
+          <input
+             name="q"
+             class="search-box"
+             type="text"
+             placeholder="Enter a link to convert"
+             value="{{ query }}" required>
+        </div>
+        <div class="col-25">
+          <input class="search-button" type="submit" value="Convert">
+        </div>
+      </form>
+    </div>
+    {% block music %}{% endblock %}
+  </div>
+
+  <div class="content">
+    <p class="intro">
+    Beatnik makes it easy to share music that you love with the people you know will love it too.
+    </p>
+    <p class="intro">
+    To get started just download the browser extension into your favourite browser, and any links that would normally take you to one of our supported streaming service will now take you to a page on this site that has a link to the same song or album on all of our suppored streaming services.
+    </p>
+    <p class="intro">
+    Alternatively, you can use our converter to get a link that you can easily share with your friends, no matter how they listen.
+    </p>
+  </div>
+</body>
+</html>
