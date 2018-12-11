@@ -53,6 +53,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+staticfiles
 
 # Flask stuff:
 instance/
@@ -113,7 +114,6 @@ src/config/configSec.js
 .DS_STORE
 *~
 *.pyc
-static
 .grunt
 _SpecRunner.html
 __benchmarks__
