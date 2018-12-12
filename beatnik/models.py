@@ -28,7 +28,7 @@ class MusicManager(Manager):
             link = parse.urlunparse(url)
             music, new = super().get_or_create(apple_url=link)
         elif LinkParser.gpm_netloc in url.netloc:
-            link = "{0}://{1}{2}".format(url.scheme, url.netloc, url.path)
+            link = "{0}://music.google.com{1}".format(url.scheme, url.path)
             music, new = super().get_or_create(gpm_url=link)
         elif LinkParser.soundcloud_netloc in url.netloc:
             link = parse.urlunparse(url)
