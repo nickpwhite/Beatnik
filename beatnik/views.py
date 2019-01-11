@@ -13,11 +13,7 @@ from urllib import parse
 
 class Index(View):
     def get(self, request):
-        context = {
-            'chrome_ext_url': "https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US",
-            'firefox_ext_url': "https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/"
-        }
-        return render(request, 'index.html', context)
+        return render(request, 'index.html')
 
 class Music(View):
     def get(self, request):
