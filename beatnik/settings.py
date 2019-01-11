@@ -41,7 +41,6 @@ CORS_ORIGIN_WHITELIST = [
 INSTALLED_APPS = [
     'beatnik.apps.BeatnikConfig',
     'corsheaders',
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

@@ -14,13 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
 from django.views.generic.base import RedirectView
 
 from beatnik.views import Index, Music, MusicApi
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^api/music', MusicApi.as_view()),
     url(r'^music', Music.as_view(), name='music'),
     url(r'^$', Index.as_view(), name='home'),
