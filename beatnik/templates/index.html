@@ -17,7 +17,7 @@
   -->
   <link rel="manifest" href="{% static "manifest.json" %}">
 
-  <link rel="stylesheet" href="{% static "css/noscript.css" %}" type="text/css">
+  <link rel="stylesheet" href="{% static "css/main.css" %}" type="text/css">
 
   <!-- ****** static/faviconit.com static/favicons ****** -->
   <link rel="shortcut icon" href="{% static "favicon.ico" %}">
@@ -78,6 +78,7 @@
         </div>
       </form>
     </div>
+    {% block errors %}{% endblock %}
     {% block music %}{% endblock %}
   </div>
 

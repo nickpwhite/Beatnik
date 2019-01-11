@@ -214,6 +214,10 @@ input.search-button {
   width: 95%;
 }
 
+.error {
+  color: red;
+}
+
 @media only screen and (max-width: 350px) {
   .service-description {
     font-size: 5vw;

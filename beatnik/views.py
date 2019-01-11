@@ -1,11 +1,11 @@
 import json
 import os
 
-from beatnik.models import Music as M
+from beatnik.models import Music as M, FormSubmit
 from django.conf import settings
 from django.core import serializers
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from api_manager.ApiManager import ApiManager
 from api_manager.LinkParser import LinkParser
@@ -22,10 +22,24 @@ class Index(View):
 class Music(View):
     def get(self, request):
         link = request.GET.get('q')
+        FormSubmit.objects.create(
+            query_string = request.META.get('QUERY_STRING'),
+            query = link,
+            user_agent = request.META.get('USER_AGENT'),
+            ip_address = request.META.get('REMOTE_ADDR'),
+            referer = request.META.get('HTTP_REFERER')
+        )
+
+        if (link is None):
+            return redirect('index')
+
         url = parse.urlparse(link)
         if (url.netloc == '' or not M.objects.verify_url(url)):
             # TODO: return form back with error
-            return HttpResponse(status=400)
+            context = {
+                'errors': ["We couldn't find a song or album at that link"]
+            }
+            return render(request, 'errors.html', context)
 
         try:
             info = M.objects.get_or_create(url)

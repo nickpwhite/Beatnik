@@ -1,4 +1,4 @@
-from django.db.models import Manager, Model, CharField, IntegerField, URLField
+from django.db.models import Manager, Model, CharField, IntegerField, TextField, URLField
 from urllib import parse
 
 from api_manager.ApiManager import ApiManager
@@ -65,3 +65,10 @@ class Music(Model):
     spotify_url = URLField("Spotify URL", null = True, unique = True)
     match_rating = IntegerField("Rating of the match", default = 0)
     artwork = URLField("Album art URL")
+
+class FormSubmit(Model):
+    query_string = TextField("Query string")
+    query = TextField("The 'q' parameter in the query")
+    user_agent = TextField("Client's user agent", null = True)
+    ip_address = CharField("Client's IP address", max_length = 45, null = True)
+    referer = URLField("HTTP referer", null = True)
