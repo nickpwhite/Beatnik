@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block errors %}
+<ul>
+  {% for error in errors %}
+  <li class="error">
+    {{error}}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

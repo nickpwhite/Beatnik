@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
 
-from beatnik.views import Index, MusicApi, MusicConvert, NoScript
+from beatnik.views import Index, Music, MusicApi
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/music', MusicApi.as_view()),
-    url(r'^noscript/music', MusicConvert.as_view(), name='music'),
-    url(r'^noscript', NoScript.as_view(), name='noscript'),
-    url(r'^.*$', Index.as_view(), name='index'),
+    url(r'^music', Music.as_view(), name='music'),
+    url(r'^$', Index.as_view(), name='home'),
+    url(r'^.*$', RedirectView.as_view(url = '/', permanent = False), name='index')
 ]

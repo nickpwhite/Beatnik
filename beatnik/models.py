@@ -1,13 +1,74 @@
-from django.db import models
+from django.db.models import Manager, Model, CharField, IntegerField, TextField, URLField
+from urllib import parse
 
-class Music(models.Model):
-    music_type = models.CharField("Album or Track", max_length = 1, choices=(('A', 'Album'), ('T', 'Track')))
-    name = models.CharField("Track Name", max_length = 200)
-    artist = models.CharField("Artist Name", max_length = 200)
-    album = models.CharField("Album Name", max_length = 200, blank = True)
-    apple_url = models.URLField("Apple Music URL", null = True, unique = True)
-    gpm_url = models.URLField("Google Play Music URL", null = True, unique = True)
-    soundcloud_url = models.URLField("Soundcloud URL", null = True, unique = True)
-    spotify_url = models.URLField("Spotify URL", null = True, unique = True)
-    match_rating = models.IntegerField("Rating of the match", default = 0)
-    artwork = models.URLField("Album art URL")
+from api_manager.ApiManager import ApiManager
+from api_manager.LinkParser import LinkParser
+
+class MusicManager(Manager):
+    # convert :: Music -> Music
+    def convert(self, music, link):
+        api_manager = ApiManager()
+        data = api_manager.link_converter.convert_link(link)
+
+        music.music_type = 'A' if data['type'] == "album" else 'T'
+        music.name = data['title']
+        music.artist = data['artist']
+        music.album = data.get('album', '')
+        music.apple_url = data['links']['apple_link']
+        music.gpm_url = data['links']['gpm_link']
+        music.soundcloud_url = data['links']['soundcloud_link']
+        music.spotify_url = data['links']['spotify_link']
+        music.artwork = data['art']
+
+        return music
+
+    # get_or_create :: (6)Tuple -> Music
+    def get_or_create(self, url):
+        if LinkParser.apple_netloc in url.netloc:
+            link = parse.urlunparse(url)
+            music, new = super().get_or_create(apple_url=link)
+        elif LinkParser.gpm_netloc in url.netloc:
+            link = "{0}://music.google.com{1}".format(url.scheme, url.path)
+            music, new = super().get_or_create(gpm_url=link)
+        elif LinkParser.soundcloud_netloc in url.netloc:
+            link = parse.urlunparse(url)
+            music, new = super().get_or_create(soundcloud_url=link)
+        elif LinkParser.spotify_netloc in url.netloc:
+            link = parse.urlunparse(url)
+            music, new = super().get_or_create(spotify_url=link)
+        else:
+            raise ValueError("{0} is not a supported url".format(url))
+
+        if new:
+            music = self.convert(music, link)
+            music.save()
+
+        return music
+
+    # verify_url :: (6)Tuple -> Boolean
+    def verify_url(self, url):
+        return LinkParser.apple_netloc in url.netloc \
+                or LinkParser.gpm_netloc in url.netloc \
+                or LinkParser.soundcloud_netloc not in url.netloc \
+                or LinkParser.spotify_netloc in url.netloc
+
+class Music(Model):
+    objects = MusicManager()
+
+    music_type = CharField("Album or Track", max_length = 1, choices=(('A', 'Album'), ('T', 'Track')))
+    name = CharField("Track Name", max_length = 200)
+    artist = CharField("Artist Name", max_length = 200)
+    album = CharField("Album Name", max_length = 200, blank = True)
+    apple_url = URLField("Apple Music URL", null = True, unique = True)
+    gpm_url = URLField("Google Play Music URL", null = True, unique = True)
+    soundcloud_url = URLField("Soundcloud URL", null = True, unique = True)
+    spotify_url = URLField("Spotify URL", null = True, unique = True)
+    match_rating = IntegerField("Rating of the match", default = 0)
+    artwork = URLField("Album art URL")
+
+class FormSubmit(Model):
+    query_string = TextField("Query string")
+    query = TextField("The 'q' parameter in the query")
+    user_agent = TextField("Client's user agent", null = True)
+    ip_address = CharField("Client's IP address", max_length = 45, null = True)
+    referer = URLField("HTTP referer", null = True)
