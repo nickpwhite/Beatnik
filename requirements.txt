@@ -7,7 +7,7 @@ chardet==3.0.4
 cryptography==2.3.1
 cssselect==1.0.3
 decorator==4.1.2
-Django==2.1.4
+Django==2.1.5
 django-cors-headers==2.1.0
 djangorestframework==3.7.3
 fudge==1.1.0
@@ -40,6 +40,6 @@ simplejson==3.13.2
 six==1.11.0
 soundcloud==0.5.0
 spotipy==2.4.4
-urllib3==1.22
+urllib3==1.24.1
 validictory==1.1.1
 whitenoise==3.3.1
