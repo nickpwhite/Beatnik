@@ -1,4 +1,4 @@
-from beatnik.models import FormSubmit, Music, MusicAccess
+from beatnik.models import FormSubmit, Music, MusicAccess, MusicClick
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from urllib import parse
@@ -25,7 +25,18 @@ def music(request, key):
         'music': music
     }
 
-    return render(request, 'music.html', context)
+    redirect_to = request.session.get('redirect_to')
+
+    if redirect_to == "apple":
+        return redirect(music.apple_url)
+    elif redirect_to == "gpm":
+        return redirect(music.gpm_url)
+    elif redirect_to == "soundcloud":
+        return redirect(music.soundcloud_url)
+    elif redirect_to == "spotify":
+        return redirect(music.spotify_url)
+    else:
+        return render(request, 'music.html', context)
 
 def search(request):
     if request.method != 'GET':
@@ -56,3 +67,24 @@ def search(request):
         return HttpResponse(status = 400)
 
     return redirect(info)
+
+def open(request):
+    if request.method != 'POST':
+        return HttpResponse(status = 405)
+
+    link = request.POST.get('link')
+    url = parse.urlparse(link)
+    link_type = MusicClick.NETLOC_TO_TYPE[url.netloc]
+
+    MusicClick.objects.create(
+        user_agent = request.META.get('USER_AGENT'),
+        ip_address = request.META.get('REMOTE_ADDR'),
+        referer = request.META.get('HTTP_REFERER'),
+        link = link,
+        link_type = link_type
+    )
+
+    if request.POST.get('redirect', False):
+        request.session['redirect_to'] = link_type
+
+    return redirect(link)
