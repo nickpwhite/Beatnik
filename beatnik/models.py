@@ -66,9 +66,18 @@ class Music(Model):
     match_rating = IntegerField("Rating of the match", default = 0)
     artwork = URLField("Album art URL")
 
+    def get_absolute_url(self):
+        return "/music/{0}".format(self.id)
+
 class FormSubmit(Model):
-    query_string = TextField("Query string")
-    query = TextField("The 'q' parameter in the query")
     user_agent = TextField("Client's user agent", null = True)
     ip_address = CharField("Client's IP address", max_length = 45, null = True)
     referer = URLField("HTTP referer", null = True)
+    query_string = TextField("Query string")
+    query = TextField("The 'q' parameter in the query")
+
+class MusicAccess(Model):
+    user_agent = TextField("Client's user agent", null = True)
+    ip_address = CharField("Client's IP address", max_length = 45, null = True)
+    referer = URLField("HTTP referer", null = True)
+    music_id = IntegerField("Id accessed")

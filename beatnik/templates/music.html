@@ -1,7 +1,11 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block music %}
+{% block preview_image %}
+<meta property="og:image" content={{ music.artwork }}
+{% endblock %}
+
+{% block result %}
 <div class="flex-row music-container">
   <div class="flex-row col-100">
     <div class="flex-col">

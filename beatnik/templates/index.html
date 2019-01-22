@@ -8,7 +8,9 @@
   <meta name="description" content="Beatnik makes it easy to share music that you love with the people most important to you!">
   <meta property="og:title" content="Beatnik - Handy music sharing">
   <meta property="og:url" content="https://beatnik-app.herokuapp.com/index" />
+  {% block preview_image %}
   <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365" />
+  {% endblock %}
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <!--
@@ -64,7 +66,7 @@
 
   <div class="content">
     <div class="flex-row">
-      <form id="search-form" action="music" method="get" class="search-form flex-row">
+      <form id="search-form" action="/search" method="get" class="search-form flex-row">
         <div class="col-75">
           <input
              name="q"
@@ -79,7 +81,7 @@
       </form>
     </div>
     {% block errors %}{% endblock %}
-    {% block music %}{% endblock %}
+    {% block result %}{% endblock %}
   </div>
 
   <div class="content">
@@ -87,7 +89,7 @@
     Beatnik makes it easy to share music that you love with the people you know will love it too.
     </p>
     <p class="intro">
-    To get started just download the browser extension into your favourite browser, and any links that would normally take you to one of our supported streaming service will now take you to a page on this site that has a link to the same song or album on all of our suppored streaming services.
+    To get started just download the browser extension into your favorite browser, and any links that would normally take you to one of our supported streaming service will now take you to a page on this site that has a link to the same song or album on all of our supported streaming services.
     </p>
     <p class="intro">
     Alternatively, you can use our converter to get a link that you can easily share with your friends, no matter how they listen.

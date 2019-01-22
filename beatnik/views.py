@@ -1,65 +1,58 @@
-import json
-import os
-
-from beatnik.models import Music as M, FormSubmit
-from django.conf import settings
-from django.core import serializers
-from django.http import HttpResponse, JsonResponse
+from beatnik.models import FormSubmit, Music, MusicAccess
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views import View
-from api_manager.ApiManager import ApiManager
-from api_manager.LinkParser import LinkParser
 from urllib import parse
 
-class Index(View):
-    def get(self, request):
-        return render(request, 'index.html')
+def index(request):
+    if request.method != 'GET':
+        return HttpResponse(status = 405)
 
-class Music(View):
-    def get(self, request):
-        link = request.GET.get('q')
-        FormSubmit.objects.create(
-            query_string = request.META.get('QUERY_STRING'),
-            query = link,
-            user_agent = request.META.get('USER_AGENT'),
-            ip_address = request.META.get('REMOTE_ADDR'),
-            referer = request.META.get('HTTP_REFERER')
-        )
+    return render(request, 'index.html')
 
-        if (link is None):
-            return redirect('index')
+def music(request, key):
+    if request.method != 'GET':
+        return HttpResponse(status = 405)
 
-        url = parse.urlparse(link)
-        if (url.netloc == '' or not M.objects.verify_url(url)):
-            # TODO: return form back with error
-            context = {
-                'errors': ["We couldn't find a song or album at that link"]
-            }
-            return render(request, 'errors.html', context)
+    MusicAccess.objects.create(
+        user_agent = request.META.get('USER_AGENT'),
+        ip_address = request.META.get('REMOTE_ADDR'),
+        referer = request.META.get('HTTP_REFERER'),
+        music_id = key
+    )
 
-        try:
-            info = M.objects.get_or_create(url)
-        except ValueError:
-            return HttpResponse(status=400)
+    music = Music.objects.get(pk = key)
+    context = {
+        'music': music
+    }
 
+    return render(request, 'music.html', context)
+
+def search(request):
+    if request.method != 'GET':
+        return HttpResponse(status = 405)
+
+    link = request.GET.get('q')
+    FormSubmit.objects.create(
+        user_agent = request.META.get('USER_AGENT'),
+        ip_address = request.META.get('REMOTE_ADDR'),
+        referer = request.META.get('HTTP_REFERER'),
+        query_string = request.META.get('QUERY_STRING'),
+        query = link
+    )
+
+    if (link is None):
+        return redirect('index')
+
+    url = parse.urlparse(link)
+    if (url.netloc == '' or not Music.objects.verify_url(url)):
         context = {
-            'music': info,
-            'query': link
+            'errors': ["That's not a valid URL"]
         }
+        return render(request, 'errors.html', context)
 
-        return render(request, 'music.html', context)
+    try:
+        info = Music.objects.get_or_create(url)
+    except ValueError:
+        return HttpResponse(status = 400)
 
-class MusicApi(View):
-    def get(self, request):
-        link = request.GET.get('q')
-        url = parse.urlparse(link)
-        if (url.netloc == '' or not M.objects.verify_url(url)):
-            return HttpResponse(status=400)
-
-        try:
-            info = M.objects.get_or_create(url)
-        except ValueError:
-            return HttpResponse(status=400)
-
-        json_response = json.loads(serializers.serialize('json', info))
-        return JsonResponse(json_response, safe=False)
+    return redirect(info)
