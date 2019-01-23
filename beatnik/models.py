@@ -1,4 +1,4 @@
-from django.db.models import Manager, Model, CharField, IntegerField, TextField, URLField
+from django.db.models import Manager, Model, BooleanField, CharField, IntegerField, TextField, URLField
 from urllib import parse
 
 from api_manager.ApiManager import ApiManager
@@ -106,3 +106,4 @@ class MusicClick(Model):
     referer = URLField("HTTP referer", null = True)
     link = URLField("The web address of the link clicked")
     link_type = CharField("Type of link", max_length = 10, choices = LINK_TYPE_CHOICES)
+    redirect = BooleanField("Whether or not the redirect checkbox was checked", default = False)

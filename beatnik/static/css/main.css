@@ -122,7 +122,7 @@ input.search-box:focus {
   outline: none;
 }
 
-input.search-button {
+.search-button {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 2px 2px 3px #666;
@@ -183,39 +183,18 @@ input.search-button {
   width: 300px;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 100px;
-}
-
-.modal {
-  background-color: #fff;
-  border-radius: 5px;
-  max-width: 500px;
-  min-height: 300px;
-  margin: 0 auto;
-  padding: 30px;
-}
-
-.modal-content {
-  min-height: 270px;
-}
-
-.modal-text {
-  text-align: center;
-}
-
-.modal-button {
-  width: 95%;
-}
-
 .error {
   color: red;
+}
+
+.redirect {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.redirect-label {
+  vertical-align: text-bottom;
 }
 
 @media only screen and (max-width: 350px) {

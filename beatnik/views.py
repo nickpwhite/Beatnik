@@ -27,13 +27,13 @@ def music(request, key):
 
     redirect_to = request.session.get('redirect_to')
 
-    if redirect_to == "apple":
+    if redirect_to == "apple" and music.apple_url is not None:
         return redirect(music.apple_url)
-    elif redirect_to == "gpm":
+    elif redirect_to == "gpm" and music.gpm_url is not None:
         return redirect(music.gpm_url)
-    elif redirect_to == "soundcloud":
+    elif redirect_to == "soundcloud" and music.soundcloud_url is not None:
         return redirect(music.soundcloud_url)
-    elif redirect_to == "spotify":
+    elif redirect_to == "spotify" and music.soundcloud_url is not None:
         return redirect(music.spotify_url)
     else:
         return render(request, 'music.html', context)
@@ -76,15 +76,20 @@ def open(request):
     url = parse.urlparse(link)
     link_type = MusicClick.NETLOC_TO_TYPE[url.netloc]
 
+    does_redirect = request.POST.get('redirect') == 'on'
+
+    if does_redirect:
+        request.session['redirect_to'] = link_type
+    elif 'redirect_to' in request.session:
+        del request.session['redirect_to']
+
     MusicClick.objects.create(
         user_agent = request.META.get('USER_AGENT'),
         ip_address = request.META.get('REMOTE_ADDR'),
         referer = request.META.get('HTTP_REFERER'),
         link = link,
-        link_type = link_type
+        link_type = link_type,
+        redirect = does_redirect
     )
-
-    if request.POST.get('redirect', False):
-        request.session['redirect_to'] = link_type
 
     return redirect(link)
