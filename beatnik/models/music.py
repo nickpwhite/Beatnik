@@ -1,8 +1,7 @@
-from django.db.models import Manager, Model, BooleanField, CharField, IntegerField, TextField, URLField
-from urllib import parse
-
 from api_manager.ApiManager import ApiManager
 from api_manager.LinkParser import LinkParser
+from django.db.models import Manager, Model, CharField, IntegerField, URLField
+from urllib import parse
 
 class MusicManager(Manager):
     # convert :: Music -> Music
@@ -68,42 +67,3 @@ class Music(Model):
 
     def get_absolute_url(self):
         return "/music/{0}".format(self.id)
-
-class FormSubmit(Model):
-    user_agent = TextField("Client's user agent", null = True)
-    ip_address = CharField("Client's IP address", max_length = 45, null = True)
-    referer = URLField("HTTP referer", null = True)
-    query_string = TextField("Query string")
-    query = TextField("The 'q' parameter in the query")
-
-class MusicAccess(Model):
-    user_agent = TextField("Client's user agent", null = True)
-    ip_address = CharField("Client's IP address", max_length = 45, null = True)
-    referer = URLField("HTTP referer", null = True)
-    music_id = IntegerField("Id accessed")
-
-class MusicClick(Model):
-    APPLE = 'apple'
-    GPM = 'gpm'
-    SOUNDCLOUD = 'soundcloud'
-    SPOTIFY = 'spotify'
-    LINK_TYPE_CHOICES = [
-        (APPLE, 'Apple Music'),
-        (GPM, 'Google Play Music'),
-        (SOUNDCLOUD, 'Soundcloud'),
-        (SPOTIFY, 'Spotify')
-    ]
-
-    NETLOC_TO_TYPE = {
-        'itunes.apple.com': APPLE,
-        'music.google.com': GPM,
-        'soundcloud.com': SOUNDCLOUD,
-        'open.spotify.com': SPOTIFY
-    }
-
-    user_agent = TextField("Client's user agent", null = True)
-    ip_address = CharField("Client's IP address", max_length = 45, null = True)
-    referer = URLField("HTTP referer", null = True)
-    link = URLField("The web address of the link clicked")
-    link_type = CharField("Type of link", max_length = 10, choices = LINK_TYPE_CHOICES)
-    redirect = BooleanField("Whether or not the redirect checkbox was checked", default = False)

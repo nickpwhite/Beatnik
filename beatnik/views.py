@@ -1,4 +1,5 @@
-from beatnik.models import FormSubmit, Music, MusicAccess, MusicClick
+from beatnik.models.music import Music
+from beatnik.models.analytics import FormSubmit, MusicAccess, MusicClick
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from urllib import parse
