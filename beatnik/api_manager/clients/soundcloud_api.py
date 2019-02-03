@@ -33,7 +33,7 @@ class SoundcloudApi:
         query = self.query_url.format(clean_title, clean_artist).replace(' ', '+')
         self.logger.info('query: {0}'.format(query))
         d = pq(url=query)
-        
+
         expected_artist = clean_artist.lower()
         expected_title = clean_title.lower()
         results = d("ul:last > li > h2 > a")
@@ -44,6 +44,6 @@ class SoundcloudApi:
             self.logger.info('title: {0}'.format(title))
             if title.lower() in text:
                 href = 'https://soundcloud.com{0}'.format(item.attr.href)
-                return href 
+                return href
 
         return None

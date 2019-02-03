@@ -55,3 +55,10 @@ class ApiManager:
     def get_spotify_api(self):
         client_credentials_manager = SpotifyClientCredentials()
         return spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+    def convert_link(self, music):
+        music = self.link_converter.convert_link(music)
+        if music.artwork is None:
+            music.artwork = self.link_parser.get_spotify_artwork(music)
+
+        return music

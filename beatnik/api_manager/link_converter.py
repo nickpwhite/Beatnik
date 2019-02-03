@@ -13,40 +13,33 @@ class LinkConverter:
         self.spotify_api = spotify_api
         self.link_parser = link_parser
 
-    def convert_link(self, link):
-        url = parse.urlparse(link)
-        if self.link_parser.apple_netloc in url.netloc:
-            info = self.link_parser.parse_apple_link(url)
-        elif self.link_parser.gpm_netloc in url.netloc:
-            info = self.link_parser.parse_gpm_link(url)
-        elif self.link_parser.soundcloud_netloc in url.netloc:
-            info = self.link_parser.parse_soundcloud_link(link)
-        elif self.link_parser.spotify_netloc in url.netloc:
-            info = self.link_parser.parse_spotify_link(url)
+    def convert_link(self, music):
+        if music.apple_url is not None:
+            music = self.link_parser.parse_apple_link(music)
+        elif music.gpm_url is not None:
+            music = self.link_parser.parse_gpm_link(music)
+        elif music.soundcloud_url is not None:
+            music = self.link_parser.parse_soundcloud_link(music)
+        elif music.spotify_url is not None:
+            music = self.link_parser.parse_spotify_link(music)
         else:
-            self.logger.error("Received a link I can't handle: {0}".format(link))
-            return None
+            self.logger.error("All the links were None")
+            return music
 
-        if info['type'] == "track":
-            apple_link = self.get_apple_track(info)
-            gpm_link = self.get_gpm_track(info)
-            soundcloud_link = self.get_soundcloud_track(info)
-            spotify_link = self.get_spotify_track(info)
-        elif info['type'] == "album":
-            apple_link = self.get_apple_album(info)
-            gpm_link = self.get_gpm_album(info)
-            soundcloud_link = self.get_soundcloud_album(info)
-            spotify_link = self.get_spotify_album(info)
+        if music.music_type == 'T':
+            music.apple_url = self.get_apple_track(music)
+            music.gpm_url = self.get_gpm_track(music)
+            music.soundcloud_url = self.get_soundcloud_track(music)
+            music.spotify_url = self.get_spotify_track(music)
+        elif music.music_type == 'A':
+            music.apple_url = self.get_apple_album(music)
+            music.gpm_url = self.get_gpm_album(music)
+            music.soundcloud_url = self.get_soundcloud_album(music)
+            music.spotify_url = self.get_spotify_album(music)
         else:
-            self.logger.error("Received a media type I can't handle: {0}".format(info))
+            self.logger.error("Received a media type I can't handle")
 
-        info['links'] = {
-            'apple_link': apple_link,
-            'gpm_link': gpm_link,
-            'soundcloud_link': soundcloud_link,
-            'spotify_link': spotify_link
-        }
-        return info
+        return music
 
     def get_apple_link(self, info):
         if info['type'] == 'album':
@@ -56,8 +49,11 @@ class LinkConverter:
         else:
             self.logger.warning("Encountered unknown type: {0}".format(info['type']))
 
-    def get_apple_album(self, album_info):
-        query = "{0} {1}".format(album_info['title'], album_info['artist'])
+    def get_apple_album(self, music):
+        if music.apple_url is not None:
+            return music.apple_url
+
+        query = "{0} {1}".format(music.name, music.artist)
         results = self.apple_api.search(query, limit = 1, types='albums')
         if (results != {}):
             album = results['albums']['data'][0]
@@ -65,8 +61,11 @@ class LinkConverter:
         else:
             return None
 
-    def get_apple_track(self, track_info):
-        query = "{0} {1}".format(track_info['title'], track_info['artist'])
+    def get_apple_track(self, music):
+        if music.apple_url is not None:
+            return music.apple_url
+
+        query = "{0} {1}".format(music.name, music.artist)
         results = self.apple_api.search(query, limit = 1, types='songs')
         if (results != {}):
             track = results['songs']['data'][0]
@@ -82,11 +81,14 @@ class LinkConverter:
         else:
             self.logger.warning("Encountered unknown type: {0}".format(info['type']))
 
-    def get_gpm_album(self, album_info):
+    def get_gpm_album(self, music):
+        if music.gpm_url is not None:
+            return music.gpm_url
+
         if self.gpm_api is None:
             return None
 
-        query = "{0} {1}".format(album_info['title'], album_info['artist'])
+        query = "{0} {1}".format(music.name, music.artist)
         results = self.gpm_api.search(query, max_results = 1)
         if (len(results['album_hits']) > 0):
             album_id = results['album_hits'][0]['album']['albumId']
@@ -94,11 +96,14 @@ class LinkConverter:
         else:
             return None
 
-    def get_gpm_track(self, track_info):
+    def get_gpm_track(self, music):
+        if music.gpm_url is not None:
+            return music.gpm_url
+
         if self.gpm_api is None:
             return None
 
-        query = "{0} {1}".format(track_info['title'], self.sanitize(track_info['artist']))
+        query = "{0} {1}".format(music.name, self.sanitize(music.artist))
         results = self.gpm_api.search(query)
         if (len(results['song_hits']) > 0):
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
@@ -114,11 +119,17 @@ class LinkConverter:
         else:
             self.logger.warning("Encountered unknown type: {0}".format(info['type']))
 
-    def get_soundcloud_album(self, album_info):
-        return self.soundcloud_api.search(album_info['title'], album_info['artist'])
+    def get_soundcloud_album(self, music):
+        if music.soundcloud_url is not None:
+            return music.soundcloud_url
 
-    def get_soundcloud_track(self, track_info):
-        return self.soundcloud_api.search(track_info['title'], track_info['artist'])
+        return self.soundcloud_api.search(music.name, music.artist)
+
+    def get_soundcloud_track(self, music):
+        if music.soundcloud_url is not None:
+            return music.soundcloud_url
+
+        return self.soundcloud_api.search(music.name, music.artist)
 
     def get_spotify_link(self, info):
         if info['type'] == 'album':
@@ -128,16 +139,22 @@ class LinkConverter:
         else:
             self.logger.warning("Encountered unknown type: {0}".format(info['type']))
 
-    def get_spotify_album(self, album_info):
-        query = "album:{0} artist:{1}".format(album_info['title'], album_info['artist'])
+    def get_spotify_album(self, music):
+        if music.spotify_url is not None:
+            return music.spotify_url
+
+        query = "album:{0} artist:{1}".format(music.name, music.artist)
         results = self.spotify_api.search(query, limit = 10, type = "album")
         if (results['albums']['total'] > 0):
             return results['albums']['items'][0]['external_urls']['spotify']
         else:
             return None
 
-    def get_spotify_track(self, track_info):
-        query = "track:{0} artist:{1}".format(track_info['title'], track_info['artist'])
+    def get_spotify_track(self, music):
+        if music.spotify_url is not None:
+            return music.spotify_url
+
+        query = "track:{0} artist:{1}".format(music.name, music.artist)
         results = self.spotify_api.search(query, limit = 10, type = "track")
         if (results['tracks']['total'] > 0):
             return results['tracks']['items'][0]['external_urls']['spotify']

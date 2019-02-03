@@ -4,20 +4,10 @@ from django.db.models import Manager, Model, Q, CharField, IntegerField, URLFiel
 from urllib import parse
 
 class MusicManager(Manager):
-    # convert :: Music -> Music
-    def convert(self, music, link):
+    # convert :: Music, string -> Music
+    def convert(self, music):
         api_manager = ApiManager()
-        data = api_manager.link_converter.convert_link(link)
-
-        music.music_type = 'A' if data['type'] == "album" else 'T'
-        music.name = data['title']
-        music.artist = data['artist']
-        music.album = data.get('album', '')
-        music.apple_url = data['links']['apple_link']
-        music.gpm_url = data['links']['gpm_link']
-        music.soundcloud_url = data['links']['soundcloud_link']
-        music.spotify_url = data['links']['spotify_link']
-        music.artwork = data['art']
+        music = api_manager.convert_link(music)
 
         return music
 
@@ -47,7 +37,7 @@ class MusicManager(Manager):
             raise ValueError("{0} is not a supported url".format(url))
 
         if new:
-            music = self.convert(music, link)
+            music = self.convert(music)
             try:
                 music.save()
             except IntegrityError as exception:

@@ -24,77 +24,88 @@ class LinkParser:
         regex = re.compile('( \- \d{4})?( \-[a-z\s]*remaster(ed)?| \(remaster(ed)?\))', re.IGNORECASE)
         return regex.sub('', title)
 
-    def parse_apple_link(self, url):
+    def parse_apple_link(self, music):
+        url = parse.urlparse(music.apple_url)
         if (url.query == ''):
             album_id = url.path.split('/')[-1]
-            album = self.apple_api.get_album(album_id)['data'][0]
-            art = album['attributes']['artwork']
-            info = {
-                'type': "album",
-                'title': album['attributes']['name'],
-                'artist': album['attributes']['artistName'],
-                'art': art['url'].format(w=art['width'], h=art['height'])
-            }
+            result = self.apple_api.get_album(album_id)['data'][0]
+            music.music_type = 'A'
         else:
             track_id = parse.parse_qs(url.query)['i'][0]
-            track = self.apple_api.get_track(track_id)['data'][0]
-            art = track['attributes']['artwork']
-            info = {
-                'type': "track",
-                'title': track['attributes']['name'],
-                'artist': track['attributes']['artistName'],
-                'art': art['url'].format(w=art['width'], h=art['height']),
-                'album': track['attributes']['albumName']
-            }
+            result = self.apple_api.get_track(track_id)['data'][0]
+            music.music_type = 'T'
+            music.album = result['attributes']['albumName']
 
-        return info
+        art = result['attributes']['artwork']
+        music.name = result['attributes']['name']
+        music.artist = result['attributes']['artistName']
+        music.artwork = art['url'].format(w=art['width'], h=art['height'])
 
-    def parse_gpm_link(self, url):
+        return music
+
+    def parse_gpm_link(self, music):
         if self.gpm_api is None:
             return {}
 
+        url = parse.urlparse(music.gpm_url)
         item_id = url.path.split('/')[-1]
         prefix = item_id[:1]
         if prefix == self.gpm_album_prefix:
-            album = self.gpm_api.get_album_info(item_id)
-            info = {
-                'type': "album",
-                'title': self.clean_title(album['name']),
-                'artist': album['artist'],
-                'art': album['albumArtRef'].replace('http:', 'https:', 1)
-            }
+            result = self.gpm_api.get_album_info(item_id)
+            music.music_type = 'A'
+            music.name = self.clean_title(result['name'])
+            music.artwork = result['albumArtRef'].replace('http:', 'https:', 1)
         elif prefix == self.gpm_track_prefix:
-            track = self.gpm_api.get_track_info(item_id)
-            info = {
-                'type': "track",
-                'title': self.clean_title(track['title']),
-                'artist': track['artist'],
-                'art': track['albumArtRef'][0]['url'].replace('http:', 'https:', 1),
-                'album': track['album']
-            }
-        return info
+            result = self.gpm_api.get_track_info(item_id)
+            music.music_type = 'T'
+            music.album = result['album']
+            music.name = self.clean_title(result['title'])
+            music.artwork = result['albumArtRef'][0]['url'].replace('http:', 'https:', 1),
 
-    def parse_soundcloud_link(self, url):
-        return self.soundcloud_api.get(url)
+        music.artist = result['artist']
 
-    def parse_spotify_link(self, url):
+        return music
+
+    def parse_soundcloud_link(self, music):
+        url = parse.urlparse(music.soundcloud_url)
+        result = self.soundcloud_api.get(music.soundcloud_url)
+        if result['type'] == "album":
+            music.music_type = 'A'
+        else:
+            music.music_type = 'T'
+
+        music.name = result['title']
+        music.artist = result['artist']
+        music.artwork = result['art']
+
+        return music
+
+    def parse_spotify_link(self, music):
+        url = parse.urlparse(music.spotify_url)
         item_id = url.path.split('/')[-1]
-        prefix = url.path.split('/')[1] 
+        prefix = url.path.split('/')[1]
         if prefix == self.spotify_album_prefix:
-            album = self.spotify_api.album(item_id)
-            info = {
-                'type': "album",
-                'title': self.clean_title(album['name']),
-                'artist': album['artists'][0]['name'],
-                'art': album['images'][0]['url']
-            }
+            result = self.spotify_api.album(item_id)
+            music.music_type = 'A'
+            music.artwork = result['images'][0]['url']
         elif prefix == self.spotify_track_prefix:
-            track = self.spotify_api.track(item_id)
-            info = {
-                'type': "track",
-                'title': self.clean_title(track['name']),
-                'artist': track['artists'][0]['name'],
-                'art': track['album']['images'][0]['url'],
-                'album': track['album']['name']
-            }
-        return info
+            result = self.spotify_api.track(item_id)
+            music.music_type = 'T'
+            music.album = result['album']['name']
+            music.artwork = result['album']['images'][0]['url']
+
+        music.name = self.clean_title(result['name'])
+        music.artist = result['artists'][0]['name']
+
+        return music
+
+    def get_spotify_artwork(self, music):
+        url = parse.urlparse(music.spotify_url)
+        item_id = url.path.split('/')[-1]
+        prefix = url.path.split('/')[1]
+        if prefix == self.spotify_album_prefix:
+            result = self.spotify_api.album(item_id)
+            return result['images'][0]['url']
+        else:
+            result = self.spotify_api.track(item_id)
+            return result['album']['images'][0]['url']
