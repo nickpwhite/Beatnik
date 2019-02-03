@@ -36,6 +36,7 @@ ul {
 .flex-col {
   display: flex;
   flex-flow: column wrap;
+  width: 100%;
 }
 
 .flex-row {
@@ -108,7 +109,7 @@ ul {
   width: 50px;
 }
 
-input.search-box {
+.search-box {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 2px 2px 3px #666;
@@ -118,7 +119,7 @@ input.search-box {
   width: 95%;
 }
 
-input.search-box:focus {
+.search-box:focus {
   outline: none;
 }
 
@@ -197,7 +198,7 @@ input.search-box:focus {
   vertical-align: text-bottom;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 375px) {
   .service-description {
     font-size: 5vw;
   }
@@ -217,15 +218,23 @@ input.search-box:focus {
   }
 
   .artwork {
-    width: 225px;
-    height: 225px;
+    width: 100%;
+    height: auto;
   }
 
   .content {
     width: 80%;
   }
 
-  input.search-box {
+  .extension {
+    display: none;
+  }
+
+  .music-button {
+    width: 100%;
+  }
+
+  .search-box {
     margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
