@@ -21,7 +21,11 @@ def music(request, key):
         music_id = key
     )
 
-    music = Music.objects.get(pk = key)
+    try:
+        music = Music.objects.get(pk = key)
+    except Music.DoesNotExist as exception:
+        return redirect('/')
+
     context = {
         'music': music
     }
@@ -56,6 +60,7 @@ def search(request):
         return redirect('index')
 
     url = parse.urlparse(link)
+    print(Music.objects.verify_url(url))
     if (url.netloc == '' or not Music.objects.verify_url(url)):
         context = {
             'errors': ["That's not a valid URL"]

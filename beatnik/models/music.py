@@ -1,6 +1,7 @@
 from api_manager.ApiManager import ApiManager
 from api_manager.LinkParser import LinkParser
-from django.db.models import Manager, Model, CharField, IntegerField, URLField
+from django.db import IntegrityError
+from django.db.models import Manager, Model, Q, CharField, IntegerField, URLField
 from urllib import parse
 
 class MusicManager(Manager):
@@ -21,6 +22,14 @@ class MusicManager(Manager):
 
         return music
 
+    def get_and_populate_existing(self, music):
+        query = Q(apple_url = music.apple_url) | Q(gpm_url = music.gpm_url) | Q(soundcloud_url =
+                music.soundcloud_url) | Q(spotify_url = music.spotify_url)
+
+        existing_music = self.get(query, ~Q(pk = music.pk))
+
+        return self.merge(existing_music, music)
+
     # get_or_create :: (6)Tuple -> Music
     def get_or_create(self, url):
         if LinkParser.apple_netloc in url.netloc:
@@ -40,15 +49,35 @@ class MusicManager(Manager):
 
         if new:
             music = self.convert(music, link)
-            music.save()
+            try:
+                music.save()
+            except IntegrityError as exception:
+                existing_music = self.get_and_populate_existing(music)
+                music.delete()
+                existing_music.save()
+                music = existing_music
 
         return music
+
+    def merge(self, old, new):
+        if old.artwork is None:
+            old.artwork = new.artwork
+        if old.apple_url is None:
+            old.apple_url = new.apple_url
+        if old.gpm_url is None:
+            old.gpm_url = new.gpm_url
+        if old.soundcloud_url is None:
+            old.soundcloud_url = new.soundcloud_url
+        if old.spotify_url is None:
+            old.spotify_url = new.spotify_url
+
+        return old
 
     # verify_url :: (6)Tuple -> Boolean
     def verify_url(self, url):
         return LinkParser.apple_netloc in url.netloc \
                 or LinkParser.gpm_netloc in url.netloc \
-                or LinkParser.soundcloud_netloc not in url.netloc \
+                or LinkParser.soundcloud_netloc in url.netloc \
                 or LinkParser.spotify_netloc in url.netloc
 
 class Music(Model):
