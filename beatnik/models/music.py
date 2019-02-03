@@ -26,7 +26,7 @@ class MusicManager(Manager):
         query = Q(apple_url = music.apple_url) | Q(gpm_url = music.gpm_url) | Q(soundcloud_url =
                 music.soundcloud_url) | Q(spotify_url = music.spotify_url)
 
-        existing_music = self.get(query, ~Q(pk = music.pk))
+        existing_music = self.filter(query, ~Q(pk = music.pk)).first()
 
         return self.merge(existing_music, music)
 
@@ -60,6 +60,9 @@ class MusicManager(Manager):
         return music
 
     def merge(self, old, new):
+        if old is None:
+            return new
+
         if old.artwork is None:
             old.artwork = new.artwork
         if old.apple_url is None:
