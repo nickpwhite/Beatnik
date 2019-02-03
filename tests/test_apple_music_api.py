@@ -1,14 +1,14 @@
 import os
 from django.test import TestCase
 
-from ..apple_music_api.AppleMusicApi import AppleMusicApi
+from beatnik.api_manager.clients import AppleMusicApi
 
 class TestAppleMusicApi(TestCase):
 
     def setUp(self):
-        self.appleMusicApi = AppleMusicApi(key_id=os.environ['APPLE_KEY_ID'],
-                issuer=os.environ['APPLE_KEY_ISSUER'],
-                key_filename=os.environ['APPLE_KEY_PATH'])
+        self.appleMusicApi = AppleMusicApi(os.environ['APPLE_KEY_ID'],
+                os.environ['APPLE_KEY_ISSUER'],
+                os.environ['APPLE_KEY'])
 
     def test_get_album(self):
         album_id = "1265893523"

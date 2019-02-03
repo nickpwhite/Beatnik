@@ -8,5 +8,5 @@ class Utils:
                 item = cls.dict_find(v, key)
                 if item is not None:
                     return item
-        
+
         return None

@@ -60,7 +60,6 @@ def search(request):
         return redirect('index')
 
     url = parse.urlparse(link)
-    print(Music.objects.verify_url(url))
     if (url.netloc == '' or not Music.objects.verify_url(url)):
         context = {
             'errors': ["That's not a valid URL"]

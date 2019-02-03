@@ -1,6 +1,6 @@
 import itertools
 
-from .Utils import Utils
+from beatnik.api_manager.utils import Utils
 
 class SearchHandler:
     def __init__(self, spotify_api, link_converter):
@@ -12,9 +12,9 @@ class SearchHandler:
         albums = raw_results.get('albums', {}).get('items', [])
         tracks = raw_results.get('tracks', []).get('items', [])
 
-        ordered_results = [ result 
-                for tup in itertools.zip_longest(albums, tracks) 
-                for result in tup 
+        ordered_results = [ result
+                for tup in itertools.zip_longest(albums, tracks)
+                for result in tup
                 if result is not None ]
 
         results = []
@@ -27,11 +27,11 @@ class SearchHandler:
                 'art': Utils.dict_find(result, 'images')[0]['url'],
                 'album': result.get('album', {}).get('name'),
             }
-            links = { 
+            links = {
                 'apple_link': self.link_converter.get_apple_link(info),
                 'gpm_link': self.link_converter.get_gpm_link(info),
                 'soundcloud_link': self.link_converter.get_soundcloud_link(info),
-                'spotify_link': result['external_urls']['spotify'] 
+                'spotify_link': result['external_urls']['spotify']
             }
 
             info['links'] = links

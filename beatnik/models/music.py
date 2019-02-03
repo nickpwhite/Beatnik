@@ -1,5 +1,4 @@
-from api_manager.ApiManager import ApiManager
-from api_manager.LinkParser import LinkParser
+from beatnik.api_manager import ApiManager, LinkParser
 from django.db import IntegrityError
 from django.db.models import Manager, Model, Q, CharField, IntegerField, URLField
 from urllib import parse
