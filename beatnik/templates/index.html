@@ -5,14 +5,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="theme-color" content="#000000">
-  <meta name="description" content="Beatnik makes it easy to share music that you love with the people most important to you!">
+  <meta name="description" content="Beatnik makes it easy to share music that you love with the people you know will love it too.">
+  {% block og_meta %}
   <meta property="og:title" content="Beatnik - Handy music sharing">
-  <meta property="og:url" content="https://beatnik-app.herokuapp.com/index" />
-  {% block preview_image %}
-  <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365" />
+  <meta property="og:url" content="https://beatnik-app.herokuapp.com/index">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365">
   {% endblock %}
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:description" content="Beatnik makes it easy to share music that you love with the people you know will love it too.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
   <!--
     manifest.json provides metadata used when your web app is added to the
     homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -42,7 +43,7 @@
   <meta name="msapplication-TileColor" content="#FFFFFF">
   <meta name="msapplication-TileImage" content="{% static "favicon-144.png" %}">
   <meta name="msapplication-config" content="{% static "browserconfig.xml" %}">
-  <title>Beatnik - Handy music sharing</title>
+  <title>Beatnik - Streaming music sharing</title>
 </head>
 <body>
   <header class="header">

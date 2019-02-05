@@ -1,8 +1,10 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block preview_image %}
-<meta property="og:image" content={{ music.artwork }}
+{% block og_meta %}
+<meta property="og:title" content="{{ music.name }} - {{ music.artist }}">
+<meta property="og:url" content="https://beatnik-app.herokuapp.com/music/{{ music.id }}">
+<meta property="og:image" content="{{ music.artwork }}">
 {% endblock %}
 
 {% block result %}
