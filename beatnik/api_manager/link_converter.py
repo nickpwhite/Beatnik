@@ -39,6 +39,9 @@ class LinkConverter:
         else:
             self.logger.error("Received a media type I can't handle")
 
+        if music.spotify_url is not None:
+            music.artwork = self.link_parser.get_spotify_artwork(music)
+
         return music
 
     def get_apple_link(self, info):

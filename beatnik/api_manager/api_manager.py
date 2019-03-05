@@ -58,7 +58,5 @@ class ApiManager:
 
     def convert_link(self, music):
         music = self.link_converter.convert_link(music)
-        if music.artwork is None:
-            music.artwork = self.link_parser.get_spotify_artwork(music)
 
         return music
