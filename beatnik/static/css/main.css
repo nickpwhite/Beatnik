@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+form {
+  width: 100%;
+}
+
 li {
   padding: 5px 0;
 }
@@ -134,10 +138,6 @@ ul {
   width: 100%;
 }
 
-.search-form {
-  width: 100%;
-}
-
 .subtitle {
   padding-top: 7px;
   padding-bottom: 7px;
@@ -198,6 +198,20 @@ ul {
   vertical-align: text-bottom;
 }
 
+.settings-item {
+  margin-bottom: 5px;
+}
+
+.settings-icon {
+  height: 27px;
+  margin-top: 20px;
+  width: 27px;
+}
+
+.reset-button {
+  margin-right: 5px;
+}
+
 @media only screen and (max-width: 375px) {
   .service-description {
     font-size: 5vw;
@@ -215,6 +229,16 @@ ul {
   .col-75 {
     width: 100%;
     flex: 0 0 100%;
+  }
+
+  .m-col-10 {
+    width: 10%;
+    flex: 0 0 10%;
+  }
+
+  .m-col-90 {
+    width: 90%;
+    flex: 0 0 90%;
   }
 
   .artwork {

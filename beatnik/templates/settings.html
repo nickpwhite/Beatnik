@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+  <div class="flex-row">
+    <h1>Settings</h1>
+  </div>
+  <div class="flex-row">
+    <form id="settings-form" action="/settings" method="post">
+      {% csrf_token %}
+      <div class="flex-row settings-item">
+        <div class="col-50">
+          <label for="redirect_to">Automatically redirect to</label>
+        </div>
+        <div class="col-50">
+          <select id="redirect_to" name="redirect_to">
+            <option value="none" {% if redirect_to == "none" %}selected{% endif %}>
+              None
+            </option>
+            <option value="apple" {% if redirect_to == "apple" %}selected{% endif %}>
+              Apple Music
+            </option>
+            <option value="gpm" {% if redirect_to == "gpm" %}selected{% endif %}>
+              Google Play Music
+            </option>
+            <option value="soundcloud" {% if redirect_to == "soundcloud" %}selected{% endif %}>
+              Soundcloud
+            </option>
+            <option value="spotify" {% if redirect_to == "spotify" %}selected{% endif %}>
+              Spotify
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="flex-row settings-item">
+        <div class="col-50">
+          <label for="tracking">Allow usage data collection?</label>
+        </div>
+        <div class="col-50">
+          <input type="checkbox" id="tracking" name="tracking"
+            {% if tracking == "on" %}checked{% endif %}>
+        </div>
+      </div>
+      <div class="flex-row">
+        <input class="reset-button" type="reset" value="Reset">
+        <input type="submit" value="Save Settings">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

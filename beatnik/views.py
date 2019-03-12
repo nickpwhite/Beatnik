@@ -1,5 +1,5 @@
 from beatnik.models.music import Music
-from beatnik.models.analytics import FormSubmit, MusicAccess, MusicClick
+from beatnik.models.analytics import FormSubmit, MusicAccess
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from urllib import parse
@@ -14,12 +14,13 @@ def music(request, key):
     if request.method != 'GET':
         return HttpResponse(status = 405)
 
-    MusicAccess.objects.create(
-        user_agent = request.META.get('USER_AGENT'),
-        ip_address = request.META.get('REMOTE_ADDR'),
-        referer = request.META.get('HTTP_REFERER'),
-        music_id = key
-    )
+    if request.session.get('tracking', 'off') == 'on':
+        MusicAccess.objects.create(
+            user_agent = request.META.get('USER_AGENT'),
+            ip_address = request.META.get('REMOTE_ADDR'),
+            referer = request.META.get('HTTP_REFERER'),
+            music_id = key
+        )
 
     try:
         music = Music.objects.get(pk = key)
@@ -48,13 +49,15 @@ def search(request):
         return HttpResponse(status = 405)
 
     link = request.GET.get('q')
-    FormSubmit.objects.create(
-        user_agent = request.META.get('USER_AGENT'),
-        ip_address = request.META.get('REMOTE_ADDR'),
-        referer = request.META.get('HTTP_REFERER'),
-        query_string = request.META.get('QUERY_STRING'),
-        query = link
-    )
+
+    if request.session.get('tracking', 'off') == 'on':
+        FormSubmit.objects.create(
+            user_agent = request.META.get('USER_AGENT'),
+            ip_address = request.META.get('REMOTE_ADDR'),
+            referer = request.META.get('HTTP_REFERER'),
+            query_string = request.META.get('QUERY_STRING'),
+            query = link
+        )
 
     if (link is None):
         return redirect('index')
@@ -73,28 +76,30 @@ def search(request):
 
     return redirect(info)
 
-def open(request):
-    if request.method != 'POST':
+def settings(request):
+    print(vars(request))
+    if request.method == 'GET':
+        return get_settings(request)
+    elif request.method == 'POST':
+        return post_settings(request)
+    else:
         return HttpResponse(status = 405)
 
-    link = request.POST.get('link')
-    url = parse.urlparse(link)
-    link_type = MusicClick.NETLOC_TO_TYPE[url.netloc]
+def get_settings(request):
+    context = {
+        'redirect_to': request.session.get('redirect_to', 'none'),
+        'tracking': request.session.get('tracking', 'off')
+    }
 
-    does_redirect = request.POST.get('redirect') == 'on'
+    return render(request, 'settings.html', context)
 
-    if does_redirect:
-        request.session['redirect_to'] = link_type
-    elif 'redirect_to' in request.session:
-        del request.session['redirect_to']
+def post_settings(request):
+    context = {
+        'redirect_to': request.POST.get('redirect_to'),
+        'tracking': request.POST.get('tracking', 'off')
+    }
 
-    MusicClick.objects.create(
-        user_agent = request.META.get('USER_AGENT'),
-        ip_address = request.META.get('REMOTE_ADDR'),
-        referer = request.META.get('HTTP_REFERER'),
-        link = link,
-        link_type = link_type,
-        redirect = does_redirect
-    )
+    request.session['redirect_to'] = context['redirect_to']
+    request.session['tracking'] = context['tracking']
 
-    return redirect(link)
+    return render(request, 'settings.html', context)

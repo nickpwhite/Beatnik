@@ -48,26 +48,34 @@
 <body>
   <header class="header">
     <div class="flex-row">
-      <div class="col-50">
+      <div class="col-50 m-col-90">
         <a href="/" class="title">
-        <h1>Beatnik</h1>
-      </div>
-      <div class="col-25 subtitle extension">
-        <a class="title" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
-          <h2>Chrome Extension</h2>
+          <h1>Beatnik</h1>
         </a>
       </div>
-      <div class="col-25 subtitle extension">
-        <a class="title" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
-          <h2>Firefox Extension</h2>
-        </a>
+      <div class="flex-row col-50 m-col-10 subtitle">
+        <div class="col-33 extension">
+          <a class="title" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
+            <h2>Chrome Extension</h2>
+          </a>
+        </div>
+        <div class="col-33 extension">
+          <a class="title" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
+            <h2>Firefox Extension</h2>
+          </a>
+        </div>
+        <div class="col-33">
+          <a class="" href="/settings">
+            <img alt="settings" class="settings-icon" src={% static "images/settings.svg" %}/>
+          </a>
       </div>
     </div>
   </header>
 
+  {% block content %}
   <div class="content">
     <div class="flex-row">
-      <form id="search-form" action="/search" method="get" class="search-form flex-row">
+      <form id="search-form" action="/search" method="get" class="flex-row">
         <div class="col-75">
           <input
              name="q"
@@ -96,5 +104,6 @@
     Additionally, you can download the browser extension into your favorite browser which will automatically redirect you here from any links to our supported streaming services.
     </p>
   </div>
+  {% endblock %}
 </body>
 </html>

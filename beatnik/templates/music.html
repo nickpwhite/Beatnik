@@ -24,12 +24,12 @@
     </div>
     <div class="flex-row col-50">
       <div class="flex-col">
-        <form action="/open" method="post" target="_blank">
+        <form target="_blank">
           {% csrf_token %}
           <ul>
             {% if music.apple_url %}
             <li>
-              <button class="music-button" name="link" value="{{ music.apple_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.apple_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/apple_logo.png" %}" />
@@ -43,7 +43,7 @@
             {% endif %}
             {% if music.gpm_url %}
             <li>
-              <button class="music-button" name="link" value="{{ music.gpm_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.gpm_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
@@ -57,7 +57,7 @@
             {% endif %}
             {% if music.soundcloud_url %}
             <li>
-              <button class="music-button" name="link" value="{{ music.soundcloud_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.soundcloud_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
@@ -71,7 +71,7 @@
             {% endif %}
             {% if music.spotify_url %}
             <li>
-              <button class="music-button" name="link" value="{{ music.spotify_url }}" type="submit">
+              <button class="music-button" formaction="{{ music.spotify_url }}" type="submit">
                 <div class="flex-row">
                   <div class="service-logo-container">
                     <img alt="" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
@@ -84,10 +84,6 @@
             </li>
             {% endif %}
           </ul>
-          <fieldset class="redirect">
-            <input id="redirect" type="checkbox" name="redirect">
-            <label for="redirect" class="redirect-label">Automatically redirect to selected service?</label>
-          </fieldset>
         </form>
       </div>
     </div>
