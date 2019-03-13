@@ -103,3 +103,14 @@ def post_settings(request):
     request.session['tracking'] = context['tracking']
 
     return render(request, 'settings.html', context)
+
+def contact(request):
+    if request.method == 'GET':
+        return get_contact(request)
+    elif request.method == 'POST':
+        return post_contact(request)
+    else:
+        return HttpResponse(status = 405)
+
+def get_contact(request):
+    return render(request, 'contact.html')

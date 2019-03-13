@@ -46,64 +46,70 @@
   <title>Beatnik - Streaming music sharing</title>
 </head>
 <body>
-  <header class="header">
-    <div class="flex-row">
-      <div class="col-50 m-col-90">
-        <a href="/" class="title">
-          <h1>Beatnik</h1>
+  <div class="container">
+    <header class="header">
+      <div class="flex-row">
+        <div class="col-50 m-col-90">
+          <a href="/" class="title">
+            <h1>Beatnik</h1>
+          </a>
+        </div>
+        <div class="flex-row col-50 m-col-10 subtitle">
+          <div class="col-33 extension">
+            <a class="title" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
+              <h2>Chrome Extension</h2>
+            </a>
+          </div>
+          <div class="col-33 extension">
+            <a class="title" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
+              <h2>Firefox Extension</h2>
+            </a>
+          </div>
+          <div class="col-33">
+            <a class="" href="/settings">
+              <img alt="settings" class="settings-icon" src={% static "images/settings.svg" %}/>
+            </a>
+        </div>
+      </div>
+    </header>
+
+    {% block content %}
+    <div class="content">
+      <div class="flex-row">
+        <form id="search-form" action="/search" method="get" class="flex-row">
+          <div class="col-75">
+            <input
+               name="q"
+               class="search-box"
+               type="text"
+               placeholder="Enter a link to convert"
+               value="{{ query }}" required>
+          </div>
+          <div class="col-25">
+            <button class="search-button" type="submit">Convert</button>
+          </div>
+        </form>
+      </div>
+      {% block errors %}{% endblock %}
+      {% block result %}{% endblock %}
+      <p class="intro">
+      Beatnik makes it easy to share music that you love with the people you know will love it too.
+      </p>
+      <p class="intro">
+      To get started just paste a link into the search bar above and press convert. In no time you'll have a shareable link that you can send to your friends, no matter how they listen.
+      </p>
+      <p class="intro">
+      Additionally, you can download the browser extension into your favorite browser which will automatically redirect you here from any links to our supported streaming services.
+      </p>
+    </div>
+    {% endblock %}
+    <footer class="header">
+      <div class="flex-row">
+        <a href="/contact" class="title">
+          <h3>Contact Us</h3>
         </a>
       </div>
-      <div class="flex-row col-50 m-col-10 subtitle">
-        <div class="col-33 extension">
-          <a class="title" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
-            <h2>Chrome Extension</h2>
-          </a>
-        </div>
-        <div class="col-33 extension">
-          <a class="title" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
-            <h2>Firefox Extension</h2>
-          </a>
-        </div>
-        <div class="col-33">
-          <a class="" href="/settings">
-            <img alt="settings" class="settings-icon" src={% static "images/settings.svg" %}/>
-          </a>
-      </div>
-    </div>
-  </header>
-
-  {% block content %}
-  <div class="content">
-    <div class="flex-row">
-      <form id="search-form" action="/search" method="get" class="flex-row">
-        <div class="col-75">
-          <input
-             name="q"
-             class="search-box"
-             type="text"
-             placeholder="Enter a link to convert"
-             value="{{ query }}" required>
-        </div>
-        <div class="col-25">
-          <button class="search-button" type="submit">Convert</button>
-        </div>
-      </form>
-    </div>
-    {% block errors %}{% endblock %}
-    {% block result %}{% endblock %}
+    </footer>
   </div>
-
-  <div class="content">
-    <p class="intro">
-    Beatnik makes it easy to share music that you love with the people you know will love it too.
-    </p>
-    <p class="intro">
-    To get started just paste a link into the search bar above and press convert. In no time you'll have a shareable link that you can send to your friends, no matter how they listen.
-    </p>
-    <p class="intro">
-    Additionally, you can download the browser extension into your favorite browser which will automatically redirect you here from any links to our supported streaming services.
-    </p>
-  </div>
-  {% endblock %}
 </body>
 </html>

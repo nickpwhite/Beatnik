@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+  <div class="flex-row">
+    <h1>Contact Us</h1>
+  </div>
+  <div class="flex-row">
+    <form id="contact-form" action="/contact" method="post">
+      {% csrf_token %}
+      <div class="flex-row form-group">
+        <input type="email" name="address" id="address" placeholder="Email" class="form-control">
+      </div>
+      <div class="flex-row form-group">
+        <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control">
+      </div>
+      <div class="flex-row form-group">
+        <textarea id="body" name="body" placeholder="Message" rows=4 class="form-control"></textarea>
+      </div>
+      <div class="flex-row form-group">
+        <input type="submit" value="Send Message">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
