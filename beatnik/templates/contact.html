@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+  <div class="flex-row">
+    <h1>Contact Us</h1>
+  </div>
+  <div class="flex-row">
+    <form id="contact-form" action="/contact" method="post">
+      {% csrf_token %}
+      <div class="flex-row form-group">
+        <input type="email" name="address" id="address" placeholder="Email" class="form-control" required>
+        {% if 'email' in errors %}<div class="flex-row error">{{ errors.email }}</div>{% endif %}
+      </div>
+      <div class="flex-row form-group">
+        <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control" maxlength="78" required>
+        {% if 'subject' in errors %}<div class="flex-row error">{{ errors.subject }}</div>{% endif %}
+      </div>
+      <div class="flex-row form-group">
+        <textarea id="body" name="body" placeholder="Message" rows=4 class="form-control" required></textarea>
+        {% if 'body' in errors %}<div class="flex-row error">{{ errors.body }}</div>{% endif %}
+      </div>
+      <div class="flex-row form-group">
+        <input type="submit" value="Send Message">
+      </div>
+      {% if success %}<div class="flex-row success">Message sent, thanks!</div>{% endif %}
+      {% if not success %}<div class="flex-row error">{{ message }}</div>{% endif %}
+    </form>
+  </div>
+</div>
+{% endblock %}

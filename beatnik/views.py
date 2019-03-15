@@ -1,5 +1,7 @@
+from beatnik.models.message import Message
 from beatnik.models.music import Music
 from beatnik.models.analytics import FormSubmit, MusicAccess
+from django.db import IntegrityError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from urllib import parse
@@ -103,3 +105,41 @@ def post_settings(request):
     request.session['tracking'] = context['tracking']
 
     return render(request, 'settings.html', context)
+
+def contact(request):
+    if request.method == 'GET':
+        return get_contact(request)
+    elif request.method == 'POST':
+        return post_contact(request)
+    else:
+        return HttpResponse(status = 405)
+
+def get_contact(request):
+    return render(request, 'contact.html')
+
+def post_contact(request):
+    errors = {}
+    from_address = request.POST['address']
+    subject = request.POST['subject']
+    body = request.POST['body']
+
+    if subject.strip() == "":
+        errors['email'] = 'Empty email address'
+    if subject.strip() == "":
+        errors['subject'] = 'Empty subject'
+    if body.strip() == "":
+        errors['body'] = 'Empty body'
+
+    if errors:
+        return render(request, 'contact.html', { 'errors': errors, 'success': false })
+    else:
+        try:
+            Message.objects.create(
+                from_address = from_address,
+                subject = subject,
+                body = body
+            )
+        except IntegrityError:
+            return render(request, 'contact.html', { 'success': False, 'message': 'Already submitted' })
+
+        return render(request, 'contact.html', { 'success': True })
