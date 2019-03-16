@@ -24,66 +24,56 @@
     </div>
     <div class="flex-row col-50">
       <div class="flex-col">
-        <form target="_blank">
-          <ul>
-            {% if music.apple_url %}
-            <li>
-              <button class="music-button" formaction="{{ music.apple_url }}" type="submit">
-                <div class="flex-row">
-                  <div class="service-logo-container">
-                    <img alt="" class="service-logo" src="{% static "images/apple_logo.png" %}" />
-                  </div>
-                  <div class="service-description">
-                    Apple Music
-                  </div>
-                </div>
-              </button>
-            </li>
-            {% endif %}
-            {% if music.gpm_url %}
-            <li>
-              <button class="music-button" formaction="{{ music.gpm_url }}" type="submit">
-                <div class="flex-row">
-                  <div class="service-logo-container">
-                    <img alt="" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
-                  </div>
-                  <div class="service-description">
-                    Google Play Music
-                  </div>
-                </div>
-              </button>
-            </li>
-            {% endif %}
-            {% if music.soundcloud_url %}
-            <li>
-              <button class="music-button" formaction="{{ music.soundcloud_url }}" type="submit">
-                <div class="flex-row">
-                  <div class="service-logo-container">
-                    <img alt="" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
-                  </div>
-                  <div class="service-description">
-                    Soundcloud
-                  </div>
-                </div>
-              </button>
-            </li>
-            {% endif %}
-            {% if music.spotify_url %}
-            <li>
-              <button class="music-button" formaction="{{ music.spotify_url }}" type="submit">
-                <div class="flex-row">
-                  <div class="service-logo-container">
-                    <img alt="" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
-                  </div>
-                  <div class="service-description">
-                    Spotify
-                  </div>
-                </div>
-              </button>
-            </li>
-            {% endif %}
-          </ul>
-        </form>
+        <ul>
+          {% if music.apple_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.apple_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Apple Music" class="service-logo" src="{% static "images/apple_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Apple Music
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if music.gpm_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.gpm_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Google Play Music" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Google Play Music
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if music.soundcloud_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.soundcloud_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Soundcloud" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Soundcloud
+              </div>
+            </a>
+          </li>
+          {% endif %}
+          {% if music.spotify_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.spotify_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Spotify" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Spotify
+              </div>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
       </div>
     </div>
   </div>

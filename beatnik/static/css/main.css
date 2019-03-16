@@ -176,8 +176,10 @@ ul {
 }
 
 .service-description {
+  display: flex;
   font-size: x-large;
   line-height: 30px;
+  margin: auto;
   text-align: left;
   width: 75%;
   flex: 0 0 75%;
@@ -186,11 +188,11 @@ ul {
 .service-logo {
   height: 30px;
   width: 30px;
-  margin-right: 20px;
-  vertical-align: middle;
+  margin: auto;
 }
 
 .service-logo-container {
+  display: flex;
   width: 25%;
   flex: 0 0 25%;
 }
@@ -208,6 +210,7 @@ ul {
   border-width: 0;
   color: #fff;
   height: 50px;
+  text-decoration: none;
   width: 300px;
 }
 
