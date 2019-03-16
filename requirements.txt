@@ -7,7 +7,7 @@ chardet==3.0.4
 cryptography==2.3.1
 cssselect==1.0.3
 decorator==4.1.2
-Django==2.1.5
+Django==2.1.7
 django-cors-headers==2.1.0
 djangorestframework==3.7.3
 fudge==1.1.0
