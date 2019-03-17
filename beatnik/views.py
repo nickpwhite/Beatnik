@@ -29,8 +29,11 @@ def music(request, key):
     except Music.DoesNotExist as exception:
         return redirect('/')
 
+    rated = request.session.get('rated.{0}'.format(key), False)
+
     context = {
-        'music': music
+        'music': music,
+        'rated': rated
     }
 
     redirect_to = request.session.get('redirect_to')
@@ -143,3 +146,22 @@ def post_contact(request):
             return render(request, 'contact.html', { 'success': False, 'message': 'Already submitted' })
 
         return render(request, 'contact.html', { 'success': True })
+
+def rating(request):
+    if request.method != 'POST':
+        return HttpResponse(statue = 405)
+
+    music_id = request.POST.get('music_id')
+    session_key = 'rated.{0}'.format(music_id)
+
+    if request.session.get(session_key, False):
+        return redirect('/music/{0}'.format(music_id))
+
+    music = Music.objects.get(pk = music_id)
+    rating = int(request.POST.get('rating'))
+
+    music.match_rating += rating
+    music.save()
+    request.session[session_key] = True
+
+    return redirect('/music/{0}'.format(music_id))

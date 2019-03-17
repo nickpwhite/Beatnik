@@ -73,6 +73,25 @@
             </a>
           </li>
           {% endif %}
+          <li>
+            {% if rated %}
+            <div class="flex-row">Thank you! We're considering your feedback.</div>
+            {% else %}
+            <form id="rating-form" action="/rating" method="post" class="flex-row">
+              {% csrf_token %}
+              <input type="hidden" name="music_id" value="{{music.id}}">
+              <fieldset class="rating-group flex-row">
+                <legend>Did we get it right?</legend>
+                <div class="m-col-50 radio-group">
+                  <label><input type="radio" name="rating" value="1">Yes</label>
+                  <label><input type="radio" name="rating" value="-1">No</label>
+                </div>
+                <div class="m-col-50">
+                  <input class="rating-button" type="submit" value="Submit Feedback">
+                </div>
+              </fieldset>
+            </form>
+            {% endif %}
         </ul>
       </div>
     </div>

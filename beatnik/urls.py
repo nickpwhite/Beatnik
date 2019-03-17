@@ -7,5 +7,6 @@ urlpatterns = [
     re_path(r'^search/?', views.search),
     re_path(r'^settings/?', views.settings),
     re_path(r'^contact/?', views.contact),
+    re_path(r'^rating/?', views.rating),
     re_path(r'^.*$', views.index),
 ]

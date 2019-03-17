@@ -22,16 +22,15 @@ input[type="submit"] {
   font-size: 100%;
   text-align: center;
   padding: 5px;
-  height: 100%;
-}
-
-input[type="submit"] {
-  width: 100%;
 }
 
 input[type="reset"]:focus,
 input[type="submit"]:focus {
   box-shadow: 2px 2px 3px grey;
+}
+
+input[type="reset"] {
+  margin-right: 10px;
 }
 
 input[type="email"]:focus,
@@ -83,9 +82,19 @@ ul {
   flex: 0 0 33%;
 }
 
+.col-40 {
+  width: 40%;
+  flex: 0 0 40%;
+}
+
 .col-50 {
   width: 50%;
   flex: 0 0 50%;
+}
+
+.col-60 {
+  width: 60%;
+  flex: 0 0 60%;
 }
 
 .col-66 {
@@ -128,6 +137,11 @@ ul {
   flex: 0 0 100%;
 }
 
+.m-col-50 {
+  height: 50%;
+  flex: 0 0 50%;
+}
+
 .header {
   background-color: #222;
   padding: 1px 10px;
@@ -163,6 +177,10 @@ ul {
   padding: 5px;
   text-align: center;
   width: 95%;
+}
+
+.search-button {
+  width: 100%;
 }
 
 .subtitle {
@@ -238,11 +256,6 @@ ul {
   width: 27px;
 }
 
-.reset-button {
-  margin-right: 5px;
-  width: 95%;
-}
-
 .form-group {
   margin-bottom: 5px;
 }
@@ -254,6 +267,15 @@ ul {
   padding: 6px 12px;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   width: 100%;
+}
+
+.rating-group {
+  margin: 0px;
+  width: 274px;
+}
+
+.radio-group {
+  margin: auto;
 }
 
 @media only screen and (max-width: 375px) {
@@ -280,6 +302,11 @@ ul {
     flex: 0 0 10%;
   }
 
+  .m-col-50 {
+    width: 50%;
+    flex: 0 0 50%;
+  }
+
   .m-col-90 {
     width: 90%;
     flex: 0 0 90%;
@@ -298,7 +325,8 @@ ul {
     display: none;
   }
 
-  .music-button {
+  .music-button,
+  .rating-group {
     width: 100%;
   }
 
@@ -306,10 +334,6 @@ ul {
     margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
-    width: 100%;
-  }
-
-  .reset-button {
     width: 100%;
   }
 }
