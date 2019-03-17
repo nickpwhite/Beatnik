@@ -1,0 +1,6 @@
+from beatnik.views.contact import Contact
+from beatnik.views.index import Index
+from beatnik.views.music import Music
+from beatnik.views.rating import Rating
+from beatnik.views.search import Search
+from beatnik.views.settings import Settings
