@@ -28,7 +28,7 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ['DJANGO_DEBUG'])
 
-ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'beatnik-app.herokuapp.com' ]
+ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'beatnik-app.herokuapp.com', 'www.beatnikapp.com' ]
 
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
