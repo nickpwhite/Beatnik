@@ -7,7 +7,7 @@ sched = BlockingScheduler({
 
 @sched.scheduled_job('interval', minutes=29)
 def keep_alive():
-    response = requests.get('https://beatnik-app.herokuapp.com/')
+    response = requests.get('http://beatnikapp.com/')
     print(response)
 
 sched.start()
