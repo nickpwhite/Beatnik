@@ -49,26 +49,24 @@
   <div class="container">
     <header class="header">
       <div class="flex-row">
-        <div class="col-50 m-col-90">
+        <div class="col-90 m-col-90">
           <a href="/" class="title">
             <h1>Beatnik</h1>
           </a>
         </div>
-        <div class="flex-row col-50 m-col-10 subtitle">
-          <div class="col-33 extension">
-            <a class="title" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
-              <h2>Chrome Extension</h2>
-            </a>
-          </div>
-          <div class="col-33 extension">
-            <a class="title" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
-              <h2>Firefox Extension</h2>
-            </a>
-          </div>
-          <div class="col-33">
-            <a class="" href="/settings">
-              <img alt="settings" class="settings-icon" src={% static "images/settings.svg" %}/>
-            </a>
+        <div class="col-10 m-col-10 subtitle">
+          <a class="extension icon-link" target="_blank" rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
+            <img alt="Chrome Extension" title="Chrome Extension" class="icon" src={% static "images/chrome.svg" %}/>
+          </a>
+          <a class="extension icon-link" target="_blank" rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
+            <img alt="Firefox Extension" title="Firefox Extension" class="icon" src={% static "images/firefox.svg" %}/>
+          </a>
+          <a class="icon-link" target="_blank" rel="noopener noreferer" href="https://github.com/nick41496/Beatnik">
+            <img alt="Github" title="Github" class="icon" src={% static "images/github.png" %}/>
+          </a>
+          <a class="icon-link" href="/settings">
+            <img alt="Settings" title="Settings" class="icon" src={% static "images/settings.svg" %}/>
+          </a>
         </div>
       </div>
     </header>

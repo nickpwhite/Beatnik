@@ -72,6 +72,11 @@ ul {
   flex-flow: row-reverse wrap;
 }
 
+.col-10 {
+  width: 10%;
+  flex: 0 0 10%;
+}
+
 .col-25 {
   width: 25%;
   flex: 0 0 25%;
@@ -105,6 +110,11 @@ ul {
 .col-75 {
   width: 75%;
   flex: 0 0 75%;
+}
+
+.col-90 {
+  width: 90%;
+  flex: 0 0 90%;
 }
 
 .col-100 {
@@ -250,10 +260,16 @@ ul {
   vertical-align: text-bottom;
 }
 
-.settings-icon {
+.icon {
   height: 27px;
   margin-top: 20px;
   width: 27px;
+}
+
+.icon-link {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
 }
 
 .form-group {
