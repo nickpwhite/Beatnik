@@ -1,7 +1,7 @@
 # Beatnik
-Beatnik is a service that aggregates links for music streaming services given a song, album, or artist. It is currently deployed on Heroku at [https://beatnik-app.herokuapp.com/](https://beatnik-app.herokuapp.com/)
+Beatnik is a service that aggregates links for music streaming services given a song, album, or artist. It is currently deployed on Heroku at [https://www.beatnikapp.com/](https://www.beatnikapp.com/)
 
-## apple_music_api 
+## apple_music_api
 An API client for the Apple Music API which implements only the basic functionality necessary (getting data for a song/album given a link and search).
 
 ## beatnik
