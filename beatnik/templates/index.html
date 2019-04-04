@@ -110,18 +110,26 @@
           </div>
         </a>
         <div class="flex-col col-10 link-container">
+          {% if music.apple_url %}
           <a class="flex-row music-button" target="_blank" href="{{ music.apple_url }}">
             <img alt="Apple Music" class="service-logo" src="{% static "images/apple_logo.png" %}" />
           </a>
+          {% endif %}
+          {% if music.gpm_url %}
           <a class="flex-row music-button" target="_blank" href="{{ music.gpm_url }}">
             <img alt="Google Play Music" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
           </a>
+          {% endif %}
+          {% if music.soundcloud_url %}
           <a class="flex-row music-button" target="_blank" href="{{ music.soundcloud_url }}">
             <img alt="Soundcloud" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />
           </a>
+          {% endif %}
+          {% if music.spotify_url %}
           <a class="flex-row music-button" target="_blank" href="{{ music.spotify_url }}">
             <img alt="Spotify" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
           </a>
+          {% endif %}
         </div>
       </li>
       {% endfor %}
