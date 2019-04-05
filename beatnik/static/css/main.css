@@ -322,6 +322,10 @@ ul {
   color: #444;
 }
 
+.feed span {
+  padding: 0px;
+}
+
 .pagination {
   margin: auto;
 }
