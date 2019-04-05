@@ -6,27 +6,25 @@ from django.views import View
 
 class Index(View):
     PAGE_SIZE = 10
-    current_page = 0
 
     def get(self, request, page = 0):
         page_count = math.ceil(Music.objects.count() / self.PAGE_SIZE)
-        self.current_page = int(page)
-        offset = request.GET.get('offset', None)
+        current_page = int(page)
+        last_page = page_count - 1
 
-        if offset is not None:
-            new_page = self.current_page + int(offset)
-            if new_page < 0:
-                new_page = 0
-            elif new_page >= page_count:
-                new_page = page_count - 1
+        start = current_page * self.PAGE_SIZE
+        end = (current_page + 1) * self.PAGE_SIZE
+        if current_page == 0:
+            page_range = [current_page, current_page + 1, current_page + 2]
+        elif current_page == last_page:
+            page_range = [current_page - 2, current_page - 1, current_page]
+        else:
+            page_range = [current_page - 1, current_page, current_page + 1]
 
-            self.current_page = new_page
-
-        start = self.current_page * self.PAGE_SIZE
-        end = (self.current_page + 1) * self.PAGE_SIZE
         context = {
-            'current_page': self.current_page,
+            'current_page': current_page,
+            'last_page': last_page,
             'latest_music': Music.objects.order_by('-id')[start:end],
-            'page_range': range(page_count),
+            'page_range': page_range,
         }
         return render(request, 'index.html', context)
