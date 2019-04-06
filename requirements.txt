@@ -21,6 +21,7 @@ lxml==4.1.1
 MechanicalSoup==0.8.0
 mock==2.0.0
 mutagen==1.38
+newrelic==4.16.1.117
 oauth2client==4.1.2
 pbr==3.1.1
 proboscis==1.2.6.0
@@ -37,6 +38,7 @@ pytz==2017.3
 requests==2.20.1
 rsa==3.4.2
 simplejson==3.13.2
+sitemap-generator==0.5.2
 six==1.11.0
 soundcloud==0.5.0
 spotipy==2.4.4
