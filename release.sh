@@ -1,4 +1,4 @@
 #!/bin/bash
 
 python manage.py migrate
-newrelic-admin generate-config $NEWRELIC_LICENSE_KEY newrelic.ini
+newrelic-admin generate-config $NEW_RELIC_LICENSE_KEY newrelic.ini
