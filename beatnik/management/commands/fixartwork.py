@@ -12,5 +12,6 @@ class Command(BaseCommand):
 
         for music in bad_artwork:
             spotify_artwork = api_manager.link_parser.get_spotify_artwork(music)
-            music.artwork = spotify_artwork
-            music.save()
+            if spotify_artwork is not None:
+                music.artwork = spotify_artwork
+                music.save()
