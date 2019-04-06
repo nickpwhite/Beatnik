@@ -100,7 +100,9 @@ class LinkParser:
         return music
 
     def get_spotify_artwork(self, music):
+        print(music.spotify_url)
         url = parse.urlparse(music.spotify_url)
+        print(url)
         item_id = url.path.split('/')[-1]
         prefix = url.path.split('/')[1]
         if prefix == self.spotify_album_prefix:
