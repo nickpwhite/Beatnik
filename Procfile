@@ -1,2 +1,2 @@
-release: ./release.sh
-web: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn beatnik.wsgi
+release: python manage.py migrate
+web: newrelic-admin run-program gunicorn beatnik.wsgi
