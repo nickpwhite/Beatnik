@@ -1,10 +1,13 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block og_meta %}
+{% block meta %}
 <meta property="og:title" content="{{ music.name }} - {{ music.artist }}">
 <meta property="og:url" content="https://beatnik-app.herokuapp.com/music/{{ music.id }}">
 <meta property="og:image" content="{{ music.artwork }}">
+
+<meta name="description" content="Links to {{ music.name }} by {{ music.artist }} on Apple Music, Google Play Music, Soundcloud, and Spotify">
+<title>{{ music.name }} by {{ music.artist }} on Beatnik</title>
 {% endblock %}
 
 {% block result %}

@@ -364,6 +364,10 @@ ul {
   padding: 8px 8px;
 }
 
+.error-page {
+  text-align: center;
+}
+
 @media only screen and (max-width: 375px) {
   .service-description {
     font-size: 5vw;

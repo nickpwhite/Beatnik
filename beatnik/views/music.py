@@ -1,5 +1,6 @@
 from beatnik.models.analytics import MusicAccess
 from beatnik.models.music import Music as MusicModel
+from django.http import Http404
 from django.shortcuts import redirect, render
 from django.views import View
 
@@ -16,7 +17,8 @@ class Music(View):
         try:
             music = MusicModel.objects.get(pk = key)
         except MusicModel.DoesNotExist as exception:
-            return redirect('/')
+            # return render(request, "404.html")
+            raise Http404("Music does not exist")
 
         redirect_to = request.session.get('redirect_to')
 
