@@ -24,7 +24,7 @@ class Index(View):
         context = {
             'current_page': current_page,
             'last_page': last_page,
-            'latest_music': Music.objects.order_by('-id')[start:end],
+            'latest_music': Music.objects.exclude(artwork='').order_by('-id')[start:end],
             'page_range': page_range,
         }
         return render(request, 'index.html', context)
