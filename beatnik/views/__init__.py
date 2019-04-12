@@ -1,5 +1,4 @@
 from beatnik.views.about import About
-from beatnik.views.contact import Contact
 from beatnik.views.index import Index
 from beatnik.views.music import Music
 from beatnik.views.rating import Rating
