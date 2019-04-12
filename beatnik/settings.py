@@ -35,6 +35,8 @@ CORS_ORIGIN_WHITELIST = [
     'beatnik-app.herokuapp.com',
 ]
 
+SECURE_SSL_REDIRECT = True
+
 
 # Application definition
 
