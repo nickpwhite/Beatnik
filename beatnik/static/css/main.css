@@ -152,11 +152,6 @@ ul {
   flex: 0 0 100%;
 }
 
-.m-col-50 {
-  height: 50%;
-  flex: 0 0 50%;
-}
-
 .header {
   background-color: #222;
   padding: 1px 10px;
@@ -311,6 +306,7 @@ ul {
 }
 
 .feed .link-container {
+  height: 50%;
   max-height: 104px;
 }
 
@@ -392,9 +388,19 @@ ul {
     flex: 0 0 20%;
   }
 
+  .m-col-30 {
+    width: 35%;
+    flex: 0 0 35%;
+  }
+
   .m-col-50 {
     width: 50%;
     flex: 0 0 50%;
+  }
+
+  .m-col-65 {
+    width: 65%;
+    flex: 0 0 65%;
   }
 
   .m-col-80 {
