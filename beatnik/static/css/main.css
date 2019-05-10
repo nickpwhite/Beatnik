@@ -284,6 +284,11 @@ ul {
   width: 100%;
 }
 
+.form-label {
+  margin: auto 0;
+  padding-right: 10px;
+}
+
 .rating-group {
   margin: 0px;
   width: 274px;

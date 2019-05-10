@@ -1,0 +1,29 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="content">
+  <h1>Login</h1>
+  <form>
+    <div class="flex-row form-group">
+      <div class="col-10 form-label">
+        <label for="username">Username:</label>
+      </div>
+      <div class="col-50">
+        <input type="text" id="username" name="username" class="form-control" required />
+      </div>
+    </div>
+    <div class="flex-row form-group">
+      <div class="col-10 form-label">
+        <label for"password">Password:</label>
+      </div>
+      <div class="col-50">
+        <input type="password" id="password" name="password" class="form-control" required />
+      </div>
+    </div>
+    <input type="hidden" name="next" value="{{ next }}" />
+    <div class="col-25">
+      <input type="submit" value="Login" class="form-control" />
+    </div>
+  </form>
+</div>
+{% endblock %}
