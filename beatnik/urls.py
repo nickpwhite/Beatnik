@@ -9,5 +9,5 @@ urlpatterns = [
     re_path(r'^about/?', About.as_view()),
     re_path(r'^rating/?', Rating.as_view()),
     re_path(r'^(?P<page>[0-9]+)/?', Index.as_view()),
-    re_path(r'^.*$', Index.as_view()),
+    re_path(r'^$', Index.as_view()),
 ]
