@@ -19,7 +19,7 @@ class MusicManager(Manager):
 
         return self.merge(existing_music, music)
 
-    # get_or_create :: (6)Tuple -> Music
+    # get_or_create :: Url -> Music
     def get_or_create(self, url):
         if LinkParser.apple_netloc in url.netloc:
             link = parse.urlunparse(url)
