@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'beatnik-app.herokuapp.com', 'www.be
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
     'beatnik-app.herokuapp.com',
+    'beatnikapp.com',
 ]
 
 SECURE_SSL_REDIRECT = not DEBUG
