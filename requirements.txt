@@ -35,13 +35,13 @@ PyJWT==1.5.3
 pyquery==1.4.0
 python-dateutil==2.6.1
 pytz==2017.3
-requests==2.20.1
+requests==2.21.0
 rsa==3.4.2
 simplejson==3.13.2
 sitemap-generator==0.5.2
 six==1.11.0
 soundcloud==0.5.0
 spotipy==2.4.4
-urllib3==1.24.1
+urllib3==1.24.3
 validictory==1.1.1
 whitenoise==3.3.1
