@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block result %}
+<ul class="flex-row feed">
+  {% for music in results %}
+  <li class="flex-row col-100">
+    <a href="{{music.url}}" class="flex-row col-100"
+                                  title="{{music.name}} - {{music.artist}}">
+      <div class="col-25 m-col-35">
+        <img class="artwork" src="{{ music.artwork }}" alt="Album cover" />
+      </div>
+      <div class="flex-col col-75 m-col-65">
+        <h2 class="music-info">{{ music.name }}</h2>
+        <h3 class="music-info">{{ music.artist }}</h3>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+{% block feed %}{% endblock %}

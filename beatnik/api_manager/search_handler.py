@@ -12,30 +12,21 @@ class SearchHandler:
         albums = raw_results.get('albums', {}).get('items', [])
         tracks = raw_results.get('tracks', []).get('items', [])
 
-        ordered_results = [ result
-                for tup in itertools.zip_longest(albums, tracks)
-                for result in tup
-                if result is not None ]
+        return [
+            self.get_info(result)
+            for tup in itertools.zip_longest(albums, tracks)
+            for result in tup
+            if result is not None
+            if result.get('external_urls', {}).get('spotify') is not None
+        ]
 
-        results = []
+    def get_info(self, result):
+        link = result.get('external_urls', {}).get('spotify')
 
-        for result in ordered_results:
-            info = {
-                'type': result['type'],
-                'title': result['name'],
-                'artist': result['artists'][0]['name'],
-                'art': Utils.dict_find(result, 'images')[0]['url'],
-                'album': result.get('album', {}).get('name'),
-            }
-            links = {
-                'apple_link': self.link_converter.get_apple_link(info),
-                'gpm_link': self.link_converter.get_gpm_link(info),
-                'soundcloud_link': self.link_converter.get_soundcloud_link(info),
-                'spotify_link': result['external_urls']['spotify']
-            }
-
-            info['links'] = links
-
-            results.append(info)
-
-        return results
+        return {
+            'name': result['name'],
+            'artist': result['artists'][0]['name'],
+            'album': result.get('album', {}).get('name'),
+            'artwork': Utils.dict_find(result, 'images')[0]['url'],
+            'url': f'/search?q={link}'
+        }

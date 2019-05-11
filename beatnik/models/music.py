@@ -67,6 +67,9 @@ class MusicManager(Manager):
 
     # verify_url :: (6)Tuple -> Boolean
     def verify_url(self, url):
+        if (url.scheme == ''):
+            return False
+
         return LinkParser.apple_netloc in url.netloc \
                 or LinkParser.gpm_netloc in url.netloc \
                 or LinkParser.soundcloud_netloc in url.netloc \
