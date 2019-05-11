@@ -32,7 +32,7 @@ class Search(View):
         else:
             return self.handle_search(request, query)
 
-    def handle_search(query):
+    def handle_search(self, request, query):
         api_manager = ApiManager()
         results = api_manager.search_handler.search(query)
         context = {
