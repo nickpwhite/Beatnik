@@ -4,6 +4,7 @@ beautifulsoup4==4.6.0
 certifi==2017.7.27.1
 cffi==1.11.2
 chardet==3.0.4
+Click==7.0
 cryptography==2.3.1
 cssselect==1.0.3
 decorator==4.1.2
@@ -35,7 +36,9 @@ PyJWT==1.5.3
 pyquery==1.4.0
 python-dateutil==2.6.1
 pytz==2017.3
+redis==3.2.1
 requests==2.21.0
+rq==1.0
 rsa==3.4.2
 simplejson==3.13.2
 sitemap-generator==0.5.2
