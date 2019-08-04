@@ -4,7 +4,6 @@ from django.db.models import Manager, Model, Q, CharField, IntegerField, URLFiel
 from urllib import parse
 
 class MusicManager(Manager):
-    # convert :: Music, string -> Music
     def convert(self, music):
         api_manager = ApiManager()
         music = api_manager.convert_link(music)
