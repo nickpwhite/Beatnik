@@ -3,7 +3,7 @@ import re
 from urllib import parse
 
 class LinkParser:
-    apple_netloc = 'itunes.apple.com'
+    apple_netloc = 'apple.com'
     gpm_netloc = 'google.com'
     soundcloud_netloc = 'soundcloud.com'
     spotify_netloc = 'open.spotify.com'
