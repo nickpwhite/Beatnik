@@ -46,6 +46,7 @@ SECURE_HSTS_SECONDS = 0 if DEBUG else 3600
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
+    'api.apps.ApiConfig',
     'beatnik.apps.BeatnikConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
