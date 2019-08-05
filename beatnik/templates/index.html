@@ -87,7 +87,7 @@
                value="{{ query }}" required>
           </div>
           <div class="col-25">
-            <input class="search-button" type="submit" value="Convert" title="Convert">
+            <input class="search-button" type="submit" value="Search" title="Search">
           </div>
         </form>
       </div>
@@ -132,6 +132,13 @@
           {% if music.spotify_url %}
           <a class="flex-row music-button" target="_blank" href="{{ music.spotify_url }}">
             <img alt="Spotify" class="service-logo" src="{% static "images/spotify_logo.png" %}" />
+          </a>
+          {% else %}
+          <span class="flex-row music-button"></span>
+          {% endif %}
+          {% if music.tidal_url %}
+          <a class="flex-row music-button" target="_blank" href="{{ music.tidal_url }}">
+            <img alt="Tidal" class="service-logo" src="{% static "images/tidal_logo.png" %}" />
           </a>
           {% else %}
           <span class="flex-row music-button"></span>

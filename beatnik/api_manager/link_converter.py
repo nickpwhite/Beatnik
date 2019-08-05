@@ -5,12 +5,13 @@ from urllib import parse
 class LinkConverter:
     gpm_format = "https://music.google.com/music/m/{0}"
 
-    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, link_parser):
+    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, tidal_api, link_parser):
         self.logger = logging.getLogger(__name__)
         self.apple_api = apple_api
         self.gpm_api = gpm_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
+        self.tidal_api = tidal_api
         self.link_parser = link_parser
 
     def convert_link(self, music):
@@ -22,6 +23,8 @@ class LinkConverter:
             music = self.link_parser.parse_soundcloud_link(music)
         elif music.spotify_url is not None:
             music = self.link_parser.parse_spotify_link(music)
+        elif music.tidal_url is not None:
+            music = self.link_parser.parse_tidal_link(music)
         else:
             self.logger.error("All the links were None")
             return music
@@ -31,11 +34,13 @@ class LinkConverter:
             music.gpm_url = self.get_gpm_track(music)
             music.soundcloud_url = self.get_soundcloud_track(music)
             music.spotify_url = self.get_spotify_track(music)
+            music.tidal_url = self.get_tidal_track(music)
         elif music.music_type == 'A':
             music.apple_url = self.get_apple_album(music)
             music.gpm_url = self.get_gpm_album(music)
             music.soundcloud_url = self.get_soundcloud_album(music)
             music.spotify_url = self.get_spotify_album(music)
+            music.tidal_url = self.get_tidal_album(music)
         else:
             self.logger.error("Received a media type I can't handle")
 
@@ -163,6 +168,24 @@ class LinkConverter:
             return results['tracks']['items'][0]['external_urls']['spotify']
         else:
             return None
+
+    def get_tidal_album(self, music):
+        if music.tidal_url is not None:
+            return music.tidal_url
+
+        query = "{0} {1}".format(music.name, music.artist)
+        results = self.tidal_api.search('album', query)
+
+        return results.albums[0]
+
+    def get_tidal_track(self, music):
+        if music.tidal_url is not None:
+            return music.tidal_url
+
+        query = "{0} {1}".format(music.name, music.artist)
+        results = self.tidal_api.search('track', query)
+
+        return results.tracks[0]
 
     def sanitize(self, s):
         return s.replace(" & ", " ")

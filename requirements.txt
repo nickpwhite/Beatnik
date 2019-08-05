@@ -42,6 +42,7 @@ sitemap-generator==0.5.2
 six==1.11.0
 soundcloud==0.5.0
 spotipy==2.4.4
+tidalapi==0.5.0
 urllib3==1.24.3
 validictory==1.1.1
 whitenoise==4.1.2

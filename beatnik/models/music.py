@@ -12,7 +12,8 @@ class MusicManager(Manager):
 
     def get_and_populate_existing(self, music):
         query = Q(apple_url = music.apple_url) | Q(gpm_url = music.gpm_url) | Q(soundcloud_url =
-                music.soundcloud_url) | Q(spotify_url = music.spotify_url)
+                music.soundcloud_url) | Q(spotify_url = music.spotify_url) | Q(tidal_url =
+                        music.tidal_url)
 
         existing_music = self.filter(query, ~Q(pk = music.pk)).first()
 
@@ -32,6 +33,9 @@ class MusicManager(Manager):
         elif LinkParser.spotify_netloc in url.netloc:
             link = parse.urlunparse(url)
             music, new = super().get_or_create(spotify_url=link)
+        elif LinkParser.tidal_netloc in url.netloc:
+            link = parse.urlunparse(url)
+            music, new = super().get_or_create(tidal_url=link)
         else:
             raise ValueError("{0} is not a supported url".format(url))
 
@@ -61,6 +65,8 @@ class MusicManager(Manager):
             old.soundcloud_url = new.soundcloud_url
         if old.spotify_url is None:
             old.spotify_url = new.spotify_url
+        if old.tidal_url is None:
+            old.tidal_url = new.tidal_url
 
         return old
 
@@ -70,9 +76,10 @@ class MusicManager(Manager):
             return False
 
         return LinkParser.apple_netloc in url.netloc \
-                or LinkParser.gpm_netloc in url.netloc \
-                or LinkParser.soundcloud_netloc in url.netloc \
-                or LinkParser.spotify_netloc in url.netloc
+            or LinkParser.gpm_netloc in url.netloc \
+            or LinkParser.soundcloud_netloc in url.netloc \
+            or LinkParser.spotify_netloc in url.netloc \
+            or LinkParser.tidal_netloc in url.netloc
 
 class Music(Model):
     objects = MusicManager()
@@ -85,6 +92,7 @@ class Music(Model):
     gpm_url = URLField("Google Play Music URL", null = True, unique = True)
     soundcloud_url = URLField("Soundcloud URL", null = True, unique = True)
     spotify_url = URLField("Spotify URL", null = True, unique = True)
+    tidal_url = URLField("Tidal URL", null = True, unique = True)
     match_rating = IntegerField("Rating of the match", default = 0)
     artwork = URLField("Album art URL")
 

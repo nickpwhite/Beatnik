@@ -9,6 +9,7 @@ from beatnik.api_manager.link_parser import LinkParser
 from beatnik.api_manager.search_handler import SearchHandler
 from gmusicapi import Mobileclient
 from spotipy.oauth2 import SpotifyClientCredentials
+from tidalapi import Session
 
 class ApiManager:
     def __init__(self):
@@ -17,16 +18,19 @@ class ApiManager:
         self.gpm_api = self.get_gpm_api()
         self.soundcloud_api = self.get_soundcloud_api()
         self.spotify_api = self.get_spotify_api()
+        self.tidal_api = self.get_tidal_api()
         self.link_parser = LinkParser(
                 self.apple_api,
                 self.gpm_api,
                 self.soundcloud_api,
-                self.spotify_api)
+                self.spotify_api,
+                self.tidal_api)
         self.link_converter = LinkConverter(
                 self.apple_api,
                 self.gpm_api,
                 self.soundcloud_api,
                 self.spotify_api,
+                self.tidal_api,
                 self.link_parser)
         self.search_handler = SearchHandler(self.spotify_api, self.link_converter)
 
@@ -34,9 +38,7 @@ class ApiManager:
         key_id = os.environ['APPLE_KEY_ID']
         issuer = os.environ['APPLE_KEY_ISSUER']
         key = os.environ['APPLE_KEY']
-        return AppleMusicApi(key_id=key_id,
-                issuer=issuer,
-                key=key)
+        return AppleMusicApi(key_id=key_id, issuer=issuer, key=key)
 
     def get_gpm_api(self):
         gpm_api = Mobileclient()
@@ -55,6 +57,17 @@ class ApiManager:
     def get_spotify_api(self):
         client_credentials_manager = SpotifyClientCredentials()
         return spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+    def get_tidal_api(self):
+        session = Session()
+        username = os.environ['TIDAL_USERNAME']
+        password = os.environ['TIDAL_PASSWORD']
+
+        if (not session.login(username, password)):
+            self.logger.error("Unable to login to Tidal")
+            return None
+
+        return session
 
     def convert_link(self, music):
         music = self.link_converter.convert_link(music)

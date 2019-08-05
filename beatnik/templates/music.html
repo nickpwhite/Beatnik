@@ -76,6 +76,18 @@
             </a>
           </li>
           {% endif %}
+          {% if music.tidal_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.tidal_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Tidal" class="service-logo" src="{% static "images/tidal_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Tidal
+              </div>
+            </a>
+          </li>
+          {% endif %}
           <li>
             {% if rated %}
             <div class="flex-row">Thank you! We appreciate your feedback.</div>

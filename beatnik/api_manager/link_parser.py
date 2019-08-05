@@ -7,18 +7,22 @@ class LinkParser:
     gpm_netloc = 'google.com'
     soundcloud_netloc = 'soundcloud.com'
     spotify_netloc = 'open.spotify.com'
+    tidal_netloc = 'tidal.com'
 
     gpm_album_prefix = 'B'
     gpm_track_prefix = 'T'
     soundcloud_album_prefix = 'sets'
     spotify_album_prefix = 'album'
     spotify_track_prefix = 'track'
+    tidal_album_prefix = 'album'
+    tidal_track_prefix = 'track'
 
-    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api):
+    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, tidal_api):
         self.apple_api = apple_api
         self.gpm_api = gpm_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
+        self.tidal_api = tidal_api
 
     def clean_title(self, title):
         regex = re.compile('( \- \d{4})?( \-[a-z\s]*remaster(ed)?| \(remaster(ed)?\))', re.IGNORECASE)
@@ -96,6 +100,22 @@ class LinkParser:
 
         music.name = self.clean_title(result['name'])
         music.artist = result['artists'][0]['name']
+
+        return music
+
+    def parse_tidal_link(self, music):
+        url = parse.urlparse(music.tidal_url)
+        _, _, prefix, item_id = url.path.split('/')
+        if prefix == self.tidal_album_prefix:
+            result = self.tidal_api.get_album(item_id)
+            music.music_type = 'A'
+        elif prefix == self.tidal_track_prefix:
+            result = self.tidal_api.get_track_radio(item_id)[0]
+            music.music_type = 'T'
+            music.album = result.album.name
+
+        music.name = self.clean_title(result.name)
+        music.artist = result.artist.name
 
         return music
 
