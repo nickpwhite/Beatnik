@@ -4,6 +4,7 @@ from urllib import parse
 
 class LinkConverter:
     gpm_format = "https://music.google.com/music/m/{0}"
+    tidal_format = "https://tidal.com/browse/{0}/{1}"
 
     def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, tidal_api, link_parser):
         self.logger = logging.getLogger(__name__)
@@ -174,18 +175,18 @@ class LinkConverter:
             return music.tidal_url
 
         query = "{0} {1}".format(music.name, music.artist)
-        results = self.tidal_api.search('album', query)
+        result = self.tidal_api.search('album', query).albums[0]
 
-        return results.albums[0]
+        return self.tidal_format.format('album', result.id)
 
     def get_tidal_track(self, music):
         if music.tidal_url is not None:
             return music.tidal_url
 
         query = "{0} {1}".format(music.name, music.artist)
-        results = self.tidal_api.search('track', query)
+        results = self.tidal_api.search('track', query).tracks[0]
 
-        return results.tracks[0]
+        return self.tidal_format.format('track', result.id)
 
     def sanitize(self, s):
         return s.replace(" & ", " ")
