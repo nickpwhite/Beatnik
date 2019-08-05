@@ -178,7 +178,6 @@ class LinkConverter:
         results = self.tidal_api.search('album', query).albums
 
         if len(results) > 0:
-            album_id = results.albums[0].id
             return self.tidal_format.format('album', results[0].id)
         else:
             return None
