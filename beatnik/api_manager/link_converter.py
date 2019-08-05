@@ -175,18 +175,25 @@ class LinkConverter:
             return music.tidal_url
 
         query = "{0} {1}".format(music.name, music.artist)
-        result = self.tidal_api.search('album', query).albums[0]
+        results = self.tidal_api.search('album', query).albums
 
-        return self.tidal_format.format('album', result.id)
+        if len(results) > 0:
+            album_id = results.albums[0].id
+            return self.tidal_format.format('album', results[0].id)
+        else:
+            return None
 
     def get_tidal_track(self, music):
         if music.tidal_url is not None:
             return music.tidal_url
 
         query = "{0} {1}".format(music.name, music.artist)
-        results = self.tidal_api.search('track', query).tracks[0]
+        results = self.tidal_api.search('track', query).tracks
 
-        return self.tidal_format.format('track', result.id)
+        if len(results) > 0:
+            return self.tidal_format.format('track', results[0].id)
+        else:
+            return None
 
     def sanitize(self, s):
         return s.replace(" & ", " ")
