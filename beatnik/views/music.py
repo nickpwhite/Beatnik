@@ -1,4 +1,3 @@
-from beatnik.models.analytics import MusicAccess
 from beatnik.models.music import Music as MusicModel
 from django.http import Http404
 from django.shortcuts import redirect, render
@@ -6,14 +5,6 @@ from django.views import View
 
 class Music(View):
     def get(self, request, key):
-        if request.session.get('tracking', 'off') == 'on':
-            MusicAccess.objects.create(
-                user_agent = request.META.get('USER_AGENT'),
-                ip_address = request.META.get('REMOTE_ADDR'),
-                referer = request.META.get('HTTP_REFERER'),
-                music_id = key
-            )
-
         try:
             music = MusicModel.objects.get(pk = key)
         except MusicModel.DoesNotExist as exception:
