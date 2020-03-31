@@ -36,7 +36,8 @@ class Convert(View):
             'apple': music_obj.apple_url,
             'gpm': music_obj.gpm_url,
             'soundcloud': music_obj.soundcloud_url,
-            'spotify': music_obj.spotify_url
+            'spotify': music_obj.spotify_url,
+            'tidal': music_obj.tidal_url
         }
 
         if music_obj.music_type == 'T':
