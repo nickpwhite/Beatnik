@@ -33,10 +33,8 @@ def link_shared(payload, **kw):
         music_obj.tidal_url
     ])))
 
-    print(music_obj.music_type)
-
     lines.insert(0, "Here are some other links to this {}:".format(
-        music_obj.music_type
+        music_obj.get_music_type_display()
     ))
 
     slack.WebClient(token=install_record.access_token).chat_postMessage(
