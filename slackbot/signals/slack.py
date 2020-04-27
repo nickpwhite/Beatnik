@@ -33,6 +33,8 @@ def link_shared(payload, **kw):
         music_obj.tidal_url
     ]))
 
+    print(lines)
+
     lines.insert(0, "Here are some other links to this {}:" %
                  music_obj.music_type)
 
