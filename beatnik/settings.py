@@ -31,7 +31,6 @@ DEBUG = bool(os.environ['DJANGO_DEBUG'])
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '69ebdd53.ngrok.io',
     'beatnik-app.herokuapp.com',
     'www.beatnikapp.com',
 ]
