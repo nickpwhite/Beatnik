@@ -25,13 +25,13 @@ def link_shared(payload, **kw):
     if not music_obj:
         return
 
-    lines = map(lambda link: ":headphones: " + link, filter(None, [
+    lines = list(map(lambda link: ":headphones: " + link, filter(None, [
         music_obj.apple_url,
         music_obj.gpm_url,
         music_obj.soundcloud_url,
         music_obj.spotify_url,
         music_obj.tidal_url
-    ]))
+    ])))
 
     print(lines)
 
