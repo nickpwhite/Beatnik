@@ -19,14 +19,14 @@ class Authorize(View):
         )
 
         install, created = Install.objects.get_or_create(
-            app_id=response['app_id'],
+            team_id=response['team']['id'],
             defaults={
+                'app_id': response['app_id'],
                 'authed_user_id': response['authed_user']['id'],
                 'scope': response['scope'],
                 'access_token': response['access_token'],
                 'bot_user_id': response['bot_user_id'],
                 'team_name': response['team']['name'],
-                'team_id': response['team']['id']
             }
         )
 

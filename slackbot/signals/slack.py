@@ -10,7 +10,7 @@ import os
 @slackevent
 def link_shared(payload, **kw):
     print(payload)
-    install_record = Install.objects.get(app_id=payload['api_app_id'])
+    install_record = Install.objects.get(team_id=payload['team_id'])
     event = payload['event']
     if install_record.bot_user_id == event['user']:
         return
@@ -46,4 +46,4 @@ def link_shared(payload, **kw):
 
 @slackevent
 def app_uninstalled(payload, **kw):
-    Install.objects.filter(app_id=payload['api_app_id']).delete()
+    Install.objects.filter(team_id=payload['team_id']).delete()
