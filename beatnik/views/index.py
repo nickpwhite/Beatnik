@@ -1,6 +1,7 @@
 import math
 
 from beatnik.models import Music
+from django.conf import settings
 from django.shortcuts import render
 from django.views import View
 
@@ -26,5 +27,6 @@ class Index(View):
             'last_page': last_page,
             'latest_music': Music.objects.exclude(artwork='').order_by('-id')[start:end],
             'page_range': page_range,
+            'scopes': settings.SLACK_SCOPES,
         }
         return render(request, 'index.html', context)
