@@ -82,6 +82,11 @@ ul {
   flex: 0 0 10%;
 }
 
+.col-20 {
+  width: 20%;
+  flex: 0 0 20%;
+}
+
 .col-25 {
   width: 25%;
   flex: 0 0 25%;
@@ -115,6 +120,11 @@ ul {
 .col-75 {
   width: 75%;
   flex: 0 0 75%;
+}
+
+.col-80 {
+  width: 80%;
+  flex: 0 0 80%;
 }
 
 .col-90 {
@@ -383,11 +393,6 @@ ul {
     flex: 0 0 100%;
   }
 
-  .m-col-20 {
-    width: 20%;
-    flex: 0 0 20%;
-  }
-
   .m-col-30 {
     width: 35%;
     flex: 0 0 35%;
@@ -401,11 +406,6 @@ ul {
   .m-col-65 {
     width: 65%;
     flex: 0 0 65%;
-  }
-
-  .m-col-80 {
-    width: 80%;
-    flex: 0 0 80%;
   }
 
   .artwork {

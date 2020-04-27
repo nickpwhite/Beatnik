@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+  {% if created %}
+  <p>The Beatnik Bot was successfully created in your Slack workspace "{{ install.team_name }}."</p>
+  {% else %}
+  <p>The Beatnik Bot already exists in your Slack workspace "{{ install.team_name }}."</p>
+  {% endif %}
+</div>
+{% endblock %}

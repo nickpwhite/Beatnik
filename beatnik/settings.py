@@ -28,7 +28,13 @@ SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ['DJANGO_DEBUG'])
 
-ALLOWED_HOSTS = [ 'localhost', '127.0.0.1', 'beatnik-app.herokuapp.com', 'www.beatnikapp.com' ]
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '69ebdd53.ngrok.io',
+    'beatnik-app.herokuapp.com',
+    'www.beatnikapp.com',
+]
 
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
@@ -48,6 +54,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'api.apps.ApiConfig',
     'beatnik.apps.BeatnikConfig',
+    'slackbot.apps.SlackbotConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +62,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tracking',
+    'django_slack_events',
 ]
 
 MIDDLEWARE = [
@@ -160,3 +168,7 @@ LOGGING = {
 # Tracking
 TRACK_PAGEVIEWS = False
 TRACK_QUERY_STRING = True
+
+# Slackbot
+SLACK_CLIENT_ID = os.environ["SLACK_CLIENT_ID"]
+SLACK_CLIENT_SECRET = os.environ["SLACK_CLIENT_SECRET"]

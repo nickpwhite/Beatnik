@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  {% block meta %}
+  <meta property="og:title" content="Beatnik - Streaming music sharing">
+  <meta property="og:description" content="Beatnik allows you to easily share music with others and makes it easy to follow streaming links, no matter which service you use.">
+  <meta property="og:url" content="https://www.beatnikapp.com">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365">
+
+  <meta name="description" content="Beatnik allows you to easily share music with others and makes it easy to follow streaming links, no matter which service you use.">
+  <title>Beatnik - Streaming music sharing</title>
+  {% endblock %}
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="manifest" href="{% static "manifest.json" %}">
+
+  <link rel="stylesheet" href="{% static "css/main.css" %}" type="text/css">
+
+  <!-- ****** static/faviconit.com static/favicons ****** -->
+  <link rel="shortcut icon" href="{% static "favicon.ico" %}">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="{% static "favicon.ico" %}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{% static "favicon-192.png" %}">
+  <link rel="icon" type="image/png" sizes="160x160" href="{% static "favicon-160.png" %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static "favicon-96.png" %}">
+  <link rel="icon" type="image/png" sizes="64x64" href="{% static "favicon-64.png" %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon-32.png" %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static "favicon-16.png" %}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{% static "favicon-57.png" %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static "favicon-114.png" %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static "favicon-72.png" %}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{% static "favicon-144.png" %}">
+  <link rel="apple-touch-icon" sizes="60x60" href="{% static "favicon-60.png" %}">
+  <link rel="apple-touch-icon" sizes="120x120" href="{% static "favicon-120.png" %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static "favicon-76.png" %}">
+  <link rel="apple-touch-icon" sizes="152x152" href="{% static "favicon-152.png" %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static "favicon-180.png" %}">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="{% static "favicon-144.png" %}">
+  <meta name="msapplication-config" content="{% static "browserconfig.xml" %}">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="flex-row">
+        <div class="col-80">
+          <a href="/" class="title" title="Beatnik">
+            <h1>Beatnik</h1>
+          </a>
+        </div>
+        <div class="col-20 subtitle">
+          <a class="icon-link" target="_blank" rel="noopener noreferer"
+             href="https://slack.com/oauth/v2/authorize?client_id=1079581525110.1098947780081&scope=channels:history,chat:write">
+            <img alt="Add to Slack" height="27"
+                 src="https://platform.slack-edge.com/img/add_to_slack.png"
+                 srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x">
+          </a>
+          <a class="extension icon-link" target="_blank" rel="noopener noreferer"
+             href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
+            <img alt="Chrome" title="Chrome Extension" class="icon" src="{% static "images/chrome.svg" %}"/>
+          </a>
+          <a class="extension icon-link" target="_blank" rel="noopener noreferer"
+             href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
+            <img alt="Firefox" title="Firefox Extension" class="icon" src="{% static "images/firefox.svg" %}"/>
+          </a>
+          <a class="icon-link" target="_blank" rel="noopener noreferer" href="https://github.com/nickpwhite/Beatnik">
+            <img alt="Github" title="Source" class="icon" src="{% static "images/github.png" %}"/>
+          </a>
+          <a class="icon-link" href="/settings">
+            <img alt="Settings" title="Settings" class="icon" src="{% static "images/settings.svg" %}"/>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+    <footer class="header">
+      <div class="flex-row">
+        <a class="title icon-link extension" title="Chrome Extension" target="_blank"
+           rel="noopener noreferer" href="https://chrome.google.com/webstore/detail/beatnik/imhhnehiopfkoogocbgihgepdkedbcfi?hl=en-US">
+          <h3>Chrome Extension</h3>
+        </a>
+        <h3 class="extension">|</h3>
+        <a class="title icon-link extension" title="Firefox Extension" target="_blank"
+           rel="noopener noreferer" href="https://addons.mozilla.org/en-US/firefox/addon/beatnik-app/">
+          <h3>Firefox Extension</h3>
+        </a>
+        <h3 class="extension">|</h3>
+        <a class="title icon-link" title="Source" target="_blank" rel="noopener noreferer"
+           href="https://github.com/nickpwhite/Beatnik">
+          <h3>Source</h3>
+        </a>
+        <h3>|</h3>
+        <a class="title icon-link" href="/about" title="About">
+          <h3>About</h3>
+        </a>
+        <h3>|</h3>
+        <a class="title icon-link" href="/settings" title="Settings">
+          <h3>Settings</h3>
+        </a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
