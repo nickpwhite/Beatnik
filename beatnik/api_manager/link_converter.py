@@ -62,6 +62,9 @@ class LinkConverter:
         if music.apple_url is not None:
             return music.apple_url
 
+        if self.apple_api is None:
+            return None
+
         query = "{0} {1}".format(music.name, music.artist)
         results = self.apple_api.search(query, limit = 1, types='albums')
         if (results != {}):
@@ -73,6 +76,9 @@ class LinkConverter:
     def get_apple_track(self, music):
         if music.apple_url is not None:
             return music.apple_url
+
+        if self.apple_api is None:
+            return None
 
         query = "{0} {1}".format(music.name, music.artist)
         results = self.apple_api.search(query, limit = 1, types='songs')
@@ -132,11 +138,17 @@ class LinkConverter:
         if music.soundcloud_url is not None:
             return music.soundcloud_url
 
+        if self.soundcloud_api is None:
+            return None
+
         return self.soundcloud_api.search(music.name, music.artist)
 
     def get_soundcloud_track(self, music):
         if music.soundcloud_url is not None:
             return music.soundcloud_url
+
+        if self.soundcloud_api is None:
+            return None
 
         return self.soundcloud_api.search(music.name, music.artist)
 
@@ -152,6 +164,9 @@ class LinkConverter:
         if music.spotify_url is not None:
             return music.spotify_url
 
+        if self.spotify_api is None:
+            return None
+
         query = "album:{0} artist:{1}".format(music.name, music.artist)
         results = self.spotify_api.search(query, limit = 10, type = "album")
         if (results['albums']['total'] > 0):
@@ -162,6 +177,9 @@ class LinkConverter:
     def get_spotify_track(self, music):
         if music.spotify_url is not None:
             return music.spotify_url
+
+        if self.spotify_api is None:
+            return None
 
         query = "track:{0} artist:{1}".format(music.name, music.artist)
         results = self.spotify_api.search(query, limit = 10, type = "track")
@@ -174,6 +192,9 @@ class LinkConverter:
         if music.tidal_url is not None:
             return music.tidal_url
 
+        if self.tidal_api is None:
+            return None
+
         query = "{0} {1}".format(music.name, music.artist)
         results = self.tidal_api.search('album', query).albums
 
@@ -185,6 +206,9 @@ class LinkConverter:
     def get_tidal_track(self, music):
         if music.tidal_url is not None:
             return music.tidal_url
+
+        if self.tidal_api is None:
+            return None
 
         query = "{0} {1}".format(music.name, music.artist)
         results = self.tidal_api.search('track', query).tracks
