@@ -35,39 +35,64 @@ class ApiManager:
         self.search_handler = SearchHandler(self.spotify_api, self.link_converter)
 
     def get_apple_api(self):
-        key_id = os.environ['APPLE_KEY_ID']
-        issuer = os.environ['APPLE_KEY_ISSUER']
-        key = os.environ['APPLE_KEY']
-        return AppleMusicApi(key_id=key_id, issuer=issuer, key=key)
+        try:
+            key_id = os.environ['APPLE_KEY_ID']
+            issuer = os.environ['APPLE_KEY_ISSUER']
+            key = os.environ['APPLE_KEY']
+            return AppleMusicApi(key_id=key_id, issuer=issuer, key=key)
+        except Exception as e:
+            self.logger.error("Something went wrong getting Apple Music API")
+            self.logger.error(e)
+            return None
 
     def get_gpm_api(self):
-        gpm_api = Mobileclient()
-        username = os.environ['GPM_USERNAME']
-        password = os.environ['GPM_PASSWORD']
+        try:
+            gpm_api = Mobileclient()
+            username = os.environ['GPM_USERNAME']
+            password = os.environ['GPM_PASSWORD']
 
-        if (not gpm_api.login(username, password, Mobileclient.FROM_MAC_ADDRESS, 'en_US')):
-            self.logger.error("Unable to login to Google Play Music.")
+            if (not gpm_api.login(username, password, Mobileclient.FROM_MAC_ADDRESS, 'en_US')):
+                self.logger.error("Unable to login to Google Play Music.")
+                return None
+
+            return gpm_api
+        except Exception as e:
+            self.logger.error("Something went wrong getting Google Play Music API")
+            self.logger.error(e)
             return None
-
-        return gpm_api
 
     def get_soundcloud_api(self):
-        return SoundcloudApi()
-
-    def get_spotify_api(self):
-        client_credentials_manager = SpotifyClientCredentials()
-        return spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
-    def get_tidal_api(self):
-        session = Session()
-        username = os.environ['TIDAL_USERNAME']
-        password = os.environ['TIDAL_PASSWORD']
-
-        if (not session.login(username, password)):
-            self.logger.error("Unable to login to Tidal")
+        try:
+            return SoundcloudApi()
+        except Exception as e:
+            self.logger.error("Something went wrong getting Soundcloud API")
+            self.logger.error(e)
             return None
 
-        return session
+    def get_spotify_api(self):
+        try:
+            client_credentials_manager = SpotifyClientCredentials()
+            return spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+        except Exception as e:
+            self.logger.error("Something went wrong getting Spotify API")
+            self.logger.error(e)
+            return None
+
+    def get_tidal_api(self):
+        try:
+            session = Session()
+            username = os.environ['TIDAL_USERNAME']
+            password = os.environ['TIDAL_PASSWORD']
+
+            if (not session.login(username, password)):
+                self.logger.error("Unable to login to Tidal")
+                return None
+
+            return session
+        except Exception as e:
+            self.logger.error("Something went wrong getting Tidal API")
+            self.logger.error(e)
+            return None
 
     def convert_link(self, music):
         music = self.link_converter.convert_link(music)
