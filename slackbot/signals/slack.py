@@ -1,5 +1,5 @@
 from beatnik.models.music import Music
-from django_slack_events.decorators import slackevent
+from slackbot.decorators import slackevent
 from slackbot.models import Install
 from urllib import parse
 

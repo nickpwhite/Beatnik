@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import dj_database_url
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'beatnik-app.herokuapp.com',
     'www.beatnikapp.com',
+    'e68cb98f8f33.ngrok.io',
 ]
 
 CORS_ORIGIN_WHITELIST = [
@@ -61,7 +63,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tracking',
-    'django_slack_events',
 ]
 
 MIDDLEWARE = [
@@ -101,14 +102,7 @@ WSGI_APPLICATION = 'beatnik.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['POSTGRES_DBNAME'],
-        'USER': os.environ['POSTGRES_USERNAME'],
-        'PASSWORD': os.environ['POSTGRES_PASSWORD'],
-        'HOST': os.environ['POSTGRES_HOST'],
-        'PORT': os.environ['POSTGRES_PORT'],
-    }
+    'default': dj_database_url.config()
 }
 
 

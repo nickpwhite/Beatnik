@@ -9,6 +9,7 @@ class Index(View):
     PAGE_SIZE = 10
 
     def get(self, request, page = 0):
+        print(Music.objects.count())
         page_count = math.ceil(Music.objects.count() / self.PAGE_SIZE)
         current_page = int(page)
         last_page = page_count - 1
