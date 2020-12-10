@@ -104,7 +104,12 @@ class LinkConverter:
             return None
 
         query = "{0} {1}".format(music.name, music.artist)
-        results = self.gpm_api.search(query, max_results = 1)
+        try:
+            results = self.gpm_api.search(query, max_results = 1)
+        except Exception:
+            self.logger.warning("Something went wrong with the Google API")
+            return
+
         if (len(results['album_hits']) > 0):
             album_id = results['album_hits'][0]['album']['albumId']
             return self.gpm_format.format(album_id)
@@ -119,7 +124,12 @@ class LinkConverter:
             return None
 
         query = "{0} {1}".format(music.name, self.sanitize(music.artist))
-        results = self.gpm_api.search(query)
+        try:
+           results = self.gpm_api.search(query)
+        except Exception:
+            self.logger.warning("Something went wrong with the Google API")
+            return
+
         if (len(results['song_hits']) > 0):
             track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
             return self.gpm_format.format(track_id)
