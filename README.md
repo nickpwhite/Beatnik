@@ -9,6 +9,7 @@ The currently supported services are listed below:
 - Soundcloud
 - Spotify
 - Tidal
+- Youtube Music
 
 ### Deprecated Services
 Google Play Music has been sunset by Google and is no longer supported in Beatnik.

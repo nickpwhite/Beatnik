@@ -76,6 +76,18 @@
             </a>
           </li>
           {% endif %}
+          {% if music.ytm_url %}
+          <li>
+            <a class="flex-row music-button" href="{{ music.ytm_url }}" target="_blank">
+              <div class="service-logo-container">
+                <img alt="Youtube Music" class="service-logo" src="{% static "images/ytm_logo.png" %}" />
+              </div>
+              <div class="service-description">
+                Youtube Music
+              </div>
+            </a>
+          </li>
+          {% endif %}
           <li>
             {% if rated %}
             <div class="flex-row">Thank you! We appreciate your feedback.</div>

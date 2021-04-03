@@ -4,13 +4,15 @@ from urllib import parse
 
 class LinkConverter:
     tidal_format = "https://tidal.com/browse/{0}/{1}"
+    ytm_format = "https://music.youtube.com/{0}?{1}={2}"
 
-    def __init__(self, apple_api, soundcloud_api, spotify_api, tidal_api, link_parser):
+    def __init__(self, apple_api, soundcloud_api, spotify_api, tidal_api, ytm_api, link_parser):
         self.logger = logging.getLogger(__name__)
         self.apple_api = apple_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
         self.tidal_api = tidal_api
+        self.ytm_api = ytm_api
         self.link_parser = link_parser
 
     def convert_link(self, music):
@@ -22,6 +24,8 @@ class LinkConverter:
             music = self.link_parser.parse_spotify_link(music)
         elif music.tidal_url is not None:
             music = self.link_parser.parse_tidal_link(music)
+        elif music.ytm_url is not None:
+            music = self.link_parser.parse_ytm_link(music)
         else:
             self.logger.error("All the links were None")
             return music
@@ -31,11 +35,13 @@ class LinkConverter:
             music.soundcloud_url = self.get_soundcloud_track(music)
             music.spotify_url = self.get_spotify_track(music)
             music.tidal_url = self.get_tidal_track(music)
+            music.ytm_url = self.get_ytm_track(music)
         elif music.music_type == 'A':
             music.apple_url = self.get_apple_album(music)
             music.soundcloud_url = self.get_soundcloud_album(music)
             music.spotify_url = self.get_spotify_album(music)
             music.tidal_url = self.get_tidal_album(music)
+            music.ytm_url = self.get_ytm_album(music)
         else:
             self.logger.error("Received a media type I can't handle")
 
@@ -171,6 +177,35 @@ class LinkConverter:
 
         if len(results) > 0:
             return self.tidal_format.format('track', results[0].id)
+        else:
+            return None
+
+    def get_ytm_album(self, music):
+        if music.ytm_url is not None:
+            return music.ytm_url
+
+        if self.ytm_api is None:
+            return None
+
+        query = "{0} {1}".format(music.name, music.artist)
+        results = self.ytm_api.search(query, "albums")
+        if len(results) > 0:
+            album = self.ytm_api.get_album(results[0]["browseId"])
+            return self.ytm_format.format("playlist", "list", album["playlistId"])
+        else:
+            return None
+
+    def get_ytm_track(self, music):
+        if music.ytm_url is not None:
+            return music.ytm_url
+
+        if self.ytm_api is None:
+            return None
+
+        query = "{0} {1}".format(music.name, music.artist)
+        results = self.ytm_api.search(query, "songs")
+        if len(results) > 0:
+            return self.ytm_format.format("watch", "v", results[0]["videoId"])
         else:
             return None
 
