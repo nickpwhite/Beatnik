@@ -42,13 +42,6 @@
         {% else %}
         <span class="flex-row music-button"></span>
         {% endif %}
-        {% if music.gpm_url %}
-        <a class="flex-row music-button" target="_blank" href="{{ music.gpm_url }}">
-          <img alt="Google Play Music" class="service-logo" src="{% static "images/gpm_logo.png" %}" />
-        </a>
-        {% else %}
-        <span class="flex-row music-button"></span>
-        {% endif %}
         {% if music.soundcloud_url %}
         <a class="flex-row music-button" target="_blank" href="{{ music.soundcloud_url }}">
           <img alt="Soundcloud" class="service-logo" src="{% static "images/soundcloud_logo.png" %}" />

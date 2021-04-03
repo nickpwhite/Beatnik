@@ -15,19 +15,16 @@ class ApiManager:
     def __init__(self):
         self.logger = logging.getLogger(__name__)
         self.apple_api = self.get_apple_api()
-        self.gpm_api = self.get_gpm_api()
         self.soundcloud_api = self.get_soundcloud_api()
         self.spotify_api = self.get_spotify_api()
         self.tidal_api = self.get_tidal_api()
         self.link_parser = LinkParser(
                 self.apple_api,
-                self.gpm_api,
                 self.soundcloud_api,
                 self.spotify_api,
                 self.tidal_api)
         self.link_converter = LinkConverter(
                 self.apple_api,
-                self.gpm_api,
                 self.soundcloud_api,
                 self.spotify_api,
                 self.tidal_api,
@@ -42,22 +39,6 @@ class ApiManager:
             return AppleMusicApi(key_id=key_id, issuer=issuer, key=key)
         except Exception as e:
             self.logger.error("Something went wrong getting Apple Music API")
-            self.logger.error(e)
-            return None
-
-    def get_gpm_api(self):
-        try:
-            gpm_api = Mobileclient()
-            username = os.environ['GPM_USERNAME']
-            password = os.environ['GPM_PASSWORD']
-
-            if (not gpm_api.login(username, password, Mobileclient.FROM_MAC_ADDRESS, 'en_US')):
-                self.logger.error("Unable to login to Google Play Music.")
-                return None
-
-            return gpm_api
-        except Exception as e:
-            self.logger.error("Something went wrong getting Google Play Music API")
             self.logger.error(e)
             return None
 

@@ -11,9 +11,10 @@ class MusicManager(Manager):
         return music
 
     def get_and_populate_existing(self, music):
-        query = Q(apple_url = music.apple_url) | Q(gpm_url = music.gpm_url) | Q(soundcloud_url =
-                music.soundcloud_url) | Q(spotify_url = music.spotify_url) | Q(tidal_url =
-                        music.tidal_url)
+        query = Q(apple_url = music.apple_url) |\
+                Q(soundcloud_url = music.soundcloud_url) |\
+                Q(spotify_url = music.spotify_url) |\
+                Q(tidal_url = music.tidal_url)
 
         existing_music = self.filter(query, ~Q(pk = music.pk)).first()
 
@@ -24,9 +25,6 @@ class MusicManager(Manager):
         if LinkParser.apple_netloc in url.netloc:
             link = parse.urlunparse(url)
             music, new = super().get_or_create(apple_url=link)
-        elif LinkParser.gpm_netloc in url.netloc:
-            link = "{0}://music.google.com{1}".format(url.scheme, url.path)
-            music, new = super().get_or_create(gpm_url=link)
         elif LinkParser.soundcloud_netloc in url.netloc:
             link = parse.urlunparse(url)
             music, new = super().get_or_create(soundcloud_url=link)
@@ -59,8 +57,6 @@ class MusicManager(Manager):
             old.artwork = new.artwork
         if old.apple_url is None:
             old.apple_url = new.apple_url
-        if old.gpm_url is None:
-            old.gpm_url = new.gpm_url
         if old.soundcloud_url is None:
             old.soundcloud_url = new.soundcloud_url
         if old.spotify_url is None:
@@ -76,7 +72,6 @@ class MusicManager(Manager):
             return False
 
         return LinkParser.apple_netloc in url.netloc \
-            or LinkParser.gpm_netloc in url.netloc \
             or LinkParser.soundcloud_netloc in url.netloc \
             or LinkParser.spotify_netloc in url.netloc \
             or LinkParser.tidal_netloc in url.netloc

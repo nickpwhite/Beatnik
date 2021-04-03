@@ -15,8 +15,6 @@ class Music(View):
 
         if redirect_to == "apple" and music.apple_url is not None:
             return redirect(music.apple_url)
-        elif redirect_to == "gpm" and music.gpm_url is not None:
-            return redirect(music.gpm_url)
         elif redirect_to == "soundcloud" and music.soundcloud_url is not None:
             return redirect(music.soundcloud_url)
         elif redirect_to == "spotify" and music.soundcloud_url is not None:

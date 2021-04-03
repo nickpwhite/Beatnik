@@ -3,13 +3,11 @@ import logging
 from urllib import parse
 
 class LinkConverter:
-    gpm_format = "https://music.google.com/music/m/{0}"
     tidal_format = "https://tidal.com/browse/{0}/{1}"
 
-    def __init__(self, apple_api, gpm_api, soundcloud_api, spotify_api, tidal_api, link_parser):
+    def __init__(self, apple_api, soundcloud_api, spotify_api, tidal_api, link_parser):
         self.logger = logging.getLogger(__name__)
         self.apple_api = apple_api
-        self.gpm_api = gpm_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
         self.tidal_api = tidal_api
@@ -18,8 +16,6 @@ class LinkConverter:
     def convert_link(self, music):
         if music.apple_url is not None:
             music = self.link_parser.parse_apple_link(music)
-        elif music.gpm_url is not None:
-            music = self.link_parser.parse_gpm_link(music)
         elif music.soundcloud_url is not None:
             music = self.link_parser.parse_soundcloud_link(music)
         elif music.spotify_url is not None:
@@ -32,13 +28,11 @@ class LinkConverter:
 
         if music.music_type == 'T':
             music.apple_url = self.get_apple_track(music)
-            music.gpm_url = self.get_gpm_track(music)
             music.soundcloud_url = self.get_soundcloud_track(music)
             music.spotify_url = self.get_spotify_track(music)
             music.tidal_url = self.get_tidal_track(music)
         elif music.music_type == 'A':
             music.apple_url = self.get_apple_album(music)
-            music.gpm_url = self.get_gpm_album(music)
             music.soundcloud_url = self.get_soundcloud_album(music)
             music.spotify_url = self.get_spotify_album(music)
             music.tidal_url = self.get_tidal_album(music)
@@ -85,54 +79,6 @@ class LinkConverter:
         if (results != {}):
             track = results['songs']['data'][0]
             return track['attributes']['url']
-        else:
-            return None
-
-    def get_gpm_link(self, info):
-        if info['type'] == 'album':
-            return self.get_gpm_album(info)
-        elif info['type'] == 'track':
-            return self.get_gpm_track(info)
-        else:
-            self.logger.warning("Encountered unknown type: {0}".format(info['type']))
-
-    def get_gpm_album(self, music):
-        if music.gpm_url is not None:
-            return music.gpm_url
-
-        if self.gpm_api is None:
-            return None
-
-        query = "{0} {1}".format(music.name, music.artist)
-        try:
-            results = self.gpm_api.search(query, max_results = 1)
-        except Exception:
-            self.logger.warning("Something went wrong with the Google API")
-            return
-
-        if (len(results['album_hits']) > 0):
-            album_id = results['album_hits'][0]['album']['albumId']
-            return self.gpm_format.format(album_id)
-        else:
-            return None
-
-    def get_gpm_track(self, music):
-        if music.gpm_url is not None:
-            return music.gpm_url
-
-        if self.gpm_api is None:
-            return None
-
-        query = "{0} {1}".format(music.name, self.sanitize(music.artist))
-        try:
-           results = self.gpm_api.search(query)
-        except Exception:
-            self.logger.warning("Something went wrong with the Google API")
-            return
-
-        if (len(results['song_hits']) > 0):
-            track_id = "T{0}".format(results['song_hits'][0]['track']['nid'])
-            return self.gpm_format.format(track_id)
         else:
             return None
 
