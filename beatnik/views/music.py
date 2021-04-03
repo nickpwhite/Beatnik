@@ -21,6 +21,8 @@ class Music(View):
             return redirect(music.spotify_url)
         elif redirect_to == "tidal" and music.tidal_url is not None:
             return redirect(music.tidal_url)
+        elif redirect_to == "ytm" and music.ytm_url is not None:
+            return redirect(music.ytm_url)
         else:
             rated = request.session.get('rated.{0}'.format(key), False)
             context = {

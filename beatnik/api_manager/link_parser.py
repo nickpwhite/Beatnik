@@ -7,6 +7,7 @@ class LinkParser:
     soundcloud_netloc = 'soundcloud.com'
     spotify_netloc = 'open.spotify.com'
     tidal_netloc = 'tidal.com'
+    ytm_netloc = 'music.youtube.com'
 
     soundcloud_album_prefix = 'sets'
     spotify_album_prefix = 'album'
@@ -14,11 +15,12 @@ class LinkParser:
     tidal_album_prefix = 'album'
     tidal_track_prefix = 'track'
 
-    def __init__(self, apple_api, soundcloud_api, spotify_api, tidal_api):
+    def __init__(self, apple_api, soundcloud_api, spotify_api, tidal_api, ytm_api):
         self.apple_api = apple_api
         self.soundcloud_api = soundcloud_api
         self.spotify_api = spotify_api
         self.tidal_api = tidal_api
+        self.ytm_api = ytm_api
 
     def clean_title(self, title):
         regex = re.compile('( \- \d{4})?( \-[a-z\s]*remaster(ed)?| \(remaster(ed)?\))', re.IGNORECASE)
@@ -89,6 +91,29 @@ class LinkParser:
 
         music.name = self.clean_title(result.name)
         music.artist = result.artist.name
+
+        return music
+
+    def parse_ytm_link(self, music):
+        url = parse.urlparse(music.ytm_url)
+        query_params = parse.parse_qs(url.query)
+        if 'list' in query_params:
+            music.music_type = 'A'
+            playlist = self.ytm_api.get_watch_playlist(None, query_params['list'][0])
+            for track in playlist["tracks"]:
+                if "album" in track and "id" in track["album"]:
+                    album_id = track["album"]["id"]
+            if not album_id:
+                return music
+
+            result = self.ytm_api.get_album(album_id)
+            music.artist = result["artist"][0]["name"]
+        elif 'video' in query_params:
+            music.music_type = 'T'
+            result = self.ytm_api.get_song(query_params['video'][0])
+            music.artist = result["artists"][0]
+
+        music.name = self.clean_title(result["title"])
 
         return music
 

@@ -10,6 +10,7 @@ from beatnik.api_manager.search_handler import SearchHandler
 from gmusicapi import Mobileclient
 from spotipy.oauth2 import SpotifyClientCredentials
 from tidalapi import Session
+from ytmusicapi import YTMusic
 
 class ApiManager:
     def __init__(self):
@@ -18,16 +19,19 @@ class ApiManager:
         self.soundcloud_api = self.get_soundcloud_api()
         self.spotify_api = self.get_spotify_api()
         self.tidal_api = self.get_tidal_api()
+        self.ytm_api = self.get_ytm_api()
         self.link_parser = LinkParser(
                 self.apple_api,
                 self.soundcloud_api,
                 self.spotify_api,
-                self.tidal_api)
+                self.tidal_api,
+                self.ytm_api)
         self.link_converter = LinkConverter(
                 self.apple_api,
                 self.soundcloud_api,
                 self.spotify_api,
                 self.tidal_api,
+                self.ytm_api,
                 self.link_parser)
         self.search_handler = SearchHandler(self.spotify_api, self.link_converter)
 
@@ -72,6 +76,15 @@ class ApiManager:
             return session
         except Exception as e:
             self.logger.error("Something went wrong getting Tidal API")
+            self.logger.error(e)
+            return None
+
+    def get_ytm_api(self):
+        try:
+            ytmusic = YTMusic()
+            return ytmusic
+        except Exception as e:
+            self.logger.error("Something went wrong getting Youtube Music API")
             self.logger.error(e)
             return None
 

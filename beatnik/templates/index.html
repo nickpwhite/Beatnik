@@ -63,6 +63,13 @@
         {% else %}
         <span class="flex-row music-button"></span>
         {% endif %}
+        {% if music.ytm_url %}
+        <a class="flex-row music-button" target="_blank" href="{{ music.ytm_url }}">
+          <img alt="Youtube Music" class="service-logo" src="{% static "images/ytm_logo.png" %}" />
+        </a>
+        {% else %}
+        <span class="flex-row music-button"></span>
+        {% endif %}
       </div>
     </li>
     {% endfor %}

@@ -45,7 +45,7 @@ pyjwt = "==1.5.3"
 pyquery = "==1.4.0"
 python-dateutil = "==2.6.1"
 pytz = "==2017.3"
-requests = "==2.21.0"
+requests = "~=2.25"
 rsa = "==4.1"
 simplejson = "==3.13.2"
 sitemap-generator = "==0.5.2"
@@ -64,6 +64,7 @@ Django = "==2.2.18"
 idna_ssl = "==1.1.0"
 MechanicalSoup = "==0.8.0"
 dj-database-url = "*"
+ytmusicapi = "0.15.0"
 
 [dev-packages]
 
