@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e72af0ec811ccdd90945cdb04061ff020d7104e1f4a8e3487fb02f87f18c8283"
+            "sha256": "7270fbe3f314db3d6df2f029587c3971ec9ea3232cb0faaf2700da1e9caa5f5c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -240,13 +240,6 @@
             ],
             "index": "pypi",
             "version": "==3.7.9"
-        },
-        "fudge": {
-            "hashes": [
-                "sha256:eba59a926fa1df1ab6dddd69a7a8af21865b16cad800cb4d1af75070b0f52afb"
-            ],
-            "index": "pypi",
-            "version": "==1.1.0"
         },
         "future": {
             "hashes": [
@@ -549,7 +542,7 @@
                 "sha256:c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1",
                 "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"
             ],
-            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2'",
+            "markers": "python_version >= '2.6' and python_version not in '3.0, 3.1, 3.2, 3.3'",
             "version": "==2.4.7"
         },
         "pyquery": {
@@ -652,14 +645,6 @@
             ],
             "index": "pypi",
             "version": "==2.5.0"
-        },
-        "soundcloud": {
-            "hashes": [
-                "sha256:16ac26b6942b7c8ff76f32fdccefdb70c22f430e65b256c28e5b1c53ef573d1f",
-                "sha256:aad2003592cec945f835f158f7b41ba8bf805c5738a2fcc5629668ea1df653d5"
-            ],
-            "index": "pypi",
-            "version": "==0.5.0"
         },
         "spotipy": {
             "hashes": [
