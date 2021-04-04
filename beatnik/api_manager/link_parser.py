@@ -80,7 +80,12 @@ class LinkParser:
 
     def parse_tidal_link(self, music):
         url = parse.urlparse(music.tidal_url)
-        _, _, prefix, item_id = url.path.split('/')
+        path_segments = url.path.split('/')
+        item_id = path_segments[-1]
+        for segment in path_segments:
+            if segment in [self.tidal_album_prefix, self.tidal_track_prefix]:
+                prefix = segment
+
         if prefix == self.tidal_album_prefix:
             result = self.tidal_api.get_album(item_id)
             music.music_type = 'A'
