@@ -62,7 +62,7 @@ Django = "==2.2.18"
 idna_ssl = "==1.1.0"
 MechanicalSoup = "==0.8.0"
 dj-database-url = "*"
-ytmusicapi = "0.15.0"
+ytmusicapi = {git = "https://github.com/sigma67/ytmusicapi"}
 
 [dev-packages]
 
