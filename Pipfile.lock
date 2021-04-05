@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7270fbe3f314db3d6df2f029587c3971ec9ea3232cb0faaf2700da1e9caa5f5c"
+            "sha256": "6cf1fec608d1f379090a9f05568973df6aa0e1d17f64502e2e9e50891271ac80"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -726,12 +726,12 @@
             "version": "==1.4.2"
         },
         "ytmusicapi": {
+            "git": "https://github.com/sigma67/ytmusicapi",
             "hashes": [
                 "sha256:3469db7041afac92bb7644a28a0d0022705a62320d32640bed256033e0278894",
                 "sha256:a5542aa0cbeeb8573fd50346e73fc0b291a580818f8bd6aa8d9dffdde54d862b"
             ],
-            "index": "pypi",
-            "version": "==0.15.0"
+            "ref": "bfe26e9b1fc09fa9524be335267596cfa759e5ae"
         }
     },
     "develop": {}

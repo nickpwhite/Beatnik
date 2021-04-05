@@ -104,14 +104,11 @@ class LinkParser:
         query_params = parse.parse_qs(url.query)
         if 'list' in query_params:
             music.music_type = 'A'
-            playlist = self.ytm_api.get_watch_playlist(None, query_params['list'][0])
-            for track in playlist["tracks"]:
-                if "album" in track and "id" in track["album"]:
-                    album_id = track["album"]["id"]
-            if not album_id:
+            browse_id = self.ytm_api.get_album_browse_id(query_params['list'][0])
+            if not browse_id:
                 return music
 
-            result = self.ytm_api.get_album(album_id)
+            result = self.ytm_api.get_album(browse_id)
             music.artist = result["artist"][0]["name"]
         elif 'video' in query_params:
             music.music_type = 'T'
