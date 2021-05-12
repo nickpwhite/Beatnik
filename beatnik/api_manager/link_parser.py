@@ -112,7 +112,7 @@ class LinkParser:
             music.artist = result["artist"][0]["name"]
         elif 'v' in query_params:
             music.music_type = 'T'
-            result = self.ytm_api.get_song(query_params['video'][0])
+            result = self.ytm_api.get_song(query_params['v'][0])
             music.artist = result["artists"][0]
 
         music.name = self.clean_title(result["title"])
