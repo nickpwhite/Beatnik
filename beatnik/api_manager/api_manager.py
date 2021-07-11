@@ -66,10 +66,14 @@ class ApiManager:
     def get_tidal_api(self):
         try:
             session = Session()
-            username = os.environ['TIDAL_USERNAME']
-            password = os.environ['TIDAL_PASSWORD']
+            session_id = os.environ['TIDAL_SESSION_ID']
+            token_type = os.environ['TIDAL_TOKEN_TYPE']
+            access_token = os.environ['TIDAL_ACCESS_TOKEN']
+            refresh_token = os.environ['TIDAL_REFRESH_TOKEN']
 
-            if (not session.login(username, password)):
+            if (not session.load_oauth_session(
+                    session_id, token_type, access_token, refresh_token
+            )):
                 self.logger.error("Unable to login to Tidal")
                 return None
 
