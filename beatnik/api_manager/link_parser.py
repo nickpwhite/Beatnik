@@ -27,6 +27,9 @@ class LinkParser:
         return regex.sub('', title)
 
     def parse_apple_link(self, music):
+        if self.apple_api is None:
+            return music
+
         url = parse.urlparse(music.apple_url)
         if (url.query == ''):
             album_id = url.path.split('/')[-1]
@@ -46,6 +49,9 @@ class LinkParser:
         return music
 
     def parse_soundcloud_link(self, music):
+        if self.soundcloud_api is None:
+            return music
+
         url = parse.urlparse(music.soundcloud_url)
         result = self.soundcloud_api.get(music.soundcloud_url)
         if result['type'] == "album":
@@ -60,6 +66,9 @@ class LinkParser:
         return music
 
     def parse_spotify_link(self, music):
+        if self.spotify_api is None:
+            return music
+
         url = parse.urlparse(music.spotify_url)
         item_id = url.path.split('/')[-1]
         prefix = url.path.split('/')[1]
@@ -79,6 +88,9 @@ class LinkParser:
         return music
 
     def parse_tidal_link(self, music):
+        if self.tidal_api is None:
+            return music
+
         url = parse.urlparse(music.tidal_url)
         path_segments = url.path.split('/')
         item_id = path_segments[-1]
@@ -100,6 +112,9 @@ class LinkParser:
         return music
 
     def parse_ytm_link(self, music):
+        if self.ytm_api is None:
+            return music
+
         url = parse.urlparse(music.ytm_url)
         query_params = parse.parse_qs(url.query)
         if 'list' in query_params:
