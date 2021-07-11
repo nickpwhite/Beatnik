@@ -35,12 +35,16 @@ ALLOWED_HOSTS = [
     'beatnik-app.herokuapp.com',
     'www.beatnikapp.com',
     'e68cb98f8f33.ngrok.io',
+    'beatnik-development.up.railway.app',
+    'beatnik-production.up.railway.app',
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'localhost:3000',
     'beatnik-app.herokuapp.com',
     'beatnikapp.com',
+    'beatnik-development.up.railway.app',
+    'beatnik-production.up.railway.app',
 ]
 
 SECURE_SSL_REDIRECT = not DEBUG
