@@ -3,7 +3,7 @@ from django.views import View
 
 class Settings(View):
     def get(self, request):
-        redirect_to = request.sesion.get('redirect_to', 'none')
+        redirect_to = request.session.get('redirect_to', 'none')
         if redirect_to == 'gpm':
             redirect_to = 'none'
 
