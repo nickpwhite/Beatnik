@@ -8,95 +8,79 @@
   <title>Beatnik - Streaming music sharing</title>
 <% end %>
 
-<div class="content">
-  <div class="flex-row">
-    <form id="search-form" action="/search" method="get" class="flex-row">
-      <div class="col-75">
-        <input
-          name="q"
-          class="search-box"
-          type="search"
-          placeholder="Enter a link or search query"
-          required>
+<!--
+{% block errors %}{% endblock %}
+{% block result %}{% endblock %}
+{% block feed %}
+-->
+<%= render "shared/search_bar" %>
+<ul class="flex-row feed">
+  <% latest_music.each do |music| %>
+  <li class="flex-row col-100">
+    <a href="/music/<%= music.id %>" class="flex-row col-90 m-col-50"
+                                     title="<%= music.name %> - <%= music.artist %>">
+      <div class="col-25 m-col-35">
+        <img class="artwork" src="<%= music.artwork %>" alt="Album cover" />
       </div>
-      <div class="col-25">
-        <input class="search-button" type="submit" value="Search" title="Search">
+      <div class="flex-col col-75 m-col-65">
+        <h2 class="music-info"><%= music.name %></h2>
+        <h3 class="music-info"><%= music.artist %></h3>
       </div>
-    </form>
-  </div>
-  <!--
-  {% block errors %}{% endblock %}
-  {% block result %}{% endblock %}
-  {% block feed %}
-  -->
-  <ul class="flex-row feed">
-    <% latest_music.each do |music| %>
-    <li class="flex-row col-100">
-      <a href="/music/<%= music.id %>" class="flex-row col-90 m-col-50"
-                                       title="<%= music.name %> - <%= music.artist %>">
-        <div class="col-25 m-col-35">
-          <img class="artwork" src="<%= music.artwork %>" alt="Album cover" />
-        </div>
-        <div class="flex-col col-75 m-col-65">
-          <h2 class="music-info"><%= music.name %></h2>
-          <h3 class="music-info"><%= music.artist %></h3>
-        </div>
-      </a>
-      <div class="flex-col col-10 link-container m-col-50">
-        <% if music.apple_url %>
-          <a class="flex-row music-button" target="_blank" href="<%= music.apple_url %>">
-            <img alt="Apple Music" class="service-logo" src="images/apple_logo.png" />
-          </a>
-        <% else %>
-          <span class="flex-row music-button"></span>
-        <% end %>
-        <% if music.soundcloud_url %>
-          <a class="flex-row music-button" target="_blank" href="<%= music.soundcloud_url %>">
-            <img alt="Soundcloud" class="service-logo" src="images/soundcloud_logo.png" />
-          </a>
-        <% else %>
-          <span class="flex-row music-button"></span>
-        <% end %>
-        <% if music.spotify_url %>
-          <a class="flex-row music-button" target="_blank" href="<%= music.spotify_url %>">
-            <img alt="Spotify" class="service-logo" src="images/spotify_logo.png" />
-          </a>
-        <% else %>
-          <span class="flex-row music-button"></span>
-        <% end %>
-        <% if music.tidal_url %>
-          <a class="flex-row music-button" target="_blank" href="<%= music.tidal_url %>">
-            <img alt="Tidal" class="service-logo" src="images/tidal_logo.png" />
-          </a>
-        <% else %>
-          <span class="flex-row music-button"></span>
-        <% end %>
-        <% if music.ytm_url %>
-          <a class="flex-row music-button" target="_blank" href="<%= music.ytm_url %>">
-            <img alt="Youtube Music" class="service-logo" src="images/ytm_logo.png" />
-          </a>
-        <% else %>
-          <span class="flex-row music-button"></span>
-        <% end %>
-      </div>
-    </li>
-  <% end %>
-  </ul>
-  <div class="flex-row">
-    <ul class="pagination">
-      <li>
-        <a href='/0' title="First page">&laquo;</a>
-      </li>
-      <% page_range.each do |i| %>
-        <li>
-          <a href='/<%= i %>' title="Page <%= i + 1 %>" <%= "class=active" if current_page == i %>>
-            <%= i + 1 %>
-          </a>
-        </li>
+    </a>
+    <div class="flex-col col-10 link-container m-col-50">
+      <% if music.apple_url %>
+        <a class="flex-row music-button" target="_blank" href="<%= music.apple_url %>">
+          <img alt="apple music" class="service-logo" src="/images/apple_logo.png" />
+        </a>
+      <% else %>
+        <span class="flex-row music-button"></span>
       <% end %>
+      <% if music.soundcloud_url %>
+        <a class="flex-row music-button" target="_blank" href="<%= music.soundcloud_url %>">
+          <img alt="soundcloud" class="service-logo" src="/images/soundcloud_logo.png" />
+        </a>
+      <% else %>
+        <span class="flex-row music-button"></span>
+      <% end %>
+      <% if music.spotify_url %>
+        <a class="flex-row music-button" target="_blank" href="<%= music.spotify_url %>">
+          <img alt="spotify" class="service-logo" src="/images/spotify_logo.png" />
+        </a>
+      <% else %>
+        <span class="flex-row music-button"></span>
+      <% end %>
+      <% if music.tidal_url %>
+        <a class="flex-row music-button" target="_blank" href="<%= music.tidal_url %>">
+          <img alt="tidal" class="service-logo" src="/images/tidal_logo.png" />
+        </a>
+      <% else %>
+        <span class="flex-row music-button"></span>
+      <% end %>
+      <% if music.ytm_url %>
+        <a class="flex-row music-button" target="_blank" href="<%= music.ytm_url %>">
+          <img alt="youtube music" class="service-logo" src="/images/ytm_logo.png" />
+        </a>
+      <% else %>
+        <span class="flex-row music-button"></span>
+      <% end %>
+    </div>
+  </li>
+<% end %>
+</ul>
+<div class="flex-row">
+  <ul class="pagination">
+    <li>
+      <a href='/0' title="first page">&laquo;</a>
+    </li>
+    <% page_range.each do |i| %>
       <li>
-        <a href='/<%= last_page %>' title="Last page">&raquo;</a>
+        <a href='/<%= i %>' title="page <%= i + 1 %>" <%= "class=active" if current_page == i %>>
+          <%= i + 1 %>
+        </a>
       </li>
-    </ul>
-  </div>
+    <% end %>
+    <li>
+      <a href='/<%= last_page %>' title="last page">&raquo;</a>
+    </li>
+  </ul>
 </div>
