@@ -2,5 +2,5 @@
 Rails.application.routes.draw do
   get "/(:page)", to: 'home#index'
 
-  resources :music, only: [:show]
+  resources :music, only: [:show, :create]
 end
