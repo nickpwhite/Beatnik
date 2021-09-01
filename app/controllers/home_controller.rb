@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# typed: strict
+# typed: ignore
 
 class HomeController < ApplicationController
   class IndexParams < T::Struct

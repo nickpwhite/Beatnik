@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/listen/all/listen.rbi
 #
-# listen-3.6.0
+# listen-3.7.0
 
 module Listen
   def self.default_logger; end
@@ -31,7 +31,7 @@ class Listen::Record
   def build; end
   def dir_entries(rel_path); end
   def file_data(rel_path); end
-  def initialize(directory); end
+  def initialize(directory, silencer); end
   def root; end
   def unset_path(rel_path); end
   def update_file(rel_path, data); end
@@ -54,6 +54,8 @@ end
 class Listen::Error::NotStarted < Listen::Error
 end
 class Listen::Error::SymlinkLoop < Listen::Error
+end
+class Listen::Error::INotifyMaxWatchesExceeded < Listen::Error
 end
 class Listen::Record::SymlinkDetector
   def _fail(symlinked, real_path); end
@@ -168,7 +170,7 @@ class Listen::Silencer
   def configure(options); end
   def ignore_patterns; end
   def ignore_patterns=(arg0); end
-  def initialize; end
+  def initialize(**options); end
   def only_patterns; end
   def only_patterns=(arg0); end
   def silenced?(relative_path, type); end

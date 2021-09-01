@@ -794,299 +794,6 @@ class Selenium::WebDriver::Location < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-module Selenium::WebDriver::Chrome
-  def self.driver_path; end
-  def self.driver_path=(path); end
-  def self.path; end
-  def self.path=(path); end
-end
-module Selenium::WebDriver::Chrome::Bridge
-  def available_log_types; end
-  def commands(command); end
-  def log(type); end
-  def network_conditions; end
-  def network_conditions=(conditions); end
-  def send_command(command_params); end
-end
-class Selenium::WebDriver::Chrome::Driver < Selenium::WebDriver::Driver
-  def browser; end
-  def create_capabilities(opts); end
-  def execute_cdp(cmd, **params); end
-  def initialize(opts = nil); end
-  def quit; end
-  include Selenium::WebDriver::DriverExtensions::DownloadsFiles
-  include Selenium::WebDriver::DriverExtensions::HasLocation
-  include Selenium::WebDriver::DriverExtensions::HasNetworkConditions
-  include Selenium::WebDriver::DriverExtensions::HasTouchScreen
-  include Selenium::WebDriver::DriverExtensions::HasWebStorage
-  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
-end
-class Selenium::WebDriver::Chrome::Profile
-  def [](key); end
-  def []=(key, value); end
-  def add_encoded_extension(encoded); end
-  def add_extension(path); end
-  def as_json(*arg0); end
-  def directory; end
-  def initialize(model = nil); end
-  def layout_on_disk; end
-  def prefs; end
-  def prefs_file_for(dir); end
-  def read_model_prefs; end
-  def write_prefs_to(dir); end
-  extend Selenium::WebDriver::ProfileHelper::ClassMethods
-  include Selenium::WebDriver::ProfileHelper
-end
-class Selenium::WebDriver::Chrome::Options < Selenium::WebDriver::Common::Options
-  def add_argument(arg); end
-  def add_emulation(device_name: nil, device_metrics: nil, user_agent: nil); end
-  def add_encoded_extension(encoded); end
-  def add_extension(path); end
-  def add_option(name, value); end
-  def add_preference(name, value); end
-  def args; end
-  def as_json(*arg0); end
-  def binary; end
-  def binary=(arg0); end
-  def detach; end
-  def detach=(arg0); end
-  def emulation; end
-  def encoded_extensions; end
-  def extensions; end
-  def headless!; end
-  def initialize(**opts); end
-  def options; end
-  def prefs; end
-  def profile; end
-  def profile=(arg0); end
-end
-class Selenium::WebDriver::Chrome::Service < Selenium::WebDriver::Service
-  def extract_service_args(driver_opts); end
-  def self.driver_path=(path); end
-end
-module Selenium::WebDriver::Edge
-  def self.driver_path; end
-  def self.driver_path=(path); end
-end
-module Selenium::WebDriver::Edge::Bridge
-  def commands(command); end
-  def maximize_window(handle = nil); end
-  def reposition_window(x, y, handle = nil); end
-  def resize_window(width, height, handle = nil); end
-  def send_keys_to_active_element(key); end
-  def window_handle; end
-  def window_position(handle = nil); end
-  def window_size(handle = nil); end
-end
-class Selenium::WebDriver::Edge::Driver < Selenium::WebDriver::Driver
-  def browser; end
-  def initialize(opts = nil); end
-  def quit; end
-  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
-end
-class Selenium::WebDriver::Edge::Options
-  def add_extension_path(path); end
-  def as_json(*arg0); end
-  def extension_paths; end
-  def in_private; end
-  def in_private=(arg0); end
-  def initialize(**opts); end
-  def start_page; end
-  def start_page=(arg0); end
-end
-class Selenium::WebDriver::Edge::Service < Selenium::WebDriver::Service
-  def extract_service_args(driver_opts); end
-end
-module Selenium::WebDriver::Firefox
-  def self.driver_path; end
-  def self.driver_path=(path); end
-  def self.path=(path); end
-end
-module Selenium::WebDriver::Firefox::Driver
-  def self.marionette?(opts); end
-  def self.new(**opts); end
-end
-module Selenium::WebDriver::Firefox::Util
-  def app_data_path; end
-  def self.app_data_path; end
-  def self.stringified?(str); end
-  def stringified?(str); end
-end
-class Selenium::WebDriver::Firefox::Extension
-  def create_root; end
-  def initialize(path); end
-  def read_id(directory); end
-  def read_id_from_install_rdf(directory); end
-  def read_id_from_manifest_json(directory); end
-  def write_to(extensions_dir); end
-end
-class Selenium::WebDriver::Firefox::Binary
-  def execute(*extra_args); end
-  def modify_link_library_path(profile_path); end
-  def quit; end
-  def self.macosx_path; end
-  def self.path; end
-  def self.path=(path); end
-  def self.reset_path!; end
-  def self.version; end
-  def self.windows_path; end
-  def self.windows_registry_path; end
-  def start_with(profile, profile_path, *args); end
-  def wait; end
-end
-class Selenium::WebDriver::Firefox::ProfilesIni
-  def [](name); end
-  def initialize; end
-  def parse; end
-  def path_for(name, is_relative, path); end
-  def refresh; end
-end
-class Selenium::WebDriver::Firefox::Profile
-  def []=(key, value); end
-  def add_extension(path, name = nil); end
-  def add_webdriver_extension; end
-  def assume_untrusted_certificate_issuer=(bool); end
-  def assume_untrusted_certificate_issuer?; end
-  def delete_extensions_cache(directory); end
-  def delete_lock_files(directory); end
-  def encoded; end
-  def extension_name_for(path); end
-  def initialize(model = nil); end
-  def install_extensions(directory); end
-  def layout_on_disk; end
-  def load_no_focus_lib=(arg0); end
-  def load_no_focus_lib?; end
-  def log_file; end
-  def log_file=(file); end
-  def name; end
-  def native_events=(arg0); end
-  def native_events?; end
-  def port=(port); end
-  def proxy=(proxy); end
-  def read_model_prefs; end
-  def read_user_prefs(path); end
-  def secure_ssl=(arg0); end
-  def secure_ssl?; end
-  def self.default_preferences; end
-  def self.from_name(name); end
-  def self.ini; end
-  def set_manual_proxy_preference(key, value); end
-  def update_user_prefs_in(directory); end
-  def write_prefs(prefs, path); end
-  extend Selenium::WebDriver::ProfileHelper::ClassMethods
-  include Selenium::WebDriver::ProfileHelper
-end
-class Selenium::WebDriver::Firefox::Launcher
-  def assert_profile; end
-  def connect_until_stable; end
-  def create_profile; end
-  def fetch_profile; end
-  def find_free_port; end
-  def initialize(binary, port, profile = nil); end
-  def launch; end
-  def quit; end
-  def socket_lock; end
-  def start; end
-  def url; end
-end
-module Selenium::WebDriver::Firefox::Legacy
-end
-class Selenium::WebDriver::Firefox::Legacy::Driver < Selenium::WebDriver::Driver
-  def browser; end
-  def initialize(opts = nil); end
-  def quit; end
-  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
-end
-module Selenium::WebDriver::Firefox::Marionette
-end
-module Selenium::WebDriver::Firefox::Marionette::Bridge
-  def commands(command); end
-  def install_addon(path, temporary); end
-  def uninstall_addon(id); end
-end
-class Selenium::WebDriver::Firefox::Marionette::Driver < Selenium::WebDriver::Driver
-  def browser; end
-  def create_capabilities(opts); end
-  def initialize(opts = nil); end
-  def quit; end
-  include Selenium::WebDriver::DriverExtensions::HasAddons
-  include Selenium::WebDriver::DriverExtensions::HasWebStorage
-  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
-end
-class Selenium::WebDriver::Firefox::Options < Selenium::WebDriver::Common::Options
-  def add_argument(arg); end
-  def add_option(name, value); end
-  def add_preference(name, value); end
-  def args; end
-  def as_json(*arg0); end
-  def binary; end
-  def binary=(arg0); end
-  def headless!; end
-  def initialize(**opts); end
-  def log_level; end
-  def log_level=(arg0); end
-  def options; end
-  def prefs; end
-  def process_profile(profile); end
-  def profile; end
-  def profile=(profile); end
-end
-class Selenium::WebDriver::Firefox::Service < Selenium::WebDriver::Service
-  def extract_service_args(driver_opts); end
-end
-module Selenium::WebDriver::IE
-  def self.driver_path; end
-  def self.driver_path=(path); end
-end
-class Selenium::WebDriver::IE::Driver < Selenium::WebDriver::Driver
-  def browser; end
-  def create_capabilities(opts); end
-  def initialize(opts = nil); end
-  def quit; end
-  include Selenium::WebDriver::DriverExtensions::HasWebStorage
-  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
-end
-class Selenium::WebDriver::IE::Options < Selenium::WebDriver::Common::Options
-  def add_argument(arg); end
-  def add_option(name, value); end
-  def args; end
-  def as_json(*arg0); end
-  def browser_attach_timeout; end
-  def browser_attach_timeout=(value); end
-  def element_scroll_behavior; end
-  def element_scroll_behavior=(value); end
-  def ensure_clean_session; end
-  def ensure_clean_session=(value); end
-  def file_upload_dialog_timeout; end
-  def file_upload_dialog_timeout=(value); end
-  def force_create_process_api; end
-  def force_create_process_api=(value); end
-  def force_shell_windows_api; end
-  def force_shell_windows_api=(value); end
-  def full_page_screenshot; end
-  def full_page_screenshot=(value); end
-  def ignore_protected_mode_settings; end
-  def ignore_protected_mode_settings=(value); end
-  def ignore_zoom_level; end
-  def ignore_zoom_level=(value); end
-  def initial_browser_url; end
-  def initial_browser_url=(value); end
-  def initialize(**opts); end
-  def native_events; end
-  def native_events=(value); end
-  def options; end
-  def persistent_hover; end
-  def persistent_hover=(value); end
-  def require_window_focus; end
-  def require_window_focus=(value); end
-  def use_per_process_proxy; end
-  def use_per_process_proxy=(value); end
-  def validate_cookie_document_type; end
-  def validate_cookie_document_type=(value); end
-end
-class Selenium::WebDriver::IE::Service < Selenium::WebDriver::Service
-  def extract_service_args(driver_opts); end
-end
 module Selenium::WebDriver::Remote
 end
 class Selenium::WebDriver::Remote::Bridge
@@ -1481,6 +1188,299 @@ class Selenium::WebDriver::Remote::W3C::Capabilities
   def unhandled_prompt_behavior=(value); end
   def version; end
   def version=(value); end
+end
+module Selenium::WebDriver::Chrome
+  def self.driver_path; end
+  def self.driver_path=(path); end
+  def self.path; end
+  def self.path=(path); end
+end
+module Selenium::WebDriver::Chrome::Bridge
+  def available_log_types; end
+  def commands(command); end
+  def log(type); end
+  def network_conditions; end
+  def network_conditions=(conditions); end
+  def send_command(command_params); end
+end
+class Selenium::WebDriver::Chrome::Driver < Selenium::WebDriver::Driver
+  def browser; end
+  def create_capabilities(opts); end
+  def execute_cdp(cmd, **params); end
+  def initialize(opts = nil); end
+  def quit; end
+  include Selenium::WebDriver::DriverExtensions::DownloadsFiles
+  include Selenium::WebDriver::DriverExtensions::HasLocation
+  include Selenium::WebDriver::DriverExtensions::HasNetworkConditions
+  include Selenium::WebDriver::DriverExtensions::HasTouchScreen
+  include Selenium::WebDriver::DriverExtensions::HasWebStorage
+  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
+end
+class Selenium::WebDriver::Chrome::Profile
+  def [](key); end
+  def []=(key, value); end
+  def add_encoded_extension(encoded); end
+  def add_extension(path); end
+  def as_json(*arg0); end
+  def directory; end
+  def initialize(model = nil); end
+  def layout_on_disk; end
+  def prefs; end
+  def prefs_file_for(dir); end
+  def read_model_prefs; end
+  def write_prefs_to(dir); end
+  extend Selenium::WebDriver::ProfileHelper::ClassMethods
+  include Selenium::WebDriver::ProfileHelper
+end
+class Selenium::WebDriver::Chrome::Options < Selenium::WebDriver::Common::Options
+  def add_argument(arg); end
+  def add_emulation(device_name: nil, device_metrics: nil, user_agent: nil); end
+  def add_encoded_extension(encoded); end
+  def add_extension(path); end
+  def add_option(name, value); end
+  def add_preference(name, value); end
+  def args; end
+  def as_json(*arg0); end
+  def binary; end
+  def binary=(arg0); end
+  def detach; end
+  def detach=(arg0); end
+  def emulation; end
+  def encoded_extensions; end
+  def extensions; end
+  def headless!; end
+  def initialize(**opts); end
+  def options; end
+  def prefs; end
+  def profile; end
+  def profile=(arg0); end
+end
+class Selenium::WebDriver::Chrome::Service < Selenium::WebDriver::Service
+  def extract_service_args(driver_opts); end
+  def self.driver_path=(path); end
+end
+module Selenium::WebDriver::Firefox
+  def self.driver_path; end
+  def self.driver_path=(path); end
+  def self.path=(path); end
+end
+module Selenium::WebDriver::Firefox::Driver
+  def self.marionette?(opts); end
+  def self.new(**opts); end
+end
+module Selenium::WebDriver::Firefox::Util
+  def app_data_path; end
+  def self.app_data_path; end
+  def self.stringified?(str); end
+  def stringified?(str); end
+end
+class Selenium::WebDriver::Firefox::Extension
+  def create_root; end
+  def initialize(path); end
+  def read_id(directory); end
+  def read_id_from_install_rdf(directory); end
+  def read_id_from_manifest_json(directory); end
+  def write_to(extensions_dir); end
+end
+class Selenium::WebDriver::Firefox::Binary
+  def execute(*extra_args); end
+  def modify_link_library_path(profile_path); end
+  def quit; end
+  def self.macosx_path; end
+  def self.path; end
+  def self.path=(path); end
+  def self.reset_path!; end
+  def self.version; end
+  def self.windows_path; end
+  def self.windows_registry_path; end
+  def start_with(profile, profile_path, *args); end
+  def wait; end
+end
+class Selenium::WebDriver::Firefox::ProfilesIni
+  def [](name); end
+  def initialize; end
+  def parse; end
+  def path_for(name, is_relative, path); end
+  def refresh; end
+end
+class Selenium::WebDriver::Firefox::Profile
+  def []=(key, value); end
+  def add_extension(path, name = nil); end
+  def add_webdriver_extension; end
+  def assume_untrusted_certificate_issuer=(bool); end
+  def assume_untrusted_certificate_issuer?; end
+  def delete_extensions_cache(directory); end
+  def delete_lock_files(directory); end
+  def encoded; end
+  def extension_name_for(path); end
+  def initialize(model = nil); end
+  def install_extensions(directory); end
+  def layout_on_disk; end
+  def load_no_focus_lib=(arg0); end
+  def load_no_focus_lib?; end
+  def log_file; end
+  def log_file=(file); end
+  def name; end
+  def native_events=(arg0); end
+  def native_events?; end
+  def port=(port); end
+  def proxy=(proxy); end
+  def read_model_prefs; end
+  def read_user_prefs(path); end
+  def secure_ssl=(arg0); end
+  def secure_ssl?; end
+  def self.default_preferences; end
+  def self.from_name(name); end
+  def self.ini; end
+  def set_manual_proxy_preference(key, value); end
+  def update_user_prefs_in(directory); end
+  def write_prefs(prefs, path); end
+  extend Selenium::WebDriver::ProfileHelper::ClassMethods
+  include Selenium::WebDriver::ProfileHelper
+end
+class Selenium::WebDriver::Firefox::Launcher
+  def assert_profile; end
+  def connect_until_stable; end
+  def create_profile; end
+  def fetch_profile; end
+  def find_free_port; end
+  def initialize(binary, port, profile = nil); end
+  def launch; end
+  def quit; end
+  def socket_lock; end
+  def start; end
+  def url; end
+end
+module Selenium::WebDriver::Firefox::Legacy
+end
+class Selenium::WebDriver::Firefox::Legacy::Driver < Selenium::WebDriver::Driver
+  def browser; end
+  def initialize(opts = nil); end
+  def quit; end
+  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
+end
+module Selenium::WebDriver::Firefox::Marionette
+end
+module Selenium::WebDriver::Firefox::Marionette::Bridge
+  def commands(command); end
+  def install_addon(path, temporary); end
+  def uninstall_addon(id); end
+end
+class Selenium::WebDriver::Firefox::Marionette::Driver < Selenium::WebDriver::Driver
+  def browser; end
+  def create_capabilities(opts); end
+  def initialize(opts = nil); end
+  def quit; end
+  include Selenium::WebDriver::DriverExtensions::HasAddons
+  include Selenium::WebDriver::DriverExtensions::HasWebStorage
+  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
+end
+class Selenium::WebDriver::Firefox::Options < Selenium::WebDriver::Common::Options
+  def add_argument(arg); end
+  def add_option(name, value); end
+  def add_preference(name, value); end
+  def args; end
+  def as_json(*arg0); end
+  def binary; end
+  def binary=(arg0); end
+  def headless!; end
+  def initialize(**opts); end
+  def log_level; end
+  def log_level=(arg0); end
+  def options; end
+  def prefs; end
+  def process_profile(profile); end
+  def profile; end
+  def profile=(profile); end
+end
+class Selenium::WebDriver::Firefox::Service < Selenium::WebDriver::Service
+  def extract_service_args(driver_opts); end
+end
+module Selenium::WebDriver::Edge
+  def self.driver_path; end
+  def self.driver_path=(path); end
+end
+module Selenium::WebDriver::Edge::Bridge
+  def commands(command); end
+  def maximize_window(handle = nil); end
+  def reposition_window(x, y, handle = nil); end
+  def resize_window(width, height, handle = nil); end
+  def send_keys_to_active_element(key); end
+  def window_handle; end
+  def window_position(handle = nil); end
+  def window_size(handle = nil); end
+end
+class Selenium::WebDriver::Edge::Driver < Selenium::WebDriver::Driver
+  def browser; end
+  def initialize(opts = nil); end
+  def quit; end
+  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
+end
+class Selenium::WebDriver::Edge::Options
+  def add_extension_path(path); end
+  def as_json(*arg0); end
+  def extension_paths; end
+  def in_private; end
+  def in_private=(arg0); end
+  def initialize(**opts); end
+  def start_page; end
+  def start_page=(arg0); end
+end
+class Selenium::WebDriver::Edge::Service < Selenium::WebDriver::Service
+  def extract_service_args(driver_opts); end
+end
+module Selenium::WebDriver::IE
+  def self.driver_path; end
+  def self.driver_path=(path); end
+end
+class Selenium::WebDriver::IE::Driver < Selenium::WebDriver::Driver
+  def browser; end
+  def create_capabilities(opts); end
+  def initialize(opts = nil); end
+  def quit; end
+  include Selenium::WebDriver::DriverExtensions::HasWebStorage
+  include Selenium::WebDriver::DriverExtensions::TakesScreenshot
+end
+class Selenium::WebDriver::IE::Options < Selenium::WebDriver::Common::Options
+  def add_argument(arg); end
+  def add_option(name, value); end
+  def args; end
+  def as_json(*arg0); end
+  def browser_attach_timeout; end
+  def browser_attach_timeout=(value); end
+  def element_scroll_behavior; end
+  def element_scroll_behavior=(value); end
+  def ensure_clean_session; end
+  def ensure_clean_session=(value); end
+  def file_upload_dialog_timeout; end
+  def file_upload_dialog_timeout=(value); end
+  def force_create_process_api; end
+  def force_create_process_api=(value); end
+  def force_shell_windows_api; end
+  def force_shell_windows_api=(value); end
+  def full_page_screenshot; end
+  def full_page_screenshot=(value); end
+  def ignore_protected_mode_settings; end
+  def ignore_protected_mode_settings=(value); end
+  def ignore_zoom_level; end
+  def ignore_zoom_level=(value); end
+  def initial_browser_url; end
+  def initial_browser_url=(value); end
+  def initialize(**opts); end
+  def native_events; end
+  def native_events=(value); end
+  def options; end
+  def persistent_hover; end
+  def persistent_hover=(value); end
+  def require_window_focus; end
+  def require_window_focus=(value); end
+  def use_per_process_proxy; end
+  def use_per_process_proxy=(value); end
+  def validate_cookie_document_type; end
+  def validate_cookie_document_type=(value); end
+end
+class Selenium::WebDriver::IE::Service < Selenium::WebDriver::Service
+  def extract_service_args(driver_opts); end
 end
 module Selenium::WebDriver::Safari
   def self.driver_path; end

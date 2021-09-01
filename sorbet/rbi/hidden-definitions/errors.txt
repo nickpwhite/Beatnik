@@ -551,26 +551,26 @@
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PROTO
 # uninitialized constant ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_HOST
-# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PORT
-# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PROTO
-# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionCable::Connection::TestRequest::HTTP_X_FORWARDED_PROTO
@@ -1525,13 +1525,13 @@
 # wrong constant name <Class:NullSessionHash>
 # wrong constant name handle_unverified_request
 # wrong constant name initialize
-# uninitialized constant #<Class:0x0000555b2948b578>::DOMAIN_REGEXP
+# uninitialized constant #<Class:0x000055bc545a9158>::DOMAIN_REGEXP
 # Did you mean?  ActionController::RequestForgeryProtection::ProtectionMethods::NullSession::NullCookieJar::DOMAIN_REGEXP
-# uninitialized constant #<Class:0x0000555b2948b578>::Elem
+# uninitialized constant #<Class:0x000055bc545a9158>::Elem
 # wrong constant name write
 # wrong constant name <static-init>
-# uninitialized constant #<Class:0x0000555b2948b708>::Elem
-# uninitialized constant #<Class:0x0000555b2948b708>::Unspecified
+# uninitialized constant #<Class:0x000055bc545a9428>::Elem
+# uninitialized constant #<Class:0x000055bc545a9428>::Unspecified
 # Did you mean?  ActionController::RequestForgeryProtection::ProtectionMethods::NullSession::NullSessionHash::Unspecified
 # wrong constant name initialize
 # wrong constant name <static-init>
@@ -1617,26 +1617,26 @@
 #                ActionController::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PROTO
 # uninitialized constant ActionController::TestRequest::HTTP_X_FORWARDED_HOST
-# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionController::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionController::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionController::TestRequest::HTTP_X_FORWARDED_PORT
-# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionController::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionController::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionController::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionController::TestRequest::HTTP_X_FORWARDED_PROTO
-# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionController::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionController::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionController::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionController::TestRequest::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionController::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionController::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionController::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionController::TestRequest::HTTP_X_FORWARDED_PROTO
@@ -2768,26 +2768,26 @@
 #                ActionDispatch::Request::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PROTO
 # uninitialized constant ActionDispatch::Request::HTTP_X_FORWARDED_HOST
-# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::Request::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PROTO
 #                ActionDispatch::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::Request::HTTP_X_FORWARDED_PORT
-# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::Request::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::Request::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PROTO
 #                ActionDispatch::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::Request::HTTP_X_FORWARDED_PROTO
-# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::Request::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::Request::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::Request::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::Request::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::Request::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::Request::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::Request::HTTP_X_FORWARDED_PROTO
@@ -3438,26 +3438,26 @@
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PROTO
 # uninitialized constant ActionDispatch::TestRequest::HTTP_X_FORWARDED_HOST
-# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::TestRequest::HTTP_X_FORWARDED_PORT
-# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PROTO
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::TestRequest::HTTP_X_FORWARDED_PROTO
-# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant ActionDispatch::TestRequest::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
-#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+# Did you mean?  ActionDispatch::TestRequest::HTTP_X_FORWARDED_SSL
+#                ActionDispatch::TestRequest::HTTP_X_FORWARDED_FOR
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PORT
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_HOST
 #                ActionDispatch::TestRequest::HTTP_X_FORWARDED_PROTO
@@ -3665,36 +3665,36 @@
 # uninitialized constant ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::VALUE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b28893180>::CLAUSE_METHODS
+# uninitialized constant #<Class:0x000055bc55f56d30>::CLAUSE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActionMailbox::InboundEmail::ClassMethods
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b28893180>::FROZEN_EMPTY_ARRAY
+# uninitialized constant #<Class:0x000055bc55f56d30>::FROZEN_EMPTY_ARRAY
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b28893180>::FROZEN_EMPTY_HASH
+# uninitialized constant #<Class:0x000055bc55f56d30>::FROZEN_EMPTY_HASH
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b28893180>::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant #<Class:0x000055bc55f56d30>::INVALID_METHODS_FOR_DELETE_ALL
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
-# uninitialized constant #<Class:0x0000555b28893180>::MULTI_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55f56d30>::MULTI_VALUE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b28893180>::NILCLASS_STRING
+# uninitialized constant #<Class:0x000055bc55f56d30>::NILCLASS_STRING
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
-# uninitialized constant #<Class:0x0000555b28893180>::ONE_AS_ONE
+# uninitialized constant #<Class:0x000055bc55f56d30>::ONE_AS_ONE
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
-# uninitialized constant #<Class:0x0000555b28893180>::ORDER_IGNORE_MESSAGE
+# uninitialized constant #<Class:0x000055bc55f56d30>::ORDER_IGNORE_MESSAGE
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
-# uninitialized constant #<Class:0x0000555b28893180>::SINGLE_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55f56d30>::SINGLE_VALUE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b28893180>::STRUCTURAL_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55f56d30>::STRUCTURAL_VALUE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b28893180>::VALID_DIRECTIONS
+# uninitialized constant #<Class:0x000055bc55f56d30>::VALID_DIRECTIONS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
-# uninitialized constant #<Class:0x0000555b28893180>::VALID_UNSCOPING_VALUES
+# uninitialized constant #<Class:0x000055bc55f56d30>::VALID_UNSCOPING_VALUES
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
-# uninitialized constant #<Class:0x0000555b28893180>::VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55f56d30>::VALUE_METHODS
 # Did you mean?  ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActionMailbox::InboundEmail::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
 # uninitialized constant ActionMailbox::InboundEmail::ActiveRecord_Relation::CLAUSE_METHODS
@@ -5160,14 +5160,14 @@
 # wrong constant name time_tag
 # uninitialized constant ActionView::Helpers::DebugHelper::ARIA_PREFIXES
 # Did you mean?  ActionView::Helpers::DebugHelper::DATA_PREFIXES
-#                ActionView::Helpers::ARIA_PREFIXES
 #                ActionView::Helpers::DATA_PREFIXES
+#                ActionView::Helpers::ARIA_PREFIXES
 # uninitialized constant ActionView::Helpers::DebugHelper::BOOLEAN_ATTRIBUTES
 # Did you mean?  ActionView::Helpers::BOOLEAN_ATTRIBUTES
 # uninitialized constant ActionView::Helpers::DebugHelper::DATA_PREFIXES
 # Did you mean?  ActionView::Helpers::DebugHelper::ARIA_PREFIXES
-#                ActionView::Helpers::ARIA_PREFIXES
 #                ActionView::Helpers::DATA_PREFIXES
+#                ActionView::Helpers::ARIA_PREFIXES
 # uninitialized constant ActionView::Helpers::DebugHelper::PRE_CONTENT_STRINGS
 # Did you mean?  ActionView::Helpers::PRE_CONTENT_STRINGS
 # uninitialized constant ActionView::Helpers::DebugHelper::TAG_TYPES
@@ -5217,14 +5217,14 @@
 # wrong constant name form_with_generates_remote_forms=
 # uninitialized constant ActionView::Helpers::FormOptionsHelper::ARIA_PREFIXES
 # Did you mean?  ActionView::Helpers::FormOptionsHelper::DATA_PREFIXES
-#                ActionView::Helpers::ARIA_PREFIXES
 #                ActionView::Helpers::DATA_PREFIXES
+#                ActionView::Helpers::ARIA_PREFIXES
 # uninitialized constant ActionView::Helpers::FormOptionsHelper::BOOLEAN_ATTRIBUTES
 # Did you mean?  ActionView::Helpers::BOOLEAN_ATTRIBUTES
 # uninitialized constant ActionView::Helpers::FormOptionsHelper::DATA_PREFIXES
 # Did you mean?  ActionView::Helpers::FormOptionsHelper::ARIA_PREFIXES
-#                ActionView::Helpers::ARIA_PREFIXES
 #                ActionView::Helpers::DATA_PREFIXES
+#                ActionView::Helpers::ARIA_PREFIXES
 # uninitialized constant ActionView::Helpers::FormOptionsHelper::PRE_CONTENT_STRINGS
 # Did you mean?  ActionView::Helpers::PRE_CONTENT_STRINGS
 # uninitialized constant ActionView::Helpers::FormOptionsHelper::TAG_TYPES
@@ -7883,9 +7883,9 @@
 #                ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::MoneyDecoder::TIMESTAMP_DB_LOCAL
 # wrong constant name decode
 # wrong constant name <static-init>
-# uninitialized constant #<Class:0x0000555b283b8a70>::DEFAULT_STATEMENT_LIMIT
+# uninitialized constant #<Class:0x000055bc55cc3460>::DEFAULT_STATEMENT_LIMIT
 # Did you mean?  ActiveRecord::ConnectionAdapters::PostgreSQLAdapter::StatementPool::DEFAULT_STATEMENT_LIMIT
-# uninitialized constant #<Class:0x0000555b283b8a70>::Elem
+# uninitialized constant #<Class:0x000055bc55cc3460>::Elem
 # wrong constant name initialize
 # wrong constant name next_key
 # wrong constant name <static-init>
@@ -8500,29 +8500,28 @@
 # wrong constant name cache_key_with_version
 # wrong constant name cache_version
 # wrong constant name to_param
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::ACTIONS
+# uninitialized constant #<Class:0x000055bc547dcb28>::ACTIONS
 # Did you mean?  ActiveRecord::InternalMetadata::ACTIONS
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::CALLBACKS
+# uninitialized constant #<Class:0x000055bc547dcb28>::CALLBACKS
 # Did you mean?  ActiveRecord::InternalMetadata::Callbacks
 #                ActiveRecord::Callbacks
 #                ActiveRecord::InternalMetadata::Callback
 #                ActiveRecord::InternalMetadata::CALLBACKS
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::CALLBACK_FILTER_TYPES
+# uninitialized constant #<Class:0x000055bc547dcb28>::CALLBACK_FILTER_TYPES
 # Did you mean?  ActiveRecord::InternalMetadata::CALLBACK_FILTER_TYPES
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::CALL_COMPILABLE_REGEXP
+# uninitialized constant #<Class:0x000055bc547dcb28>::CALL_COMPILABLE_REGEXP
 # Did you mean?  ActiveRecord::InternalMetadata::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
-# wrong constant name <Class:GeneratedAttributeMethods>
 # wrong constant name <Class:GeneratedRelationMethods>
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::MAX_PASSWORD_LENGTH_ALLOWED
+# uninitialized constant #<Class:0x000055bc547dcb28>::MAX_PASSWORD_LENGTH_ALLOWED
 # Did you mean?  ActiveRecord::InternalMetadata::MAX_PASSWORD_LENGTH_ALLOWED
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::MINIMUM_TOKEN_LENGTH
+# uninitialized constant #<Class:0x000055bc547dcb28>::MINIMUM_TOKEN_LENGTH
 # Did you mean?  ActiveRecord::InternalMetadata::MINIMUM_TOKEN_LENGTH
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::NAME_COMPILABLE_REGEXP
+# uninitialized constant #<Class:0x000055bc547dcb28>::NAME_COMPILABLE_REGEXP
 # Did you mean?  ActiveRecord::InternalMetadata::NAME_COMPILABLE_REGEXP
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::RESTRICTED_CLASS_METHODS
+# uninitialized constant #<Class:0x000055bc547dcb28>::RESTRICTED_CLASS_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::RESTRICTED_CLASS_METHODS
-# uninitialized constant ActiveRecord::InternalMetadata(Table doesn't exist)::UNASSIGNABLE_KEYS
+# uninitialized constant #<Class:0x000055bc547dcb28>::UNASSIGNABLE_KEYS
 # Did you mean?  ActiveRecord::InternalMetadata::UNASSIGNABLE_KEYS
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation::CLAUSE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation::ClassMethods
@@ -8543,36 +8542,36 @@
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation::VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_AssociationRelation::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::CLAUSE_METHODS
+# uninitialized constant #<Class:0x000055bc547a9930>::CLAUSE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveRecord::InternalMetadata::ClassMethods
 #                ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::FROZEN_EMPTY_ARRAY
+# uninitialized constant #<Class:0x000055bc547a9930>::FROZEN_EMPTY_ARRAY
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::FROZEN_EMPTY_HASH
+# uninitialized constant #<Class:0x000055bc547a9930>::FROZEN_EMPTY_HASH
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant #<Class:0x000055bc547a9930>::INVALID_METHODS_FOR_DELETE_ALL
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::MULTI_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc547a9930>::MULTI_VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::NILCLASS_STRING
+# uninitialized constant #<Class:0x000055bc547a9930>::NILCLASS_STRING
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::ONE_AS_ONE
+# uninitialized constant #<Class:0x000055bc547a9930>::ONE_AS_ONE
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::ORDER_IGNORE_MESSAGE
+# uninitialized constant #<Class:0x000055bc547a9930>::ORDER_IGNORE_MESSAGE
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::SINGLE_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc547a9930>::SINGLE_VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::STRUCTURAL_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc547a9930>::STRUCTURAL_VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::VALID_DIRECTIONS
+# uninitialized constant #<Class:0x000055bc547a9930>::VALID_DIRECTIONS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::VALID_UNSCOPING_VALUES
+# uninitialized constant #<Class:0x000055bc547a9930>::VALID_UNSCOPING_VALUES
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
-# uninitialized constant #<Class:0x0000555b2b9ae5a8>::VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc547a9930>::VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveRecord::InternalMetadata::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_Relation::CLAUSE_METHODS
@@ -8594,7 +8593,6 @@
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_Relation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveRecord::InternalMetadata::ActiveRecord_Relation::VALUE_METHODS
 # Did you mean?  ActiveRecord::InternalMetadata::ActiveRecord_Relation::CLAUSE_METHODS
-# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name enabled?
@@ -9362,29 +9360,28 @@
 # wrong constant name fk_ignore_pattern=
 # wrong constant name ignore_tables
 # wrong constant name ignore_tables=
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::ACTIONS
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::ACTIONS
 # Did you mean?  ActiveRecord::SchemaMigration::ACTIONS
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::CALLBACKS
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::CALLBACKS
 # Did you mean?  ActiveRecord::SchemaMigration::Callbacks
 #                ActiveRecord::Callbacks
 #                ActiveRecord::SchemaMigration::Callback
 #                ActiveRecord::SchemaMigration::CALLBACKS
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::CALLBACK_FILTER_TYPES
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::CALLBACK_FILTER_TYPES
 # Did you mean?  ActiveRecord::SchemaMigration::CALLBACK_FILTER_TYPES
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::CALL_COMPILABLE_REGEXP
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::CALL_COMPILABLE_REGEXP
 # Did you mean?  ActiveRecord::SchemaMigration::CALL_COMPILABLE_REGEXP
 # wrong constant name <Class:GeneratedAssociationMethods>
-# wrong constant name <Class:GeneratedAttributeMethods>
 # wrong constant name <Class:GeneratedRelationMethods>
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::MAX_PASSWORD_LENGTH_ALLOWED
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::MAX_PASSWORD_LENGTH_ALLOWED
 # Did you mean?  ActiveRecord::SchemaMigration::MAX_PASSWORD_LENGTH_ALLOWED
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::MINIMUM_TOKEN_LENGTH
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::MINIMUM_TOKEN_LENGTH
 # Did you mean?  ActiveRecord::SchemaMigration::MINIMUM_TOKEN_LENGTH
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::NAME_COMPILABLE_REGEXP
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::NAME_COMPILABLE_REGEXP
 # Did you mean?  ActiveRecord::SchemaMigration::NAME_COMPILABLE_REGEXP
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::RESTRICTED_CLASS_METHODS
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::RESTRICTED_CLASS_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::RESTRICTED_CLASS_METHODS
-# uninitialized constant ActiveRecord::SchemaMigration(Table doesn't exist)::UNASSIGNABLE_KEYS
+# uninitialized constant ActiveRecord::SchemaMigration(version: string)::UNASSIGNABLE_KEYS
 # Did you mean?  ActiveRecord::SchemaMigration::UNASSIGNABLE_KEYS
 # wrong constant name version
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation::CLAUSE_METHODS
@@ -9406,36 +9403,36 @@
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation::VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::CLAUSE_METHODS
+# uninitialized constant #<Class:0x000055bc53e70490>::CLAUSE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveRecord::SchemaMigration::ClassMethods
 #                ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::FROZEN_EMPTY_ARRAY
+# uninitialized constant #<Class:0x000055bc53e70490>::FROZEN_EMPTY_ARRAY
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::FROZEN_EMPTY_HASH
+# uninitialized constant #<Class:0x000055bc53e70490>::FROZEN_EMPTY_HASH
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant #<Class:0x000055bc53e70490>::INVALID_METHODS_FOR_DELETE_ALL
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::MULTI_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc53e70490>::MULTI_VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::NILCLASS_STRING
+# uninitialized constant #<Class:0x000055bc53e70490>::NILCLASS_STRING
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::ONE_AS_ONE
+# uninitialized constant #<Class:0x000055bc53e70490>::ONE_AS_ONE
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::ORDER_IGNORE_MESSAGE
+# uninitialized constant #<Class:0x000055bc53e70490>::ORDER_IGNORE_MESSAGE
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::SINGLE_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc53e70490>::SINGLE_VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::STRUCTURAL_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc53e70490>::STRUCTURAL_VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::VALID_DIRECTIONS
+# uninitialized constant #<Class:0x000055bc53e70490>::VALID_DIRECTIONS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::VALID_UNSCOPING_VALUES
+# uninitialized constant #<Class:0x000055bc53e70490>::VALID_UNSCOPING_VALUES
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
-# uninitialized constant #<Class:0x0000555b2b9abdd0>::VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc53e70490>::VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_Relation::CLAUSE_METHODS
@@ -9457,7 +9454,6 @@
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_Relation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveRecord::SchemaMigration::ActiveRecord_Relation::VALUE_METHODS
 # Did you mean?  ActiveRecord::SchemaMigration::ActiveRecord_Relation::CLAUSE_METHODS
-# wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name <static-init>
 # wrong constant name all_versions
@@ -9931,36 +9927,36 @@
 # uninitialized constant ActiveStorage::Attachment::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveStorage::Attachment::ActiveRecord_AssociationRelation::VALUE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_AssociationRelation::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b29364708>::CLAUSE_METHODS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::CLAUSE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::Attachment::ClassMethods
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b29364708>::FROZEN_EMPTY_ARRAY
+# uninitialized constant #<Class:0x000055bc55fd5f18>::FROZEN_EMPTY_ARRAY
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b29364708>::FROZEN_EMPTY_HASH
+# uninitialized constant #<Class:0x000055bc55fd5f18>::FROZEN_EMPTY_HASH
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b29364708>::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant #<Class:0x000055bc55fd5f18>::INVALID_METHODS_FOR_DELETE_ALL
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
-# uninitialized constant #<Class:0x0000555b29364708>::MULTI_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::MULTI_VALUE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b29364708>::NILCLASS_STRING
+# uninitialized constant #<Class:0x000055bc55fd5f18>::NILCLASS_STRING
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
-# uninitialized constant #<Class:0x0000555b29364708>::ONE_AS_ONE
+# uninitialized constant #<Class:0x000055bc55fd5f18>::ONE_AS_ONE
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
-# uninitialized constant #<Class:0x0000555b29364708>::ORDER_IGNORE_MESSAGE
+# uninitialized constant #<Class:0x000055bc55fd5f18>::ORDER_IGNORE_MESSAGE
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
-# uninitialized constant #<Class:0x0000555b29364708>::SINGLE_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::SINGLE_VALUE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b29364708>::STRUCTURAL_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::STRUCTURAL_VALUE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b29364708>::VALID_DIRECTIONS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::VALID_DIRECTIONS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
-# uninitialized constant #<Class:0x0000555b29364708>::VALID_UNSCOPING_VALUES
+# uninitialized constant #<Class:0x000055bc55fd5f18>::VALID_UNSCOPING_VALUES
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
-# uninitialized constant #<Class:0x0000555b29364708>::VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fd5f18>::VALUE_METHODS
 # Did you mean?  ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveStorage::Attachment::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
 # uninitialized constant ActiveStorage::Attachment::ActiveRecord_Relation::CLAUSE_METHODS
@@ -10546,36 +10542,36 @@
 # uninitialized constant ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
 # uninitialized constant ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::VALUE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_AssociationRelation::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b292a0178>::CLAUSE_METHODS
+# uninitialized constant #<Class:0x000055bc55fbf358>::CLAUSE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::ClassMethods
 #                ActiveStorage::VariantRecord::ClassMethods
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
-# uninitialized constant #<Class:0x0000555b292a0178>::FROZEN_EMPTY_ARRAY
+# uninitialized constant #<Class:0x000055bc55fbf358>::FROZEN_EMPTY_ARRAY
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b292a0178>::FROZEN_EMPTY_HASH
+# uninitialized constant #<Class:0x000055bc55fbf358>::FROZEN_EMPTY_HASH
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
-# uninitialized constant #<Class:0x0000555b292a0178>::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant #<Class:0x000055bc55fbf358>::INVALID_METHODS_FOR_DELETE_ALL
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
-# uninitialized constant #<Class:0x0000555b292a0178>::MULTI_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fbf358>::MULTI_VALUE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b292a0178>::NILCLASS_STRING
+# uninitialized constant #<Class:0x000055bc55fbf358>::NILCLASS_STRING
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
-# uninitialized constant #<Class:0x0000555b292a0178>::ONE_AS_ONE
+# uninitialized constant #<Class:0x000055bc55fbf358>::ONE_AS_ONE
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
-# uninitialized constant #<Class:0x0000555b292a0178>::ORDER_IGNORE_MESSAGE
+# uninitialized constant #<Class:0x000055bc55fbf358>::ORDER_IGNORE_MESSAGE
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
-# uninitialized constant #<Class:0x0000555b292a0178>::SINGLE_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fbf358>::SINGLE_VALUE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b292a0178>::STRUCTURAL_VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fbf358>::STRUCTURAL_VALUE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
-# uninitialized constant #<Class:0x0000555b292a0178>::VALID_DIRECTIONS
+# uninitialized constant #<Class:0x000055bc55fbf358>::VALID_DIRECTIONS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
-# uninitialized constant #<Class:0x0000555b292a0178>::VALID_UNSCOPING_VALUES
+# uninitialized constant #<Class:0x000055bc55fbf358>::VALID_UNSCOPING_VALUES
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
-# uninitialized constant #<Class:0x0000555b292a0178>::VALUE_METHODS
+# uninitialized constant #<Class:0x000055bc55fbf358>::VALUE_METHODS
 # Did you mean?  ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
 #                ActiveStorage::VariantRecord::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
 # uninitialized constant ActiveStorage::VariantRecord::ActiveRecord_Relation::CLAUSE_METHODS
@@ -11164,8 +11160,8 @@
 # wrong constant name /
 # wrong constant name <=>
 # uninitialized constant ActiveSupport::Duration::Scalar::EXABYTE
-# Did you mean?  ActiveSupport::Duration::Scalar::TERABYTE
-#                ActiveSupport::Duration::Scalar::MEGABYTE
+# Did you mean?  ActiveSupport::Duration::Scalar::MEGABYTE
+#                ActiveSupport::Duration::Scalar::TERABYTE
 # uninitialized constant ActiveSupport::Duration::Scalar::GIGABYTE
 # uninitialized constant ActiveSupport::Duration::Scalar::KILOBYTE
 # uninitialized constant ActiveSupport::Duration::Scalar::MEGABYTE
@@ -11173,8 +11169,8 @@
 # uninitialized constant ActiveSupport::Duration::Scalar::PETABYTE
 # Did you mean?  ActiveSupport::Duration::Scalar::TERABYTE
 # uninitialized constant ActiveSupport::Duration::Scalar::TERABYTE
-# Did you mean?  ActiveSupport::Duration::Scalar::PETABYTE
-#                ActiveSupport::Duration::Scalar::EXABYTE
+# Did you mean?  ActiveSupport::Duration::Scalar::EXABYTE
+#                ActiveSupport::Duration::Scalar::PETABYTE
 # wrong constant name coerce
 # wrong constant name initialize
 # wrong constant name to_f
@@ -12176,6 +12172,7 @@
 # Did you mean?  ApplicationRecord::RESTRICTED_CLASS_METHODS
 # uninitialized constant ApplicationRecord(abstract)::UNASSIGNABLE_KEYS
 # Did you mean?  ApplicationRecord::UNASSIGNABLE_KEYS
+# wrong constant name initialize
 # uninitialized constant ApplicationRecord::ActiveRecord_AssociationRelation::CLAUSE_METHODS
 # Did you mean?  ApplicationRecord::ActiveRecord_AssociationRelation::ClassMethods
 #                ApplicationRecord::ClassMethods
@@ -13027,6 +13024,8 @@
 # wrong constant name to_csv
 # wrong constant name to_h
 # wrong constant name try_convert
+# wrong constant name __binding__
+# wrong constant name initialize
 # wrong constant name <Class:BasicObject>
 # uninitialized constant BasicSocket::APPEND
 # uninitialized constant BasicSocket::BINARY
@@ -13094,8 +13093,8 @@
 # wrong constant name initialize
 # wrong constant name to_a
 # uninitialized constant BigDecimal::EXABYTE
-# Did you mean?  BigDecimal::TERABYTE
-#                BigDecimal::MEGABYTE
+# Did you mean?  BigDecimal::MEGABYTE
+#                BigDecimal::TERABYTE
 # uninitialized constant BigDecimal::GIGABYTE
 # uninitialized constant BigDecimal::KILOBYTE
 # uninitialized constant BigDecimal::MEGABYTE
@@ -13103,8 +13102,8 @@
 # uninitialized constant BigDecimal::PETABYTE
 # Did you mean?  BigDecimal::TERABYTE
 # uninitialized constant BigDecimal::TERABYTE
-# Did you mean?  BigDecimal::PETABYTE
-#                BigDecimal::EXABYTE
+# Did you mean?  BigDecimal::EXABYTE
+#                BigDecimal::PETABYTE
 # wrong constant name clone
 # wrong constant name to_digits
 # wrong constant name interpret_loosely
@@ -14746,7 +14745,18 @@
 # wrong constant name unbundled_env
 # wrong constant name unbundled_exec
 # wrong constant name unbundled_system
+# wrong constant name <Class:PryProcessor>
 # wrong constant name <Class:ThreadsTable>
+# wrong constant name at_breakpoint
+# wrong constant name at_return
+# wrong constant name bold
+# wrong constant name output
+# wrong constant name perform
+# wrong constant name pry
+# wrong constant name pry=
+# wrong constant name run
+# wrong constant name <static-init>
+# wrong constant name start
 # wrong constant name <static-init>
 # wrong constant name a
 # wrong constant name base
@@ -16141,6 +16151,176 @@
 # wrong constant name descendants
 # wrong constant name json_creatable?
 # wrong constant name subclasses
+# wrong constant name <Class:Duo>
+# wrong constant name <Class:Encoders>
+# wrong constant name <Class:FileType>
+# wrong constant name <Class:Plugin>
+# wrong constant name <Class:PluginHost>
+# wrong constant name <Class:Scanners>
+# wrong constant name <Class:Styles>
+# wrong constant name <Class:Tokens>
+# wrong constant name <Class:TokensProxy>
+# wrong constant name call
+# wrong constant name encode
+# wrong constant name encoder
+# wrong constant name format
+# wrong constant name format=
+# wrong constant name highlight
+# wrong constant name initialize
+# wrong constant name lang
+# wrong constant name lang=
+# wrong constant name options
+# wrong constant name options=
+# wrong constant name scanner
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name <Class:Encoder>
+# wrong constant name <Class:Terminal>
+# wrong constant name <<
+# wrong constant name begin_group
+# wrong constant name begin_line
+# wrong constant name compile
+# wrong constant name encode
+# wrong constant name encode_tokens
+# wrong constant name end_group
+# wrong constant name end_line
+# wrong constant name file_extension
+# wrong constant name finish
+# wrong constant name get_output
+# wrong constant name highlight
+# wrong constant name initialize
+# wrong constant name options
+# wrong constant name options=
+# wrong constant name output
+# wrong constant name scanner
+# wrong constant name scanner=
+# wrong constant name setup
+# wrong constant name text_token
+# wrong constant name token
+# wrong constant name tokens
+# wrong constant name <static-init>
+# wrong constant name const_missing
+# wrong constant name file_extension
+# uninitialized constant CodeRay::Encoders::Terminal::DEFAULT_OPTIONS
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <Class:UnknownFileType>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name fetch
+# wrong constant name type_from_shebang
+# wrong constant name aliases
+# wrong constant name plugin_host
+# wrong constant name plugin_id
+# wrong constant name register_for
+# wrong constant name title
+# wrong constant name <static-init>
+# wrong constant name <Class:HostNotFound>
+# wrong constant name <Class:PluginNotFound>
+# wrong constant name []
+# wrong constant name all_plugins
+# wrong constant name const_missing
+# wrong constant name default
+# wrong constant name list
+# wrong constant name load
+# wrong constant name load_all
+# wrong constant name load_plugin_map
+# wrong constant name make_plugin_hash
+# wrong constant name map
+# wrong constant name path_to
+# wrong constant name plugin_hash
+# wrong constant name plugin_path
+# wrong constant name register
+# wrong constant name validate_id
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name extended
+# wrong constant name <Class:Scanner>
+# uninitialized constant CodeRay::Scanners::Scanner::Elem
+# uninitialized constant CodeRay::Scanners::Scanner::Id
+# wrong constant name <Class:ScanError>
+# uninitialized constant CodeRay::Scanners::Scanner::Version
+# Did you mean?  CodeRay::VERSION
+# wrong constant name binary_string
+# wrong constant name column
+# wrong constant name each
+# wrong constant name file_extension
+# wrong constant name initialize
+# wrong constant name lang
+# wrong constant name line
+# wrong constant name raise_inspect
+# wrong constant name raise_inspect_arguments
+# wrong constant name reset_instance
+# wrong constant name scan_rest
+# wrong constant name scan_tokens
+# wrong constant name scanner_state_info
+# wrong constant name set_string_from_source
+# wrong constant name set_tokens_from_options
+# wrong constant name setup
+# wrong constant name state
+# wrong constant name state=
+# wrong constant name string=
+# wrong constant name tokenize
+# wrong constant name tokens
+# wrong constant name tokens_last
+# wrong constant name tokens_size
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name encode_with_encoding
+# wrong constant name encoding
+# wrong constant name file_extension
+# wrong constant name guess_encoding
+# wrong constant name lang
+# wrong constant name normalize
+# wrong constant name to_unix
+# wrong constant name <static-init>
+# wrong constant name <Class:Style>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant CodeRay::Tokens::Elem
+# wrong constant name begin_group
+# wrong constant name begin_line
+# wrong constant name count
+# wrong constant name encode
+# wrong constant name end_group
+# wrong constant name end_line
+# wrong constant name method_missing
+# wrong constant name scanner
+# wrong constant name scanner=
+# wrong constant name split_into_parts
+# wrong constant name text_token
+# wrong constant name to_s
+# wrong constant name tokens
+# wrong constant name <static-init>
+# wrong constant name block
+# wrong constant name block=
+# wrong constant name each
+# wrong constant name encode
+# wrong constant name initialize
+# wrong constant name input
+# wrong constant name input=
+# wrong constant name lang
+# wrong constant name lang=
+# wrong constant name method_missing
+# wrong constant name options
+# wrong constant name options=
+# wrong constant name scanner
+# wrong constant name tokens
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name coderay_path
+# wrong constant name encode
+# wrong constant name encode_file
+# wrong constant name encode_tokens
+# wrong constant name encoder
+# wrong constant name get_scanner_options
+# wrong constant name highlight
+# wrong constant name highlight_file
+# wrong constant name scan
+# wrong constant name scan_file
+# wrong constant name scanner
 # uninitialized constant Concurrent::AbstractExecutorService::DEBUG
 # uninitialized constant Concurrent::AbstractExecutorService::ERROR
 # Did you mean?  Concurrent::Error
@@ -16282,8 +16462,8 @@
 # wrong constant name since
 # wrong constant name to_default_s
 # uninitialized constant Date::Infinity::EXABYTE
-# Did you mean?  Date::Infinity::TERABYTE
-#                Date::Infinity::MEGABYTE
+# Did you mean?  Date::Infinity::MEGABYTE
+#                Date::Infinity::TERABYTE
 # uninitialized constant Date::Infinity::GIGABYTE
 # uninitialized constant Date::Infinity::KILOBYTE
 # uninitialized constant Date::Infinity::MEGABYTE
@@ -16291,8 +16471,8 @@
 # uninitialized constant Date::Infinity::PETABYTE
 # Did you mean?  Date::Infinity::TERABYTE
 # uninitialized constant Date::Infinity::TERABYTE
-# Did you mean?  Date::Infinity::PETABYTE
-#                Date::Infinity::EXABYTE
+# Did you mean?  Date::Infinity::EXABYTE
+#                Date::Infinity::PETABYTE
 # wrong constant name initialize
 # wrong constant name beginning_of_week
 # wrong constant name beginning_of_week=
@@ -16525,8 +16705,8 @@
 # uninitialized constant FileUtils::Verbose::VERSION
 # Did you mean?  FileUtils::VERSION
 # uninitialized constant Float::EXABYTE
-# Did you mean?  Float::TERABYTE
-#                Float::MEGABYTE
+# Did you mean?  Float::MEGABYTE
+#                Float::TERABYTE
 # uninitialized constant Float::GIGABYTE
 # uninitialized constant Float::KILOBYTE
 # uninitialized constant Float::MEGABYTE
@@ -16534,8 +16714,8 @@
 # uninitialized constant Float::PETABYTE
 # Did you mean?  Float::TERABYTE
 # uninitialized constant Float::TERABYTE
-# Did you mean?  Float::PETABYTE
-#                Float::EXABYTE
+# Did you mean?  Float::EXABYTE
+#                Float::PETABYTE
 # wrong constant name _compile_method
 # wrong constant name _delegator_method
 # wrong constant name _valid_method?
@@ -16796,6 +16976,10 @@
 # wrong constant name <static-init>
 # wrong constant name activated_gem_paths
 # wrong constant name _routes
+# wrong constant name music_index_path
+# wrong constant name music_index_url
+# wrong constant name music_path
+# wrong constant name music_url
 # wrong constant name rails_info_path
 # wrong constant name rails_info_properties_path
 # wrong constant name rails_info_properties_url
@@ -16887,6 +17071,7 @@
 # wrong constant name ruby2_keywords_hash
 # wrong constant name ruby2_keywords_hash?
 # wrong constant name try_convert
+# wrong constant name inherited
 # wrong constant name <Class:Gettext>
 # wrong constant name <Class:Locale>
 # wrong constant name <Class:Middleware>
@@ -17274,8 +17459,8 @@
 # wrong constant name setup
 # wrong constant name get_type
 # uninitialized constant Integer::EXABYTE
-# Did you mean?  Integer::TERABYTE
-#                Integer::MEGABYTE
+# Did you mean?  Integer::MEGABYTE
+#                Integer::TERABYTE
 # uninitialized constant Integer::GIGABYTE
 # uninitialized constant Integer::KILOBYTE
 # uninitialized constant Integer::MEGABYTE
@@ -17283,8 +17468,8 @@
 # uninitialized constant Integer::PETABYTE
 # Did you mean?  Integer::TERABYTE
 # uninitialized constant Integer::TERABYTE
-# Did you mean?  Integer::PETABYTE
-#                Integer::EXABYTE
+# Did you mean?  Integer::EXABYTE
+#                Integer::PETABYTE
 # wrong constant name multiple_of?
 # wrong constant name ordinal
 # wrong constant name ordinalize
@@ -19288,7 +19473,7 @@
 # wrong constant name start
 # wrong constant name start=
 # wrong constant name <Class:ContentTransferEncodingStruct>
-# uninitialized constant #<Class:0x0000555b273bca40>::Elem
+# uninitialized constant #<Class:0x000055bc52184ae8>::Elem
 # wrong constant name encoding
 # wrong constant name encoding=
 # wrong constant name error
@@ -20641,8 +20826,8 @@
 # wrong constant name -
 # wrong constant name /
 # uninitialized constant Matrix::Scalar::EXABYTE
-# Did you mean?  Matrix::Scalar::TERABYTE
-#                Matrix::Scalar::MEGABYTE
+# Did you mean?  Matrix::Scalar::MEGABYTE
+#                Matrix::Scalar::TERABYTE
 # uninitialized constant Matrix::Scalar::GIGABYTE
 # uninitialized constant Matrix::Scalar::KILOBYTE
 # uninitialized constant Matrix::Scalar::MEGABYTE
@@ -20650,8 +20835,8 @@
 # uninitialized constant Matrix::Scalar::PETABYTE
 # Did you mean?  Matrix::Scalar::TERABYTE
 # uninitialized constant Matrix::Scalar::TERABYTE
-# Did you mean?  Matrix::Scalar::PETABYTE
-#                Matrix::Scalar::EXABYTE
+# Did you mean?  Matrix::Scalar::EXABYTE
+#                Matrix::Scalar::PETABYTE
 # wrong constant name initialize
 # wrong constant name <static-init>
 # wrong constant name <Class:AllType>
@@ -20783,6 +20968,109 @@
 # wrong constant name initialize
 # uninitialized constant MonitorMixin::ConditionVariable::Timeout
 # uninitialized constant MonitorMixin::ConditionVariable::Timeout
+# uninitialized constant #<Class:0x000055bc55e903d8>::ACTIONS
+# Did you mean?  Music::ACTIONS
+# uninitialized constant #<Class:0x000055bc55e903d8>::CALLBACKS
+# Did you mean?  Music::Callbacks
+#                Music::Callback
+#                Music::CALLBACKS
+# uninitialized constant #<Class:0x000055bc55e903d8>::CALLBACK_FILTER_TYPES
+# Did you mean?  Music::CALLBACK_FILTER_TYPES
+# uninitialized constant #<Class:0x000055bc55e903d8>::CALL_COMPILABLE_REGEXP
+# Did you mean?  Music::CALL_COMPILABLE_REGEXP
+# wrong constant name <Class:GeneratedAssociationMethods>
+# wrong constant name <Class:GeneratedRelationMethods>
+# uninitialized constant #<Class:0x000055bc55e903d8>::MAX_PASSWORD_LENGTH_ALLOWED
+# Did you mean?  Music::MAX_PASSWORD_LENGTH_ALLOWED
+# uninitialized constant #<Class:0x000055bc55e903d8>::MINIMUM_TOKEN_LENGTH
+# Did you mean?  Music::MINIMUM_TOKEN_LENGTH
+# uninitialized constant #<Class:0x000055bc55e903d8>::NAME_COMPILABLE_REGEXP
+# Did you mean?  Music::NAME_COMPILABLE_REGEXP
+# uninitialized constant #<Class:0x000055bc55e903d8>::RESTRICTED_CLASS_METHODS
+# Did you mean?  Music::RESTRICTED_CLASS_METHODS
+# uninitialized constant #<Class:0x000055bc55e903d8>::UNASSIGNABLE_KEYS
+# Did you mean?  Music::UNASSIGNABLE_KEYS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# Did you mean?  Music::ActiveRecord_AssociationRelation::ClassMethods
+#                Music::ClassMethods
+#                Music::ActiveRecord_AssociationRelation::VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::FROZEN_EMPTY_ARRAY
+# Did you mean?  Music::ActiveRecord_AssociationRelation::FROZEN_EMPTY_HASH
+# uninitialized constant Music::ActiveRecord_AssociationRelation::FROZEN_EMPTY_HASH
+# Did you mean?  Music::ActiveRecord_AssociationRelation::FROZEN_EMPTY_ARRAY
+# uninitialized constant Music::ActiveRecord_AssociationRelation::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant Music::ActiveRecord_AssociationRelation::MULTI_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::NILCLASS_STRING
+# uninitialized constant Music::ActiveRecord_AssociationRelation::ONE_AS_ONE
+# uninitialized constant Music::ActiveRecord_AssociationRelation::ORDER_IGNORE_MESSAGE
+# uninitialized constant Music::ActiveRecord_AssociationRelation::SINGLE_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::STRUCTURAL_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::VALID_DIRECTIONS
+# uninitialized constant Music::ActiveRecord_AssociationRelation::VALID_UNSCOPING_VALUES
+# uninitialized constant Music::ActiveRecord_AssociationRelation::VALUE_METHODS
+# Did you mean?  Music::ActiveRecord_AssociationRelation::CLAUSE_METHODS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# Did you mean?  Music::ActiveRecord_Associations_CollectionProxy::ClassMethods
+#                Music::ClassMethods
+#                Music::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
+# Did you mean?  Music::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_HASH
+# Did you mean?  Music::ActiveRecord_Associations_CollectionProxy::FROZEN_EMPTY_ARRAY
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::MULTI_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::NILCLASS_STRING
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::ONE_AS_ONE
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::ORDER_IGNORE_MESSAGE
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::SINGLE_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::STRUCTURAL_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::VALID_DIRECTIONS
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::VALID_UNSCOPING_VALUES
+# uninitialized constant Music::ActiveRecord_Associations_CollectionProxy::VALUE_METHODS
+# Did you mean?  Music::ActiveRecord_Associations_CollectionProxy::CLAUSE_METHODS
+# uninitialized constant Music::ActiveRecord_Relation::CLAUSE_METHODS
+# Did you mean?  Music::ActiveRecord_Relation::ClassMethods
+#                Music::ClassMethods
+#                Music::ActiveRecord_Relation::VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Relation::FROZEN_EMPTY_ARRAY
+# Did you mean?  Music::ActiveRecord_Relation::FROZEN_EMPTY_HASH
+# uninitialized constant Music::ActiveRecord_Relation::FROZEN_EMPTY_HASH
+# Did you mean?  Music::ActiveRecord_Relation::FROZEN_EMPTY_ARRAY
+# uninitialized constant Music::ActiveRecord_Relation::INVALID_METHODS_FOR_DELETE_ALL
+# uninitialized constant Music::ActiveRecord_Relation::MULTI_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Relation::NILCLASS_STRING
+# uninitialized constant Music::ActiveRecord_Relation::ONE_AS_ONE
+# uninitialized constant Music::ActiveRecord_Relation::ORDER_IGNORE_MESSAGE
+# uninitialized constant Music::ActiveRecord_Relation::SINGLE_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Relation::STRUCTURAL_VALUE_METHODS
+# uninitialized constant Music::ActiveRecord_Relation::VALID_DIRECTIONS
+# uninitialized constant Music::ActiveRecord_Relation::VALID_UNSCOPING_VALUES
+# uninitialized constant Music::ActiveRecord_Relation::VALUE_METHODS
+# Did you mean?  Music::ActiveRecord_Relation::CLAUSE_METHODS
+# wrong constant name <static-init>
+# uninitialized constant Music::GeneratedRelationMethods::AppleMusic
+# uninitialized constant Music::GeneratedRelationMethods::Soundcloud
+# uninitialized constant Music::GeneratedRelationMethods::Spotify
+# uninitialized constant Music::GeneratedRelationMethods::Tidal
+# uninitialized constant Music::GeneratedRelationMethods::YoutubeMusic
+# wrong constant name not_AppleMusic
+# wrong constant name not_Soundcloud
+# wrong constant name not_Spotify
+# wrong constant name not_Tidal
+# wrong constant name not_YoutubeMusic
+# wrong constant name <static-init>
+# uninitialized constant #<Class:0x000055bc55e903d8>::AppleMusic
+# uninitialized constant #<Class:0x000055bc55e903d8>::Soundcloud
+# uninitialized constant #<Class:0x000055bc55e903d8>::Spotify
+# uninitialized constant #<Class:0x000055bc55e903d8>::Tidal
+# uninitialized constant #<Class:0x000055bc55e903d8>::YoutubeMusic
+# wrong constant name not_AppleMusic
+# wrong constant name not_Soundcloud
+# wrong constant name not_Spotify
+# wrong constant name not_Tidal
+# wrong constant name not_YoutubeMusic
+# wrong constant name inherited
+# wrong constant name inherited
 # uninitialized constant NIO::ByteBuffer::Elem
 # wrong constant name <Class:MarkUnsetError>
 # wrong constant name <Class:OverflowError>
@@ -21177,6 +21465,7 @@
 # wrong constant name dclone
 # wrong constant name html_safe?
 # wrong constant name presence_in
+# wrong constant name pry
 # wrong constant name to_yaml
 # wrong constant name yaml_tag
 # wrong constant name <Class:Object>
@@ -24587,7 +24876,9 @@
 # uninitialized constant PStore
 # uninitialized constant PStore
 # uninitialized constant PTY
+# Did you mean?  Pry
 # uninitialized constant PTY
+# Did you mean?  Pry
 # uninitialized constant PackageSpec
 # uninitialized constant PackageSpec
 # wrong constant name <Class:PackageSpec>
@@ -27220,6 +27511,1787 @@
 # uninitialized constant Proc9
 # uninitialized constant Proc9
 # wrong constant name fork
+# wrong constant name <Class:BasicObject>
+# wrong constant name <Class:BlockCommand>
+# wrong constant name <Class:Byebug>
+# wrong constant name <Class:CLI>
+# wrong constant name <Class:ClassCommand>
+# wrong constant name <Class:Code>
+# wrong constant name <Class:CodeFile>
+# wrong constant name <Class:CodeObject>
+# wrong constant name <Class:ColorPrinter>
+# wrong constant name <Class:Command>
+# wrong constant name <Class:CommandError>
+# wrong constant name <Class:CommandSet>
+# wrong constant name <Class:CommandState>
+# wrong constant name <Class:Config>
+# wrong constant name <Class:ControlDHandler>
+# wrong constant name <Class:Editor>
+# wrong constant name <Class:Env>
+# wrong constant name <Class:ExceptionHandler>
+# wrong constant name <Class:Forwardable>
+# wrong constant name <Class:FrozenObjectException>
+# wrong constant name <Class:Helpers>
+# wrong constant name <Class:History>
+# wrong constant name <Class:Hooks>
+# wrong constant name <Class:Indent>
+# wrong constant name <Class:InputCompleter>
+# wrong constant name <Class:InputLock>
+# wrong constant name <Class:Inspector>
+# wrong constant name <Class:LastException>
+# wrong constant name <Class:Method>
+# wrong constant name <Class:MethodNotFound>
+# wrong constant name <Class:NoCommandError>
+# wrong constant name <Class:ObjectPath>
+# wrong constant name <Class:ObsoleteError>
+# wrong constant name <Class:Output>
+# wrong constant name <Class:Pager>
+# wrong constant name <Class:Prompt>
+# wrong constant name <Class:REPL>
+# wrong constant name <Class:REPLFileLoader>
+# wrong constant name <Class:RescuableException>
+# wrong constant name <Class:Result>
+# wrong constant name <Class:Ring>
+# wrong constant name <Class:Slop>
+# wrong constant name <Class:SyntaxHighlighter>
+# wrong constant name <Class:SystemCommandHandler>
+# wrong constant name <Class:TooSafeException>
+# wrong constant name <Class:UserError>
+# wrong constant name <Class:Warning>
+# wrong constant name <Class:WrappedModule>
+# wrong constant name add_sticky_local
+# wrong constant name backtrace
+# wrong constant name backtrace=
+# wrong constant name binding_stack
+# wrong constant name binding_stack=
+# wrong constant name color
+# wrong constant name color=
+# wrong constant name commands
+# wrong constant name commands=
+# wrong constant name complete
+# wrong constant name config
+# wrong constant name current_binding
+# wrong constant name current_context
+# wrong constant name custom_completions
+# wrong constant name custom_completions=
+# wrong constant name editor
+# wrong constant name editor=
+# wrong constant name eval
+# wrong constant name eval_string
+# wrong constant name eval_string=
+# wrong constant name evaluate_ruby
+# wrong constant name exception_handler
+# wrong constant name exception_handler=
+# wrong constant name exec_hook
+# wrong constant name exit_value
+# wrong constant name extra_sticky_locals
+# wrong constant name extra_sticky_locals=
+# wrong constant name hooks
+# wrong constant name hooks=
+# wrong constant name initialize
+# wrong constant name inject_local
+# wrong constant name inject_sticky_locals!
+# wrong constant name input
+# wrong constant name input=
+# wrong constant name input_ring
+# wrong constant name last_dir
+# wrong constant name last_dir=
+# wrong constant name last_exception
+# wrong constant name last_exception=
+# wrong constant name last_file
+# wrong constant name last_file=
+# wrong constant name last_result
+# wrong constant name last_result=
+# wrong constant name last_result_is_exception?
+# wrong constant name memory_size
+# wrong constant name memory_size=
+# wrong constant name output
+# wrong constant name output=
+# wrong constant name output_ring
+# wrong constant name pager
+# wrong constant name pager=
+# wrong constant name pop_prompt
+# wrong constant name print
+# wrong constant name print=
+# wrong constant name process_command
+# wrong constant name process_command_safely
+# wrong constant name prompt
+# wrong constant name prompt=
+# wrong constant name push_binding
+# wrong constant name push_initial_binding
+# wrong constant name push_prompt
+# wrong constant name quiet?
+# wrong constant name raise_up
+# wrong constant name raise_up!
+# wrong constant name raise_up_common
+# wrong constant name repl
+# wrong constant name reset_eval_string
+# wrong constant name run_command
+# wrong constant name select_prompt
+# wrong constant name set_last_result
+# wrong constant name should_print?
+# wrong constant name show_result
+# wrong constant name sticky_locals
+# wrong constant name suppress_output
+# wrong constant name suppress_output=
+# wrong constant name update_input_history
+# uninitialized constant Pry::BasicObject::RUBYGEMS_ACTIVATION_MONITOR
+# wrong constant name <static-init>
+# uninitialized constant Pry::BlockCommand::COLORS
+# uninitialized constant Pry::BlockCommand::VOID_VALUE
+# wrong constant name call
+# wrong constant name help
+# wrong constant name <static-init>
+# wrong constant name <Class:Breakpoints>
+# wrong constant name <Class:FileBreakpoint>
+# wrong constant name <Class:MethodBreakpoint>
+# wrong constant name add_file
+# wrong constant name add_method
+# wrong constant name breakpoints
+# wrong constant name change
+# wrong constant name delete
+# wrong constant name delete_all
+# wrong constant name disable
+# wrong constant name disable_all
+# wrong constant name each
+# wrong constant name enable
+# wrong constant name find_by_id
+# wrong constant name last
+# wrong constant name size
+# wrong constant name to_a
+# wrong constant name source_code
+# wrong constant name to_s
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name source_code
+# wrong constant name to_s
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant Pry::Byebug::Breakpoints::Elem
+# wrong constant name <static-init>
+# wrong constant name <Class:NoOptionsError>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name add_option_processor
+# wrong constant name add_options
+# wrong constant name input_args
+# wrong constant name input_args=
+# wrong constant name option_processors
+# wrong constant name option_processors=
+# wrong constant name options
+# wrong constant name options=
+# wrong constant name parse_options
+# wrong constant name reset
+# wrong constant name start
+# uninitialized constant Pry::ClassCommand::COLORS
+# uninitialized constant Pry::ClassCommand::VOID_VALUE
+# wrong constant name args
+# wrong constant name args=
+# wrong constant name call
+# wrong constant name complete
+# wrong constant name help
+# wrong constant name options
+# wrong constant name opts
+# wrong constant name opts=
+# wrong constant name process
+# wrong constant name setup
+# wrong constant name slop
+# wrong constant name subcommands
+# wrong constant name <static-init>
+# wrong constant name inherited
+# wrong constant name source_location
+# wrong constant name <<
+# wrong constant name ==
+# wrong constant name <Class:CodeRange>
+# wrong constant name <Class:LOC>
+# wrong constant name after
+# wrong constant name alter
+# wrong constant name around
+# wrong constant name before
+# wrong constant name between
+# wrong constant name code_type
+# wrong constant name code_type=
+# wrong constant name comment_describing
+# wrong constant name expression_at
+# wrong constant name grep
+# wrong constant name highlighted
+# wrong constant name initialize
+# wrong constant name length
+# wrong constant name max_lineno_width
+# wrong constant name method_missing
+# wrong constant name nesting_at
+# wrong constant name print_to_output
+# wrong constant name push
+# wrong constant name raw
+# wrong constant name reject
+# wrong constant name select
+# wrong constant name take_lines
+# wrong constant name with_indentation
+# wrong constant name with_line_numbers
+# wrong constant name with_marker
+# wrong constant name indices_range
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name ==
+# wrong constant name add_line_number
+# wrong constant name add_marker
+# wrong constant name colorize
+# wrong constant name handle_multiline_entries_from_edit_command
+# wrong constant name indent
+# wrong constant name initialize
+# wrong constant name line
+# wrong constant name lineno
+# wrong constant name tuple
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name from_file
+# wrong constant name from_method
+# wrong constant name from_module
+# wrong constant name code
+# wrong constant name code_type
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <Class:Helpers>
+# wrong constant name command_lookup
+# wrong constant name default_lookup
+# wrong constant name empty_lookup
+# wrong constant name initialize
+# wrong constant name method_or_class_lookup
+# wrong constant name pry_instance
+# wrong constant name pry_instance=
+# wrong constant name str
+# wrong constant name str=
+# wrong constant name super_level
+# wrong constant name super_level=
+# wrong constant name target
+# wrong constant name target=
+# wrong constant name c_method?
+# wrong constant name c_module?
+# wrong constant name command?
+# wrong constant name module_with_yard_docs?
+# wrong constant name real_method_object?
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name lookup
+# wrong constant name pp
+# wrong constant name text
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name pp
+# wrong constant name <Class:AmendLine>
+# wrong constant name <Class:Bang>
+# wrong constant name <Class:BangPry>
+# uninitialized constant Pry::Command::COLORS
+# wrong constant name <Class:Cat>
+# wrong constant name <Class:Cd>
+# wrong constant name <Class:ChangeInspector>
+# wrong constant name <Class:ChangePrompt>
+# wrong constant name <Class:ClearScreen>
+# wrong constant name <Class:CodeCollector>
+# wrong constant name <Class:DisablePry>
+# wrong constant name <Class:Edit>
+# wrong constant name <Class:Exit>
+# wrong constant name <Class:ExitAll>
+# wrong constant name <Class:ExitProgram>
+# wrong constant name <Class:FindMethod>
+# wrong constant name <Class:FixIndent>
+# wrong constant name <Class:Help>
+# wrong constant name <Class:Hist>
+# wrong constant name <Class:ImportSet>
+# wrong constant name <Class:JumpTo>
+# wrong constant name <Class:ListInspectors>
+# wrong constant name <Class:Ls>
+# wrong constant name <Class:Nesting>
+# wrong constant name <Class:Play>
+# wrong constant name <Class:PryBacktrace>
+# wrong constant name <Class:RaiseUp>
+# wrong constant name <Class:ReloadCode>
+# wrong constant name <Class:Reset>
+# wrong constant name <Class:Ri>
+# wrong constant name <Class:SaveFile>
+# wrong constant name <Class:ShellCommand>
+# wrong constant name <Class:ShellMode>
+# wrong constant name <Class:ShowDoc>
+# wrong constant name <Class:ShowInfo>
+# wrong constant name <Class:ShowInput>
+# wrong constant name <Class:ShowSource>
+# wrong constant name <Class:Stat>
+# wrong constant name <Class:SwitchTo>
+# wrong constant name <Class:ToggleColor>
+# wrong constant name <Class:Version>
+# wrong constant name <Class:WatchExpression>
+# wrong constant name <Class:Whereami>
+# wrong constant name <Class:Wtf>
+# wrong constant name _pry_
+# wrong constant name _pry_=
+# wrong constant name arg_string
+# wrong constant name arg_string=
+# wrong constant name block
+# wrong constant name captures
+# wrong constant name captures=
+# wrong constant name check_for_command_collision
+# wrong constant name command_block
+# wrong constant name command_block=
+# wrong constant name command_name
+# wrong constant name command_options
+# wrong constant name command_set
+# wrong constant name command_set=
+# wrong constant name commands
+# wrong constant name complete
+# wrong constant name context
+# wrong constant name context=
+# wrong constant name description
+# wrong constant name eval_string
+# wrong constant name eval_string=
+# wrong constant name hooks
+# wrong constant name hooks=
+# wrong constant name initialize
+# wrong constant name interpolate_string
+# wrong constant name match
+# wrong constant name name
+# wrong constant name output
+# wrong constant name output=
+# wrong constant name process_line
+# wrong constant name pry_instance
+# wrong constant name pry_instance=
+# wrong constant name run
+# wrong constant name source
+# wrong constant name state
+# wrong constant name target
+# wrong constant name target=
+# wrong constant name target_self
+# wrong constant name tokenize
+# wrong constant name void
+# uninitialized constant Pry::Command::AmendLine::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::AmendLine::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Bang::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Bang::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::BangPry::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::BangPry::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# wrong constant name <Class:AbstractFormatter>
+# uninitialized constant Pry::Command::Cat::COLORS
+# Did you mean?  Pry::Command::COLORS
+# wrong constant name <Class:ExceptionFormatter>
+# wrong constant name <Class:FileFormatter>
+# wrong constant name <Class:InputExpressionFormatter>
+# uninitialized constant Pry::Command::Cat::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name load_path_completions
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Cat::ExceptionFormatter::COLORS
+# Did you mean?  Pry::Command::Cat::COLORS
+#                Pry::Command::COLORS
+# wrong constant name ex
+# wrong constant name format
+# wrong constant name initialize
+# wrong constant name opts
+# wrong constant name pry_instance
+# wrong constant name <static-init>
+# wrong constant name file_and_line
+# wrong constant name file_with_embedded_line
+# wrong constant name format
+# wrong constant name initialize
+# wrong constant name opts
+# wrong constant name pry_instance
+# wrong constant name <static-init>
+# wrong constant name format
+# wrong constant name initialize
+# wrong constant name input_expressions
+# wrong constant name input_expressions=
+# wrong constant name opts
+# wrong constant name opts=
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Cd::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Cd::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ChangeInspector::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ChangeInspector::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ChangePrompt::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ChangePrompt::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ClearScreen::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ClearScreen::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# wrong constant name args
+# wrong constant name code_object
+# wrong constant name content
+# wrong constant name file
+# wrong constant name file=
+# wrong constant name initialize
+# wrong constant name line_range
+# wrong constant name obj_name
+# wrong constant name opts
+# wrong constant name pry_input_content
+# wrong constant name pry_instance
+# wrong constant name pry_output_content
+# wrong constant name restrict_to_lines
+# wrong constant name <static-init>
+# wrong constant name inject_options
+# wrong constant name input_expression_ranges
+# wrong constant name input_expression_ranges=
+# wrong constant name output_result_ranges
+# wrong constant name output_result_ranges=
+# uninitialized constant Pry::Command::DisablePry::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::DisablePry::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Edit::COLORS
+# Did you mean?  Pry::Command::COLORS
+# wrong constant name <Class:ExceptionPatcher>
+# wrong constant name <Class:FileAndLineLocator>
+# uninitialized constant Pry::Command::Edit::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name apply_runtime_patch
+# wrong constant name bad_option_combination?
+# wrong constant name code_object
+# wrong constant name ensure_file_name_is_valid
+# wrong constant name file_and_line
+# wrong constant name file_and_line_for_current_exception
+# wrong constant name file_based_exception?
+# wrong constant name file_edit
+# wrong constant name filename_argument
+# wrong constant name initial_temp_file_content
+# wrong constant name input_expression
+# wrong constant name never_reload?
+# wrong constant name patch_exception?
+# wrong constant name previously_patched?
+# wrong constant name probably_a_file?
+# wrong constant name pry_method?
+# wrong constant name reload?
+# wrong constant name reloadable?
+# wrong constant name repl_edit
+# wrong constant name repl_edit?
+# wrong constant name runtime_patch?
+# wrong constant name file_and_line
+# wrong constant name file_and_line=
+# wrong constant name initialize
+# wrong constant name perform_patch
+# wrong constant name pry_instance
+# wrong constant name pry_instance=
+# wrong constant name state
+# wrong constant name state=
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name from_binding
+# wrong constant name from_code_object
+# wrong constant name from_exception
+# wrong constant name from_filename_argument
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Exit::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Exit::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process_pop_and_return
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ExitAll::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ExitAll::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ExitProgram::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ExitProgram::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::FindMethod::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::FindMethod::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::FixIndent::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::FixIndent::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Help::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Help::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name command_groups
+# wrong constant name display_command
+# wrong constant name display_filtered_commands
+# wrong constant name display_filtered_search_results
+# wrong constant name display_index
+# wrong constant name display_search
+# wrong constant name group_sort_key
+# wrong constant name help_text_for_commands
+# wrong constant name normalize
+# wrong constant name search_hash
+# wrong constant name sorted_commands
+# wrong constant name sorted_group_names
+# wrong constant name visible_commands
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Hist::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Hist::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ImportSet::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ImportSet::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::JumpTo::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::JumpTo::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ListInspectors::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ListInspectors::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Ls::COLORS
+# Did you mean?  Pry::Command::COLORS
+# wrong constant name <Class:Constants>
+# wrong constant name <Class:Formatter>
+# wrong constant name <Class:Globals>
+# wrong constant name <Class:Grep>
+# wrong constant name <Class:InstanceVars>
+# wrong constant name <Class:Interrogatable>
+# wrong constant name <Class:JRubyHacks>
+# wrong constant name <Class:LocalNames>
+# wrong constant name <Class:LocalVars>
+# wrong constant name <Class:LsEntity>
+# wrong constant name <Class:Methods>
+# wrong constant name <Class:MethodsHelper>
+# wrong constant name <Class:SelfMethods>
+# uninitialized constant Pry::Command::Ls::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name no_user_opts?
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name grep=
+# wrong constant name initialize
+# wrong constant name pry_instance
+# wrong constant name write_out
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name regexp
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name entities_table
+# wrong constant name initialize
+# wrong constant name pry_instance
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Nesting::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Nesting::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Play::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Play::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name code_object
+# wrong constant name content
+# wrong constant name content_after_options
+# wrong constant name content_at_expression
+# wrong constant name default_file
+# wrong constant name file_content
+# wrong constant name perform_play
+# wrong constant name should_use_default_file?
+# wrong constant name show_input
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::PryBacktrace::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::PryBacktrace::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::RaiseUp::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::RaiseUp::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ReloadCode::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ReloadCode::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Reset::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Reset::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Ri::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Ri::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::SaveFile::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::SaveFile::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name display_content
+# wrong constant name file_name
+# wrong constant name mode
+# wrong constant name save_file
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShellCommand::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShellCommand::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShellMode::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShellMode::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShowDoc::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShowDoc::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# uninitialized constant Pry::Command::ShowDoc::YARD_TAGS
+# wrong constant name content_for
+# wrong constant name docs_for
+# wrong constant name render_doc_markup_for
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShowInfo::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShowInfo::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name code_object_header
+# wrong constant name code_object_with_accessible_source
+# wrong constant name complete
+# wrong constant name content_and_header_for_code_object
+# wrong constant name content_and_headers_for_all_module_candidates
+# wrong constant name file_and_line_for
+# wrong constant name header
+# wrong constant name header_options
+# wrong constant name initialize
+# wrong constant name method_header
+# wrong constant name method_sections
+# wrong constant name module_header
+# wrong constant name no_definition_message
+# wrong constant name obj_name
+# wrong constant name show_all_modules?
+# wrong constant name start_line_for
+# wrong constant name use_line_numbers?
+# wrong constant name valid_superclass?
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShowInput::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShowInput::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ShowSource::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ShowSource::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# uninitialized constant Pry::Command::ShowSource::YARD_TAGS
+# wrong constant name content_for
+# wrong constant name docs_for
+# wrong constant name render_doc_markup_for
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Stat::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Stat::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::SwitchTo::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::SwitchTo::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::ToggleColor::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::ToggleColor::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name color_toggle
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Version::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Version::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::WatchExpression::COLORS
+# Did you mean?  Pry::Command::COLORS
+# wrong constant name <Class:Expression>
+# uninitialized constant Pry::Command::WatchExpression::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name changed?
+# wrong constant name eval!
+# wrong constant name initialize
+# wrong constant name previous_value
+# wrong constant name pry_instance
+# wrong constant name source
+# wrong constant name target
+# wrong constant name value
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant Pry::Command::Whereami::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Whereami::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name bad_option_combination?
+# wrong constant name code
+# wrong constant name code?
+# wrong constant name initialize
+# wrong constant name location
+# wrong constant name <static-init>
+# wrong constant name method_size_cutoff
+# wrong constant name method_size_cutoff=
+# uninitialized constant Pry::Command::Wtf::COLORS
+# Did you mean?  Pry::Command::COLORS
+# uninitialized constant Pry::Command::Wtf::VOID_VALUE
+# Did you mean?  Pry::Command::VOID_VALUE
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name banner
+# wrong constant name block
+# wrong constant name block=
+# wrong constant name command_name
+# wrong constant name command_options
+# wrong constant name command_options=
+# wrong constant name command_regex
+# wrong constant name convert_to_regex
+# wrong constant name default_options
+# wrong constant name description
+# wrong constant name description=
+# wrong constant name doc
+# wrong constant name file
+# wrong constant name group
+# wrong constant name line
+# wrong constant name match
+# wrong constant name match=
+# wrong constant name match_score
+# wrong constant name matches?
+# wrong constant name options
+# wrong constant name options=
+# wrong constant name source
+# wrong constant name source_file
+# wrong constant name source_line
+# wrong constant name state
+# wrong constant name subclass
+# wrong constant name <static-init>
+# uninitialized constant Pry::CommandSet::Elem
+# wrong constant name []
+# wrong constant name []=
+# wrong constant name add_command
+# wrong constant name alias_command
+# wrong constant name block_command
+# wrong constant name command
+# wrong constant name complete
+# wrong constant name create_command
+# wrong constant name delete
+# wrong constant name desc
+# wrong constant name each
+# wrong constant name find_command
+# wrong constant name find_command_by_match_or_listing
+# wrong constant name find_command_for_help
+# wrong constant name helper_module
+# wrong constant name import
+# wrong constant name import_from
+# wrong constant name initialize
+# wrong constant name keys
+# wrong constant name list_commands
+# wrong constant name process_line
+# wrong constant name rename_command
+# wrong constant name to_h
+# wrong constant name to_hash
+# wrong constant name valid_command?
+# wrong constant name <static-init>
+# wrong constant name reset
+# wrong constant name state_for
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name <Class:Attributable>
+# wrong constant name <Class:LazyValue>
+# wrong constant name <Class:MemoizedValue>
+# wrong constant name <Class:Value>
+# wrong constant name []
+# wrong constant name []=
+# wrong constant name auto_indent
+# wrong constant name auto_indent=
+# wrong constant name collision_warning
+# wrong constant name collision_warning=
+# wrong constant name color
+# wrong constant name color=
+# wrong constant name command_completions
+# wrong constant name command_completions=
+# wrong constant name command_prefix
+# wrong constant name command_prefix=
+# wrong constant name commands
+# wrong constant name commands=
+# wrong constant name completer
+# wrong constant name completer=
+# wrong constant name control_d_handler
+# wrong constant name control_d_handler=
+# wrong constant name correct_indent
+# wrong constant name correct_indent=
+# wrong constant name default_window_size
+# wrong constant name default_window_size=
+# wrong constant name disable_auto_reload
+# wrong constant name disable_auto_reload=
+# wrong constant name editor
+# wrong constant name editor=
+# wrong constant name exception_handler
+# wrong constant name exception_handler=
+# wrong constant name exception_whitelist
+# wrong constant name exception_whitelist=
+# wrong constant name exec_string
+# wrong constant name exec_string=
+# wrong constant name extra_sticky_locals
+# wrong constant name extra_sticky_locals=
+# wrong constant name file_completions
+# wrong constant name file_completions=
+# wrong constant name history
+# wrong constant name history=
+# wrong constant name history_file
+# wrong constant name history_file=
+# wrong constant name history_ignorelist
+# wrong constant name history_ignorelist=
+# wrong constant name history_load
+# wrong constant name history_load=
+# wrong constant name history_save
+# wrong constant name history_save=
+# wrong constant name hooks
+# wrong constant name hooks=
+# wrong constant name input
+# wrong constant name input=
+# wrong constant name ls
+# wrong constant name ls=
+# wrong constant name memory_size
+# wrong constant name memory_size=
+# wrong constant name merge
+# wrong constant name merge!
+# wrong constant name method_missing
+# wrong constant name output
+# wrong constant name output=
+# wrong constant name output_prefix
+# wrong constant name output_prefix=
+# wrong constant name pager
+# wrong constant name pager=
+# wrong constant name print
+# wrong constant name print=
+# wrong constant name prompt
+# wrong constant name prompt=
+# wrong constant name prompt_name
+# wrong constant name prompt_name=
+# wrong constant name prompt_safe_contexts
+# wrong constant name prompt_safe_contexts=
+# wrong constant name quiet
+# wrong constant name quiet=
+# wrong constant name rc_file
+# wrong constant name rc_file=
+# wrong constant name requires
+# wrong constant name requires=
+# wrong constant name should_load_local_rc
+# wrong constant name should_load_local_rc=
+# wrong constant name should_load_rc
+# wrong constant name should_load_rc=
+# wrong constant name should_load_requires
+# wrong constant name should_load_requires=
+# wrong constant name should_trap_interrupts
+# wrong constant name should_trap_interrupts=
+# wrong constant name system
+# wrong constant name system=
+# wrong constant name unrescued_exceptions
+# wrong constant name unrescued_exceptions=
+# wrong constant name windows_console_warning
+# wrong constant name windows_console_warning=
+# wrong constant name attribute
+# wrong constant name <static-init>
+# wrong constant name call
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name call
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name call
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name build_editor_invocation_string
+# wrong constant name edit_tempfile_with_content
+# wrong constant name initialize
+# wrong constant name invoke_editor
+# wrong constant name pry_instance
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name <static-init>
+# wrong constant name handle_exception
+# uninitialized constant Pry::Forwardable::FORWARDABLE_VERSION
+# uninitialized constant Pry::Forwardable::VERSION
+# Did you mean?  Pry::VERSION
+# wrong constant name def_private_delegators
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name ===
+# wrong constant name <Class:BaseHelpers>
+# wrong constant name <Class:CommandHelpers>
+# wrong constant name <Class:DocumentationHelpers>
+# wrong constant name <Class:OptionsHelpers>
+# wrong constant name <Class:Platform>
+# wrong constant name <Class:Table>
+# wrong constant name <Class:Text>
+# wrong constant name colorize_code
+# wrong constant name find_command
+# wrong constant name heading
+# wrong constant name highlight
+# wrong constant name not_a_real_file?
+# wrong constant name safe_send
+# wrong constant name silence_warnings
+# wrong constant name stagger_output
+# wrong constant name use_ansi_codes?
+# wrong constant name <static-init>
+# wrong constant name absolute_index_number
+# wrong constant name absolute_index_range
+# wrong constant name get_method_or_raise
+# wrong constant name internal_binding?
+# wrong constant name one_index_number
+# wrong constant name one_index_range
+# wrong constant name one_index_range_or_number
+# wrong constant name restrict_to_lines
+# wrong constant name set_file_and_dir_locals
+# wrong constant name temp_file
+# wrong constant name unindent
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name get_comment_content
+# wrong constant name process_comment_markup
+# wrong constant name process_rdoc
+# wrong constant name process_yardoc
+# wrong constant name process_yardoc_tag
+# wrong constant name strip_comments_from_c_code
+# wrong constant name strip_leading_whitespace
+# wrong constant name <static-init>
+# wrong constant name method_object
+# wrong constant name method_options
+# wrong constant name <static-init>
+# wrong constant name jruby?
+# wrong constant name jruby_19?
+# wrong constant name linux?
+# wrong constant name mac_osx?
+# wrong constant name mri?
+# wrong constant name mri_19?
+# wrong constant name mri_2?
+# wrong constant name windows?
+# wrong constant name windows_ansi?
+# wrong constant name ==
+# wrong constant name column_count
+# wrong constant name column_count=
+# wrong constant name columns
+# wrong constant name fits_on_line?
+# wrong constant name initialize
+# wrong constant name items
+# wrong constant name items=
+# wrong constant name rows_to_s
+# wrong constant name to_a
+# wrong constant name <static-init>
+# wrong constant name black
+# wrong constant name black_on_black
+# wrong constant name black_on_blue
+# wrong constant name black_on_cyan
+# wrong constant name black_on_green
+# wrong constant name black_on_magenta
+# wrong constant name black_on_purple
+# wrong constant name black_on_red
+# wrong constant name black_on_white
+# wrong constant name black_on_yellow
+# wrong constant name blue
+# wrong constant name blue_on_black
+# wrong constant name blue_on_blue
+# wrong constant name blue_on_cyan
+# wrong constant name blue_on_green
+# wrong constant name blue_on_magenta
+# wrong constant name blue_on_purple
+# wrong constant name blue_on_red
+# wrong constant name blue_on_white
+# wrong constant name blue_on_yellow
+# wrong constant name bold
+# wrong constant name bright_black
+# wrong constant name bright_black_on_black
+# wrong constant name bright_black_on_blue
+# wrong constant name bright_black_on_cyan
+# wrong constant name bright_black_on_green
+# wrong constant name bright_black_on_magenta
+# wrong constant name bright_black_on_purple
+# wrong constant name bright_black_on_red
+# wrong constant name bright_black_on_white
+# wrong constant name bright_black_on_yellow
+# wrong constant name bright_blue
+# wrong constant name bright_blue_on_black
+# wrong constant name bright_blue_on_blue
+# wrong constant name bright_blue_on_cyan
+# wrong constant name bright_blue_on_green
+# wrong constant name bright_blue_on_magenta
+# wrong constant name bright_blue_on_purple
+# wrong constant name bright_blue_on_red
+# wrong constant name bright_blue_on_white
+# wrong constant name bright_blue_on_yellow
+# wrong constant name bright_cyan
+# wrong constant name bright_cyan_on_black
+# wrong constant name bright_cyan_on_blue
+# wrong constant name bright_cyan_on_cyan
+# wrong constant name bright_cyan_on_green
+# wrong constant name bright_cyan_on_magenta
+# wrong constant name bright_cyan_on_purple
+# wrong constant name bright_cyan_on_red
+# wrong constant name bright_cyan_on_white
+# wrong constant name bright_cyan_on_yellow
+# wrong constant name bright_green
+# wrong constant name bright_green_on_black
+# wrong constant name bright_green_on_blue
+# wrong constant name bright_green_on_cyan
+# wrong constant name bright_green_on_green
+# wrong constant name bright_green_on_magenta
+# wrong constant name bright_green_on_purple
+# wrong constant name bright_green_on_red
+# wrong constant name bright_green_on_white
+# wrong constant name bright_green_on_yellow
+# wrong constant name bright_magenta
+# wrong constant name bright_magenta_on_black
+# wrong constant name bright_magenta_on_blue
+# wrong constant name bright_magenta_on_cyan
+# wrong constant name bright_magenta_on_green
+# wrong constant name bright_magenta_on_magenta
+# wrong constant name bright_magenta_on_purple
+# wrong constant name bright_magenta_on_red
+# wrong constant name bright_magenta_on_white
+# wrong constant name bright_magenta_on_yellow
+# wrong constant name bright_purple
+# wrong constant name bright_purple_on_black
+# wrong constant name bright_purple_on_blue
+# wrong constant name bright_purple_on_cyan
+# wrong constant name bright_purple_on_green
+# wrong constant name bright_purple_on_magenta
+# wrong constant name bright_purple_on_purple
+# wrong constant name bright_purple_on_red
+# wrong constant name bright_purple_on_white
+# wrong constant name bright_purple_on_yellow
+# wrong constant name bright_red
+# wrong constant name bright_red_on_black
+# wrong constant name bright_red_on_blue
+# wrong constant name bright_red_on_cyan
+# wrong constant name bright_red_on_green
+# wrong constant name bright_red_on_magenta
+# wrong constant name bright_red_on_purple
+# wrong constant name bright_red_on_red
+# wrong constant name bright_red_on_white
+# wrong constant name bright_red_on_yellow
+# wrong constant name bright_white
+# wrong constant name bright_white_on_black
+# wrong constant name bright_white_on_blue
+# wrong constant name bright_white_on_cyan
+# wrong constant name bright_white_on_green
+# wrong constant name bright_white_on_magenta
+# wrong constant name bright_white_on_purple
+# wrong constant name bright_white_on_red
+# wrong constant name bright_white_on_white
+# wrong constant name bright_white_on_yellow
+# wrong constant name bright_yellow
+# wrong constant name bright_yellow_on_black
+# wrong constant name bright_yellow_on_blue
+# wrong constant name bright_yellow_on_cyan
+# wrong constant name bright_yellow_on_green
+# wrong constant name bright_yellow_on_magenta
+# wrong constant name bright_yellow_on_purple
+# wrong constant name bright_yellow_on_red
+# wrong constant name bright_yellow_on_white
+# wrong constant name bright_yellow_on_yellow
+# wrong constant name cyan
+# wrong constant name cyan_on_black
+# wrong constant name cyan_on_blue
+# wrong constant name cyan_on_cyan
+# wrong constant name cyan_on_green
+# wrong constant name cyan_on_magenta
+# wrong constant name cyan_on_purple
+# wrong constant name cyan_on_red
+# wrong constant name cyan_on_white
+# wrong constant name cyan_on_yellow
+# wrong constant name default
+# wrong constant name green
+# wrong constant name green_on_black
+# wrong constant name green_on_blue
+# wrong constant name green_on_cyan
+# wrong constant name green_on_green
+# wrong constant name green_on_magenta
+# wrong constant name green_on_purple
+# wrong constant name green_on_red
+# wrong constant name green_on_white
+# wrong constant name green_on_yellow
+# wrong constant name indent
+# wrong constant name magenta
+# wrong constant name magenta_on_black
+# wrong constant name magenta_on_blue
+# wrong constant name magenta_on_cyan
+# wrong constant name magenta_on_green
+# wrong constant name magenta_on_magenta
+# wrong constant name magenta_on_purple
+# wrong constant name magenta_on_red
+# wrong constant name magenta_on_white
+# wrong constant name magenta_on_yellow
+# wrong constant name no_color
+# wrong constant name no_pager
+# wrong constant name purple
+# wrong constant name purple_on_black
+# wrong constant name purple_on_blue
+# wrong constant name purple_on_cyan
+# wrong constant name purple_on_green
+# wrong constant name purple_on_magenta
+# wrong constant name purple_on_purple
+# wrong constant name purple_on_red
+# wrong constant name purple_on_white
+# wrong constant name purple_on_yellow
+# wrong constant name red
+# wrong constant name red_on_black
+# wrong constant name red_on_blue
+# wrong constant name red_on_cyan
+# wrong constant name red_on_green
+# wrong constant name red_on_magenta
+# wrong constant name red_on_purple
+# wrong constant name red_on_red
+# wrong constant name red_on_white
+# wrong constant name red_on_yellow
+# wrong constant name strip_color
+# wrong constant name white
+# wrong constant name white_on_black
+# wrong constant name white_on_blue
+# wrong constant name white_on_cyan
+# wrong constant name white_on_green
+# wrong constant name white_on_magenta
+# wrong constant name white_on_purple
+# wrong constant name white_on_red
+# wrong constant name white_on_white
+# wrong constant name white_on_yellow
+# wrong constant name with_line_numbers
+# wrong constant name yellow
+# wrong constant name yellow_on_black
+# wrong constant name yellow_on_blue
+# wrong constant name yellow_on_cyan
+# wrong constant name yellow_on_green
+# wrong constant name yellow_on_magenta
+# wrong constant name yellow_on_purple
+# wrong constant name yellow_on_red
+# wrong constant name yellow_on_white
+# wrong constant name yellow_on_yellow
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name tablify
+# wrong constant name tablify_or_one_line
+# wrong constant name tablify_to_screen_width
+# wrong constant name <<
+# wrong constant name clear
+# wrong constant name filter
+# wrong constant name history_line_count
+# wrong constant name initialize
+# wrong constant name load
+# wrong constant name loader
+# wrong constant name loader=
+# wrong constant name original_lines
+# wrong constant name push
+# wrong constant name saver
+# wrong constant name saver=
+# wrong constant name session_line_count
+# wrong constant name to_a
+# wrong constant name <static-init>
+# wrong constant name default_file
+# wrong constant name add_hook
+# wrong constant name clear_event_hooks
+# wrong constant name delete_hook
+# wrong constant name errors
+# wrong constant name exec_hook
+# wrong constant name get_hook
+# wrong constant name get_hooks
+# wrong constant name hook_count
+# wrong constant name hook_exists?
+# wrong constant name hooks
+# wrong constant name merge
+# wrong constant name merge!
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name <Class:UnparseableNestingError>
+# wrong constant name correct_indentation
+# wrong constant name current_prefix
+# wrong constant name end_of_statement?
+# wrong constant name in_string?
+# wrong constant name indent
+# wrong constant name indent_level
+# wrong constant name indentation_delta
+# wrong constant name initialize
+# wrong constant name module_nesting
+# wrong constant name open_delimiters
+# wrong constant name open_delimiters_line
+# wrong constant name reset
+# wrong constant name stack
+# wrong constant name tokenize
+# wrong constant name track_delimiter
+# wrong constant name track_module_nesting
+# wrong constant name track_module_nesting_end
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name indent
+# wrong constant name nesting_at
+# wrong constant name build_path
+# wrong constant name call
+# wrong constant name ignored_modules
+# wrong constant name initialize
+# wrong constant name select_message
+# wrong constant name <static-init>
+# wrong constant name <Class:Interrupt>
+# wrong constant name __with_ownership
+# wrong constant name enter_interruptible_region
+# wrong constant name interruptible_region
+# wrong constant name leave_interruptible_region
+# wrong constant name with_ownership
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name for
+# wrong constant name global_lock
+# wrong constant name global_lock=
+# wrong constant name input_locks
+# wrong constant name input_locks=
+# wrong constant name <static-init>
+# wrong constant name bt_index
+# wrong constant name bt_index=
+# wrong constant name bt_source_location_for
+# wrong constant name file
+# wrong constant name inc_bt_index
+# wrong constant name initialize
+# wrong constant name line
+# wrong constant name method_missing
+# wrong constant name wrapped_exception
+# wrong constant name <static-init>
+# wrong constant name ==
+# wrong constant name <Class:Disowned>
+# wrong constant name <Class:Patcher>
+# wrong constant name <Class:WeirdMethodLocator>
+# uninitialized constant Pry::Method::YARD_TAGS
+# wrong constant name alias?
+# wrong constant name aliases
+# wrong constant name bound_method?
+# wrong constant name comment
+# wrong constant name doc
+# wrong constant name dynamically_defined?
+# wrong constant name initialize
+# wrong constant name is_a?
+# wrong constant name kind_of?
+# wrong constant name method_missing
+# wrong constant name name
+# wrong constant name name_with_owner
+# wrong constant name original_name
+# wrong constant name owner
+# wrong constant name parameters
+# wrong constant name pry_method?
+# wrong constant name receiver
+# wrong constant name redefine
+# wrong constant name respond_to?
+# wrong constant name signature
+# wrong constant name singleton_method?
+# wrong constant name source
+# wrong constant name source?
+# wrong constant name source_file
+# wrong constant name source_line
+# wrong constant name source_range
+# wrong constant name source_type
+# wrong constant name super
+# wrong constant name unbound_method?
+# wrong constant name undefined?
+# wrong constant name visibility
+# wrong constant name wrapped
+# wrong constant name wrapped_owner
+# uninitialized constant Pry::Method::Disowned::YARD_TAGS
+# Did you mean?  Pry::Method::YARD_TAGS
+# wrong constant name initialize
+# wrong constant name owner
+# wrong constant name receiver
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name method
+# wrong constant name method=
+# wrong constant name patch_in_ram
+# wrong constant name <static-init>
+# wrong constant name code_for
+# wrong constant name find_method
+# wrong constant name initialize
+# wrong constant name lost_method?
+# wrong constant name method
+# wrong constant name method=
+# wrong constant name target
+# wrong constant name target=
+# wrong constant name <static-init>
+# wrong constant name normal_method?
+# wrong constant name weird_method?
+# wrong constant name <static-init>
+# wrong constant name all_from_class
+# wrong constant name all_from_obj
+# wrong constant name from_binding
+# wrong constant name from_class
+# wrong constant name from_module
+# wrong constant name from_obj
+# wrong constant name from_str
+# wrong constant name instance_method_definition?
+# wrong constant name instance_resolution_order
+# wrong constant name lookup_method_via_binding
+# wrong constant name method_definition?
+# wrong constant name resolution_order
+# wrong constant name singleton_class_of
+# wrong constant name singleton_class_resolution_order
+# wrong constant name singleton_method_definition?
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name resolve
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <<
+# wrong constant name decolorize_maybe
+# wrong constant name height
+# wrong constant name initialize
+# wrong constant name method_missing
+# wrong constant name print
+# wrong constant name pry_instance
+# wrong constant name puts
+# wrong constant name size
+# wrong constant name tty?
+# wrong constant name width
+# wrong constant name write
+# wrong constant name <static-init>
+# wrong constant name <Class:NullPager>
+# wrong constant name <Class:PageTracker>
+# wrong constant name <Class:SimplePager>
+# wrong constant name <Class:StopPaging>
+# wrong constant name <Class:SystemPager>
+# wrong constant name initialize
+# wrong constant name open
+# wrong constant name page
+# wrong constant name pry_instance
+# wrong constant name <<
+# wrong constant name close
+# wrong constant name initialize
+# wrong constant name print
+# wrong constant name puts
+# wrong constant name write
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name page?
+# wrong constant name record
+# wrong constant name reset
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name initialize
+# wrong constant name <static-init>
+# wrong constant name available?
+# wrong constant name default_pager
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name description
+# wrong constant name incomplete_proc
+# wrong constant name initialize
+# wrong constant name name
+# wrong constant name prompt_procs
+# wrong constant name wait_proc
+# wrong constant name <static-init>
+# wrong constant name []
+# wrong constant name add
+# wrong constant name all
+# wrong constant name initialize
+# wrong constant name input
+# wrong constant name output
+# wrong constant name pry
+# wrong constant name pry=
+# wrong constant name start
+# wrong constant name <static-init>
+# wrong constant name start
+# wrong constant name define_additional_commands
+# wrong constant name initialize
+# wrong constant name interactive_mode
+# wrong constant name load
+# wrong constant name non_interactive_mode
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name ===
+# wrong constant name command?
+# wrong constant name initialize
+# wrong constant name retval
+# wrong constant name void_command?
+# wrong constant name <static-init>
+# wrong constant name <<
+# wrong constant name []
+# wrong constant name clear
+# wrong constant name count
+# wrong constant name initialize
+# wrong constant name max_size
+# wrong constant name size
+# wrong constant name to_a
+# wrong constant name <static-init>
+# wrong constant name <Class:Commands>
+# uninitialized constant Pry::Slop::Elem
+# wrong constant name <Class:Error>
+# wrong constant name <Class:InvalidArgumentError>
+# wrong constant name <Class:InvalidCommandError>
+# wrong constant name <Class:InvalidOptionError>
+# wrong constant name <Class:MissingArgumentError>
+# wrong constant name <Class:MissingOptionError>
+# wrong constant name <Class:Option>
+# wrong constant name []
+# wrong constant name add_callback
+# wrong constant name banner
+# wrong constant name banner=
+# wrong constant name command
+# wrong constant name config
+# wrong constant name description
+# wrong constant name description=
+# wrong constant name each
+# wrong constant name fetch_command
+# wrong constant name fetch_option
+# wrong constant name get
+# wrong constant name help
+# wrong constant name initialize
+# wrong constant name missing
+# wrong constant name on
+# wrong constant name opt
+# wrong constant name option
+# wrong constant name options
+# wrong constant name parse
+# wrong constant name parse!
+# wrong constant name present?
+# wrong constant name run
+# wrong constant name separator
+# wrong constant name strict?
+# wrong constant name to_h
+# wrong constant name to_hash
+# uninitialized constant Pry::Slop::Commands::Elem
+# wrong constant name []
+# wrong constant name arguments
+# wrong constant name banner
+# wrong constant name banner=
+# wrong constant name commands
+# wrong constant name config
+# wrong constant name default
+# wrong constant name each
+# wrong constant name get
+# wrong constant name global
+# wrong constant name help
+# wrong constant name initialize
+# wrong constant name on
+# wrong constant name parse
+# wrong constant name parse!
+# wrong constant name present?
+# wrong constant name to_hash
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name accepts_optional_argument?
+# wrong constant name argument_in_value
+# wrong constant name argument_in_value=
+# wrong constant name call
+# wrong constant name config
+# wrong constant name count
+# wrong constant name count=
+# wrong constant name description
+# wrong constant name expects_argument?
+# wrong constant name help
+# wrong constant name initialize
+# wrong constant name key
+# wrong constant name long
+# wrong constant name short
+# wrong constant name types
+# wrong constant name value
+# wrong constant name value=
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name optspec
+# wrong constant name parse
+# wrong constant name parse!
+# wrong constant name <static-init>
+# wrong constant name highlight
+# wrong constant name keyword_token_color
+# wrong constant name overwrite_coderay_comment_token!
+# wrong constant name tokenize
+# wrong constant name <static-init>
+# wrong constant name default
+# wrong constant name <static-init>
+# wrong constant name ===
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name warn
+# wrong constant name <Class:Candidate>
+# wrong constant name candidate
+# wrong constant name candidates
+# wrong constant name class?
+# wrong constant name constants
+# wrong constant name doc
+# wrong constant name file
+# wrong constant name initialize
+# wrong constant name line
+# wrong constant name method_missing
+# wrong constant name method_prefix
+# wrong constant name module?
+# wrong constant name nonblank_name
+# wrong constant name number_of_candidates
+# wrong constant name singleton_class?
+# wrong constant name singleton_instance
+# wrong constant name source
+# wrong constant name source_file
+# wrong constant name source_line
+# wrong constant name source_location
+# wrong constant name super
+# wrong constant name wrapped
+# wrong constant name yard_doc
+# wrong constant name yard_docs?
+# wrong constant name yard_file
+# wrong constant name yard_line
+# uninitialized constant Pry::WrappedModule::Candidate::YARD_TAGS
+# wrong constant name class?
+# wrong constant name doc
+# wrong constant name file
+# wrong constant name initialize
+# wrong constant name line
+# wrong constant name module?
+# wrong constant name nonblank_name
+# wrong constant name number_of_candidates
+# wrong constant name source
+# wrong constant name source_file
+# wrong constant name source_line
+# wrong constant name source_location
+# wrong constant name wrapped
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name from_str
+# wrong constant name <static-init>
+# wrong constant name auto_resize!
+# wrong constant name binding_for
+# wrong constant name cli
+# wrong constant name cli=
+# wrong constant name color
+# wrong constant name color=
+# wrong constant name commands
+# wrong constant name commands=
+# wrong constant name config
+# wrong constant name config=
+# wrong constant name configure
+# wrong constant name critical_section
+# wrong constant name current
+# wrong constant name current_line
+# wrong constant name current_line=
+# wrong constant name custom_completions
+# wrong constant name custom_completions=
+# wrong constant name editor
+# wrong constant name editor=
+# wrong constant name eval_path
+# wrong constant name eval_path=
+# wrong constant name exception_handler
+# wrong constant name exception_handler=
+# wrong constant name extra_sticky_locals
+# wrong constant name extra_sticky_locals=
+# wrong constant name final_session_setup
+# wrong constant name history
+# wrong constant name history=
+# wrong constant name hooks
+# wrong constant name hooks=
+# wrong constant name in_critical_section?
+# wrong constant name init
+# wrong constant name initial_session?
+# wrong constant name initial_session_setup
+# wrong constant name input
+# wrong constant name input=
+# wrong constant name last_internal_error
+# wrong constant name last_internal_error=
+# wrong constant name line_buffer
+# wrong constant name line_buffer=
+# wrong constant name load_file_at_toplevel
+# wrong constant name load_file_through_repl
+# wrong constant name load_history
+# wrong constant name load_rc_files
+# wrong constant name load_requires
+# wrong constant name load_traps
+# wrong constant name load_win32console
+# wrong constant name main
+# wrong constant name memory_size
+# wrong constant name memory_size=
+# wrong constant name output
+# wrong constant name output=
+# wrong constant name pager
+# wrong constant name pager=
+# wrong constant name print
+# wrong constant name print=
+# wrong constant name prompt
+# wrong constant name prompt=
+# wrong constant name quiet
+# wrong constant name quiet=
+# wrong constant name rc_files_to_load
+# wrong constant name real_path_to
+# wrong constant name reset_defaults
+# wrong constant name run_command
+# wrong constant name start
+# wrong constant name start_with_pry_byebug
+# wrong constant name start_without_pry_byebug
+# wrong constant name toplevel_binding
+# wrong constant name toplevel_binding=
+# wrong constant name view_clip
+# wrong constant name <Class:BacktraceCommand>
+# wrong constant name <Class:BreakCommand>
+# wrong constant name <Class:ContinueCommand>
+# wrong constant name <Class:DownCommand>
+# wrong constant name <Class:ExitAllCommand>
+# wrong constant name <Class:FinishCommand>
+# wrong constant name <Class:FrameCommand>
+# wrong constant name <Class:Helpers>
+# wrong constant name <Class:NextCommand>
+# wrong constant name <Class:StepCommand>
+# wrong constant name <Class:UpCommand>
+# wrong constant name current_remote_server
+# wrong constant name current_remote_server=
+# uninitialized constant PryByebug::BacktraceCommand::COLORS
+# uninitialized constant PryByebug::BacktraceCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::BreakCommand::COLORS
+# uninitialized constant PryByebug::BreakCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::ContinueCommand::COLORS
+# uninitialized constant PryByebug::ContinueCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::DownCommand::COLORS
+# uninitialized constant PryByebug::DownCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::ExitAllCommand::COLORS
+# uninitialized constant PryByebug::ExitAllCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::FinishCommand::COLORS
+# uninitialized constant PryByebug::FinishCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::FrameCommand::COLORS
+# uninitialized constant PryByebug::FrameCommand::VOID_VALUE
+# wrong constant name <static-init>
+# wrong constant name <Class:Breakpoints>
+# wrong constant name <Class:Location>
+# wrong constant name <Class:Multiline>
+# wrong constant name <Class:Navigation>
+# wrong constant name bold_puts
+# wrong constant name breakpoints
+# wrong constant name max_width
+# wrong constant name print_breakpoints_header
+# wrong constant name print_full_breakpoint
+# wrong constant name print_short_breakpoint
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name current_file
+# wrong constant name check_multiline_context
+# wrong constant name <static-init>
+# wrong constant name breakout_navigation
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::NextCommand::COLORS
+# uninitialized constant PryByebug::NextCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::StepCommand::COLORS
+# uninitialized constant PryByebug::StepCommand::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryByebug::UpCommand::COLORS
+# uninitialized constant PryByebug::UpCommand::VOID_VALUE
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name check_file_context
+# wrong constant name file_context?
+# wrong constant name <Class:FindRoute>
+# wrong constant name <Class:ModelFormatter>
+# wrong constant name <Class:Prompt>
+# wrong constant name <Class:Railtie>
+# wrong constant name <Class:RecognizePath>
+# wrong constant name <Class:ShowMiddleware>
+# wrong constant name <Class:ShowModel>
+# wrong constant name <Class:ShowModels>
+# wrong constant name <Class:ShowRoutes>
+# uninitialized constant PryRails::FindRoute::COLORS
+# uninitialized constant PryRails::FindRoute::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# wrong constant name format_active_record
+# wrong constant name format_association
+# wrong constant name format_column
+# wrong constant name format_error
+# wrong constant name format_model_name
+# wrong constant name format_mongoid
+# wrong constant name kind_of_relation
+# wrong constant name <static-init>
+# wrong constant name <static-init>
+# wrong constant name formatted_env
+# wrong constant name project_name
+# uninitialized constant PryRails::Railtie::ABSTRACT_RAILTIES
+# wrong constant name <static-init>
+# uninitialized constant PryRails::RecognizePath::COLORS
+# uninitialized constant PryRails::RecognizePath::VOID_VALUE
+# wrong constant name process
+# wrong constant name <static-init>
+# uninitialized constant PryRails::ShowMiddleware::COLORS
+# uninitialized constant PryRails::ShowMiddleware::VOID_VALUE
+# wrong constant name print_middleware
+# wrong constant name <static-init>
+# uninitialized constant PryRails::ShowModel::COLORS
+# uninitialized constant PryRails::ShowModel::VOID_VALUE
+# wrong constant name <static-init>
+# uninitialized constant PryRails::ShowModels::COLORS
+# uninitialized constant PryRails::ShowModels::VOID_VALUE
+# wrong constant name colorize_matches
+# wrong constant name display_activerecord_models
+# wrong constant name display_mongoid_models
+# wrong constant name grep_regex
+# wrong constant name print_unless_filtered
+# wrong constant name <static-init>
+# uninitialized constant PryRails::ShowRoutes::COLORS
+# uninitialized constant PryRails::ShowRoutes::VOID_VALUE
+# wrong constant name grep_routes
+# wrong constant name process_rails_3_0_and_3_1
+# wrong constant name process_rails_3_2
+# wrong constant name process_rails_4_and_5
+# wrong constant name process_rails_6_and_higher
+# wrong constant name <static-init>
+# wrong constant name <static-init>
 # uninitialized constant Psych::UnsafeYAML
 # uninitialized constant Psych::UnsafeYAML
 # wrong constant name add_builtin_type
@@ -27289,12 +29361,12 @@
 # Did you mean?  Puma::Binder::HTTP_X_FORWARDED_SSL
 #                Puma::Binder::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Binder::HTTP_X_FORWARDED_PROTO
-# Did you mean?  Puma::Binder::HTTP_X_FORWARDED_FOR
-#                Puma::Binder::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Binder::HTTP_X_FORWARDED_SSL
+#                Puma::Binder::HTTP_X_FORWARDED_FOR
 #                Puma::Binder::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Puma::Binder::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  Puma::Binder::HTTP_X_FORWARDED_FOR
-#                Puma::Binder::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Binder::HTTP_X_FORWARDED_SSL
+#                Puma::Binder::HTTP_X_FORWARDED_FOR
 #                Puma::Binder::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Binder::HTTP_X_FORWARDED_SSL
 # Did you mean?  Puma::Binder::HTTP_X_FORWARDED_FOR
@@ -27401,12 +29473,12 @@
 # Did you mean?  Puma::Client::HTTP_X_FORWARDED_SSL
 #                Puma::Client::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Client::HTTP_X_FORWARDED_PROTO
-# Did you mean?  Puma::Client::HTTP_X_FORWARDED_FOR
-#                Puma::Client::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Client::HTTP_X_FORWARDED_SSL
+#                Puma::Client::HTTP_X_FORWARDED_FOR
 #                Puma::Client::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Puma::Client::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  Puma::Client::HTTP_X_FORWARDED_FOR
-#                Puma::Client::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Client::HTTP_X_FORWARDED_SSL
+#                Puma::Client::HTTP_X_FORWARDED_FOR
 #                Puma::Client::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Client::HTTP_X_FORWARDED_SSL
 # Did you mean?  Puma::Client::HTTP_X_FORWARDED_FOR
@@ -27513,12 +29585,12 @@
 # Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
 #                Puma::ErrorLogger::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::ErrorLogger::HTTP_X_FORWARDED_PROTO
-# Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_FOR
-#                Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
+#                Puma::ErrorLogger::HTTP_X_FORWARDED_FOR
 #                Puma::ErrorLogger::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Puma::ErrorLogger::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_FOR
-#                Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
+#                Puma::ErrorLogger::HTTP_X_FORWARDED_FOR
 #                Puma::ErrorLogger::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::ErrorLogger::HTTP_X_FORWARDED_SSL
 # Did you mean?  Puma::ErrorLogger::HTTP_X_FORWARDED_FOR
@@ -27628,12 +29700,12 @@
 # Did you mean?  Puma::Server::HTTP_X_FORWARDED_SSL
 #                Puma::Server::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Server::HTTP_X_FORWARDED_PROTO
-# Did you mean?  Puma::Server::HTTP_X_FORWARDED_FOR
-#                Puma::Server::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Server::HTTP_X_FORWARDED_SSL
+#                Puma::Server::HTTP_X_FORWARDED_FOR
 #                Puma::Server::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Puma::Server::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  Puma::Server::HTTP_X_FORWARDED_FOR
-#                Puma::Server::HTTP_X_FORWARDED_SSL
+# Did you mean?  Puma::Server::HTTP_X_FORWARDED_SSL
+#                Puma::Server::HTTP_X_FORWARDED_FOR
 #                Puma::Server::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Puma::Server::HTTP_X_FORWARDED_SSL
 # Did you mean?  Puma::Server::HTTP_X_FORWARDED_FOR
@@ -28654,26 +30726,26 @@
 #                Rack::Request::HTTP_X_FORWARDED_HOST
 #                Rack::Request::HTTP_X_FORWARDED_PROTO
 # uninitialized constant Rack::Request::HTTP_X_FORWARDED_HOST
-# Did you mean?  Rack::Request::HTTP_X_FORWARDED_FOR
-#                Rack::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  Rack::Request::HTTP_X_FORWARDED_SSL
+#                Rack::Request::HTTP_X_FORWARDED_FOR
 #                Rack::Request::HTTP_X_FORWARDED_PORT
 #                Rack::Request::HTTP_X_FORWARDED_PROTO
 #                Rack::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Rack::Request::HTTP_X_FORWARDED_PORT
-# Did you mean?  Rack::Request::HTTP_X_FORWARDED_FOR
-#                Rack::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  Rack::Request::HTTP_X_FORWARDED_SSL
+#                Rack::Request::HTTP_X_FORWARDED_FOR
 #                Rack::Request::HTTP_X_FORWARDED_HOST
 #                Rack::Request::HTTP_X_FORWARDED_PROTO
 #                Rack::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Rack::Request::HTTP_X_FORWARDED_PROTO
-# Did you mean?  Rack::Request::HTTP_X_FORWARDED_FOR
-#                Rack::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  Rack::Request::HTTP_X_FORWARDED_SSL
+#                Rack::Request::HTTP_X_FORWARDED_FOR
 #                Rack::Request::HTTP_X_FORWARDED_PORT
 #                Rack::Request::HTTP_X_FORWARDED_HOST
 #                Rack::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant Rack::Request::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  Rack::Request::HTTP_X_FORWARDED_FOR
-#                Rack::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  Rack::Request::HTTP_X_FORWARDED_SSL
+#                Rack::Request::HTTP_X_FORWARDED_FOR
 #                Rack::Request::HTTP_X_FORWARDED_PORT
 #                Rack::Request::HTTP_X_FORWARDED_HOST
 #                Rack::Request::HTTP_X_FORWARDED_PROTO
@@ -31899,26 +33971,26 @@
 #                WebConsole::Request::HTTP_X_FORWARDED_HOST
 #                WebConsole::Request::HTTP_X_FORWARDED_PROTO
 # uninitialized constant WebConsole::Request::HTTP_X_FORWARDED_HOST
-# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_FOR
-#                WebConsole::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_SSL
+#                WebConsole::Request::HTTP_X_FORWARDED_FOR
 #                WebConsole::Request::HTTP_X_FORWARDED_PORT
 #                WebConsole::Request::HTTP_X_FORWARDED_PROTO
 #                WebConsole::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant WebConsole::Request::HTTP_X_FORWARDED_PORT
-# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_FOR
-#                WebConsole::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_SSL
+#                WebConsole::Request::HTTP_X_FORWARDED_FOR
 #                WebConsole::Request::HTTP_X_FORWARDED_HOST
 #                WebConsole::Request::HTTP_X_FORWARDED_PROTO
 #                WebConsole::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant WebConsole::Request::HTTP_X_FORWARDED_PROTO
-# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_FOR
-#                WebConsole::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_SSL
+#                WebConsole::Request::HTTP_X_FORWARDED_FOR
 #                WebConsole::Request::HTTP_X_FORWARDED_PORT
 #                WebConsole::Request::HTTP_X_FORWARDED_HOST
 #                WebConsole::Request::HTTP_X_FORWARDED_SCHEME
 # uninitialized constant WebConsole::Request::HTTP_X_FORWARDED_SCHEME
-# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_FOR
-#                WebConsole::Request::HTTP_X_FORWARDED_SSL
+# Did you mean?  WebConsole::Request::HTTP_X_FORWARDED_SSL
+#                WebConsole::Request::HTTP_X_FORWARDED_FOR
 #                WebConsole::Request::HTTP_X_FORWARDED_PORT
 #                WebConsole::Request::HTTP_X_FORWARDED_HOST
 #                WebConsole::Request::HTTP_X_FORWARDED_PROTO

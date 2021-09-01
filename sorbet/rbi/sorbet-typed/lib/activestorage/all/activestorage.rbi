@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/activestorage/all/activestorage.rbi
 #
-# typed: strong
+# typed: ignore
 
 module ActiveStorage
   sig { returns(Gem::Version) }
@@ -20,8 +20,8 @@ class ActiveStorage::Attached::One
   # methods to Attachment, which in turn delegates to Blob. This is essentially
   # a hack to make it easier to maintain the ActiveStorage signatures. We can't
   #include Blob directly because it's a class, so `include`ing it doesn't work.
-  include ActiveStorage::Blob::Analyzable
-  include ActiveStorage::Blob::Identifiable
+  include ActiveStorage::AnalyzeJob
+  include PG::TextEncoder::Identifier
   include ActiveStorage::Blob::Representable
 
   # Attaches an `attachable` to the record.
@@ -77,8 +77,8 @@ class ActiveStorage::Attached::Many
   # methods to Attachment, which in turn delegates to Blob. This is essentially
   # a hack to make it easier to maintain the ActiveStorage signatures. We can't
   # include Blob directly because it's a class, so `include`ing it doesn't work.
-  include ActiveStorage::Blob::Analyzable
-  include ActiveStorage::Blob::Identifiable
+  include ActiveStorage::AnalyzeJob
+  include Bundler::LazySpecification::Identifier
   include ActiveStorage::Blob::Representable
 
   # Attaches one or more `attachables` to the record.
@@ -151,6 +151,6 @@ module ActiveStorage::Blob::Representable
   #
   # Raises ActiveStorage::InvariableError if ImageMagick cannot transform the blob. To determine whether a blob is
   # variable, call ActiveStorage::Blob#variable?.
-  sig { params(transformations: T.untyped).returns(ActiveStorage::Variant) }
+  sig { params(transformations: T.untyped).returns(Regexp::Expression::UnicodeProperty::Print) }
   def variant(transformations); end
 end

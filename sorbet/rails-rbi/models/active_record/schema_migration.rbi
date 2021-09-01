@@ -7,6 +7,17 @@ module ActiveRecord::SchemaMigration::ActiveRelation_WhereNot
   def not(opts, *rest); end
 end
 
+module ActiveRecord::SchemaMigration::GeneratedAttributeMethods
+  sig { returns(String) }
+  def version; end
+
+  sig { params(value: T.any(String, Symbol)).void }
+  def version=(value); end
+
+  sig { returns(T::Boolean) }
+  def version?; end
+end
+
 module ActiveRecord::SchemaMigration::CustomFinderMethods
   sig { params(limit: Integer).returns(T::Array[ActiveRecord::SchemaMigration]) }
   def first_n(limit); end
@@ -25,6 +36,7 @@ module ActiveRecord::SchemaMigration::CustomFinderMethods
 end
 
 class ActiveRecord::SchemaMigration < ActiveRecord::Base
+  include ActiveRecord::SchemaMigration::GeneratedAttributeMethods
   extend ActiveRecord::SchemaMigration::CustomFinderMethods
   extend ActiveRecord::SchemaMigration::QueryMethodsReturningRelation
   RelationType = T.type_alias { T.any(ActiveRecord::SchemaMigration::ActiveRecord_Relation, ActiveRecord::SchemaMigration::ActiveRecord_Associations_CollectionProxy, ActiveRecord::SchemaMigration::ActiveRecord_AssociationRelation) }

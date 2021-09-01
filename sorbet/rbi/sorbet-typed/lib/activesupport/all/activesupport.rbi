@@ -196,7 +196,7 @@ class String
   sig { params(amount: Integer, indent_string: T.nilable(String), indent_empty_lines: T::Boolean).returns(T.nilable(String)) }
   def indent(amount, indent_string = nil, indent_empty_lines = false); end
 
-  sig { returns(ActiveSupport::StringInquirer) }
+  sig { returns(TZInfo::StringDeduper) }
   def inquiry; end
 
   sig { returns(T::Boolean) }
@@ -205,7 +205,7 @@ class String
   sig { params(limit: Integer).returns(String) }
   def last(limit = 1); end
 
-  sig { returns(ActiveSupport::Multibyte::Chars) }
+  sig { returns(Crass) }
   def mb_chars; end
 
   sig { params(separator: String, preserve_case: T::Boolean, locale: Symbol).returns(String) }

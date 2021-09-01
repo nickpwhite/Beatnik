@@ -39,7 +39,7 @@ class Sprockets::Cache
   def self.default_logger; end
   def set(key, value, local = nil); end
 end
-class Anonymous_Struct_37 < Struct
+class Anonymous_Struct_36 < Struct
   def cache; end
   def cache=(_); end
   def self.[](*arg0); end
@@ -47,7 +47,7 @@ class Anonymous_Struct_37 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Sprockets::Cache::Wrapper < Anonymous_Struct_37
+class Sprockets::Cache::Wrapper < Anonymous_Struct_36
 end
 class Sprockets::Cache::GetWrapper < Sprockets::Cache::Wrapper
   def clear(options = nil); end
@@ -227,7 +227,7 @@ module Sprockets::ProcessorUtils
   def validate_processor_result!(result); end
   extend Sprockets::ProcessorUtils
 end
-class Anonymous_Struct_38 < Struct
+class Anonymous_Struct_37 < Struct
   def param; end
   def param=(_); end
   def processor_strategy; end
@@ -239,7 +239,7 @@ class Anonymous_Struct_38 < Struct
   def self.members; end
   def self.new(*arg0); end
 end
-class Sprockets::ProcessorUtils::CompositeProcessor < Anonymous_Struct_38
+class Sprockets::ProcessorUtils::CompositeProcessor < Anonymous_Struct_37
   def cache_key; end
   def call(input); end
   def self.create(processors); end

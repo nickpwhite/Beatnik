@@ -61,11 +61,11 @@ module ActiveRecord::ModelSchema::ClassMethods
   def table_exists?
   end
 
-  sig { returns(T::Hash[String, ActiveRecord::ConnectionAdapters::Column]) }
+  sig { returns(T::Hash[String, MIME::Type::Columnar]) }
   def columns_hash
   end
 
-  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
+  sig { returns(T::Array[MIME::Type::Columnar]) }
   def columns
   end
 
@@ -73,7 +73,7 @@ module ActiveRecord::ModelSchema::ClassMethods
   def column_defaults
   end
 
-  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::Column]) }
+  sig { returns(T::Array[MIME::Type::Columnar]) }
   def content_columns
   end
 end

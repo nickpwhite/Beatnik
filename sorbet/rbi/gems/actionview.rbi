@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/actionview/all/actionview.rbi
 #
-# actionview-6.1.4
+# actionview-6.1.4.1
 
 module ActionView
   def self.eager_load!; end
@@ -1411,7 +1411,7 @@ class ActionView::TestCase::TestController < ActionController::Base
   def self.middleware_stack; end
   include ActionDispatch::Routing::UrlFor
   include ActionDispatch::TestProcess
-  include Anonymous_Module_22
+  include GeneratedUrlHelpers
 end
 module ActionView::TestCase::TestController::HelperMethods
   include ActionController::Base::HelperMethods

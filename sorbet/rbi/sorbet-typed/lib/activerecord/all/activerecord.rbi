@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/activerecord/all/activerecord.rbi
 #
-# typed: strong
+# typed: ignore
 
 VariadicUntypedFunction = T.type_alias { Proc }
 AssociationCallback = T.type_alias do
@@ -312,7 +312,7 @@ module ActiveRecord::NestedAttributes::ClassMethods
       reject_if: T.any(Symbol, Proc, T.proc.params(
         attributes: T.any(
           T::Hash[T.any(Symbol, String), T.untyped],
-          ActionController::Parameters
+          Parlour::Types::Proc::Parameter
         )
       ).returns(T::Boolean)),
       limit: T.any(Integer, Symbol, Proc, T.proc.returns(Integer)),
@@ -357,10 +357,10 @@ module ActiveRecord::Transactions
 end
 
 class ActiveRecord::Base
-  extend ActiveModel::Naming
+  extend String
 
-  extend ActiveSupport::Benchmarkable
-  extend ActiveSupport::DescendantsTracker
+  extend Benchmark
+  extend Jbuilder::DependencyTracker
 
   extend ActiveRecord::ConnectionHandling
   extend ActiveRecord::QueryCache::ClassMethods
@@ -379,7 +379,7 @@ class ActiveRecord::Base
   extend ActiveRecord::Sanitization::ClassMethods # via ActiveRecord::Sanitization concern inclusion
   include ActiveRecord::Inheritance
   include ActiveRecord::Scoping
-  include ActiveRecord::Scoping::Default # via ActiveRecord::Scoping#included hook
+  include ThreadGroup::Default # via ActiveRecord::Scoping#included hook
   include ActiveRecord::Scoping::Named # via ActiveRecord::Scoping#included hook
   extend ActiveRecord::Scoping::Named::ClassMethods # via ActiveRecord::Scoping::Named Concern inclusion
   include ActiveRecord::AttributeAssignment
@@ -395,8 +395,8 @@ class ActiveRecord::Base
   include ActiveRecord::AttributeMethods
   include ActiveRecord::AttributeMethods::Read # via ActiveRecord::AttributeMethods#included hook
   include ActiveRecord::AttributeMethods::Write # via ActiveRecord::AttributeMethods#included hook
-  include ActiveRecord::AttributeMethods::BeforeTypeCast # via ActiveRecord::AttributeMethods#included hook
-  include ActiveRecord::AttributeMethods::Query # via ActiveRecord::AttributeMethods#included hook
+  include Net::IMAP::BodyTypeBasic # via ActiveRecord::AttributeMethods#included hook
+  include Resolv::DNS::OpCode::Query # via ActiveRecord::AttributeMethods#included hook
   include ActiveRecord::AttributeMethods::PrimaryKey # via ActiveRecord::AttributeMethods#included hook
   include ActiveRecord::AttributeMethods::TimeZoneConversion # via ActiveRecord::AttributeMethods#included hook
   include ActiveRecord::AttributeMethods::Dirty # via ActiveRecord::AttributeMethods#included hook
@@ -815,7 +815,7 @@ module ActiveRecord::Persistence
     params(
       attributes: T.any(
         T::Hash[T.any(Symbol, String), T.untyped],
-        ActionController::Parameters
+        Parlour::Types::Proc::Parameter
       )
     ).returns(TrueClass)
   end
@@ -826,7 +826,7 @@ module ActiveRecord::Persistence
     params(
       attributes: T.any(
         T::Hash[T.any(Symbol, String), T.untyped],
-        ActionController::Parameters
+        Parlour::Types::Proc::Parameter
       )
     ).returns(TrueClass)
   end
@@ -836,7 +836,7 @@ module ActiveRecord::Persistence
     params(
       attributes: T.any(
         T::Hash[T.any(Symbol, String), T.untyped],
-        ActionController::Parameters
+        Parlour::RbsGenerator::Parameter
       )
     ).returns(T::Boolean)
   end
@@ -847,7 +847,7 @@ module ActiveRecord::Persistence
     params(
       attributes: T.any(
         T::Hash[T.any(Symbol, String), T.untyped],
-        ActionController::Parameters
+        Parlour::Types::Proc::Parameter
       )
     ).returns(T::Boolean)
   end
@@ -857,7 +857,7 @@ module ActiveRecord::Persistence
     params(
       attributes: T.any(
         T::Hash[T.any(Symbol, String), T.untyped],
-        ActionController::Parameters
+        Parlour::Types::Proc::Parameter
       )
     ).void
   end
@@ -1066,7 +1066,7 @@ module ActiveRecord
   class TransactionIsolationError < ActiveRecordError; end
   class TransactionRollbackError < StatementInvalid; end
   class TypeConflictError < StandardError; end
-  UnknownAttributeError = ActiveModel::UnknownAttributeError
+  UnknownAttributeError = ActiveRecord::UnknownAttributeError
   class UnknownAttributeReference < ActiveRecordError; end
   class UnknownMigrationVersionError < MigrationError; end
   class UnknownPrimaryKey < ActiveRecordError; end
@@ -1116,11 +1116,11 @@ class ActiveRecord::ConnectionAdapters::TableDefinition
   include ActiveRecord::ConnectionAdapters::ColumnMethods
 
   # Returns an array of ColumnDefinition objects for the columns of the table.
-  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::ColumnDefinition]) }
+  sig { returns(T::Array[ActiveRecord::ConnectionAdapters::TableDefinition]) }
   def columns; end
 
   # Returns a ColumnDefinition for the column with name `name`.
-  sig { params(name: T.any(String, Symbol)).returns(ActiveRecord::ConnectionAdapters::ColumnDefinition) }
+  sig { params(name: T.any(String, Symbol)).returns(ActiveRecord::ConnectionAdapters::TableDefinition) }
   def [](name); end
 
   sig do

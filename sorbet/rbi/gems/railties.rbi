@@ -7,7 +7,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/new/master?filename=lib/railties/all/railties.rbi
 #
-# railties-6.1.4
+# railties-6.1.4.1
 
 module Rails
   def self.app_class; end
@@ -728,4 +728,63 @@ class Rails::Generators::TestCase < ActiveSupport::TestCase
   include Rails::Generators::Testing::Assertions
   include Rails::Generators::Testing::Behaviour
   include Rails::Generators::Testing::SetupAndTeardown
+end
+class ActiveRecord::ExplainRegistry
+  def self.collect?(**, &&); end
+end
+class ActiveRecord::Scoping::ScopeRegistry
+  def self.value_for(**, &&); end
+end
+class ActiveSupport::TestCase < Minitest::Test
+  def fixture_class_names; end
+  def fixture_class_names=(arg0); end
+  def fixture_class_names?; end
+  def fixture_path; end
+  def fixture_path?; end
+  def fixture_table_names; end
+  def fixture_table_names=(arg0); end
+  def fixture_table_names?; end
+  def lock_threads; end
+  def lock_threads=(arg0); end
+  def lock_threads?; end
+  def pre_loaded_fixtures; end
+  def pre_loaded_fixtures=(arg0); end
+  def pre_loaded_fixtures?; end
+  def self.fixture_class_names; end
+  def self.fixture_class_names=(value); end
+  def self.fixture_class_names?; end
+  def self.fixture_path; end
+  def self.fixture_path=(value); end
+  def self.fixture_path?; end
+  def self.fixture_table_names; end
+  def self.fixture_table_names=(value); end
+  def self.fixture_table_names?; end
+  def self.lock_threads; end
+  def self.lock_threads=(value); end
+  def self.lock_threads?; end
+  def self.pre_loaded_fixtures; end
+  def self.pre_loaded_fixtures=(value); end
+  def self.pre_loaded_fixtures?; end
+  def self.use_instantiated_fixtures; end
+  def self.use_instantiated_fixtures=(value); end
+  def self.use_instantiated_fixtures?; end
+  def self.use_transactional_tests; end
+  def self.use_transactional_tests=(value); end
+  def self.use_transactional_tests?; end
+  def use_instantiated_fixtures; end
+  def use_instantiated_fixtures=(arg0); end
+  def use_instantiated_fixtures?; end
+  def use_transactional_tests; end
+  def use_transactional_tests=(arg0); end
+  def use_transactional_tests?; end
+  extend ActiveRecord::TestFixtures::ClassMethods
+  include ActiveRecord::TestDatabases
+  include ActiveRecord::TestFixtures
+end
+class ActionDispatch::IntegrationTest < ActiveSupport::TestCase
+  def before_setup; end
+  def self.fixture_path; end
+end
+class ActionController::TestCase < ActiveSupport::TestCase
+  def before_setup; end
 end
