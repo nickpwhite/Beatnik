@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/activestorage/~>6.1.0.rc1/activestorage.rbi
 #
-# typed: ignore
+# typed: strong
 
 module ActiveStorage::Attached::Model::ClassMethods
   # Specifies the relation between a single attachment and the model.
@@ -105,19 +105,19 @@ module ActiveStorage::Attached::Model
   mixes_in_class_methods(ActiveStorage::Attached::Model::ClassMethods)
 end
 
-class ActiveStorage::Attachment < Listen::Record
+class ActiveStorage::Attachment < ActiveStorage::Record
   # These aren't technically included, but Attachment delegates any missing
   # methods to Blob, which means it effectively inherits methods from Blob.
   # This is essentially a hack to make it easier to maintain the
   # ActiveStorage signatures. We can't include Blob directly because
   # it's a class, so `include`ing it doesn't work.
-  include ActiveStorage::AnalyzeJob
-  include PG::TextDecoder::Identifier
+  include ActiveStorage::Blob::Analyzable
+  include ActiveStorage::Blob::Identifiable
   include ActiveStorage::Blob::Representable
 end
 
-class ActiveStorage::Blob < PG::TextDecoder::Record
-  include ActiveStorage::AnalyzeJob
-  include PG::TextDecoder::Identifier
+class ActiveStorage::Blob < ActiveStorage::Record
+  include ActiveStorage::Blob::Analyzable
+  include ActiveStorage::Blob::Identifiable
   include ActiveStorage::Blob::Representable
 end

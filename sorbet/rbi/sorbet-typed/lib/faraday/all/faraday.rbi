@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/faraday/all/faraday.rbi
 #
-# typed: ignore
+# typed: true
 # faraday-1.1.0
 
 module Faraday

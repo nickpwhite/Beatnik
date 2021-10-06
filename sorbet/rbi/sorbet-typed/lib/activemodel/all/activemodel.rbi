@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/activemodel/all/activemodel.rbi
 #
-# typed: ignore
+# typed: strong
 
 module ActiveModel::AttributeMethods
   mixes_in_class_methods(::ActiveModel::AttributeMethods::ClassMethods)
@@ -48,7 +48,7 @@ class ActiveModel::ForbiddenAttributesError < ::StandardError
 end
 
 module ActiveModel::Model
-  include(ActiveRecord::AttributeAssignment)
+  include(::ActiveModel::AttributeAssignment)
   extend(::ActiveSupport::Concern)
 
   include(::ActiveSupport::Callbacks)

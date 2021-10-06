@@ -5,7 +5,7 @@
 #
 #   https://github.com/sorbet/sorbet-typed/edit/master/lib/activestorage/>=6.0.0/activestorage.rbi
 #
-# typed: strict
+# typed: strong
 
 class ActiveStorage::Attached::One
   sig { returns(T::Boolean) }

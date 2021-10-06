@@ -18,6 +18,27 @@ class ActionMailer::Base
 end
 
 module GeneratedUrlHelpers
+  # Sigs for route /music(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def music_index_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def music_index_url(*args, **kwargs); end
+
+  # Sigs for route /music/:id(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def music_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def music_url(*args, **kwargs); end
+
+  # Sigs for route /about(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def about_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def about_url(*args, **kwargs); end
+
   # Sigs for route /rails/action_mailbox/postmark/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def rails_postmark_inbound_emails_path(*args, **kwargs); end
