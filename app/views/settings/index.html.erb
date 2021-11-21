@@ -1,0 +1,31 @@
+<% content_for :head do %>
+  <meta property="og:title" content="Beatnik - Streaming music sharing">
+  <meta property="og:description" content="Beatnik allows you to easily share music with others and makes it easy to follow streaming links, no matter which service you use.">
+  <meta property="og:url" content="https://www.beatnikapp.com">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/VC4PNBfT_VghCeFsETuFQ4MfeKPQpqBM0nNjhCx3c0A_bYJLHRkIa_S7cwxWTACoYyxC9mp_uIM=w640-h400-e365">
+
+  <meta name="description" content="Beatnik allows you to easily share music with others and makes it easy to follow streaming links, no matter which service you use.">
+  <title>Beatnik - Streaming music sharing</title>
+<% end %>
+
+<div class="flex-row">
+  <h1>Settings</h1>
+</div>
+<div class="flex-row">
+  <%= form_with model: settings, url: settings_path, method: :post do |form| %>
+    <div class="flex-row form-group">
+      <div class="col-50">
+        <label for="redirect_to">Automatically redirect to</label>
+      </div>
+      <div class="col-50">
+        <%= form.collection_select(
+          :redirect, Settings::Redirect.values, :serialize, :humanize
+        )%>
+      </div>
+    </div>
+    <div class="flex-row">
+      <input type="reset" value="Reset">
+      <%= form.submit "Save Settings" %>
+    </div>
+<% end %>
+</div>

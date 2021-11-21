@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# typed: false
+# typed: strict
 
 class Music < ApplicationRecord
   PAGE_SIZE = 10
@@ -11,11 +11,11 @@ class Music < ApplicationRecord
   attribute :match_rating, :integer, default: 0
 
   typed_enum source: {
-    AppleMusic: :apple_music,
-    Soundcloud: :soundcloud,
-    Spotify: :spotify,
-    Tidal: :tidal,
-    YoutubeMusic: :youtube_music,
+    AppleMusic: "apple_music",
+    Soundcloud: "soundcloud",
+    Spotify: "spotify",
+    Tidal: "tidal",
+    YoutubeMusic: "youtube_music",
   }
 
   sig {returns(ActiveRecord::Relation)}

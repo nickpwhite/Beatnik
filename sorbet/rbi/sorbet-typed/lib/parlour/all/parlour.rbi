@@ -3,9 +3,9 @@
 #
 # If you would like to make changes to this file, great! Please upstream any changes you make here:
 #
-#   https://github.com/sorbet/sorbet-typed/edit/master/lib/parlour/6.0.1/parlour.rbi
+#   https://github.com/sorbet/sorbet-typed/edit/master/lib/parlour/all/parlour.rbi
 #
-# typed: strong
+# typed: false
 module Kernel
 end
 

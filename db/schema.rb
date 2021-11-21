@@ -1,4 +1,4 @@
-# typed: ignore
+# typed: false
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_053900) do
+ActiveRecord::Schema.define(version: 2021_10_14_152938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,8 +78,33 @@ ActiveRecord::Schema.define(version: 2021_08_16_053900) do
     t.index ["user_id"], name: "auth_user_user_permissions_user_id_a95ead1b"
   end
 
-# Could not dump table "beatnik_music" because of following StandardError
-#   Unknown type 'music_source' for column 'source'
+  create_table "beatnik_music", id: :serial, force: :cascade do |t|
+    t.string "music_type", limit: 1, null: false
+    t.string "name", limit: 200, null: false
+    t.string "artist", limit: 200, null: false
+    t.string "album", limit: 200, null: false
+    t.string "apple_url", limit: 200
+    t.string "gpm_url", limit: 200
+    t.string "soundcloud_url", limit: 200
+    t.string "spotify_url", limit: 200
+    t.integer "match_rating", null: false
+    t.string "artwork", limit: 200, null: false
+    t.string "tidal_url", limit: 200
+    t.string "ytm_url", limit: 200
+    t.enum "source"
+    t.index ["apple_url"], name: "beatnik_music_apple_url_4b8de405_like", opclass: :varchar_pattern_ops
+    t.index ["apple_url"], name: "beatnik_music_apple_url_4b8de405_uniq", unique: true
+    t.index ["gpm_url"], name: "beatnik_music_gpm_url_e7c1ac2c_like", opclass: :varchar_pattern_ops
+    t.index ["gpm_url"], name: "beatnik_music_gpm_url_e7c1ac2c_uniq", unique: true
+    t.index ["soundcloud_url"], name: "beatnik_music_soundcloud_url_64d68bec_like", opclass: :varchar_pattern_ops
+    t.index ["soundcloud_url"], name: "beatnik_music_soundcloud_url_64d68bec_uniq", unique: true
+    t.index ["spotify_url"], name: "beatnik_music_spotify_url_c2a182ee_like", opclass: :varchar_pattern_ops
+    t.index ["spotify_url"], name: "beatnik_music_spotify_url_c2a182ee_uniq", unique: true
+    t.index ["tidal_url"], name: "beatnik_music_tidal_url_cd13b47b_like", opclass: :varchar_pattern_ops
+    t.index ["tidal_url"], name: "beatnik_music_tidal_url_key", unique: true
+    t.index ["ytm_url"], name: "beatnik_music_ytm_url_28445fad_like", opclass: :varchar_pattern_ops
+    t.index ["ytm_url"], name: "beatnik_music_ytm_url_key", unique: true
+  end
 
   create_table "django_admin_log", id: :serial, force: :cascade do |t|
     t.datetime "action_time", null: false
@@ -111,6 +136,14 @@ ActiveRecord::Schema.define(version: 2021_08_16_053900) do
     t.datetime "expire_date", null: false
     t.index ["expire_date"], name: "django_session_expire_date_a5c62663"
     t.index ["session_key"], name: "django_session_session_key_c0390e0f_like", opclass: :varchar_pattern_ops
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "visitor_id", null: false
+    t.enum "redirect", default: "none", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["visitor_id"], name: "index_settings_on_visitor_id"
   end
 
   create_table "slackbot_install", id: :serial, force: :cascade do |t|
