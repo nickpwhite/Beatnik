@@ -49,7 +49,7 @@ module ActionMailbox::InboundEmail::CustomFinderMethods
   sig { params(args: T::Array[T.any(Integer, String)]).returns(T::Array[ActionMailbox::InboundEmail]) }
   def find_n(*args); end
 
-  sig { params(id: Integer).returns(T.nilable(ActionMailbox::InboundEmail)) }
+  sig { params(id: T.nilable(Integer)).returns(T.nilable(ActionMailbox::InboundEmail)) }
   def find_by_id(id); end
 
   sig { params(id: Integer).returns(ActionMailbox::InboundEmail) }
@@ -239,9 +239,6 @@ module ActionMailbox::InboundEmail::QueryMethodsReturningRelation
   def unscoped(&block); end
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
-  def select(*args); end
-
-  sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
   def reselect(*args); end
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
@@ -327,6 +324,12 @@ module ActionMailbox::InboundEmail::QueryMethodsReturningRelation
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
   def only(*args); end
+
+  sig { params(block: T.proc.params(e: ActionMailbox::InboundEmail).returns(T::Boolean)).returns(T::Array[ActionMailbox::InboundEmail]) }
+  def select(&block); end
+
+  sig { params(args: T.any(String, Symbol, T::Array[T.any(String, Symbol)])).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
+  def select_columns(*args); end
 
   sig { params(args: T.untyped, block: T.nilable(T.proc.void)).returns(ActionMailbox::InboundEmail::ActiveRecord_Relation) }
   def extending(*args, &block); end
@@ -352,9 +355,6 @@ module ActionMailbox::InboundEmail::QueryMethodsReturningAssociationRelation
   def unscoped(&block); end
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
-  def select(*args); end
-
-  sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
   def reselect(*args); end
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
@@ -440,6 +440,12 @@ module ActionMailbox::InboundEmail::QueryMethodsReturningAssociationRelation
 
   sig { params(args: T.untyped).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
   def only(*args); end
+
+  sig { params(block: T.proc.params(e: ActionMailbox::InboundEmail).returns(T::Boolean)).returns(T::Array[ActionMailbox::InboundEmail]) }
+  def select(&block); end
+
+  sig { params(args: T.any(String, Symbol, T::Array[T.any(String, Symbol)])).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
+  def select_columns(*args); end
 
   sig { params(args: T.untyped, block: T.nilable(T.proc.void)).returns(ActionMailbox::InboundEmail::ActiveRecord_AssociationRelation) }
   def extending(*args, &block); end

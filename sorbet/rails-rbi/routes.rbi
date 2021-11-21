@@ -17,6 +17,14 @@ class ActionMailer::Base
   include GeneratedUrlHelpers
 end
 
+class ActionDispatch::IntegrationTest
+  include GeneratedUrlHelpers
+end
+
+class ActionDispatch::SystemTestCase
+  include GeneratedUrlHelpers
+end
+
 module GeneratedUrlHelpers
   # Sigs for route /music(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
@@ -31,6 +39,13 @@ module GeneratedUrlHelpers
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def music_url(*args, **kwargs); end
+
+  # Sigs for route /settings(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def settings_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def settings_url(*args, **kwargs); end
 
   # Sigs for route /about(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }

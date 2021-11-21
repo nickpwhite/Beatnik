@@ -171,7 +171,7 @@ module Music::CustomFinderMethods
   sig { params(args: T::Array[T.any(Integer, String)]).returns(T::Array[Music]) }
   def find_n(*args); end
 
-  sig { params(id: Integer).returns(T.nilable(Music)) }
+  sig { params(id: T.nilable(Integer)).returns(T.nilable(Music)) }
   def find_by_id(id); end
 
   sig { params(id: Integer).returns(Music) }
@@ -185,7 +185,7 @@ class Music < ApplicationRecord
   extend Music::QueryMethodsReturningRelation
   RelationType = T.type_alias { T.any(Music::ActiveRecord_Relation, Music::ActiveRecord_Associations_CollectionProxy, Music::ActiveRecord_AssociationRelation) }
 
-  sig { returns(T::Hash[T.any(String, Symbol), Symbol]) }
+  sig { returns(T::Hash[T.any(String, Symbol), String]) }
   def self.sources; end
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_Relation) }
@@ -366,9 +366,6 @@ module Music::QueryMethodsReturningRelation
   def unscoped(&block); end
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_Relation) }
-  def select(*args); end
-
-  sig { params(args: T.untyped).returns(Music::ActiveRecord_Relation) }
   def reselect(*args); end
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_Relation) }
@@ -454,6 +451,12 @@ module Music::QueryMethodsReturningRelation
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_Relation) }
   def only(*args); end
+
+  sig { params(block: T.proc.params(e: Music).returns(T::Boolean)).returns(T::Array[Music]) }
+  def select(&block); end
+
+  sig { params(args: T.any(String, Symbol, T::Array[T.any(String, Symbol)])).returns(Music::ActiveRecord_Relation) }
+  def select_columns(*args); end
 
   sig { params(args: T.untyped, block: T.nilable(T.proc.void)).returns(Music::ActiveRecord_Relation) }
   def extending(*args, &block); end
@@ -479,9 +482,6 @@ module Music::QueryMethodsReturningAssociationRelation
   def unscoped(&block); end
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_AssociationRelation) }
-  def select(*args); end
-
-  sig { params(args: T.untyped).returns(Music::ActiveRecord_AssociationRelation) }
   def reselect(*args); end
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_AssociationRelation) }
@@ -567,6 +567,12 @@ module Music::QueryMethodsReturningAssociationRelation
 
   sig { params(args: T.untyped).returns(Music::ActiveRecord_AssociationRelation) }
   def only(*args); end
+
+  sig { params(block: T.proc.params(e: Music).returns(T::Boolean)).returns(T::Array[Music]) }
+  def select(&block); end
+
+  sig { params(args: T.any(String, Symbol, T::Array[T.any(String, Symbol)])).returns(Music::ActiveRecord_AssociationRelation) }
+  def select_columns(*args); end
 
   sig { params(args: T.untyped, block: T.nilable(T.proc.void)).returns(Music::ActiveRecord_AssociationRelation) }
   def extending(*args, &block); end
