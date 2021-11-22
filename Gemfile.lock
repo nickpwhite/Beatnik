@@ -105,7 +105,10 @@ GEM
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
+    faraday_middleware (1.2.0)
+      faraday (~> 1.0)
     ffi (1.15.3)
+    gli (2.20.1)
     globalid (0.5.2)
       activesupport (>= 5.0)
     hashie (4.1.0)
@@ -241,6 +244,12 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    slack-ruby-client (0.17.0)
+      faraday (>= 1.0)
+      faraday_middleware
+      gli
+      hashie
+      websocket-driver
     sorbet (0.5.9363)
       sorbet-static (= 0.5.9363)
     sorbet-coerce (0.5.0)
@@ -318,6 +327,7 @@ DEPENDENCIES
   rspotify (~> 2.10)
   sass-rails (>= 6)
   selenium-webdriver
+  slack-ruby-client (~> 0.17)
   sorbet
   sorbet-rails
   sorbet-runtime

@@ -192,6 +192,22 @@ ul {
   font-size: large;
 }
 
+.flash {
+  padding: 15px;
+  border: 1px solid;
+  text-align: center;
+}
+
+.flash-alert {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.flash-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
 .content {
   flex: 1 0 auto;
   margin: 10px auto;
