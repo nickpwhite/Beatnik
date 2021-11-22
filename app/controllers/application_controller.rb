@@ -1,4 +1,6 @@
+# frozen_string_literal: true
 # typed: strict
+
 class ApplicationController < ActionController::Base
   before_action :initialize_visitor
 
