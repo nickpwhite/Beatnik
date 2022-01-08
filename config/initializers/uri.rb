@@ -31,11 +31,12 @@ module URI
     end
   end
 
-  class AppleMusic < URI::HTTPS; end
-  class Soundcloud < URI::HTTPS; end
-  class Spotify < URI::HTTPS; end
-  class Tidal < URI::HTTPS; end
-  class YoutubeMusic < URI::HTTPS; end
+  class Beatnik < URI::HTTPS; end
+  class AppleMusic < Beatnik; end
+  class Soundcloud < Beatnik; end
+  class Spotify < Beatnik; end
+  class Tidal < Beatnik; end
+  class YoutubeMusic < Beatnik; end
 
   @@hosts['music.apple.com'] = AppleMusic
   @@hosts['soundcloud.com'] = Soundcloud

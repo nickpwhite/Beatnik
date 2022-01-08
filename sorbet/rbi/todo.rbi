@@ -4,7 +4,6 @@
 # typed: strong
 module ActionDispatch::Request::Session; end
 module ActionDispatch::Response::ContentTypeHeader; end
-module ActiveRecord::Batches::BatchEnumerator; end
 module ActiveRecord::Delegation::DelegateCache; end
 module Mail::CheckDeliveryParams; end
 module Mail::Ruby19; end

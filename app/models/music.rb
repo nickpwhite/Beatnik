@@ -27,4 +27,16 @@ class Music < ApplicationRecord
   def self.get_feed(page)
     for_feed.limit(PAGE_SIZE).offset(page * PAGE_SIZE)
   end
+
+  sig {returns(String)}
+  def humanized_type
+    case music_type
+    when "T"
+      "track"
+    when "A"
+      "album"
+    else
+      raise "Unknown music type #{music_type}"
+    end
+  end
 end

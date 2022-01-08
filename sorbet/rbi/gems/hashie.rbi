@@ -43,13 +43,6 @@ module Hashie::Extensions::Mash
 end
 module Hashie::Extensions::Array
 end
-module Hashie::Extensions::ActiveSupport
-end
-module Hashie::Extensions::ActiveSupport::CoreExt
-end
-module Hashie::Extensions::ActiveSupport::CoreExt::Hash
-  def except(*keys); end
-end
 module Hashie::Extensions::PrettyInspect
   def hashie_inspect; end
   def self.included(base); end
@@ -168,6 +161,13 @@ class Hashie::Mash < Hashie::Hash
   extend Hashie::Extensions::RubyVersionCheck::ClassMethods
   include Hashie::Extensions::PrettyInspect
   include Hashie::Extensions::RubyVersionCheck
+end
+module Hashie::Extensions::ActiveSupport
+end
+module Hashie::Extensions::ActiveSupport::CoreExt
+end
+module Hashie::Extensions::ActiveSupport::CoreExt::Hash
+  def except(*keys); end
 end
 module Hashie::Extensions::DeepLocate
   def deep_locate(comparator); end

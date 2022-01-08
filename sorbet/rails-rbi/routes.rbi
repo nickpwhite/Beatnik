@@ -47,12 +47,33 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def settings_url(*args, **kwargs); end
 
+  # Sigs for route /slack/authorize(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def slack_authorize_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def slack_authorize_url(*args, **kwargs); end
+
+  # Sigs for route /slack/event(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def slack_event_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def slack_event_url(*args, **kwargs); end
+
   # Sigs for route /about(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def about_path(*args, **kwargs); end
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def about_url(*args, **kwargs); end
+
+  # Sigs for route /(:page)(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def home_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def home_url(*args, **kwargs); end
 
   # Sigs for route /rails/action_mailbox/postmark/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }

@@ -2,8 +2,20 @@
 # typed: strict
 
 class SlackController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :event
+
   class AuthorizeParams < T::Struct
     const :code, String
+  end
+
+  class EventParams < T::Struct
+    const :token, String
+    const :team_id, String
+    const :api_app_id, String
+    const :event, Slack::Event::RawHash
+    const :type, String
+    const :event_id, String
+    const :event_time, Integer
   end
 
   sig {void}
@@ -27,5 +39,23 @@ class SlackController < ApplicationController
     end
 
     redirect_to home_url
+  end
+
+  sig {void}
+  def event
+    Slack::Events::Request.new(request).verify!
+
+    if params.include?(:challenge)
+      render plain: params[:challenge]
+      return
+    end
+
+    typed_params = TypedParams[EventParams].new.extract!(params)
+    Slack::Event.create_event(typed_params).process
+
+    head :ok
+  rescue Slack::Events::Request::TimestampExpired,
+    Slack::Events::Request::InvalidSignature
+    head :forbidden
   end
 end

@@ -161,7 +161,7 @@ GEM
       parser
       rainbow (~> 3.0)
       sorbet-runtime (>= 0.5)
-    parser (3.0.2.0)
+    parser (3.1.0.0)
       ast (~> 2.4.1)
     pg (1.2.3)
     polyfill (1.9.0)
@@ -250,8 +250,8 @@ GEM
       gli
       hashie
       websocket-driver
-    sorbet (0.5.9363)
-      sorbet-static (= 0.5.9363)
+    sorbet (0.5.9491)
+      sorbet-static (= 0.5.9491)
     sorbet-coerce (0.5.0)
       polyfill (~> 1.8)
       safe_type (~> 1.1, >= 1.1.1)
@@ -262,8 +262,8 @@ GEM
       parser (>= 2.7)
       sorbet-coerce (>= 0.2.6)
       sorbet-runtime (>= 0.5)
-    sorbet-runtime (0.5.9363)
-    sorbet-static (0.5.9363-x86_64-linux)
+    sorbet-runtime (0.5.9491)
+    sorbet-static (0.5.9491-x86_64-linux)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)

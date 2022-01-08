@@ -10,16 +10,15 @@ module Slack
       URI::HTTPS.build(
         host: "slack.com",
         path: "/oauth/v2/authorize",
-        query: Rack::Utils.build_nested_query(query_params)
+        query: Rack::Utils.build_nested_query(query_params),
       )
     end
 
-    sig {returns({client_id: String, scope: String, redirect_uri: String})}
+    sig {returns({client_id: String, scope: String})}
     def self.query_params
       {
         client_id: client_id,
         scope: "chat:write,links:read",
-        redirect_uri: redirect_uri,
       }
     end
 
@@ -29,7 +28,6 @@ module Slack
         code: code,
         client_id: client_id,
         client_secret: client_secret,
-        redirect_uri: redirect_uri,
       )
 
       if response.ok?
@@ -52,11 +50,6 @@ module Slack
     sig {returns(String)}
     private_class_method def self.client_secret
       ENV.fetch('SLACK_CLIENT_SECRET')
-    end
-
-    sig {returns(String)}
-    private_class_method def self.redirect_uri
-      "https://cef4-157-131-154-125.ngrok.io/slack/authorize"
     end
   end
 end
