@@ -7,13 +7,15 @@ module Client
     def self.get_metadata(music)
       uri = URI.parse(music.spotify_url)
       path = path(uri)
-      prefix, id = path.split('/')
+      _, prefix, id = path.split('/')
       raise 'unable to get prefix or ID' if prefix.nil? || id.nil?
 
       if prefix == "album"
         result = RSpotify::Album.find(id)
         raise 'got multiple albums' if result.is_a?(Array)
         music.music_type = 'A'
+        cover_art = result.images.find {|i| i["height"] == i["weight"]} ||
+          result.images.first
       elsif prefix == "track"
         result = RSpotify::Track.find(id)
         raise 'got multiple tracks' if result.is_a?(Array)
@@ -21,6 +23,9 @@ module Client
         album = result.album
         if album.present?
           music.album = album.name
+          cover_art = album.images.find {|i| i["height"] == i["weight"]} ||
+            album.images.first
+          music.artwork = cover_art && cover_art["url"]
         end
       else
         raise 'unknown prefix'

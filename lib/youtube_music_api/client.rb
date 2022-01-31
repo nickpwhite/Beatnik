@@ -95,8 +95,6 @@ module YoutubeMusicAPI
       )
       body = JSON.parse(response.body)
 
-      binding.pry
-
       if type == "album"
         id = body.deep_find("playlistId")
         "https://music.youtube.com/playlist?list=#{id}"
