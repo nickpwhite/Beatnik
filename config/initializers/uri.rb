@@ -20,11 +20,14 @@ module URI
       host = parsed.host
 
       if host && (uri_class = @@hosts[host.downcase])
-        uri_class.build(
-          parsed.component.each_with_object({}) do |prop, hash|
-            hash[prop] = parsed.public_send(prop)
+        args = parsed.component.each_with_object({}) do |prop, hash|
+          hash[prop] = parsed.public_send(prop)
+          if prop == :query && hash[prop].present?
+            hash[prop] = Rack::Utils.build_query(Rack::Utils.parse_query(hash[prop]).compact)
           end
-        ).tap {|new_uri| new_uri.scheme = parsed.scheme}
+        end
+
+        uri_class.build(args).tap {|new_uri| new_uri.scheme = parsed.scheme}
       else
         parsed
       end
