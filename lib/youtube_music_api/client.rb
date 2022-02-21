@@ -5,11 +5,6 @@ module YoutubeMusicAPI
   class Client
     include Singleton
 
-    sig {void}
-    def initialize
-      Excon.defaults[:middlewares].unshift(MyLogger)
-    end
-
     sig {params(album_id: String).returns(T::Hash[String, String])}
     def get_album(album_id)
       response = _get("https://music.youtube.com/playlist", {list: album_id})
@@ -178,17 +173,3 @@ module YoutubeMusicAPI
     end
   end
 end
-
-class MyLogger < Excon::Middleware::Base
-  sig {params(stack: T.untyped).void}
-  def initialize(stack)
-    @stack = stack
-  end
-
-  sig {override.params(datum: BasicObject).returns(T.untyped)}
-  def request_call(datum)
-    puts datum
-    @stack.request_call(datum)
-  end
-end
-
