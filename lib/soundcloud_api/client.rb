@@ -15,7 +15,7 @@ module SoundcloudAPI
       )
     end
     private def _get(url, pattern='//h2')
-      browser = Watir::Browser.new :firefox
+      browser = Watir::Browser.new :firefox, options: {args: ['-headless']}
       browser.goto(url)
       document = parse_html(browser, pattern: pattern, num_retries: 2)
       browser.close
