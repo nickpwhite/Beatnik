@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.5'
+ruby '2.7.6'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'excon', '~> 0.85'
