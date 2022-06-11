@@ -12,5 +12,6 @@ RUN ln -s /opt/firefox/firefox /bin/firefox
 WORKDIR /beatnik
 COPY . /beatnik
 RUN bundle install
+RUN yarn install
 
 ENTRYPOINT ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
