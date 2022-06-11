@@ -12,7 +12,7 @@ class SlackController < ApplicationController
     const :token, String
     const :team_id, String
     const :api_app_id, String
-    const :event, Slack::Event::RawHash
+    const :event, T::Hash[String, T.untyped]
     const :type, String
     const :event_id, String
     const :event_time, Integer
@@ -51,11 +51,30 @@ class SlackController < ApplicationController
     end
 
     typed_params = TypedParams[EventParams].new.extract!(params)
-    Slack::Event.create_event(typed_params).process
+    event_params = typed_params.event
+    event_type = T.cast(event_params["type"], String)
+    event =
+      case event_type
+      when "app_uninstalled"
+        AppUninstalledEvent.from_params(event_params)
+      when "link_shared"
+        LinkSharedEvent.from_params(event_params)
+      else
+        raise "Unsupported event type #{type}"
+      end
+    event_container = SlackEventContainer.create!(
+      token: typed_params.token,
+      team_id: typed_params.team_id,
+      api_app_id: typed_params.api_app_id,
+      type: typed_params.type,
+      event_id: typed_params.event_id,
+      event_time: typed_params.event_time,
+      slack_event: event,
+    )
+    SlackEventJob.perform_async(event_container.id)
 
     head :ok
-  rescue Slack::Events::Request::TimestampExpired,
-    Slack::Events::Request::InvalidSignature
+  rescue Slack::Events::Request::TimestampExpired, Slack::Events::Request::InvalidSignature
     head :forbidden
   end
 end

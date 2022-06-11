@@ -81,6 +81,7 @@ GEM
     commander (4.6.0)
       highline (~> 2.0.0)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -222,6 +223,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     readline-ext (0.1.2)
+    redis (4.6.0)
     regexp_parser (2.1.1)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
@@ -248,6 +250,10 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
+    sidekiq (6.4.2)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     slack-ruby-client (0.17.0)
       faraday (>= 1.0)
       faraday_middleware
@@ -332,6 +338,7 @@ DEPENDENCIES
   rspotify (~> 2.10)
   sass-rails (>= 6)
   selenium-webdriver
+  sidekiq (~> 6.4)
   slack-ruby-client (~> 0.17)
   sorbet
   sorbet-rails

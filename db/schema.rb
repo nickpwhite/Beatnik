@@ -1,4 +1,3 @@
-# typed: false
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_152938) do
+ActiveRecord::Schema.define(version: 2022_06_05_173450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +22,12 @@ ActiveRecord::Schema.define(version: 2021_10_14_152938) do
     t.text "query_string", null: false
     t.text "query", null: false
     t.text "path"
+  end
+
+  create_table "app_uninstalled_events", force: :cascade do |t|
+    t.string "type", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "auth_group", id: :serial, force: :cascade do |t|
@@ -138,12 +143,36 @@ ActiveRecord::Schema.define(version: 2021_10_14_152938) do
     t.index ["session_key"], name: "django_session_session_key_c0390e0f_like", opclass: :varchar_pattern_ops
   end
 
+  create_table "link_shared_events", force: :cascade do |t|
+    t.string "type", null: false
+    t.string "channel", null: false
+    t.string "user", null: false
+    t.text "links", default: [], null: false, array: true
+    t.string "thread_ts", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "settings", force: :cascade do |t|
     t.string "visitor_id", null: false
     t.enum "redirect", default: "none", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["visitor_id"], name: "index_settings_on_visitor_id"
+  end
+
+  create_table "slack_event_containers", force: :cascade do |t|
+    t.string "token", null: false
+    t.string "team_id", null: false
+    t.string "api_app_id", null: false
+    t.string "type", null: false
+    t.string "event_id", null: false
+    t.integer "event_time", null: false
+    t.string "slack_event_type"
+    t.bigint "slack_event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slack_event_type", "slack_event_id"], name: "index_slack_event_containers_on_slack_event"
   end
 
   create_table "slackbot_install", id: :serial, force: :cascade do |t|
