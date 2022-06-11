@@ -13,4 +13,4 @@ WORKDIR /beatnik
 COPY . /beatnik
 RUN bundle install
 
-CMD ["bundle", "exec", "sidekiq"]
+ENTRYPOINT ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]

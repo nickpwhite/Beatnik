@@ -1,5 +1,0 @@
-[[build.buildpacks]]
-uri = "heroku/ruby"
-
-[[build.buildpacks]]
-uri = "heroku/heroku-buildpack-google-chrome"
