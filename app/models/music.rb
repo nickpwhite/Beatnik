@@ -28,7 +28,12 @@ class Music < ApplicationRecord
     for_feed.limit(PAGE_SIZE).offset(page * PAGE_SIZE)
   end
 
-  sig {params(uri: URI::HTTP, blk: T.proc.returns(T.nilable(Music))).returns(T.nilable(Music))}
+  sig do
+    params(
+      uri: URI::Generic,
+      blk: T.nilable(T.proc.returns(T.nilable(Music)))
+    ).returns(T.nilable(Music))
+  end
   def self.from_uri(uri, &blk)
     case uri
     when URI::AppleMusic

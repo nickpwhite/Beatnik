@@ -60,7 +60,7 @@ class SlackController < ApplicationController
       when "link_shared"
         LinkSharedEvent.from_params(event_params)
       else
-        raise "Unsupported event type #{type}"
+        raise "Unsupported event type #{event_type}"
       end
     event_container = SlackEventContainer.create!(
       token: typed_params.token,
