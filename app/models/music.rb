@@ -29,7 +29,7 @@ class Music < ApplicationRecord
   end
 
   sig {params(uri: URI::HTTP, blk: T.proc.returns(T.nilable(Music))).returns(T.nilable(Music))}
-  def self.from_uri(uri, blk)
+  def self.from_uri(uri, &blk)
     case uri
     when URI::AppleMusic
       Music.find_or_initialize_by(apple_url: uri.to_s) do |music|

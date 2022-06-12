@@ -10,6 +10,7 @@ module Client
       _, prefix, id = path.split('/')
       raise 'unable to get prefix or ID' if prefix.nil? || id.nil?
 
+      RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
       if prefix == "album"
         result = RSpotify::Album.find(id)
         raise 'got multiple albums' if result.is_a?(Array)
@@ -44,6 +45,7 @@ module Client
     def self.get_url(music)
       return music if music.spotify_url.present?
 
+      RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
       result = if music.music_type == 'A'
                  RSpotify::Album.search("#{music.name} #{music.artist}")
                elsif music.music_type == 'T'
