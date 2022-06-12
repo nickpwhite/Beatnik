@@ -26,13 +26,13 @@ class MusicController < ApplicationController
   sig {void}
   def create
     typed_params = TypedParams[CreateParams].new.extract!(params)
-    uri = URI.parse(typed_params.query)
-
-    if !(uri.class < URI::HTTP)
-      search_results = SearchClient.instance.search(typed_params.query)
-      render :search_results, locals: {search_results: search_results}
-      return
-    end
+    uri = begin
+            URI.parse(typed_params.query)
+          rescue URI::InvalidURIError
+            search_results = SearchClient.instance.search(typed_params.query)
+            render :search_results, locals: {search_results: search_results}
+            return
+          end
 
     music = Music.from_uri(uri) do
       render status: :bad_request
