@@ -28,29 +28,7 @@ class LinkSharedEvent < ApplicationRecord
       uri = URI.parse(link)
       next unless uri.is_a?(URI::Beatnik)
 
-      music =
-        case uri
-        when URI::AppleMusic
-          Music.find_or_initialize_by(apple_url: uri.to_s) do |music|
-            music.typed_source = Music::Source::AppleMusic
-          end
-        when URI::Soundcloud
-          Music.find_or_initialize_by(soundcloud_url: uri.to_s) do |music|
-            music.typed_source = Music::Source::Soundcloud
-          end
-        when URI::Spotify
-          Music.find_or_initialize_by(spotify_url: uri.to_s) do |music|
-            music.typed_source = Music::Source::Spotify
-          end
-        when URI::Tidal
-          Music.find_or_initialize_by(tidal_url: uri.to_s) do |music|
-            music.typed_source = Music::Source::Tidal
-          end
-        when URI::YoutubeMusic
-          Music.find_or_initialize_by(ytm_url: uri.to_s) do |music|
-            music.typed_source = Music::Source::YoutubeMusic
-          end
-        end
+      music = Music.from_uri(uri)
 
       next if music.nil?
 
