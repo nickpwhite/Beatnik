@@ -1,0 +1,26 @@
+<% content_for :head do %>
+  <meta property="og:title" content="Beatnik - Search Results">
+  <meta property="og:description" content="Search results for <%= query %> on Beatnik">
+  <meta property="og:url" content="https://www.beatnikapp.com/search?q=<%= query %>">
+
+  <meta name="description" content="Search results for <%= query %> on Beatnik">
+  <title>Beatnik - Search Results</title>
+<% end %>
+
+<%= render "shared/search_bar" %>
+<ul class="flex-row feed">
+  <% results.each do |music| %>
+    <li class="flex-row col-100">
+      <%= link_to search_index_path(q: music.url), class: "flex-row col-100",
+        title: "#{music.name} - #{music.artist}" do %>
+        <div class="col-25 m-col-35">
+          <img class="artwork" src="<%= music.artwork %>" alt="Album cover" />
+        </div>
+        <div class="flex-col col-75 m-col-65">
+          <h2 class="music-info"><%= music.name %></h2>
+          <h3 class="music-info"><%= music.artist %></h3>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

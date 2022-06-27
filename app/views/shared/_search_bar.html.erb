@@ -1,8 +1,8 @@
 <div class="flex-row">
-  <%= form_with url: "/music", class: "flex-row" do |form| %>
+  <%= form_with url: "/search", class: "flex-row", method: :get do |form| %>
     <div class="col-75">
       <input
-        name="query"
+        name="q"
         class="search-box"
         type="search"
         placeholder="Enter a link or search query"

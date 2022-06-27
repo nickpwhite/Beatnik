@@ -10,13 +10,12 @@ module Client
       _, prefix, id = path.split('/')
       raise 'unable to get prefix or ID' if prefix.nil? || id.nil?
 
-      RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
+      authenticate
       if prefix == "album"
         result = RSpotify::Album.find(id)
         raise 'got multiple albums' if result.is_a?(Array)
         music.music_type = 'A'
-        cover_art = result.images.find {|i| i["height"] == i["weight"]} ||
-          result.images.first
+        music.artwork = find_artwork(result.images)
       elsif prefix == "track"
         result = RSpotify::Track.find(id)
         raise 'got multiple tracks' if result.is_a?(Array)
@@ -24,9 +23,7 @@ module Client
         album = result.album
         if album.present?
           music.album = album.name
-          cover_art = album.images.find {|i| i["height"] == i["weight"]} ||
-            album.images.first
-          music.artwork = cover_art && cover_art["url"]
+          music.artwork = find_artwork(album.images)
         end
       else
         raise 'unknown prefix'
@@ -45,7 +42,7 @@ module Client
     def self.get_url(music)
       return music if music.spotify_url.present?
 
-      RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
+      authenticate
       result = if music.music_type == 'A'
                  RSpotify::Album.search("#{music.name} #{music.artist}")
                elsif music.music_type == 'T'
@@ -58,5 +55,47 @@ module Client
 
       music
     end
+
+    sig {params(query: String).returns(T::Array[T::Hash[Symbol, T.nilable(String)]])}
+    def self.search(query)
+      return [] if query.blank?
+
+      authenticate
+      # The Spotify client modifies the types string, calling #dup here unfreezes it.
+      types = 'album,track'.dup
+      results = RSpotify::Base.search(query, types, limit: 5)
+      results.filter_map do |album_or_track|
+        url = album_or_track.external_urls['spotify']
+        next if url.blank?
+
+        artwork = if album_or_track.is_a?(RSpotify::Album)
+          find_artwork(album_or_track.images)
+        else
+          find_artwork(album_or_track.album&.images)
+        end
+        next if artwork.blank?
+
+        result = {
+          name: album_or_track.name,
+          artist: album_or_track.artists.first&.name,
+          url: url,
+          artwork: artwork,
+        }
+
+        result
+      end
+    end
+
+    sig {void}
+    def self.authenticate
+      RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
+    end
+
+    sig {params(images: T::Array[T::Hash[String, T.untyped]]).returns(T.nilable(String))}
+    def self.find_artwork(images)
+      image = (images.find {|i| i["height"] == i["weight"]} || images.first)
+      image && image["url"]
+    end
+    private_class_method :authenticate, :find_artwork
   end
 end
