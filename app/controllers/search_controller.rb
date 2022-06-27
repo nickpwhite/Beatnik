@@ -10,8 +10,6 @@ class SearchController < ApplicationController
   def index
     typed_params = TypedParams[Params].new.extract!(params)
 
-    binding.pry
-
     uri = URI.parse(typed_params.q)
     if uri.is_a?(URI::Beatnik)
       convert_url(uri)

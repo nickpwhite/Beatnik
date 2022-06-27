@@ -8,7 +8,11 @@ class HomeController < ApplicationController
 
   sig {void}
   def index
-    typed_params = TypedParams[IndexParams].new.extract!(params)
+    typed_params = begin
+                     TypedParams[IndexParams].new.extract!(params)
+                   rescue ActionController::BadRequest
+                     raise ActionController::RoutingError.new('Not Found')
+                   end
 
     current_page = typed_params.page || 0
     last_page = (Music.for_feed.count / Music::PAGE_SIZE).ceil - 1
