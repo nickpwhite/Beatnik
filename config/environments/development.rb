@@ -76,5 +76,4 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.hosts << "beatnik-development.up.railway.app"
-  config.hosts << "www.beatnikapp.com"
 end

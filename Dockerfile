@@ -24,5 +24,6 @@ RUN ln -s /tmp/node_modules
 
 COPY . /beatnik
 RUN bin/webpack
+RUN bundle exec rake assets:precompile
 
 ENTRYPOINT ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
