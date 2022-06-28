@@ -86,26 +86,26 @@
             </a>
           </li>
         <% end %>
-        <!--li>
-          {% if rated? %}
-          <div class="flex-row">Thank you! We appreciate your feedback.</div>
-          {% else %}
-          <form id="rating-form" action="/rating" method="post" class="flex-row">
-            {% csrf_token %}
-            <input type="hidden" name="music_id" value="{{music.id}}">
-            <fieldset class="rating-group flex-row">
-              <legend>Did we get it right?</legend>
-              <div class="m-col-50 radio-group">
-                <label><input type="radio" name="rating" value="1">Yes</label>
-                <label><input type="radio" name="rating" value="-1">No</label>
-              </div>
-              <div class="m-col-50">
-                <input class="rating-button" type="submit" value="Submit Feedback">
-              </div>
-            </fieldset>
-          </form>
-          {% endif %}
-          </li-->
+        <% if rated %>
+          <li>
+            <div class="flex-row">Thank you! We appreciate your feedback.</div>
+          </li>
+        <% else %>
+          <li>
+            <%= form_with url: "/music/#{music.id}/ratings", class: "flex-row" do |form| %>
+              <fieldset class="rating-group flex-row">
+                <legend>Did we get it right?</legend>
+                <div class="m-col-50 radio-group">
+                  <label><input type="radio" name="rating" value="1">Yes</label>
+                  <label><input type="radio" name="rating" value="-1">No</label>
+                </div>
+                <div class="m-col-50">
+                  <input class="rating-button" type="submit" value="Submit Feedback">
+                </div>
+              </fieldset>
+            <% end %>
+          </li>
+        <% end %>
         </ul>
       </div>
     </div>

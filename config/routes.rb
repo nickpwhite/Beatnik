@@ -2,7 +2,9 @@
 # typed: strict
 
 Rails.application.routes.draw do
-  resources :music, only: [:show]
+  resources :music, only: [:show] do
+    resources :ratings, only: [:create]
+  end
   resources :search, only: [:index]
   resources :settings, only: [:index, :create]
 

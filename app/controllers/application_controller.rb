@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
 
     session[:visitor_id] = SecureRandom.uuid
   end
+
+  sig {params(music_id: Integer).returns(T::Boolean)}
+  def rated?(music_id)
+    !!session["rated.#{music_id}".to_sym]
+  end
+
+  sig {params(music_id: Integer).void}
+  def set_rated(music_id)
+    session["rated.#{music_id}".to_sym] = true
+  end
 end

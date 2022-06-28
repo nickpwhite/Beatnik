@@ -15,7 +15,7 @@ class MusicController < ApplicationController
     if (redirect_url = settings&.typed_redirect&.music_url(music))
       redirect_to redirect_url
     else
-      render :show, locals: {music: music}
+      render :show, locals: {music: music, rated: rated?(music.id)}
     end
   end
 end

@@ -6,6 +6,7 @@ class ApiController < ApplicationController
     const :q, String
   end
 
+  sig {void}
   def convert
     typed_params = TypedParams[ConvertParams].new.extract!(params)
 
