@@ -10,6 +10,7 @@ class MusicConverter
   sig {returns(Music)}
   def convert
     populate_metadata
+    populate_artwork_if_necessary
     populate_urls
 
     @music
@@ -30,6 +31,13 @@ class MusicConverter
       when Music::Source::YoutubeMusic
         Client::YoutubeMusic.get_metadata(@music)
       end
+  end
+
+  sig {void}
+  private def populate_artwork_if_necessary
+    return unless @music.artwork.nil?
+
+    @music.artwork = Client::Spotify.get_artwork(@music)
   end
 
   sig {void}

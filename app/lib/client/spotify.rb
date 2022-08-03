@@ -86,6 +86,23 @@ module Client
       end
     end
 
+    sig {params(music: Music).returns(T.nilable(String))}
+    def self.get_artwork(music)
+      uri = URI.parse(music.spotify_url)
+      path = path(uri)
+      _, prefix, id = path.split('/')
+      return if prefix.nil? || id.nil?
+
+      authenticate
+      if prefix == "album"
+        result = RSpotify::Album.find(id)
+      elsif prefix == "track"
+        result = RSpotify::Track.find(id)
+      end
+
+      find_artwork(result.images)
+    end
+
     sig {void}
     def self.authenticate
       RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])

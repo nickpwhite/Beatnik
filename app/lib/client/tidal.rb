@@ -20,12 +20,12 @@ module Client
       if type == "album"
         result = TidalAPI::Client.instance.get_album(id)
         music.music_type = 'A'
-        artwork_path = result["cover"].gsub("-", "/")
+        artwork_path = result["cover"]&.gsub("-", "/")
       elsif type == "track"
         result = TidalAPI::Client.instance.get_track(id)
         music.music_type = 'T'
         music.album = result.dig("album", "title")
-        artwork_path = result.dig("album", "cover").gsub("-", "/")
+        artwork_path = result.dig("album", "cover")&.gsub("-", "/")
       else
         raise "unknown type #{type}"
       end
