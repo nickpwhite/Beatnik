@@ -17,8 +17,6 @@ gem 'slack-ruby-client', '~> 0.17'
 gem 'sorbet-rails'
 gem 'sorbet-runtime'
 gem 'turbolinks', '~> 5'
-gem 'watir', '~> 6.19'
-gem 'webdrivers', '~> 4.5'
 gem 'webpacker', '~> 5.0'
 
 group :development, :test do

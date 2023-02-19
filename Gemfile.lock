@@ -292,18 +292,11 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
-    watir (6.19.1)
-      regexp_parser (>= 1.2, < 3)
-      selenium-webdriver (>= 3.142.7)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (4.6.1)
-      nokogiri (~> 1.6)
-      rubyzip (>= 1.3.0)
-      selenium-webdriver (>= 3.0, < 4.0)
     webpacker (5.4.2)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -346,9 +339,7 @@ DEPENDENCIES
   spring
   turbolinks (~> 5)
   tzinfo-data
-  watir (~> 6.19)
   web-console (>= 4.1.0)
-  webdrivers (~> 4.5)
   webpacker (~> 5.0)
 
 RUBY VERSION

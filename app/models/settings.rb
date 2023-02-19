@@ -5,7 +5,6 @@ class Settings < ApplicationRecord
   typed_enum redirect: {
     None: "none",
     AppleMusic: "apple_music",
-    Soundcloud: "soundcloud",
     Spotify: "spotify",
     Tidal: "tidal",
     YoutubeMusic: "youtube_music",
@@ -21,8 +20,6 @@ class Settings < ApplicationRecord
         "None"
       when AppleMusic
         "Apple Music"
-      when Soundcloud
-        "Soundcloud"
       when Spotify
         "Spotify"
       when Tidal
@@ -41,8 +38,6 @@ class Settings < ApplicationRecord
         nil
       when AppleMusic
         music.apple_url
-      when Soundcloud
-        music.soundcloud_url
       when Spotify
         music.spotify_url
       when Tidal
