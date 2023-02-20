@@ -40,10 +40,6 @@ class Music < ApplicationRecord
       Music.find_or_initialize_by(apple_url: uri.to_s) do |music|
         music.typed_source = Music::Source::AppleMusic
       end
-    when URI::Soundcloud
-      Music.find_or_initialize_by(soundcloud_url: uri.to_s) do |music|
-        music.typed_source = Music::Source::Soundcloud
-      end
     when URI::Spotify
       Music.find_or_initialize_by(spotify_url: uri.to_s) do |music|
         music.typed_source = Music::Source::Spotify
