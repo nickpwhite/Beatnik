@@ -148,7 +148,6 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0704)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -165,9 +164,6 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.14.2)
-      mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     oauth2 (1.4.7)
@@ -201,7 +197,7 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (3.1.1)
-    puma (5.4.0)
+    puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.2)
@@ -328,7 +324,6 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -343,7 +338,7 @@ DEPENDENCIES
   pg (~> 1.1)
   pry-byebug
   pry-rails
-  puma (~> 5.0)
+  puma (~> 5.6)
   rack-mini-profiler (~> 2.0)
   rails (~> 7.0.4)
   readline-ext
